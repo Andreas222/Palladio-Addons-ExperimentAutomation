@@ -1,0 +1,132 @@
+grammar org.palladiosimulator.experimentautomation.dsl.ExpAuto with org.eclipse.xtext.common.Terminals
+
+import "platform:/resource/org.palladiosimulator.experimentautomation/model/experimentautomation.ecore#//variation"
+import "platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.ecore"
+
+generate expAuto "http://www.palladiosimulator.org/experimentautomation/dsl/ExpAuto"
+
+Model:
+	imports += Import+
+	datasources += Datasource+
+	experiments += Experiment+
+;
+
+Import:
+	'import' path = STRING
+;
+
+Datasource:
+	'datasource' name = ID ':' sourceType = 'EDP2' '(' sourceURI = STRING ')'
+;
+
+Experiment:
+	'experiment' name = ID ':' design = ('FullFactorial' | 'OneFactor')
+	'{' 
+		experimentSpecifications = ExperimentSpecifications
+	'}'
+;
+
+ExperimentSpecifications:
+	specifications += (Description | InitialModel | Variation | StopTimeCondition | StopCountCondition | NumberOfExperiments | SeedDefinition | ExperimentDatasource | ToolDefinition)+
+;
+
+Description:
+	'description' '=' description = STRING
+;
+
+InitialModel:
+	'initial' '=' modeltyp = 'PCM'
+	'{' 
+		initSpecifications = InitSpecifications
+	'}'
+;
+
+InitSpecifications:
+	specifications += (AllocationModel | UsageModel | MiddlewareRepository | EventMiddlewareRepository | MonitorRepository)+
+;
+
+AllocationModel:
+	'allocation' '=' allocation = STRING
+;
+
+UsageModel:
+	'usageModel' '=' usageModel = STRING
+;
+
+MiddlewareRepository:
+	'middlewareRepository' '=' middlewareRepository = STRING
+;
+
+EventMiddlewareRepository:
+	'eventMiddlewareRepository' '=' eventMiddelwareRepository = STRING
+;
+
+MonitorRepository:
+	'monitorRepository' '=' monitorRepository = STRING
+;
+
+Variation:
+	'variation' '=' variationTyp = [ValueVariation] name = ID
+	'{'
+		'target' '=' target = [Identifier]
+		'maxVariations' '=' maxVariations = INT
+		'values' '=' valueProvider = (NestedIntervalsValueProvider | SetValueProvider | LinearValueProvider | ExponentialValueProvider | PolynomialValueProvider)
+	'}'
+;
+
+NestedIntervalsValueProvider:
+	('[' min = INT ',' max = INT ']') | ('nestedIntervall' '(' min = INT ',' max = INT ')')
+;
+
+SetValueProvider:
+	('{' values += INT (',' values += INT)* '}') | ('setValues' '(' values += INT (',' values += INT)* ')')
+;
+
+LinearValueProvider:
+	'linear' '(' summand = INT ',' factor = INT ')'
+;
+
+ExponentialValueProvider:
+	'exponential' '(' base = INT ')'
+;
+
+PolynomialValueProvider:
+	'polynomial' '(' exponent = INT ',' factor = INT ')'
+;
+
+StopTimeCondition:
+	'stop' '=' stopTyp = 'simulationTime' '(' stopParam = INT ')'
+;
+
+StopCountCondition:
+	'stop' '=' stopTyp = 'measurementCount' '(' stopParam = INT ')'
+;
+
+NumberOfExperiments:
+	'repetitions' '=' numberOfRepetitions = INT
+;
+
+SeedDefinition:
+	'seeds' '=' '{' seedLists += ListOfSeeds (',' seedLists += ListOfSeeds)* '}'
+;
+
+ListOfSeeds:
+	'{' seeds += INT (',' seeds += INT)* '}'
+;
+
+ExperimentDatasource:
+	'datasource' '=' source = [Datasource]
+;
+
+ToolDefinition:
+	'tool' '=' tool = ('SimuCom' | 'SimuLizar') '{' configParams += ConfigurationParams* '}'
+	//'tool' '=' tool = STRING '{' configParams += ConfigurationParams* '}'
+;
+
+ConfigurationParams:
+	key = ID '=' value = ConfigValue ';'
+;
+
+ConfigValue:
+	STRING | INT
+;

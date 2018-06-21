@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<?eclipse version="3.0"?>
+<plugin>
+   <extension-point id="org_palladiosimulator_experimentautomation_dsl_toolAdapter" name="toolAdapter" schema="schema/org_palladiosimulator_experimentautomation_dsl_toolAdapter.exsd"/>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package 
+			uri = "http://www.palladiosimulator.org/experimentautomation/dsl/ExpAuto"
+			class = "org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage"
+			genModel = "model/generated/ExpAuto.genmodel" />
+	</extension>
+</plugin>
