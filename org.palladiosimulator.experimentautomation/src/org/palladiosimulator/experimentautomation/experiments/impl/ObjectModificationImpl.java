@@ -2,7 +2,10 @@
  */
 package org.palladiosimulator.experimentautomation.experiments.impl;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.palladiosimulator.experimentautomation.experiments.ExperimentsPackage;
 import org.palladiosimulator.experimentautomation.experiments.ObjectModification;
 import org.palladiosimulator.experimentautomation.variation.VariationType;
@@ -14,14 +17,10 @@ import org.palladiosimulator.experimentautomation.variation.VariationType;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.palladiosimulator.experimentautomation.experiments.impl.ObjectModificationImpl#getType
- * <em>Type</em>}</li>
- * <li>{@link org.palladiosimulator.experimentautomation.experiments.impl.ObjectModificationImpl#getName
- * <em>Name</em>}</li>
- * <li>{@link org.palladiosimulator.experimentautomation.experiments.impl.ObjectModificationImpl#getVariedObjectId
- * <em>Varied Object Id</em>}</li>
- * <li>{@link org.palladiosimulator.experimentautomation.experiments.impl.ObjectModificationImpl#getValue
- * <em>Value</em>}</li>
+ *   <li>{@link org.palladiosimulator.experimentautomation.experiments.impl.ObjectModificationImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.palladiosimulator.experimentautomation.experiments.impl.ObjectModificationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.palladiosimulator.experimentautomation.experiments.impl.ObjectModificationImpl#getVariedObjectId <em>Varied Object Id</em>}</li>
+ *   <li>{@link org.palladiosimulator.experimentautomation.experiments.impl.ObjectModificationImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,251 +28,294 @@ import org.palladiosimulator.experimentautomation.variation.VariationType;
 public class ObjectModificationImpl extends ModificationImpl implements ObjectModification {
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public static final String copyright = "Palladiosimulator.org 2008-2017";
+	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected VariationType type;
 
-    /**
-     * The default value of the '{@link #getName() <em>Name</em>}' attribute. <!-- begin-user-doc
+				/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
-     * @see #getName()
-     * @generated
-     * @ordered
-     */
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String NAME_EDEFAULT = null;
 
     /**
-     * The default value of the '{@link #getVariedObjectId() <em>Varied Object Id</em>}' attribute.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getVariedObjectId()
-     * @generated
-     * @ordered
-     */
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+				/**
+	 * The default value of the '{@link #getVariedObjectId() <em>Varied Object Id</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getVariedObjectId()
+	 * @generated
+	 * @ordered
+	 */
     protected static final String VARIED_OBJECT_ID_EDEFAULT = null;
 
     /**
-     * The default value of the '{@link #getValue() <em>Value</em>}' attribute. <!-- begin-user-doc
+	 * The cached value of the '{@link #getVariedObjectId() <em>Varied Object Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVariedObjectId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String variedObjectId = VARIED_OBJECT_ID_EDEFAULT;
+
+				/**
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
-     * @see #getValue()
-     * @generated
-     * @ordered
-     */
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
     protected static final long VALUE_EDEFAULT = 0L;
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected long value = VALUE_EDEFAULT;
+
+				/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     protected ObjectModificationImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return ExperimentsPackage.Literals.OBJECT_MODIFICATION;
-    }
+		return ExperimentsPackage.Literals.OBJECT_MODIFICATION;
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     public VariationType getType() {
-        return (VariationType) this.eDynamicGet(ExperimentsPackage.OBJECT_MODIFICATION__TYPE,
-                ExperimentsPackage.Literals.OBJECT_MODIFICATION__TYPE, true, true);
-    }
+		if (type != null && type.eIsProxy()) {
+			InternalEObject oldType = (InternalEObject)type;
+			type = (VariationType)eResolveProxy(oldType);
+			if (type != oldType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExperimentsPackage.OBJECT_MODIFICATION__TYPE, oldType, type));
+			}
+		}
+		return type;
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     public VariationType basicGetType() {
-        return (VariationType) this.eDynamicGet(ExperimentsPackage.OBJECT_MODIFICATION__TYPE,
-                ExperimentsPackage.Literals.OBJECT_MODIFICATION__TYPE, false, true);
-    }
+		return type;
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
-    public void setType(final VariationType newType) {
-        this.eDynamicSet(ExperimentsPackage.OBJECT_MODIFICATION__TYPE,
-                ExperimentsPackage.Literals.OBJECT_MODIFICATION__TYPE,
-                newType);
-    }
+    public void setType(VariationType newType) {
+		VariationType oldType = type;
+		type = newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExperimentsPackage.OBJECT_MODIFICATION__TYPE, oldType, type));
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     public String getName() {
-        return (String) this.eDynamicGet(ExperimentsPackage.OBJECT_MODIFICATION__NAME,
-                ExperimentsPackage.Literals.OBJECT_MODIFICATION__NAME, true, true);
-    }
+		return name;
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
-    public void setName(final String newName) {
-        this.eDynamicSet(ExperimentsPackage.OBJECT_MODIFICATION__NAME,
-                ExperimentsPackage.Literals.OBJECT_MODIFICATION__NAME,
-                newName);
-    }
+    public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExperimentsPackage.OBJECT_MODIFICATION__NAME, oldName, name));
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     public String getVariedObjectId() {
-        return (String) this.eDynamicGet(ExperimentsPackage.OBJECT_MODIFICATION__VARIED_OBJECT_ID,
-                ExperimentsPackage.Literals.OBJECT_MODIFICATION__VARIED_OBJECT_ID, true, true);
-    }
+		return variedObjectId;
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
-    public void setVariedObjectId(final String newVariedObjectId) {
-        this.eDynamicSet(ExperimentsPackage.OBJECT_MODIFICATION__VARIED_OBJECT_ID,
-                ExperimentsPackage.Literals.OBJECT_MODIFICATION__VARIED_OBJECT_ID, newVariedObjectId);
-    }
+    public void setVariedObjectId(String newVariedObjectId) {
+		String oldVariedObjectId = variedObjectId;
+		variedObjectId = newVariedObjectId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExperimentsPackage.OBJECT_MODIFICATION__VARIED_OBJECT_ID, oldVariedObjectId, variedObjectId));
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     public long getValue() {
-        return (Long) this.eDynamicGet(ExperimentsPackage.OBJECT_MODIFICATION__VALUE,
-                ExperimentsPackage.Literals.OBJECT_MODIFICATION__VALUE, true, true);
-    }
+		return value;
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
-    public void setValue(final long newValue) {
-        this.eDynamicSet(ExperimentsPackage.OBJECT_MODIFICATION__VALUE,
-                ExperimentsPackage.Literals.OBJECT_MODIFICATION__VALUE, newValue);
-    }
+    public void setValue(long newValue) {
+		long oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExperimentsPackage.OBJECT_MODIFICATION__VALUE, oldValue, value));
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
-    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
-        case ExperimentsPackage.OBJECT_MODIFICATION__TYPE:
-            if (resolve) {
-                return this.getType();
-            }
-            return this.basicGetType();
-        case ExperimentsPackage.OBJECT_MODIFICATION__NAME:
-            return this.getName();
-        case ExperimentsPackage.OBJECT_MODIFICATION__VARIED_OBJECT_ID:
-            return this.getVariedObjectId();
-        case ExperimentsPackage.OBJECT_MODIFICATION__VALUE:
-            return this.getValue();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+    public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case ExperimentsPackage.OBJECT_MODIFICATION__TYPE:
+				if (resolve) return getType();
+				return basicGetType();
+			case ExperimentsPackage.OBJECT_MODIFICATION__NAME:
+				return getName();
+			case ExperimentsPackage.OBJECT_MODIFICATION__VARIED_OBJECT_ID:
+				return getVariedObjectId();
+			case ExperimentsPackage.OBJECT_MODIFICATION__VALUE:
+				return getValue();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
-    public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
-        case ExperimentsPackage.OBJECT_MODIFICATION__TYPE:
-            this.setType((VariationType) newValue);
-            return;
-        case ExperimentsPackage.OBJECT_MODIFICATION__NAME:
-            this.setName((String) newValue);
-            return;
-        case ExperimentsPackage.OBJECT_MODIFICATION__VARIED_OBJECT_ID:
-            this.setVariedObjectId((String) newValue);
-            return;
-        case ExperimentsPackage.OBJECT_MODIFICATION__VALUE:
-            this.setValue((Long) newValue);
-            return;
-        }
-        super.eSet(featureID, newValue);
-    }
+    public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case ExperimentsPackage.OBJECT_MODIFICATION__TYPE:
+				setType((VariationType)newValue);
+				return;
+			case ExperimentsPackage.OBJECT_MODIFICATION__NAME:
+				setName((String)newValue);
+				return;
+			case ExperimentsPackage.OBJECT_MODIFICATION__VARIED_OBJECT_ID:
+				setVariedObjectId((String)newValue);
+				return;
+			case ExperimentsPackage.OBJECT_MODIFICATION__VALUE:
+				setValue((Long)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
-    public void eUnset(final int featureID) {
-        switch (featureID) {
-        case ExperimentsPackage.OBJECT_MODIFICATION__TYPE:
-            this.setType((VariationType) null);
-            return;
-        case ExperimentsPackage.OBJECT_MODIFICATION__NAME:
-            this.setName(NAME_EDEFAULT);
-            return;
-        case ExperimentsPackage.OBJECT_MODIFICATION__VARIED_OBJECT_ID:
-            this.setVariedObjectId(VARIED_OBJECT_ID_EDEFAULT);
-            return;
-        case ExperimentsPackage.OBJECT_MODIFICATION__VALUE:
-            this.setValue(VALUE_EDEFAULT);
-            return;
-        }
-        super.eUnset(featureID);
-    }
+    public void eUnset(int featureID) {
+		switch (featureID) {
+			case ExperimentsPackage.OBJECT_MODIFICATION__TYPE:
+				setType((VariationType)null);
+				return;
+			case ExperimentsPackage.OBJECT_MODIFICATION__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case ExperimentsPackage.OBJECT_MODIFICATION__VARIED_OBJECT_ID:
+				setVariedObjectId(VARIED_OBJECT_ID_EDEFAULT);
+				return;
+			case ExperimentsPackage.OBJECT_MODIFICATION__VALUE:
+				setValue(VALUE_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
-    public boolean eIsSet(final int featureID) {
-        switch (featureID) {
-        case ExperimentsPackage.OBJECT_MODIFICATION__TYPE:
-            return this.basicGetType() != null;
-        case ExperimentsPackage.OBJECT_MODIFICATION__NAME:
-            return NAME_EDEFAULT == null ? this.getName() != null : !NAME_EDEFAULT.equals(this.getName());
-        case ExperimentsPackage.OBJECT_MODIFICATION__VARIED_OBJECT_ID:
-            return VARIED_OBJECT_ID_EDEFAULT == null ? this.getVariedObjectId() != null
-                    : !VARIED_OBJECT_ID_EDEFAULT.equals(this.getVariedObjectId());
-        case ExperimentsPackage.OBJECT_MODIFICATION__VALUE:
-            return this.getValue() != VALUE_EDEFAULT;
-        }
-        return super.eIsSet(featureID);
-    }
+    public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case ExperimentsPackage.OBJECT_MODIFICATION__TYPE:
+				return type != null;
+			case ExperimentsPackage.OBJECT_MODIFICATION__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ExperimentsPackage.OBJECT_MODIFICATION__VARIED_OBJECT_ID:
+				return VARIED_OBJECT_ID_EDEFAULT == null ? variedObjectId != null : !VARIED_OBJECT_ID_EDEFAULT.equals(variedObjectId);
+			case ExperimentsPackage.OBJECT_MODIFICATION__VALUE:
+				return value != VALUE_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", variedObjectId: ");
+		result.append(variedObjectId);
+		result.append(", value: ");
+		result.append(value);
+		result.append(')');
+		return result.toString();
+	}
 
 } // ObjectModificationImpl

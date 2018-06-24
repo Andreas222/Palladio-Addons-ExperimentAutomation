@@ -3,7 +3,7 @@
 package org.palladiosimulator.experimentautomation.abstractsimulation.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.internal.cdo.CDOObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.palladiosimulator.experimentautomation.abstractsimulation.AbstractsimulationPackage;
 import org.palladiosimulator.experimentautomation.abstractsimulation.StopCondition;
 
@@ -13,42 +13,23 @@ import org.palladiosimulator.experimentautomation.abstractsimulation.StopConditi
  *
  * @generated
  */
-public abstract class StopConditionImpl extends CDOObjectImpl implements StopCondition {
+public abstract class StopConditionImpl extends MinimalEObjectImpl.Container implements StopCondition {
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public static final String copyright = "Palladiosimulator.org 2008-2017";
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     protected StopConditionImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return AbstractsimulationPackage.Literals.STOP_CONDITION;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    protected int eStaticFeatureCount() {
-        return 0;
-    }
+		return AbstractsimulationPackage.Literals.STOP_CONDITION;
+	}
 
 } // StopConditionImpl

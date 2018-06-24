@@ -12,11 +12,4 @@ package org.palladiosimulator.experimentautomation.experiments;
  * @generated
  */
 public interface ProfilingMeasurement extends ResponseMeasurement {
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    String copyright = "Palladiosimulator.org 2008-2017";
 } // ProfilingMeasurement

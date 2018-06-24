@@ -2,7 +2,9 @@
  */
 package org.palladiosimulator.experimentautomation.abstractsimulation.impl;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.palladiosimulator.experimentautomation.abstractsimulation.AbstractsimulationPackage;
 import org.palladiosimulator.experimentautomation.abstractsimulation.MeasurementCountStopCondition;
 
@@ -13,8 +15,7 @@ import org.palladiosimulator.experimentautomation.abstractsimulation.Measurement
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.palladiosimulator.experimentautomation.abstractsimulation.impl.MeasurementCountStopConditionImpl#getMeasurementCount
- * <em>Measurement Count</em>}</li>
+ *   <li>{@link org.palladiosimulator.experimentautomation.abstractsimulation.impl.MeasurementCountStopConditionImpl#getMeasurementCount <em>Measurement Count</em>}</li>
  * </ul>
  *
  * @generated
@@ -22,119 +23,130 @@ import org.palladiosimulator.experimentautomation.abstractsimulation.Measurement
 public class MeasurementCountStopConditionImpl extends StopConditionImpl implements MeasurementCountStopCondition {
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public static final String copyright = "Palladiosimulator.org 2008-2017";
-    /**
-     * The default value of the '{@link #getMeasurementCount() <em>Measurement Count</em>}'
-     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see #getMeasurementCount()
-     * @generated
-     * @ordered
-     */
+	 * The default value of the '{@link #getMeasurementCount() <em>Measurement Count</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see #getMeasurementCount()
+	 * @generated
+	 * @ordered
+	 */
     protected static final int MEASUREMENT_COUNT_EDEFAULT = 0;
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * The cached value of the '{@link #getMeasurementCount() <em>Measurement Count</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMeasurementCount()
+	 * @generated
+	 * @ordered
+	 */
+	protected int measurementCount = MEASUREMENT_COUNT_EDEFAULT;
+
+				/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     protected MeasurementCountStopConditionImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return AbstractsimulationPackage.Literals.MEASUREMENT_COUNT_STOP_CONDITION;
-    }
+		return AbstractsimulationPackage.Literals.MEASUREMENT_COUNT_STOP_CONDITION;
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     public int getMeasurementCount() {
-        return (Integer) this.eDynamicGet(AbstractsimulationPackage.MEASUREMENT_COUNT_STOP_CONDITION__MEASUREMENT_COUNT,
-                AbstractsimulationPackage.Literals.MEASUREMENT_COUNT_STOP_CONDITION__MEASUREMENT_COUNT, true, true);
-    }
+		return measurementCount;
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
-    public void setMeasurementCount(final int newMeasurementCount) {
-        this.eDynamicSet(AbstractsimulationPackage.MEASUREMENT_COUNT_STOP_CONDITION__MEASUREMENT_COUNT,
-                AbstractsimulationPackage.Literals.MEASUREMENT_COUNT_STOP_CONDITION__MEASUREMENT_COUNT,
-                newMeasurementCount);
-    }
+    public void setMeasurementCount(int newMeasurementCount) {
+		int oldMeasurementCount = measurementCount;
+		measurementCount = newMeasurementCount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AbstractsimulationPackage.MEASUREMENT_COUNT_STOP_CONDITION__MEASUREMENT_COUNT, oldMeasurementCount, measurementCount));
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
-    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
-        case AbstractsimulationPackage.MEASUREMENT_COUNT_STOP_CONDITION__MEASUREMENT_COUNT:
-            return this.getMeasurementCount();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+    public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case AbstractsimulationPackage.MEASUREMENT_COUNT_STOP_CONDITION__MEASUREMENT_COUNT:
+				return getMeasurementCount();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
-    public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
-        case AbstractsimulationPackage.MEASUREMENT_COUNT_STOP_CONDITION__MEASUREMENT_COUNT:
-            this.setMeasurementCount((Integer) newValue);
-            return;
-        }
-        super.eSet(featureID, newValue);
-    }
+    public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case AbstractsimulationPackage.MEASUREMENT_COUNT_STOP_CONDITION__MEASUREMENT_COUNT:
+				setMeasurementCount((Integer)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
-    public void eUnset(final int featureID) {
-        switch (featureID) {
-        case AbstractsimulationPackage.MEASUREMENT_COUNT_STOP_CONDITION__MEASUREMENT_COUNT:
-            this.setMeasurementCount(MEASUREMENT_COUNT_EDEFAULT);
-            return;
-        }
-        super.eUnset(featureID);
-    }
+    public void eUnset(int featureID) {
+		switch (featureID) {
+			case AbstractsimulationPackage.MEASUREMENT_COUNT_STOP_CONDITION__MEASUREMENT_COUNT:
+				setMeasurementCount(MEASUREMENT_COUNT_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
-    public boolean eIsSet(final int featureID) {
-        switch (featureID) {
-        case AbstractsimulationPackage.MEASUREMENT_COUNT_STOP_CONDITION__MEASUREMENT_COUNT:
-            return this.getMeasurementCount() != MEASUREMENT_COUNT_EDEFAULT;
-        }
-        return super.eIsSet(featureID);
-    }
+    public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case AbstractsimulationPackage.MEASUREMENT_COUNT_STOP_CONDITION__MEASUREMENT_COUNT:
+				return measurementCount != MEASUREMENT_COUNT_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (measurementCount: ");
+		result.append(measurementCount);
+		result.append(')');
+		return result.toString();
+	}
 
 } // MeasurementCountStopConditionImpl

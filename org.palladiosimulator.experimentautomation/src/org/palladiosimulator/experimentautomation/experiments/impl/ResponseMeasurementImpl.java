@@ -3,7 +3,7 @@
 package org.palladiosimulator.experimentautomation.experiments.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.internal.cdo.CDOObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.palladiosimulator.experimentautomation.experiments.ExperimentsPackage;
 import org.palladiosimulator.experimentautomation.experiments.ResponseMeasurement;
 
@@ -13,42 +13,23 @@ import org.palladiosimulator.experimentautomation.experiments.ResponseMeasuremen
  *
  * @generated
  */
-public abstract class ResponseMeasurementImpl extends CDOObjectImpl implements ResponseMeasurement {
+public abstract class ResponseMeasurementImpl extends MinimalEObjectImpl.Container implements ResponseMeasurement {
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public static final String copyright = "Palladiosimulator.org 2008-2017";
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     protected ResponseMeasurementImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return ExperimentsPackage.Literals.RESPONSE_MEASUREMENT;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    protected int eStaticFeatureCount() {
-        return 0;
-    }
+		return ExperimentsPackage.Literals.RESPONSE_MEASUREMENT;
+	}
 
 } // ResponseMeasurementImpl

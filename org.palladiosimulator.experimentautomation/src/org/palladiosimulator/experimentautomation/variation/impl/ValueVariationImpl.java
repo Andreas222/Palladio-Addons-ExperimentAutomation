@@ -15,29 +15,20 @@ import org.palladiosimulator.experimentautomation.variation.VariationPackage;
 public class ValueVariationImpl extends VariationTypeImpl implements ValueVariation {
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public static final String copyright = "Palladiosimulator.org 2008-2017";
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     protected ValueVariationImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return VariationPackage.Literals.VALUE_VARIATION;
-    }
+		return VariationPackage.Literals.VALUE_VARIATION;
+	}
 
 } // ValueVariationImpl

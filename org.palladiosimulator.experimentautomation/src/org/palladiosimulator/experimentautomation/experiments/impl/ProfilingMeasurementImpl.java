@@ -15,29 +15,20 @@ import org.palladiosimulator.experimentautomation.experiments.ProfilingMeasureme
 public class ProfilingMeasurementImpl extends ResponseMeasurementImpl implements ProfilingMeasurement {
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public static final String copyright = "Palladiosimulator.org 2008-2017";
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     protected ProfilingMeasurementImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return ExperimentsPackage.Literals.PROFILING_MEASUREMENT;
-    }
+		return ExperimentsPackage.Literals.PROFILING_MEASUREMENT;
+	}
 
 } // ProfilingMeasurementImpl

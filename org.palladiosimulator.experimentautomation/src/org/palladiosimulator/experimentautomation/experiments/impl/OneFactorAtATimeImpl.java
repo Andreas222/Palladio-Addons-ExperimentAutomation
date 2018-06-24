@@ -15,29 +15,20 @@ import org.palladiosimulator.experimentautomation.experiments.OneFactorAtATime;
 public class OneFactorAtATimeImpl extends ExperimentDesignImpl implements OneFactorAtATime {
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public static final String copyright = "Palladiosimulator.org 2008-2017";
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     protected OneFactorAtATimeImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return ExperimentsPackage.Literals.ONE_FACTOR_AT_ATIME;
-    }
+		return ExperimentsPackage.Literals.ONE_FACTOR_AT_ATIME;
+	}
 
 } // OneFactorAtATimeImpl

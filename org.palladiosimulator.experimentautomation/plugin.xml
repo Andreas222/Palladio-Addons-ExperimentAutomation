@@ -7,7 +7,7 @@
       <package
             uri="http://palladiosimulator.org/ExperimentAutomation/Variation/1.0"
             class="org.palladiosimulator.experimentautomation.variation.VariationPackage"
-            genModel="model/ExperimentAutomation.genmodel"/>
+            genModel="model/ExperimentAutomation.genmodel_old"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
@@ -22,7 +22,7 @@
       <package
             uri="http://palladiosimulator.org/ExperimentAutomation/Experiments/1.0"
             class="org.palladiosimulator.experimentautomation.experiments.ExperimentsPackage"
-            genModel="model/ExperimentAutomation.genmodel"/>
+            genModel="model/ExperimentAutomation.genmodel_old"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
@@ -37,7 +37,7 @@
       <package
             uri="http://palladiosimulator.org/ExperimentAutomation/AbstractSimulation/1.0"
             class="org.palladiosimulator.experimentautomation.abstractsimulation.AbstractsimulationPackage"
-            genModel="model/ExperimentAutomation.genmodel"/>
+            genModel="model/ExperimentAutomation.genmodel_old"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">

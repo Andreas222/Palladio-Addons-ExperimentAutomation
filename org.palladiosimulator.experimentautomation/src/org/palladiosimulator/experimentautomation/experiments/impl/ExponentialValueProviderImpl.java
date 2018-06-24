@@ -2,7 +2,9 @@
  */
 package org.palladiosimulator.experimentautomation.experiments.impl;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.palladiosimulator.experimentautomation.experiments.ExperimentsPackage;
 import org.palladiosimulator.experimentautomation.experiments.ExponentialValueProvider;
 
@@ -13,8 +15,7 @@ import org.palladiosimulator.experimentautomation.experiments.ExponentialValuePr
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.palladiosimulator.experimentautomation.experiments.impl.ExponentialValueProviderImpl#getBase
- * <em>Base</em>}</li>
+ *   <li>{@link org.palladiosimulator.experimentautomation.experiments.impl.ExponentialValueProviderImpl#getBase <em>Base</em>}</li>
  * </ul>
  *
  * @generated
@@ -22,118 +23,131 @@ import org.palladiosimulator.experimentautomation.experiments.ExponentialValuePr
 public class ExponentialValueProviderImpl extends ValueProviderImpl implements ExponentialValueProvider {
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public static final String copyright = "Palladiosimulator.org 2008-2017";
-    /**
-     * The default value of the '{@link #getBase() <em>Base</em>}' attribute. <!-- begin-user-doc
+	 * The default value of the '{@link #getBase() <em>Base</em>}' attribute.
+	 * <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
-     * @see #getBase()
-     * @generated
-     * @ordered
-     */
+	 * @see #getBase()
+	 * @generated
+	 * @ordered
+	 */
     protected static final double BASE_EDEFAULT = 0.0;
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * The cached value of the '{@link #getBase() <em>Base</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBase()
+	 * @generated
+	 * @ordered
+	 */
+	protected double base = BASE_EDEFAULT;
+
+				/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     protected ExponentialValueProviderImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return ExperimentsPackage.Literals.EXPONENTIAL_VALUE_PROVIDER;
-    }
+		return ExperimentsPackage.Literals.EXPONENTIAL_VALUE_PROVIDER;
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     public double getBase() {
-        return (Double) this.eDynamicGet(ExperimentsPackage.EXPONENTIAL_VALUE_PROVIDER__BASE,
-                ExperimentsPackage.Literals.EXPONENTIAL_VALUE_PROVIDER__BASE, true, true);
-    }
+		return base;
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
-    public void setBase(final double newBase) {
-        this.eDynamicSet(ExperimentsPackage.EXPONENTIAL_VALUE_PROVIDER__BASE,
-                ExperimentsPackage.Literals.EXPONENTIAL_VALUE_PROVIDER__BASE, newBase);
-    }
+    public void setBase(double newBase) {
+		double oldBase = base;
+		base = newBase;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExperimentsPackage.EXPONENTIAL_VALUE_PROVIDER__BASE, oldBase, base));
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
-    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
-        switch (featureID) {
-        case ExperimentsPackage.EXPONENTIAL_VALUE_PROVIDER__BASE:
-            return this.getBase();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+    public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case ExperimentsPackage.EXPONENTIAL_VALUE_PROVIDER__BASE:
+				return getBase();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
-    public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
-        case ExperimentsPackage.EXPONENTIAL_VALUE_PROVIDER__BASE:
-            this.setBase((Double) newValue);
-            return;
-        }
-        super.eSet(featureID, newValue);
-    }
+    public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case ExperimentsPackage.EXPONENTIAL_VALUE_PROVIDER__BASE:
+				setBase((Double)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
-    public void eUnset(final int featureID) {
-        switch (featureID) {
-        case ExperimentsPackage.EXPONENTIAL_VALUE_PROVIDER__BASE:
-            this.setBase(BASE_EDEFAULT);
-            return;
-        }
-        super.eUnset(featureID);
-    }
+    public void eUnset(int featureID) {
+		switch (featureID) {
+			case ExperimentsPackage.EXPONENTIAL_VALUE_PROVIDER__BASE:
+				setBase(BASE_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
-    public boolean eIsSet(final int featureID) {
-        switch (featureID) {
-        case ExperimentsPackage.EXPONENTIAL_VALUE_PROVIDER__BASE:
-            return this.getBase() != BASE_EDEFAULT;
-        }
-        return super.eIsSet(featureID);
-    }
+    public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case ExperimentsPackage.EXPONENTIAL_VALUE_PROVIDER__BASE:
+				return base != BASE_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+				/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (base: ");
+		result.append(base);
+		result.append(')');
+		return result.toString();
+	}
 
 } // ExponentialValueProviderImpl

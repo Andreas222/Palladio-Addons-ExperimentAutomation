@@ -17,142 +17,121 @@ import org.palladiosimulator.experimentautomation.abstractsimulation.SimTimeStop
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- *
  * @generated
  */
 public class AbstractsimulationFactoryImpl extends EFactoryImpl implements AbstractsimulationFactory {
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public static final String copyright = "Palladiosimulator.org 2008-2017";
-
-    /**
-     * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     public static AbstractsimulationFactory init() {
-        try {
-            final AbstractsimulationFactory theAbstractsimulationFactory = (AbstractsimulationFactory) EPackage.Registry.INSTANCE
-                    .getEFactory(AbstractsimulationPackage.eNS_URI);
-            if (theAbstractsimulationFactory != null) {
-                return theAbstractsimulationFactory;
-            }
-        } catch (final Exception exception) {
-            EcorePlugin.INSTANCE.log(exception);
-        }
-        return new AbstractsimulationFactoryImpl();
-    }
+		try {
+			AbstractsimulationFactory theAbstractsimulationFactory = (AbstractsimulationFactory)EPackage.Registry.INSTANCE.getEFactory(AbstractsimulationPackage.eNS_URI);
+			if (theAbstractsimulationFactory != null) {
+				return theAbstractsimulationFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new AbstractsimulationFactoryImpl();
+	}
 
     /**
-     * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     public AbstractsimulationFactoryImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
-    public EObject create(final EClass eClass) {
-        switch (eClass.getClassifierID()) {
-        case AbstractsimulationPackage.RANDOM_NUMBER_GENERATOR_SEED:
-            return this.createRandomNumberGeneratorSeed();
-        case AbstractsimulationPackage.MEMORY_DATASOURCE:
-            return this.createMemoryDatasource();
-        case AbstractsimulationPackage.FILE_DATASOURCE:
-            return this.createFileDatasource();
-        case AbstractsimulationPackage.MEASUREMENT_COUNT_STOP_CONDITION:
-            return this.createMeasurementCountStopCondition();
-        case AbstractsimulationPackage.SIM_TIME_STOP_CONDITION:
-            return this.createSimTimeStopCondition();
-        default:
-            throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-        }
-    }
+    public EObject create(EClass eClass) {
+		switch (eClass.getClassifierID()) {
+			case AbstractsimulationPackage.RANDOM_NUMBER_GENERATOR_SEED: return createRandomNumberGeneratorSeed();
+			case AbstractsimulationPackage.MEMORY_DATASOURCE: return createMemoryDatasource();
+			case AbstractsimulationPackage.FILE_DATASOURCE: return createFileDatasource();
+			case AbstractsimulationPackage.MEASUREMENT_COUNT_STOP_CONDITION: return createMeasurementCountStopCondition();
+			case AbstractsimulationPackage.SIM_TIME_STOP_CONDITION: return createSimTimeStopCondition();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     public RandomNumberGeneratorSeed createRandomNumberGeneratorSeed() {
-        final RandomNumberGeneratorSeedImpl randomNumberGeneratorSeed = new RandomNumberGeneratorSeedImpl();
-        return randomNumberGeneratorSeed;
-    }
+		RandomNumberGeneratorSeedImpl randomNumberGeneratorSeed = new RandomNumberGeneratorSeedImpl();
+		return randomNumberGeneratorSeed;
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     public MemoryDatasource createMemoryDatasource() {
-        final MemoryDatasourceImpl memoryDatasource = new MemoryDatasourceImpl();
-        return memoryDatasource;
-    }
+		MemoryDatasourceImpl memoryDatasource = new MemoryDatasourceImpl();
+		return memoryDatasource;
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     public FileDatasource createFileDatasource() {
-        final FileDatasourceImpl fileDatasource = new FileDatasourceImpl();
-        return fileDatasource;
-    }
+		FileDatasourceImpl fileDatasource = new FileDatasourceImpl();
+		return fileDatasource;
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     public MeasurementCountStopCondition createMeasurementCountStopCondition() {
-        final MeasurementCountStopConditionImpl measurementCountStopCondition = new MeasurementCountStopConditionImpl();
-        return measurementCountStopCondition;
-    }
+		MeasurementCountStopConditionImpl measurementCountStopCondition = new MeasurementCountStopConditionImpl();
+		return measurementCountStopCondition;
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     public SimTimeStopCondition createSimTimeStopCondition() {
-        final SimTimeStopConditionImpl simTimeStopCondition = new SimTimeStopConditionImpl();
-        return simTimeStopCondition;
-    }
+		SimTimeStopConditionImpl simTimeStopCondition = new SimTimeStopConditionImpl();
+		return simTimeStopCondition;
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     public AbstractsimulationPackage getAbstractsimulationPackage() {
-        return (AbstractsimulationPackage) this.getEPackage();
-    }
+		return (AbstractsimulationPackage)getEPackage();
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @deprecated
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @deprecated
+	 * @generated
+	 */
     @Deprecated
     public static AbstractsimulationPackage getPackage() {
-        return AbstractsimulationPackage.eINSTANCE;
-    }
+		return AbstractsimulationPackage.eINSTANCE;
+	}
 
 } // AbstractsimulationFactoryImpl

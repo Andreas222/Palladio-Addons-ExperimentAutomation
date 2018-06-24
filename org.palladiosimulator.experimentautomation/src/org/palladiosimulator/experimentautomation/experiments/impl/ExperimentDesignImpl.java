@@ -3,7 +3,7 @@
 package org.palladiosimulator.experimentautomation.experiments.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.internal.cdo.CDOObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.palladiosimulator.experimentautomation.experiments.ExperimentDesign;
 import org.palladiosimulator.experimentautomation.experiments.ExperimentsPackage;
 
@@ -13,42 +13,23 @@ import org.palladiosimulator.experimentautomation.experiments.ExperimentsPackage
  *
  * @generated
  */
-public abstract class ExperimentDesignImpl extends CDOObjectImpl implements ExperimentDesign {
+public abstract class ExperimentDesignImpl extends MinimalEObjectImpl.Container implements ExperimentDesign {
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public static final String copyright = "Palladiosimulator.org 2008-2017";
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     protected ExperimentDesignImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return ExperimentsPackage.Literals.EXPERIMENT_DESIGN;
-    }
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    protected int eStaticFeatureCount() {
-        return 0;
-    }
+		return ExperimentsPackage.Literals.EXPERIMENT_DESIGN;
+	}
 
 } // ExperimentDesignImpl

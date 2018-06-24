@@ -15,29 +15,20 @@ import org.palladiosimulator.experimentautomation.abstractsimulation.MemoryDatas
 public class MemoryDatasourceImpl extends EDP2DatasourceImpl implements MemoryDatasource {
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public static final String copyright = "Palladiosimulator.org 2008-2017";
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     protected MemoryDatasourceImpl() {
-        super();
-    }
+		super();
+	}
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
     @Override
     protected EClass eStaticClass() {
-        return AbstractsimulationPackage.Literals.MEMORY_DATASOURCE;
-    }
+		return AbstractsimulationPackage.Literals.MEMORY_DATASOURCE;
+	}
 
 } // MemoryDatasourceImpl
