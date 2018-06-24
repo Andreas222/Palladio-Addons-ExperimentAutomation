@@ -117,7 +117,7 @@ Workflow {
 		"platform:/resource/org.palladiosimulator.experimentautomation/model/experimentautomation.genmodel"
 	}
 	component = XtextGenerator {
-		configuration = /*MyGeneratorModule*/ {
+		configuration = {
 			project = StandardProjectConfig {
 				baseName = "org.palladiosimulator.experimentautomation.dsl"
 				rootPath = rootPath
