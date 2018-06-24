@@ -3,7 +3,7 @@
 <schema targetNamespace="org.palladiosimulator.experimentautomation.dsl" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appInfo>
-         <meta.schema plugin="org.palladiosimulator.experimentautomation.dsl" id="org_palladiosimulator_experimentautomation_dsl_toolAdapter" name="toolAdapter"/>
+         <meta.schema plugin="org.palladiosimulator.experimentautomation.dsl" id="org.palladiosimulator.experimentautomation.dsl.toolAdapter" name="toolAdapter"/>
       </appInfo>
       <documentation>
          [Enter description of this extension point.]
@@ -17,6 +17,9 @@
          </appInfo>
       </annotation>
       <complexType>
+         <sequence minOccurs="1" maxOccurs="unbounded">
+            <element ref="ToolAdapterConfigurationFactory" minOccurs="1" maxOccurs="unbounded"/>
+         </sequence>
          <attribute name="point" type="string" use="required">
             <annotation>
                <documentation>
