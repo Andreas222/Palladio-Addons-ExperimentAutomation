@@ -107,12 +107,42 @@ Workflow {
 			from = "platform:/plugin/org.palladiosimulator.edp2/model/EDP2.ecore"
 			to = "platform:/resource/org.palladiosimulator.edp2/model/EDP2.ecore"
 		}		
+
+
+		uriMap = {
+
+			from = "platform:/plugin/tools.descartes.dlim.generator/src/tools/descartes/dlim/model/dlim.ecore"
+			to = "platform:/resource/tools.descartes.dlim.generator/src/tools/descartes/dlim/model/dlim.ecore"
+		}
 		
+		uriMap = {
+
+			from = "platform:/plugin/org.palladiosimulator.metricspec/model/metricspec.genmodel"
+			to = "platform:/resource/org.palladiosimulator.metricspec/model/metricspec.genmodel"
+		}
 		
-		registerGeneratedEPackage = "org.eclipse.uml2.codegen.ecore.genmodel.GenModelPackage"
+		uriMap = {
+
+			from = "platform:/plugin/org.palladiosimulator.pcm/model/pcm.genmodel"
+			to = "platform:/resource/org.palladiosimulator.pcm/model/pcm.genmodel"
+		}																
+
+
+		uriMap = {
+			from = "platform:/plugin/org.palladiosimulator.edp2/model/EDP2.genmodel"
+			to = "platform:/resource/org.palladiosimulator.edp2/model/EDP2.genmodel"
+		}		
+		
+		uriMap = {
+			from = "platform:/plugin/tools.descartes.dlim.generator/src/tools/descartes/dlim/model/dlim.genmodel"
+			to = "platform:/resource/tools.descartes.dlim.generator/src/tools/descartes/dlim/model/dlim.genmodel"
+		}
+		
+				registerGeneratedEPackage = "org.eclipse.uml2.codegen.ecore.genmodel.GenModelPackage"
 		registerGenModelFile = "platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.genmodel"
 		registerGenModelFile = "platform:/resource/de.uka.ipd.sdq.units/model/Units.genmodel"
-		registerGenModelFile = "platform:/resource/org.palladiosimulator.edp2/model/EDP2.ecore"
+		registerGenModelFile = "platform:/resource/org.palladiosimulator.edp2/model/EDP2.genmodel"
+		registerGenModelFile = "platform:/resource/tools.descartes.dlim.generator/src/tools/descartes/dlim/model/dlim.genmodel"
 		registerGenModelFile =
 		"platform:/resource/org.palladiosimulator.experimentautomation/model/experimentautomation.genmodel"
 	}
@@ -150,3 +180,4 @@ Workflow {
 		}
 	}
 }
+
