@@ -967,27 +967,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ToolDefinition__ToolAlternatives_2_0
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getToolDefinitionAccess().getToolSimuComKeyword_2_0_0()); }
-		'SimuCom'
-		{ after(grammarAccess.getToolDefinitionAccess().getToolSimuComKeyword_2_0_0()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getToolDefinitionAccess().getToolSimuLizarKeyword_2_0_1()); }
-		'SimuLizar'
-		{ after(grammarAccess.getToolDefinitionAccess().getToolSimuLizarKeyword_2_0_1()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 rule__ConfigValue__Alternatives
 	@init {
 		int stackSize = keepStackSize();
@@ -5564,9 +5543,13 @@ rule__ToolDefinition__ToolAssignment_2
 	}
 :
 	(
-		{ before(grammarAccess.getToolDefinitionAccess().getToolAlternatives_2_0()); }
-		(rule__ToolDefinition__ToolAlternatives_2_0)
-		{ after(grammarAccess.getToolDefinitionAccess().getToolAlternatives_2_0()); }
+		{ before(grammarAccess.getToolDefinitionAccess().getToolToolConfigurationCrossReference_2_0()); }
+		(
+			{ before(grammarAccess.getToolDefinitionAccess().getToolToolConfigurationIDTerminalRuleCall_2_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getToolDefinitionAccess().getToolToolConfigurationIDTerminalRuleCall_2_0_1()); }
+		)
+		{ after(grammarAccess.getToolDefinitionAccess().getToolToolConfigurationCrossReference_2_0()); }
 	)
 ;
 finally {

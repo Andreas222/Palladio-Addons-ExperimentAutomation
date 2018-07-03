@@ -37,7 +37,6 @@ public class ExpAutoParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVariationAccess().getValueProviderAlternatives_13_0(), "rule__Variation__ValueProviderAlternatives_13_0");
 					put(grammarAccess.getNestedIntervalsValueProviderAccess().getAlternatives(), "rule__NestedIntervalsValueProvider__Alternatives");
 					put(grammarAccess.getSetValueProviderAccess().getAlternatives(), "rule__SetValueProvider__Alternatives");
-					put(grammarAccess.getToolDefinitionAccess().getToolAlternatives_2_0(), "rule__ToolDefinition__ToolAlternatives_2_0");
 					put(grammarAccess.getConfigValueAccess().getAlternatives(), "rule__ConfigValue__Alternatives");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");

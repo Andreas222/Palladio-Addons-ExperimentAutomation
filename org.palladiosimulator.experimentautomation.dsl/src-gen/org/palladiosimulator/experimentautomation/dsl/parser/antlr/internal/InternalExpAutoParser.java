@@ -21,9 +21,8 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalExpAutoParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'datasource'", "':'", "'EDP2'", "'('", "')'", "'experiment'", "'FullFactorial'", "'OneFactor'", "'{'", "'}'", "'description'", "'='", "'initial'", "'PCM'", "'allocation'", "'usageModel'", "'middlewareRepository'", "'eventMiddlewareRepository'", "'monitorRepository'", "'variation'", "'target'", "'maxVariations'", "'values'", "'['", "','", "']'", "'nestedIntervall'", "'setValues'", "'linear'", "'exponential'", "'polynomial'", "'stop'", "'simulationTime'", "'measurementCount'", "'repetitions'", "'seeds'", "'tool'", "'SimuCom'", "'SimuLizar'", "';'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'datasource'", "':'", "'EDP2'", "'('", "')'", "'experiment'", "'FullFactorial'", "'OneFactor'", "'{'", "'}'", "'description'", "'='", "'initial'", "'PCM'", "'allocation'", "'usageModel'", "'middlewareRepository'", "'eventMiddlewareRepository'", "'monitorRepository'", "'variation'", "'target'", "'maxVariations'", "'values'", "'['", "','", "']'", "'nestedIntervall'", "'setValues'", "'linear'", "'exponential'", "'polynomial'", "'stop'", "'simulationTime'", "'measurementCount'", "'repetitions'", "'seeds'", "'tool'", "';'"
     };
-    public static final int T__50=50;
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
@@ -33,7 +32,6 @@ public class InternalExpAutoParser extends AbstractInternalAntlrParser {
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
-    public static final int T__51=51;
     public static final int RULE_ID=5;
     public static final int T__26=26;
     public static final int T__27=27;
@@ -4575,14 +4573,13 @@ public class InternalExpAutoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleToolDefinition"
-    // InternalExpAuto.g:1994:1: ruleToolDefinition returns [EObject current=null] : (otherlv_0= 'tool' otherlv_1= '=' ( ( (lv_tool_2_1= 'SimuCom' | lv_tool_2_2= 'SimuLizar' ) ) ) otherlv_3= '{' ( (lv_configParams_4_0= ruleConfigurationParams ) )* otherlv_5= '}' ) ;
+    // InternalExpAuto.g:1994:1: ruleToolDefinition returns [EObject current=null] : (otherlv_0= 'tool' otherlv_1= '=' ( (otherlv_2= RULE_ID ) ) otherlv_3= '{' ( (lv_configParams_4_0= ruleConfigurationParams ) )* otherlv_5= '}' ) ;
     public final EObject ruleToolDefinition() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        Token lv_tool_2_1=null;
-        Token lv_tool_2_2=null;
+        Token otherlv_2=null;
         Token otherlv_3=null;
         Token otherlv_5=null;
         EObject lv_configParams_4_0 = null;
@@ -4592,110 +4589,67 @@ public class InternalExpAutoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalExpAuto.g:2000:2: ( (otherlv_0= 'tool' otherlv_1= '=' ( ( (lv_tool_2_1= 'SimuCom' | lv_tool_2_2= 'SimuLizar' ) ) ) otherlv_3= '{' ( (lv_configParams_4_0= ruleConfigurationParams ) )* otherlv_5= '}' ) )
-            // InternalExpAuto.g:2001:2: (otherlv_0= 'tool' otherlv_1= '=' ( ( (lv_tool_2_1= 'SimuCom' | lv_tool_2_2= 'SimuLizar' ) ) ) otherlv_3= '{' ( (lv_configParams_4_0= ruleConfigurationParams ) )* otherlv_5= '}' )
+            // InternalExpAuto.g:2000:2: ( (otherlv_0= 'tool' otherlv_1= '=' ( (otherlv_2= RULE_ID ) ) otherlv_3= '{' ( (lv_configParams_4_0= ruleConfigurationParams ) )* otherlv_5= '}' ) )
+            // InternalExpAuto.g:2001:2: (otherlv_0= 'tool' otherlv_1= '=' ( (otherlv_2= RULE_ID ) ) otherlv_3= '{' ( (lv_configParams_4_0= ruleConfigurationParams ) )* otherlv_5= '}' )
             {
-            // InternalExpAuto.g:2001:2: (otherlv_0= 'tool' otherlv_1= '=' ( ( (lv_tool_2_1= 'SimuCom' | lv_tool_2_2= 'SimuLizar' ) ) ) otherlv_3= '{' ( (lv_configParams_4_0= ruleConfigurationParams ) )* otherlv_5= '}' )
-            // InternalExpAuto.g:2002:3: otherlv_0= 'tool' otherlv_1= '=' ( ( (lv_tool_2_1= 'SimuCom' | lv_tool_2_2= 'SimuLizar' ) ) ) otherlv_3= '{' ( (lv_configParams_4_0= ruleConfigurationParams ) )* otherlv_5= '}'
+            // InternalExpAuto.g:2001:2: (otherlv_0= 'tool' otherlv_1= '=' ( (otherlv_2= RULE_ID ) ) otherlv_3= '{' ( (lv_configParams_4_0= ruleConfigurationParams ) )* otherlv_5= '}' )
+            // InternalExpAuto.g:2002:3: otherlv_0= 'tool' otherlv_1= '=' ( (otherlv_2= RULE_ID ) ) otherlv_3= '{' ( (lv_configParams_4_0= ruleConfigurationParams ) )* otherlv_5= '}'
             {
             otherlv_0=(Token)match(input,48,FOLLOW_17); 
 
             			newLeafNode(otherlv_0, grammarAccess.getToolDefinitionAccess().getToolKeyword_0());
             		
-            otherlv_1=(Token)match(input,23,FOLLOW_32); 
+            otherlv_1=(Token)match(input,23,FOLLOW_7); 
 
             			newLeafNode(otherlv_1, grammarAccess.getToolDefinitionAccess().getEqualsSignKeyword_1());
             		
-            // InternalExpAuto.g:2010:3: ( ( (lv_tool_2_1= 'SimuCom' | lv_tool_2_2= 'SimuLizar' ) ) )
-            // InternalExpAuto.g:2011:4: ( (lv_tool_2_1= 'SimuCom' | lv_tool_2_2= 'SimuLizar' ) )
+            // InternalExpAuto.g:2010:3: ( (otherlv_2= RULE_ID ) )
+            // InternalExpAuto.g:2011:4: (otherlv_2= RULE_ID )
             {
-            // InternalExpAuto.g:2011:4: ( (lv_tool_2_1= 'SimuCom' | lv_tool_2_2= 'SimuLizar' ) )
-            // InternalExpAuto.g:2012:5: (lv_tool_2_1= 'SimuCom' | lv_tool_2_2= 'SimuLizar' )
+            // InternalExpAuto.g:2011:4: (otherlv_2= RULE_ID )
+            // InternalExpAuto.g:2012:5: otherlv_2= RULE_ID
             {
-            // InternalExpAuto.g:2012:5: (lv_tool_2_1= 'SimuCom' | lv_tool_2_2= 'SimuLizar' )
-            int alt16=2;
-            int LA16_0 = input.LA(1);
 
-            if ( (LA16_0==49) ) {
-                alt16=1;
-            }
-            else if ( (LA16_0==50) ) {
-                alt16=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 16, 0, input);
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getToolDefinitionRule());
+            					}
+            				
+            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_13); 
 
-                throw nvae;
-            }
-            switch (alt16) {
-                case 1 :
-                    // InternalExpAuto.g:2013:6: lv_tool_2_1= 'SimuCom'
-                    {
-                    lv_tool_2_1=(Token)match(input,49,FOLLOW_13); 
-
-                    						newLeafNode(lv_tool_2_1, grammarAccess.getToolDefinitionAccess().getToolSimuComKeyword_2_0_0());
-                    					
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getToolDefinitionRule());
-                    						}
-                    						setWithLastConsumed(current, "tool", lv_tool_2_1, null);
-                    					
-
-                    }
-                    break;
-                case 2 :
-                    // InternalExpAuto.g:2024:6: lv_tool_2_2= 'SimuLizar'
-                    {
-                    lv_tool_2_2=(Token)match(input,50,FOLLOW_13); 
-
-                    						newLeafNode(lv_tool_2_2, grammarAccess.getToolDefinitionAccess().getToolSimuLizarKeyword_2_0_1());
-                    					
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getToolDefinitionRule());
-                    						}
-                    						setWithLastConsumed(current, "tool", lv_tool_2_2, null);
-                    					
-
-                    }
-                    break;
+            					newLeafNode(otherlv_2, grammarAccess.getToolDefinitionAccess().getToolToolConfigurationCrossReference_2_0());
+            				
 
             }
 
 
             }
 
-
-            }
-
-            otherlv_3=(Token)match(input,20,FOLLOW_33); 
+            otherlv_3=(Token)match(input,20,FOLLOW_32); 
 
             			newLeafNode(otherlv_3, grammarAccess.getToolDefinitionAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalExpAuto.g:2041:3: ( (lv_configParams_4_0= ruleConfigurationParams ) )*
-            loop17:
+            // InternalExpAuto.g:2027:3: ( (lv_configParams_4_0= ruleConfigurationParams ) )*
+            loop16:
             do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
+                int alt16=2;
+                int LA16_0 = input.LA(1);
 
-                if ( (LA17_0==RULE_ID) ) {
-                    alt17=1;
+                if ( (LA16_0==RULE_ID) ) {
+                    alt16=1;
                 }
 
 
-                switch (alt17) {
+                switch (alt16) {
             	case 1 :
-            	    // InternalExpAuto.g:2042:4: (lv_configParams_4_0= ruleConfigurationParams )
+            	    // InternalExpAuto.g:2028:4: (lv_configParams_4_0= ruleConfigurationParams )
             	    {
-            	    // InternalExpAuto.g:2042:4: (lv_configParams_4_0= ruleConfigurationParams )
-            	    // InternalExpAuto.g:2043:5: lv_configParams_4_0= ruleConfigurationParams
+            	    // InternalExpAuto.g:2028:4: (lv_configParams_4_0= ruleConfigurationParams )
+            	    // InternalExpAuto.g:2029:5: lv_configParams_4_0= ruleConfigurationParams
             	    {
 
             	    					newCompositeNode(grammarAccess.getToolDefinitionAccess().getConfigParamsConfigurationParamsParserRuleCall_4_0());
             	    				
-            	    pushFollow(FOLLOW_33);
+            	    pushFollow(FOLLOW_32);
             	    lv_configParams_4_0=ruleConfigurationParams();
 
             	    state._fsp--;
@@ -4719,7 +4673,7 @@ public class InternalExpAutoParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop17;
+            	    break loop16;
                 }
             } while (true);
 
@@ -4750,7 +4704,7 @@ public class InternalExpAutoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConfigurationParams"
-    // InternalExpAuto.g:2068:1: entryRuleConfigurationParams returns [EObject current=null] : iv_ruleConfigurationParams= ruleConfigurationParams EOF ;
+    // InternalExpAuto.g:2054:1: entryRuleConfigurationParams returns [EObject current=null] : iv_ruleConfigurationParams= ruleConfigurationParams EOF ;
     public final EObject entryRuleConfigurationParams() throws RecognitionException {
         EObject current = null;
 
@@ -4758,8 +4712,8 @@ public class InternalExpAutoParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalExpAuto.g:2068:60: (iv_ruleConfigurationParams= ruleConfigurationParams EOF )
-            // InternalExpAuto.g:2069:2: iv_ruleConfigurationParams= ruleConfigurationParams EOF
+            // InternalExpAuto.g:2054:60: (iv_ruleConfigurationParams= ruleConfigurationParams EOF )
+            // InternalExpAuto.g:2055:2: iv_ruleConfigurationParams= ruleConfigurationParams EOF
             {
              newCompositeNode(grammarAccess.getConfigurationParamsRule()); 
             pushFollow(FOLLOW_1);
@@ -4786,7 +4740,7 @@ public class InternalExpAutoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConfigurationParams"
-    // InternalExpAuto.g:2075:1: ruleConfigurationParams returns [EObject current=null] : ( ( (lv_key_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleConfigValue ) ) otherlv_3= ';' ) ;
+    // InternalExpAuto.g:2061:1: ruleConfigurationParams returns [EObject current=null] : ( ( (lv_key_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleConfigValue ) ) otherlv_3= ';' ) ;
     public final EObject ruleConfigurationParams() throws RecognitionException {
         EObject current = null;
 
@@ -4800,17 +4754,17 @@ public class InternalExpAutoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalExpAuto.g:2081:2: ( ( ( (lv_key_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleConfigValue ) ) otherlv_3= ';' ) )
-            // InternalExpAuto.g:2082:2: ( ( (lv_key_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleConfigValue ) ) otherlv_3= ';' )
+            // InternalExpAuto.g:2067:2: ( ( ( (lv_key_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleConfigValue ) ) otherlv_3= ';' ) )
+            // InternalExpAuto.g:2068:2: ( ( (lv_key_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleConfigValue ) ) otherlv_3= ';' )
             {
-            // InternalExpAuto.g:2082:2: ( ( (lv_key_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleConfigValue ) ) otherlv_3= ';' )
-            // InternalExpAuto.g:2083:3: ( (lv_key_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleConfigValue ) ) otherlv_3= ';'
+            // InternalExpAuto.g:2068:2: ( ( (lv_key_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleConfigValue ) ) otherlv_3= ';' )
+            // InternalExpAuto.g:2069:3: ( (lv_key_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_value_2_0= ruleConfigValue ) ) otherlv_3= ';'
             {
-            // InternalExpAuto.g:2083:3: ( (lv_key_0_0= RULE_ID ) )
-            // InternalExpAuto.g:2084:4: (lv_key_0_0= RULE_ID )
+            // InternalExpAuto.g:2069:3: ( (lv_key_0_0= RULE_ID ) )
+            // InternalExpAuto.g:2070:4: (lv_key_0_0= RULE_ID )
             {
-            // InternalExpAuto.g:2084:4: (lv_key_0_0= RULE_ID )
-            // InternalExpAuto.g:2085:5: lv_key_0_0= RULE_ID
+            // InternalExpAuto.g:2070:4: (lv_key_0_0= RULE_ID )
+            // InternalExpAuto.g:2071:5: lv_key_0_0= RULE_ID
             {
             lv_key_0_0=(Token)match(input,RULE_ID,FOLLOW_17); 
 
@@ -4832,20 +4786,20 @@ public class InternalExpAutoParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,23,FOLLOW_34); 
+            otherlv_1=(Token)match(input,23,FOLLOW_33); 
 
             			newLeafNode(otherlv_1, grammarAccess.getConfigurationParamsAccess().getEqualsSignKeyword_1());
             		
-            // InternalExpAuto.g:2105:3: ( (lv_value_2_0= ruleConfigValue ) )
-            // InternalExpAuto.g:2106:4: (lv_value_2_0= ruleConfigValue )
+            // InternalExpAuto.g:2091:3: ( (lv_value_2_0= ruleConfigValue ) )
+            // InternalExpAuto.g:2092:4: (lv_value_2_0= ruleConfigValue )
             {
-            // InternalExpAuto.g:2106:4: (lv_value_2_0= ruleConfigValue )
-            // InternalExpAuto.g:2107:5: lv_value_2_0= ruleConfigValue
+            // InternalExpAuto.g:2092:4: (lv_value_2_0= ruleConfigValue )
+            // InternalExpAuto.g:2093:5: lv_value_2_0= ruleConfigValue
             {
 
             					newCompositeNode(grammarAccess.getConfigurationParamsAccess().getValueConfigValueParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_34);
             lv_value_2_0=ruleConfigValue();
 
             state._fsp--;
@@ -4867,7 +4821,7 @@ public class InternalExpAutoParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,51,FOLLOW_2); 
+            otherlv_3=(Token)match(input,49,FOLLOW_2); 
 
             			newLeafNode(otherlv_3, grammarAccess.getConfigurationParamsAccess().getSemicolonKeyword_3());
             		
@@ -4894,7 +4848,7 @@ public class InternalExpAutoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConfigValue"
-    // InternalExpAuto.g:2132:1: entryRuleConfigValue returns [String current=null] : iv_ruleConfigValue= ruleConfigValue EOF ;
+    // InternalExpAuto.g:2118:1: entryRuleConfigValue returns [String current=null] : iv_ruleConfigValue= ruleConfigValue EOF ;
     public final String entryRuleConfigValue() throws RecognitionException {
         String current = null;
 
@@ -4902,8 +4856,8 @@ public class InternalExpAutoParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalExpAuto.g:2132:51: (iv_ruleConfigValue= ruleConfigValue EOF )
-            // InternalExpAuto.g:2133:2: iv_ruleConfigValue= ruleConfigValue EOF
+            // InternalExpAuto.g:2118:51: (iv_ruleConfigValue= ruleConfigValue EOF )
+            // InternalExpAuto.g:2119:2: iv_ruleConfigValue= ruleConfigValue EOF
             {
              newCompositeNode(grammarAccess.getConfigValueRule()); 
             pushFollow(FOLLOW_1);
@@ -4930,7 +4884,7 @@ public class InternalExpAutoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConfigValue"
-    // InternalExpAuto.g:2139:1: ruleConfigValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_INT_1= RULE_INT ) ;
+    // InternalExpAuto.g:2125:1: ruleConfigValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_INT_1= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleConfigValue() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4941,28 +4895,28 @@ public class InternalExpAutoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalExpAuto.g:2145:2: ( (this_STRING_0= RULE_STRING | this_INT_1= RULE_INT ) )
-            // InternalExpAuto.g:2146:2: (this_STRING_0= RULE_STRING | this_INT_1= RULE_INT )
+            // InternalExpAuto.g:2131:2: ( (this_STRING_0= RULE_STRING | this_INT_1= RULE_INT ) )
+            // InternalExpAuto.g:2132:2: (this_STRING_0= RULE_STRING | this_INT_1= RULE_INT )
             {
-            // InternalExpAuto.g:2146:2: (this_STRING_0= RULE_STRING | this_INT_1= RULE_INT )
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // InternalExpAuto.g:2132:2: (this_STRING_0= RULE_STRING | this_INT_1= RULE_INT )
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( (LA18_0==RULE_STRING) ) {
-                alt18=1;
+            if ( (LA17_0==RULE_STRING) ) {
+                alt17=1;
             }
-            else if ( (LA18_0==RULE_INT) ) {
-                alt18=2;
+            else if ( (LA17_0==RULE_INT) ) {
+                alt17=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 18, 0, input);
+                    new NoViableAltException("", 17, 0, input);
 
                 throw nvae;
             }
-            switch (alt18) {
+            switch (alt17) {
                 case 1 :
-                    // InternalExpAuto.g:2147:3: this_STRING_0= RULE_STRING
+                    // InternalExpAuto.g:2133:3: this_STRING_0= RULE_STRING
                     {
                     this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -4975,7 +4929,7 @@ public class InternalExpAutoParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalExpAuto.g:2155:3: this_INT_1= RULE_INT
+                    // InternalExpAuto.g:2141:3: this_INT_1= RULE_INT
                     {
                     this_INT_1=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -5089,9 +5043,8 @@ public class InternalExpAutoParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000001000010000L});
     public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000100000000000L});
     public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0006000000000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000200020L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000000050L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000200020L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000050L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0002000000000000L});
 
 }

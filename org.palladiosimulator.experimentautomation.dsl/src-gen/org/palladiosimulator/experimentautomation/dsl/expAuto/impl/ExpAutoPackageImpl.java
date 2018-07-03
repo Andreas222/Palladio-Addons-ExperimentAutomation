@@ -5,6 +5,12 @@ package org.palladiosimulator.experimentautomation.dsl.expAuto.impl;
 
 import de.uka.ipd.sdq.identifier.IdentifierPackage;
 
+import de.uka.ipd.sdq.probfunction.ProbfunctionPackage;
+
+import de.uka.ipd.sdq.stoex.StoexPackage;
+
+import de.uka.ipd.sdq.units.UnitsPackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -12,6 +18,12 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
+
+import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
+
+import org.palladiosimulator.experimentautomation.abstractsimulation.AbstractsimulationPackage;
 
 import org.palladiosimulator.experimentautomation.dsl.expAuto.AllocationModel;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams;
@@ -43,7 +55,57 @@ import org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.UsageModel;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Variation;
 
+import org.palladiosimulator.experimentautomation.experiments.ExperimentsPackage;
+
 import org.palladiosimulator.experimentautomation.variation.VariationPackage;
+
+import org.palladiosimulator.metricspec.MetricSpecPackage;
+
+import org.palladiosimulator.monitorrepository.MonitorRepositoryPackage;
+
+import org.palladiosimulator.monitorrepository.util.UtilPackage;
+
+import org.palladiosimulator.pcm.allocation.AllocationPackage;
+
+import org.palladiosimulator.pcm.core.CorePackage;
+
+import org.palladiosimulator.pcm.core.composition.CompositionPackage;
+
+import org.palladiosimulator.pcm.core.entity.EntityPackage;
+
+import org.palladiosimulator.pcm.parameter.ParameterPackage;
+
+import org.palladiosimulator.pcm.protocol.ProtocolPackage;
+
+import org.palladiosimulator.pcm.qosannotations.QosannotationsPackage;
+
+import org.palladiosimulator.pcm.qosannotations.qos_performance.QosPerformancePackage;
+
+import org.palladiosimulator.pcm.qosannotations.qos_reliability.QosReliabilityPackage;
+
+import org.palladiosimulator.pcm.reliability.ReliabilityPackage;
+
+import org.palladiosimulator.pcm.repository.RepositoryPackage;
+
+import org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage;
+
+import org.palladiosimulator.pcm.resourcetype.ResourcetypePackage;
+
+import org.palladiosimulator.pcm.seff.SeffPackage;
+
+import org.palladiosimulator.pcm.seff.seff_performance.SeffPerformancePackage;
+
+import org.palladiosimulator.pcm.seff.seff_reliability.SeffReliabilityPackage;
+
+import org.palladiosimulator.pcm.system.SystemPackage;
+
+import org.palladiosimulator.pcm.usagemodel.UsagemodelPackage;
+
+import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
+
+import org.scaledl.usageevolution.UsageevolutionPackage;
+
+import tools.descartes.dlim.DlimPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -293,7 +355,39 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
     // Initialize simple dependencies
     IdentifierPackage.eINSTANCE.eClass();
     EcorePackage.eINSTANCE.eClass();
+    ExperimentsPackage.eINSTANCE.eClass();
     VariationPackage.eINSTANCE.eClass();
+    AbstractsimulationPackage.eINSTANCE.eClass();
+    UsagemodelPackage.eINSTANCE.eClass();
+    AllocationPackage.eINSTANCE.eClass();
+    RepositoryPackage.eINSTANCE.eClass();
+    MonitorRepositoryPackage.eINSTANCE.eClass();
+    ServicelevelObjectivePackage.eINSTANCE.eClass();
+    SystemPackage.eINSTANCE.eClass();
+    ResourceenvironmentPackage.eINSTANCE.eClass();
+    UsageevolutionPackage.eINSTANCE.eClass();
+    EntityPackage.eINSTANCE.eClass();
+    CompositionPackage.eINSTANCE.eClass();
+    ParameterPackage.eINSTANCE.eClass();
+    CorePackage.eINSTANCE.eClass();
+    ReliabilityPackage.eINSTANCE.eClass();
+    SeffPackage.eINSTANCE.eClass();
+    ResourcetypePackage.eINSTANCE.eClass();
+    ProtocolPackage.eINSTANCE.eClass();
+    MeasuringpointPackage.eINSTANCE.eClass();
+    MetricSpecPackage.eINSTANCE.eClass();
+    UtilPackage.eINSTANCE.eClass();
+    ExperimentDataPackage.eINSTANCE.eClass();
+    QosannotationsPackage.eINSTANCE.eClass();
+    DlimPackage.eINSTANCE.eClass();
+    StoexPackage.eINSTANCE.eClass();
+    SeffPerformancePackage.eINSTANCE.eClass();
+    QosPerformancePackage.eINSTANCE.eClass();
+    QosReliabilityPackage.eINSTANCE.eClass();
+    SeffReliabilityPackage.eINSTANCE.eClass();
+    UnitsPackage.eINSTANCE.eClass();
+    org.palladiosimulator.edp2.models.Repository.RepositoryPackage.eINSTANCE.eClass();
+    ProbfunctionPackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
     theExpAutoPackage.createPackageContents();
@@ -985,9 +1079,9 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getToolDefinition_Tool()
+  public EReference getToolDefinition_Tool()
   {
-    return (EAttribute)toolDefinitionEClass.getEStructuralFeatures().get(0);
+    return (EReference)toolDefinitionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1152,7 +1246,7 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
     createEReference(experimentDatasourceEClass, EXPERIMENT_DATASOURCE__SOURCE);
 
     toolDefinitionEClass = createEClass(TOOL_DEFINITION);
-    createEAttribute(toolDefinitionEClass, TOOL_DEFINITION__TOOL);
+    createEReference(toolDefinitionEClass, TOOL_DEFINITION__TOOL);
     createEReference(toolDefinitionEClass, TOOL_DEFINITION__CONFIG_PARAMS);
 
     configurationParamsEClass = createEClass(CONFIGURATION_PARAMS);
@@ -1188,6 +1282,7 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
     EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
     VariationPackage theVariationPackage = (VariationPackage)EPackage.Registry.INSTANCE.getEPackage(VariationPackage.eNS_URI);
     IdentifierPackage theIdentifierPackage = (IdentifierPackage)EPackage.Registry.INSTANCE.getEPackage(IdentifierPackage.eNS_URI);
+    ExperimentsPackage theExperimentsPackage = (ExperimentsPackage)EPackage.Registry.INSTANCE.getEPackage(ExperimentsPackage.eNS_URI);
 
     // Create type parameters
 
@@ -1288,7 +1383,7 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
     initEReference(getExperimentDatasource_Source(), this.getDatasource(), null, "source", null, 0, 1, ExperimentDatasource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(toolDefinitionEClass, ToolDefinition.class, "ToolDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getToolDefinition_Tool(), theEcorePackage.getEString(), "tool", null, 0, 1, ToolDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getToolDefinition_Tool(), theExperimentsPackage.getToolConfiguration(), null, "tool", null, 0, 1, ToolDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getToolDefinition_ConfigParams(), this.getConfigurationParams(), null, "configParams", null, 0, -1, ToolDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(configurationParamsEClass, ConfigurationParams.class, "ConfigurationParams", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

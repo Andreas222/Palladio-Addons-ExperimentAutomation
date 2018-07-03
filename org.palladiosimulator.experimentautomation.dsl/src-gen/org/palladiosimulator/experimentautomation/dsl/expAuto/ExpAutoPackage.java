@@ -912,7 +912,7 @@ public interface ExpAutoPackage extends EPackage
   int TOOL_DEFINITION = 25;
 
   /**
-   * The feature id for the '<em><b>Tool</b></em>' attribute.
+   * The feature id for the '<em><b>Tool</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1688,15 +1688,15 @@ public interface ExpAutoPackage extends EPackage
   EClass getToolDefinition();
 
   /**
-   * Returns the meta object for the attribute '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition#getTool <em>Tool</em>}'.
+   * Returns the meta object for the reference '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition#getTool <em>Tool</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Tool</em>'.
+   * @return the meta object for the reference '<em>Tool</em>'.
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition#getTool()
    * @see #getToolDefinition()
    * @generated
    */
-  EAttribute getToolDefinition_Tool();
+  EReference getToolDefinition_Tool();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition#getConfigParams <em>Config Params</em>}'.
@@ -2353,12 +2353,12 @@ public interface ExpAutoPackage extends EPackage
     EClass TOOL_DEFINITION = eINSTANCE.getToolDefinition();
 
     /**
-     * The meta object literal for the '<em><b>Tool</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Tool</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TOOL_DEFINITION__TOOL = eINSTANCE.getToolDefinition_Tool();
+    EReference TOOL_DEFINITION__TOOL = eINSTANCE.getToolDefinition_Tool();
 
     /**
      * The meta object literal for the '<em><b>Config Params</b></em>' containment reference list feature.

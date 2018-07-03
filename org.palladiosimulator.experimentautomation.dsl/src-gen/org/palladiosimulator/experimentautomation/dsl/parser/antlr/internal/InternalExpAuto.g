@@ -2009,29 +2009,15 @@ ruleToolDefinition returns [EObject current=null]
 		}
 		(
 			(
-				(
-					lv_tool_2_1='SimuCom'
-					{
-						newLeafNode(lv_tool_2_1, grammarAccess.getToolDefinitionAccess().getToolSimuComKeyword_2_0_0());
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getToolDefinitionRule());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToolDefinitionRule());
-						}
-						setWithLastConsumed($current, "tool", lv_tool_2_1, null);
-					}
-					    |
-					lv_tool_2_2='SimuLizar'
-					{
-						newLeafNode(lv_tool_2_2, grammarAccess.getToolDefinitionAccess().getToolSimuLizarKeyword_2_0_1());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getToolDefinitionRule());
-						}
-						setWithLastConsumed($current, "tool", lv_tool_2_2, null);
-					}
-				)
+				}
+				otherlv_2=RULE_ID
+				{
+					newLeafNode(otherlv_2, grammarAccess.getToolDefinitionAccess().getToolToolConfigurationCrossReference_2_0());
+				}
 			)
 		)
 		otherlv_3='{'

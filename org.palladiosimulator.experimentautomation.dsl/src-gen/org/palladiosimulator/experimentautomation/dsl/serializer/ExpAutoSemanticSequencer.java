@@ -573,7 +573,7 @@ public class ExpAutoSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ToolDefinition returns ToolDefinition
 	 *
 	 * Constraint:
-	 *     ((tool='SimuCom' | tool='SimuLizar') configParams+=ConfigurationParams*)
+	 *     (tool=[ToolConfiguration|ID] configParams+=ConfigurationParams*)
 	 */
 	protected void sequence_ToolDefinition(ISerializationContext context, ToolDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

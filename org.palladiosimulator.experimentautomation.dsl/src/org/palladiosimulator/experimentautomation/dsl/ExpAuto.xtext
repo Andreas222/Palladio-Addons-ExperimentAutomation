@@ -120,8 +120,8 @@ ExperimentDatasource:
 ;
 
 ToolDefinition:
-	'tool' '=' tool = ('SimuCom' | 'SimuLizar') '{' configParams += ConfigurationParams* '}'
-	//'tool' '=' tool = STRING '{' configParams += ConfigurationParams* '}'
+	//'tool' '=' tool = ('SimuCom' | 'SimuLizar') '{' configParams += ConfigurationParams* '}'
+	'tool' '=' tool = [exp::ToolConfiguration] '{' configParams += ConfigurationParams* '}'
 ;
 
 ConfigurationParams:

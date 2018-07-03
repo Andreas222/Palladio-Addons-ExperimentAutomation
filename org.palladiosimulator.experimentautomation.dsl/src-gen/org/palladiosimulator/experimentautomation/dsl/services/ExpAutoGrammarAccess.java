@@ -1151,40 +1151,36 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cToolKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cToolAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final Alternatives cToolAlternatives_2_0 = (Alternatives)cToolAssignment_2.eContents().get(0);
-		private final Keyword cToolSimuComKeyword_2_0_0 = (Keyword)cToolAlternatives_2_0.eContents().get(0);
-		private final Keyword cToolSimuLizarKeyword_2_0_1 = (Keyword)cToolAlternatives_2_0.eContents().get(1);
+		private final CrossReference cToolToolConfigurationCrossReference_2_0 = (CrossReference)cToolAssignment_2.eContents().get(0);
+		private final RuleCall cToolToolConfigurationIDTerminalRuleCall_2_0_1 = (RuleCall)cToolToolConfigurationCrossReference_2_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cConfigParamsAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cConfigParamsConfigurationParamsParserRuleCall_4_0 = (RuleCall)cConfigParamsAssignment_4.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//ToolDefinition:
-		//	'tool' '=' tool=('SimuCom' | 'SimuLizar') '{' configParams+=ConfigurationParams* '}'
-		//	//'tool' '=' tool = STRING '{' configParams += ConfigurationParams* '}'
-		//;
+		//ToolDefinition: //'tool' '=' tool = ('SimuCom' | 'SimuLizar') '{' configParams += ConfigurationParams* '}'
+		//	'tool' '=' tool=[exp::ToolConfiguration] '{' configParams+=ConfigurationParams* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'tool' '=' tool=('SimuCom' | 'SimuLizar') '{' configParams+=ConfigurationParams* '}'
+		////'tool' '=' tool = ('SimuCom' | 'SimuLizar') '{' configParams += ConfigurationParams* '}'
+		//'tool' '=' tool=[exp::ToolConfiguration] '{' configParams+=ConfigurationParams* '}'
 		public Group getGroup() { return cGroup; }
 		
+		////'tool' '=' tool = ('SimuCom' | 'SimuLizar') '{' configParams += ConfigurationParams* '}'
 		//'tool'
 		public Keyword getToolKeyword_0() { return cToolKeyword_0; }
 		
 		//'='
 		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
 		
-		//tool=('SimuCom' | 'SimuLizar')
+		//tool=[exp::ToolConfiguration]
 		public Assignment getToolAssignment_2() { return cToolAssignment_2; }
 		
-		//('SimuCom' | 'SimuLizar')
-		public Alternatives getToolAlternatives_2_0() { return cToolAlternatives_2_0; }
+		//[exp::ToolConfiguration]
+		public CrossReference getToolToolConfigurationCrossReference_2_0() { return cToolToolConfigurationCrossReference_2_0; }
 		
-		//'SimuCom'
-		public Keyword getToolSimuComKeyword_2_0_0() { return cToolSimuComKeyword_2_0_0; }
-		
-		//'SimuLizar'
-		public Keyword getToolSimuLizarKeyword_2_0_1() { return cToolSimuLizarKeyword_2_0_1; }
+		//ID
+		public RuleCall getToolToolConfigurationIDTerminalRuleCall_2_0_1() { return cToolToolConfigurationIDTerminalRuleCall_2_0_1; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
@@ -1615,10 +1611,8 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		return getExperimentDatasourceAccess().getRule();
 	}
 	
-	//ToolDefinition:
-	//	'tool' '=' tool=('SimuCom' | 'SimuLizar') '{' configParams+=ConfigurationParams* '}'
-	//	//'tool' '=' tool = STRING '{' configParams += ConfigurationParams* '}'
-	//;
+	//ToolDefinition: //'tool' '=' tool = ('SimuCom' | 'SimuLizar') '{' configParams += ConfigurationParams* '}'
+	//	'tool' '=' tool=[exp::ToolConfiguration] '{' configParams+=ConfigurationParams* '}';
 	public ToolDefinitionElements getToolDefinitionAccess() {
 		return pToolDefinition;
 	}
