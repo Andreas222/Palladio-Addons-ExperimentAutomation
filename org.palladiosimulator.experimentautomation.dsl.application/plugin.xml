@@ -2,7 +2,8 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         id="id1"
+         id="org.palladiosimulator.experimentautomation.dsl.application"
+         name="Palladio Experiment Automation DSL"
          point="org.eclipse.core.runtime.applications">
       <application
             cardinality="singleton-global"
@@ -13,24 +14,27 @@
    <extension
          point="org.eclipse.debug.core.launchConfigurationTypes">
       <launchConfigurationType
-            id="org.palladiosimulator.experimentautomation.dsl.application.launchConfigurationType1"
-            name="name">
+            delegate="org.palladiosimulator.experimentautomation.dsl.application.workflow.ExperimentAutomationDslWorkflowLauncher"
+            id="org.palladiosimulator.experimentautomation.dsl.application.launchConfigurationType"
+            modes="run, debug"
+            name="Experiment Automation DSL">
       </launchConfigurationType>
    </extension>
    <extension
          point="org.eclipse.debug.ui.launchConfigurationTabGroups">
       <launchConfigurationTabGroup
-            class="org.palladiosimulator.experimentautomation.dsl.application.AbstractLaunchConfigurationTabGroup1"
-            id="org.palladiosimulator.experimentautomation.dsl.application.launchConfigurationTabGroup1"
-            type="org.palladiosimulator.experimentautomation.dsl.application.launchConfigurationTabGroup1">
+            class="org.palladiosimulator.experimentautomation.dsl.application.workflow.ExperimentAutomationDslTabGroup"
+            id="org.palladiosimulator.experimentautomation.dsl.application.launchConfigurationTabGroup"
+            type="org.palladiosimulator.experimentautomation.dsl.application.launchConfigurationType">
       </launchConfigurationTabGroup>
    </extension>
    <extension
+         id="org.palladiosimulator.experimentautomation.dsl.application.launchConfigurationType"
          point="org.eclipse.debug.ui.launchConfigurationTypeImages">
       <launchConfigurationTypeImage
-            configTypeID="org.palladiosimulator.experimentautomation.dsl.application.launchConfigurationTypeImage1"
-            icon="org.palladiosimulator.experimentautomation.dsl.application.launchConfigurationTypeImage1"
-            id="org.palladiosimulator.experimentautomation.dsl.application.launchConfigurationTypeImage1">
+            configTypeID="org.palladiosimulator.experimentautomation.dsl.application.launchConfigurationType"
+            icon="icon/app_experiment_automation_dsl.png"
+            id="org.palladiosimulator.experimentautomation.dsl.application.launchConfigurationTypeImage">
       </launchConfigurationTypeImage>
    </extension>
 
