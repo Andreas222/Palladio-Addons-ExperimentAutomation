@@ -3,8 +3,6 @@
  */
 package org.palladiosimulator.experimentautomation.dsl.expAuto;
 
-import de.uka.ipd.sdq.identifier.Identifier;
-
 import org.eclipse.emf.ecore.EObject;
 
 import org.palladiosimulator.experimentautomation.variation.ValueVariation;
@@ -84,30 +82,30 @@ public interface Variation extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Target</b></em>' reference.
+   * Returns the value of the '<em><b>Target</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Target</em>' reference isn't clear,
+   * If the meaning of the '<em>Target</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Target</em>' reference.
-   * @see #setTarget(Identifier)
+   * @return the value of the '<em>Target</em>' attribute.
+   * @see #setTarget(String)
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage#getVariation_Target()
    * @model
    * @generated
    */
-  Identifier getTarget();
+  String getTarget();
 
   /**
-   * Sets the value of the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.Variation#getTarget <em>Target</em>}' reference.
+   * Sets the value of the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.Variation#getTarget <em>Target</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Target</em>' reference.
+   * @param value the new value of the '<em>Target</em>' attribute.
    * @see #getTarget()
    * @generated
    */
-  void setTarget(Identifier value);
+  void setTarget(String value);
 
   /**
    * Returns the value of the '<em><b>Max Variations</b></em>' attribute.

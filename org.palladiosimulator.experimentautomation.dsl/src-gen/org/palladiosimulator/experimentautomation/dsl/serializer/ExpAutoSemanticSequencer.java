@@ -573,7 +573,7 @@ public class ExpAutoSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ToolDefinition returns ToolDefinition
 	 *
 	 * Constraint:
-	 *     (tool=[ToolConfiguration|ID] configParams+=ConfigurationParams*)
+	 *     (tool=STRING configParams+=ConfigurationParams*)
 	 */
 	protected void sequence_ToolDefinition(ISerializationContext context, ToolDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -606,7 +606,7 @@ public class ExpAutoSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (
 	 *         variationTyp=[ValueVariation|ID] 
 	 *         name=ID 
-	 *         target=[Identifier|ID] 
+	 *         target=STRING 
 	 *         maxVariations=INT 
 	 *         (
 	 *             valueProvider=NestedIntervalsValueProvider | 

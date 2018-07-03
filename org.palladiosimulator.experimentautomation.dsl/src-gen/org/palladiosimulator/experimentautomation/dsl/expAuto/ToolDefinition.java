@@ -7,8 +7,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.palladiosimulator.experimentautomation.experiments.ToolConfiguration;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Tool Definition</b></em>'.
@@ -29,30 +27,30 @@ import org.palladiosimulator.experimentautomation.experiments.ToolConfiguration;
 public interface ToolDefinition extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Tool</b></em>' reference.
+   * Returns the value of the '<em><b>Tool</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Tool</em>' reference isn't clear,
+   * If the meaning of the '<em>Tool</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Tool</em>' reference.
-   * @see #setTool(ToolConfiguration)
+   * @return the value of the '<em>Tool</em>' attribute.
+   * @see #setTool(String)
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage#getToolDefinition_Tool()
    * @model
    * @generated
    */
-  ToolConfiguration getTool();
+  String getTool();
 
   /**
-   * Sets the value of the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition#getTool <em>Tool</em>}' reference.
+   * Sets the value of the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition#getTool <em>Tool</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Tool</em>' reference.
+   * @param value the new value of the '<em>Tool</em>' attribute.
    * @see #getTool()
    * @generated
    */
-  void setTool(ToolConfiguration value);
+  void setTool(String value);
 
   /**
    * Returns the value of the '<em><b>Config Params</b></em>' containment reference list.

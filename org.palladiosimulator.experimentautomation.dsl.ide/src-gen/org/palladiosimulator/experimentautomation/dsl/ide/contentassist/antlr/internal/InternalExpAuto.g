@@ -5137,13 +5137,9 @@ rule__Variation__TargetAssignment_7
 	}
 :
 	(
-		{ before(grammarAccess.getVariationAccess().getTargetIdentifierCrossReference_7_0()); }
-		(
-			{ before(grammarAccess.getVariationAccess().getTargetIdentifierIDTerminalRuleCall_7_0_1()); }
-			RULE_ID
-			{ after(grammarAccess.getVariationAccess().getTargetIdentifierIDTerminalRuleCall_7_0_1()); }
-		)
-		{ after(grammarAccess.getVariationAccess().getTargetIdentifierCrossReference_7_0()); }
+		{ before(grammarAccess.getVariationAccess().getTargetSTRINGTerminalRuleCall_7_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getVariationAccess().getTargetSTRINGTerminalRuleCall_7_0()); }
 	)
 ;
 finally {
@@ -5543,13 +5539,9 @@ rule__ToolDefinition__ToolAssignment_2
 	}
 :
 	(
-		{ before(grammarAccess.getToolDefinitionAccess().getToolToolConfigurationCrossReference_2_0()); }
-		(
-			{ before(grammarAccess.getToolDefinitionAccess().getToolToolConfigurationIDTerminalRuleCall_2_0_1()); }
-			RULE_ID
-			{ after(grammarAccess.getToolDefinitionAccess().getToolToolConfigurationIDTerminalRuleCall_2_0_1()); }
-		)
-		{ after(grammarAccess.getToolDefinitionAccess().getToolToolConfigurationCrossReference_2_0()); }
+		{ before(grammarAccess.getToolDefinitionAccess().getToolSTRINGTerminalRuleCall_2_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getToolDefinitionAccess().getToolSTRINGTerminalRuleCall_2_0()); }
 	)
 ;
 finally {

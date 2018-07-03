@@ -166,7 +166,7 @@ class ExpAutoValidator extends AbstractExpAutoValidator {
 		}
 		
 		if(numberOfDescriptions > 1){
-			error('Es darf maximal eine BEschreibung angegeben werden', ExpAutoPackage.Literals.EXPERIMENT_SPECIFICATIONS__SPECIFICATIONS, 'invalidExperiment')
+			error('Es darf maximal eine Beschreibung angegeben werden', ExpAutoPackage.Literals.EXPERIMENT_SPECIFICATIONS__SPECIFICATIONS, 'invalidExperiment')
 		} else if(numberOfInitModels != 1){
 			error('Es muss genau ein initiales Modell angegeben werden', ExpAutoPackage.Literals.EXPERIMENT_SPECIFICATIONS__SPECIFICATIONS, 'invalidExperiment')
 		} else if(numberOfVariations < 1){

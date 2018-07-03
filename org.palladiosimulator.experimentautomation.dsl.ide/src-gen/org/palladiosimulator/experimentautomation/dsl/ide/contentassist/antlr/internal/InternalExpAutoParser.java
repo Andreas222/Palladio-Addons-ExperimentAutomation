@@ -7143,7 +7143,7 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
             // InternalExpAuto.g:2339:1: ( rule__Variation__Group__6__Impl rule__Variation__Group__7 )
             // InternalExpAuto.g:2340:2: rule__Variation__Group__6__Impl rule__Variation__Group__7
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_10);
             rule__Variation__Group__6__Impl();
 
             state._fsp--;
@@ -13575,7 +13575,7 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
             // InternalExpAuto.g:4553:1: ( rule__ToolDefinition__Group__1__Impl rule__ToolDefinition__Group__2 )
             // InternalExpAuto.g:4554:2: rule__ToolDefinition__Group__1__Impl rule__ToolDefinition__Group__2
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_10);
             rule__ToolDefinition__Group__1__Impl();
 
             state._fsp--;
@@ -15177,29 +15177,21 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Variation__TargetAssignment_7"
-    // InternalExpAuto.g:5134:1: rule__Variation__TargetAssignment_7 : ( ( RULE_ID ) ) ;
+    // InternalExpAuto.g:5134:1: rule__Variation__TargetAssignment_7 : ( RULE_STRING ) ;
     public final void rule__Variation__TargetAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5138:1: ( ( ( RULE_ID ) ) )
-            // InternalExpAuto.g:5139:2: ( ( RULE_ID ) )
+            // InternalExpAuto.g:5138:1: ( ( RULE_STRING ) )
+            // InternalExpAuto.g:5139:2: ( RULE_STRING )
             {
-            // InternalExpAuto.g:5139:2: ( ( RULE_ID ) )
-            // InternalExpAuto.g:5140:3: ( RULE_ID )
+            // InternalExpAuto.g:5139:2: ( RULE_STRING )
+            // InternalExpAuto.g:5140:3: RULE_STRING
             {
-             before(grammarAccess.getVariationAccess().getTargetIdentifierCrossReference_7_0()); 
-            // InternalExpAuto.g:5141:3: ( RULE_ID )
-            // InternalExpAuto.g:5142:4: RULE_ID
-            {
-             before(grammarAccess.getVariationAccess().getTargetIdentifierIDTerminalRuleCall_7_0_1()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getVariationAccess().getTargetIdentifierIDTerminalRuleCall_7_0_1()); 
-
-            }
-
-             after(grammarAccess.getVariationAccess().getTargetIdentifierCrossReference_7_0()); 
+             before(grammarAccess.getVariationAccess().getTargetSTRINGTerminalRuleCall_7_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getVariationAccess().getTargetSTRINGTerminalRuleCall_7_0()); 
 
             }
 
@@ -15222,17 +15214,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Variation__MaxVariationsAssignment_10"
-    // InternalExpAuto.g:5153:1: rule__Variation__MaxVariationsAssignment_10 : ( RULE_INT ) ;
+    // InternalExpAuto.g:5149:1: rule__Variation__MaxVariationsAssignment_10 : ( RULE_INT ) ;
     public final void rule__Variation__MaxVariationsAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5157:1: ( ( RULE_INT ) )
-            // InternalExpAuto.g:5158:2: ( RULE_INT )
+            // InternalExpAuto.g:5153:1: ( ( RULE_INT ) )
+            // InternalExpAuto.g:5154:2: ( RULE_INT )
             {
-            // InternalExpAuto.g:5158:2: ( RULE_INT )
-            // InternalExpAuto.g:5159:3: RULE_INT
+            // InternalExpAuto.g:5154:2: ( RULE_INT )
+            // InternalExpAuto.g:5155:3: RULE_INT
             {
              before(grammarAccess.getVariationAccess().getMaxVariationsINTTerminalRuleCall_10_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -15259,21 +15251,21 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Variation__ValueProviderAssignment_13"
-    // InternalExpAuto.g:5168:1: rule__Variation__ValueProviderAssignment_13 : ( ( rule__Variation__ValueProviderAlternatives_13_0 ) ) ;
+    // InternalExpAuto.g:5164:1: rule__Variation__ValueProviderAssignment_13 : ( ( rule__Variation__ValueProviderAlternatives_13_0 ) ) ;
     public final void rule__Variation__ValueProviderAssignment_13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5172:1: ( ( ( rule__Variation__ValueProviderAlternatives_13_0 ) ) )
-            // InternalExpAuto.g:5173:2: ( ( rule__Variation__ValueProviderAlternatives_13_0 ) )
+            // InternalExpAuto.g:5168:1: ( ( ( rule__Variation__ValueProviderAlternatives_13_0 ) ) )
+            // InternalExpAuto.g:5169:2: ( ( rule__Variation__ValueProviderAlternatives_13_0 ) )
             {
-            // InternalExpAuto.g:5173:2: ( ( rule__Variation__ValueProviderAlternatives_13_0 ) )
-            // InternalExpAuto.g:5174:3: ( rule__Variation__ValueProviderAlternatives_13_0 )
+            // InternalExpAuto.g:5169:2: ( ( rule__Variation__ValueProviderAlternatives_13_0 ) )
+            // InternalExpAuto.g:5170:3: ( rule__Variation__ValueProviderAlternatives_13_0 )
             {
              before(grammarAccess.getVariationAccess().getValueProviderAlternatives_13_0()); 
-            // InternalExpAuto.g:5175:3: ( rule__Variation__ValueProviderAlternatives_13_0 )
-            // InternalExpAuto.g:5175:4: rule__Variation__ValueProviderAlternatives_13_0
+            // InternalExpAuto.g:5171:3: ( rule__Variation__ValueProviderAlternatives_13_0 )
+            // InternalExpAuto.g:5171:4: rule__Variation__ValueProviderAlternatives_13_0
             {
             pushFollow(FOLLOW_2);
             rule__Variation__ValueProviderAlternatives_13_0();
@@ -15306,17 +15298,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NestedIntervalsValueProvider__MinAssignment_0_1"
-    // InternalExpAuto.g:5183:1: rule__NestedIntervalsValueProvider__MinAssignment_0_1 : ( RULE_INT ) ;
+    // InternalExpAuto.g:5179:1: rule__NestedIntervalsValueProvider__MinAssignment_0_1 : ( RULE_INT ) ;
     public final void rule__NestedIntervalsValueProvider__MinAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5187:1: ( ( RULE_INT ) )
-            // InternalExpAuto.g:5188:2: ( RULE_INT )
+            // InternalExpAuto.g:5183:1: ( ( RULE_INT ) )
+            // InternalExpAuto.g:5184:2: ( RULE_INT )
             {
-            // InternalExpAuto.g:5188:2: ( RULE_INT )
-            // InternalExpAuto.g:5189:3: RULE_INT
+            // InternalExpAuto.g:5184:2: ( RULE_INT )
+            // InternalExpAuto.g:5185:3: RULE_INT
             {
              before(grammarAccess.getNestedIntervalsValueProviderAccess().getMinINTTerminalRuleCall_0_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -15343,17 +15335,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NestedIntervalsValueProvider__MaxAssignment_0_3"
-    // InternalExpAuto.g:5198:1: rule__NestedIntervalsValueProvider__MaxAssignment_0_3 : ( RULE_INT ) ;
+    // InternalExpAuto.g:5194:1: rule__NestedIntervalsValueProvider__MaxAssignment_0_3 : ( RULE_INT ) ;
     public final void rule__NestedIntervalsValueProvider__MaxAssignment_0_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5202:1: ( ( RULE_INT ) )
-            // InternalExpAuto.g:5203:2: ( RULE_INT )
+            // InternalExpAuto.g:5198:1: ( ( RULE_INT ) )
+            // InternalExpAuto.g:5199:2: ( RULE_INT )
             {
-            // InternalExpAuto.g:5203:2: ( RULE_INT )
-            // InternalExpAuto.g:5204:3: RULE_INT
+            // InternalExpAuto.g:5199:2: ( RULE_INT )
+            // InternalExpAuto.g:5200:3: RULE_INT
             {
              before(grammarAccess.getNestedIntervalsValueProviderAccess().getMaxINTTerminalRuleCall_0_3_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -15380,17 +15372,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NestedIntervalsValueProvider__MinAssignment_1_2"
-    // InternalExpAuto.g:5213:1: rule__NestedIntervalsValueProvider__MinAssignment_1_2 : ( RULE_INT ) ;
+    // InternalExpAuto.g:5209:1: rule__NestedIntervalsValueProvider__MinAssignment_1_2 : ( RULE_INT ) ;
     public final void rule__NestedIntervalsValueProvider__MinAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5217:1: ( ( RULE_INT ) )
-            // InternalExpAuto.g:5218:2: ( RULE_INT )
+            // InternalExpAuto.g:5213:1: ( ( RULE_INT ) )
+            // InternalExpAuto.g:5214:2: ( RULE_INT )
             {
-            // InternalExpAuto.g:5218:2: ( RULE_INT )
-            // InternalExpAuto.g:5219:3: RULE_INT
+            // InternalExpAuto.g:5214:2: ( RULE_INT )
+            // InternalExpAuto.g:5215:3: RULE_INT
             {
              before(grammarAccess.getNestedIntervalsValueProviderAccess().getMinINTTerminalRuleCall_1_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -15417,17 +15409,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NestedIntervalsValueProvider__MaxAssignment_1_4"
-    // InternalExpAuto.g:5228:1: rule__NestedIntervalsValueProvider__MaxAssignment_1_4 : ( RULE_INT ) ;
+    // InternalExpAuto.g:5224:1: rule__NestedIntervalsValueProvider__MaxAssignment_1_4 : ( RULE_INT ) ;
     public final void rule__NestedIntervalsValueProvider__MaxAssignment_1_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5232:1: ( ( RULE_INT ) )
-            // InternalExpAuto.g:5233:2: ( RULE_INT )
+            // InternalExpAuto.g:5228:1: ( ( RULE_INT ) )
+            // InternalExpAuto.g:5229:2: ( RULE_INT )
             {
-            // InternalExpAuto.g:5233:2: ( RULE_INT )
-            // InternalExpAuto.g:5234:3: RULE_INT
+            // InternalExpAuto.g:5229:2: ( RULE_INT )
+            // InternalExpAuto.g:5230:3: RULE_INT
             {
              before(grammarAccess.getNestedIntervalsValueProviderAccess().getMaxINTTerminalRuleCall_1_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -15454,17 +15446,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SetValueProvider__ValuesAssignment_0_1"
-    // InternalExpAuto.g:5243:1: rule__SetValueProvider__ValuesAssignment_0_1 : ( RULE_INT ) ;
+    // InternalExpAuto.g:5239:1: rule__SetValueProvider__ValuesAssignment_0_1 : ( RULE_INT ) ;
     public final void rule__SetValueProvider__ValuesAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5247:1: ( ( RULE_INT ) )
-            // InternalExpAuto.g:5248:2: ( RULE_INT )
+            // InternalExpAuto.g:5243:1: ( ( RULE_INT ) )
+            // InternalExpAuto.g:5244:2: ( RULE_INT )
             {
-            // InternalExpAuto.g:5248:2: ( RULE_INT )
-            // InternalExpAuto.g:5249:3: RULE_INT
+            // InternalExpAuto.g:5244:2: ( RULE_INT )
+            // InternalExpAuto.g:5245:3: RULE_INT
             {
              before(grammarAccess.getSetValueProviderAccess().getValuesINTTerminalRuleCall_0_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -15491,17 +15483,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SetValueProvider__ValuesAssignment_0_2_1"
-    // InternalExpAuto.g:5258:1: rule__SetValueProvider__ValuesAssignment_0_2_1 : ( RULE_INT ) ;
+    // InternalExpAuto.g:5254:1: rule__SetValueProvider__ValuesAssignment_0_2_1 : ( RULE_INT ) ;
     public final void rule__SetValueProvider__ValuesAssignment_0_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5262:1: ( ( RULE_INT ) )
-            // InternalExpAuto.g:5263:2: ( RULE_INT )
+            // InternalExpAuto.g:5258:1: ( ( RULE_INT ) )
+            // InternalExpAuto.g:5259:2: ( RULE_INT )
             {
-            // InternalExpAuto.g:5263:2: ( RULE_INT )
-            // InternalExpAuto.g:5264:3: RULE_INT
+            // InternalExpAuto.g:5259:2: ( RULE_INT )
+            // InternalExpAuto.g:5260:3: RULE_INT
             {
              before(grammarAccess.getSetValueProviderAccess().getValuesINTTerminalRuleCall_0_2_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -15528,17 +15520,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SetValueProvider__ValuesAssignment_1_2"
-    // InternalExpAuto.g:5273:1: rule__SetValueProvider__ValuesAssignment_1_2 : ( RULE_INT ) ;
+    // InternalExpAuto.g:5269:1: rule__SetValueProvider__ValuesAssignment_1_2 : ( RULE_INT ) ;
     public final void rule__SetValueProvider__ValuesAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5277:1: ( ( RULE_INT ) )
-            // InternalExpAuto.g:5278:2: ( RULE_INT )
+            // InternalExpAuto.g:5273:1: ( ( RULE_INT ) )
+            // InternalExpAuto.g:5274:2: ( RULE_INT )
             {
-            // InternalExpAuto.g:5278:2: ( RULE_INT )
-            // InternalExpAuto.g:5279:3: RULE_INT
+            // InternalExpAuto.g:5274:2: ( RULE_INT )
+            // InternalExpAuto.g:5275:3: RULE_INT
             {
              before(grammarAccess.getSetValueProviderAccess().getValuesINTTerminalRuleCall_1_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -15565,17 +15557,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SetValueProvider__ValuesAssignment_1_3_1"
-    // InternalExpAuto.g:5288:1: rule__SetValueProvider__ValuesAssignment_1_3_1 : ( RULE_INT ) ;
+    // InternalExpAuto.g:5284:1: rule__SetValueProvider__ValuesAssignment_1_3_1 : ( RULE_INT ) ;
     public final void rule__SetValueProvider__ValuesAssignment_1_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5292:1: ( ( RULE_INT ) )
-            // InternalExpAuto.g:5293:2: ( RULE_INT )
+            // InternalExpAuto.g:5288:1: ( ( RULE_INT ) )
+            // InternalExpAuto.g:5289:2: ( RULE_INT )
             {
-            // InternalExpAuto.g:5293:2: ( RULE_INT )
-            // InternalExpAuto.g:5294:3: RULE_INT
+            // InternalExpAuto.g:5289:2: ( RULE_INT )
+            // InternalExpAuto.g:5290:3: RULE_INT
             {
              before(grammarAccess.getSetValueProviderAccess().getValuesINTTerminalRuleCall_1_3_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -15602,17 +15594,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LinearValueProvider__SummandAssignment_2"
-    // InternalExpAuto.g:5303:1: rule__LinearValueProvider__SummandAssignment_2 : ( RULE_INT ) ;
+    // InternalExpAuto.g:5299:1: rule__LinearValueProvider__SummandAssignment_2 : ( RULE_INT ) ;
     public final void rule__LinearValueProvider__SummandAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5307:1: ( ( RULE_INT ) )
-            // InternalExpAuto.g:5308:2: ( RULE_INT )
+            // InternalExpAuto.g:5303:1: ( ( RULE_INT ) )
+            // InternalExpAuto.g:5304:2: ( RULE_INT )
             {
-            // InternalExpAuto.g:5308:2: ( RULE_INT )
-            // InternalExpAuto.g:5309:3: RULE_INT
+            // InternalExpAuto.g:5304:2: ( RULE_INT )
+            // InternalExpAuto.g:5305:3: RULE_INT
             {
              before(grammarAccess.getLinearValueProviderAccess().getSummandINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -15639,17 +15631,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LinearValueProvider__FactorAssignment_4"
-    // InternalExpAuto.g:5318:1: rule__LinearValueProvider__FactorAssignment_4 : ( RULE_INT ) ;
+    // InternalExpAuto.g:5314:1: rule__LinearValueProvider__FactorAssignment_4 : ( RULE_INT ) ;
     public final void rule__LinearValueProvider__FactorAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5322:1: ( ( RULE_INT ) )
-            // InternalExpAuto.g:5323:2: ( RULE_INT )
+            // InternalExpAuto.g:5318:1: ( ( RULE_INT ) )
+            // InternalExpAuto.g:5319:2: ( RULE_INT )
             {
-            // InternalExpAuto.g:5323:2: ( RULE_INT )
-            // InternalExpAuto.g:5324:3: RULE_INT
+            // InternalExpAuto.g:5319:2: ( RULE_INT )
+            // InternalExpAuto.g:5320:3: RULE_INT
             {
              before(grammarAccess.getLinearValueProviderAccess().getFactorINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -15676,17 +15668,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExponentialValueProvider__BaseAssignment_2"
-    // InternalExpAuto.g:5333:1: rule__ExponentialValueProvider__BaseAssignment_2 : ( RULE_INT ) ;
+    // InternalExpAuto.g:5329:1: rule__ExponentialValueProvider__BaseAssignment_2 : ( RULE_INT ) ;
     public final void rule__ExponentialValueProvider__BaseAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5337:1: ( ( RULE_INT ) )
-            // InternalExpAuto.g:5338:2: ( RULE_INT )
+            // InternalExpAuto.g:5333:1: ( ( RULE_INT ) )
+            // InternalExpAuto.g:5334:2: ( RULE_INT )
             {
-            // InternalExpAuto.g:5338:2: ( RULE_INT )
-            // InternalExpAuto.g:5339:3: RULE_INT
+            // InternalExpAuto.g:5334:2: ( RULE_INT )
+            // InternalExpAuto.g:5335:3: RULE_INT
             {
              before(grammarAccess.getExponentialValueProviderAccess().getBaseINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -15713,17 +15705,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PolynomialValueProvider__ExponentAssignment_2"
-    // InternalExpAuto.g:5348:1: rule__PolynomialValueProvider__ExponentAssignment_2 : ( RULE_INT ) ;
+    // InternalExpAuto.g:5344:1: rule__PolynomialValueProvider__ExponentAssignment_2 : ( RULE_INT ) ;
     public final void rule__PolynomialValueProvider__ExponentAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5352:1: ( ( RULE_INT ) )
-            // InternalExpAuto.g:5353:2: ( RULE_INT )
+            // InternalExpAuto.g:5348:1: ( ( RULE_INT ) )
+            // InternalExpAuto.g:5349:2: ( RULE_INT )
             {
-            // InternalExpAuto.g:5353:2: ( RULE_INT )
-            // InternalExpAuto.g:5354:3: RULE_INT
+            // InternalExpAuto.g:5349:2: ( RULE_INT )
+            // InternalExpAuto.g:5350:3: RULE_INT
             {
              before(grammarAccess.getPolynomialValueProviderAccess().getExponentINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -15750,17 +15742,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PolynomialValueProvider__FactorAssignment_4"
-    // InternalExpAuto.g:5363:1: rule__PolynomialValueProvider__FactorAssignment_4 : ( RULE_INT ) ;
+    // InternalExpAuto.g:5359:1: rule__PolynomialValueProvider__FactorAssignment_4 : ( RULE_INT ) ;
     public final void rule__PolynomialValueProvider__FactorAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5367:1: ( ( RULE_INT ) )
-            // InternalExpAuto.g:5368:2: ( RULE_INT )
+            // InternalExpAuto.g:5363:1: ( ( RULE_INT ) )
+            // InternalExpAuto.g:5364:2: ( RULE_INT )
             {
-            // InternalExpAuto.g:5368:2: ( RULE_INT )
-            // InternalExpAuto.g:5369:3: RULE_INT
+            // InternalExpAuto.g:5364:2: ( RULE_INT )
+            // InternalExpAuto.g:5365:3: RULE_INT
             {
              before(grammarAccess.getPolynomialValueProviderAccess().getFactorINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -15787,21 +15779,21 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StopTimeCondition__StopTypAssignment_2"
-    // InternalExpAuto.g:5378:1: rule__StopTimeCondition__StopTypAssignment_2 : ( ( 'simulationTime' ) ) ;
+    // InternalExpAuto.g:5374:1: rule__StopTimeCondition__StopTypAssignment_2 : ( ( 'simulationTime' ) ) ;
     public final void rule__StopTimeCondition__StopTypAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5382:1: ( ( ( 'simulationTime' ) ) )
-            // InternalExpAuto.g:5383:2: ( ( 'simulationTime' ) )
+            // InternalExpAuto.g:5378:1: ( ( ( 'simulationTime' ) ) )
+            // InternalExpAuto.g:5379:2: ( ( 'simulationTime' ) )
             {
-            // InternalExpAuto.g:5383:2: ( ( 'simulationTime' ) )
-            // InternalExpAuto.g:5384:3: ( 'simulationTime' )
+            // InternalExpAuto.g:5379:2: ( ( 'simulationTime' ) )
+            // InternalExpAuto.g:5380:3: ( 'simulationTime' )
             {
              before(grammarAccess.getStopTimeConditionAccess().getStopTypSimulationTimeKeyword_2_0()); 
-            // InternalExpAuto.g:5385:3: ( 'simulationTime' )
-            // InternalExpAuto.g:5386:4: 'simulationTime'
+            // InternalExpAuto.g:5381:3: ( 'simulationTime' )
+            // InternalExpAuto.g:5382:4: 'simulationTime'
             {
              before(grammarAccess.getStopTimeConditionAccess().getStopTypSimulationTimeKeyword_2_0()); 
             match(input,48,FOLLOW_2); 
@@ -15832,17 +15824,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StopTimeCondition__StopParamAssignment_4"
-    // InternalExpAuto.g:5397:1: rule__StopTimeCondition__StopParamAssignment_4 : ( RULE_INT ) ;
+    // InternalExpAuto.g:5393:1: rule__StopTimeCondition__StopParamAssignment_4 : ( RULE_INT ) ;
     public final void rule__StopTimeCondition__StopParamAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5401:1: ( ( RULE_INT ) )
-            // InternalExpAuto.g:5402:2: ( RULE_INT )
+            // InternalExpAuto.g:5397:1: ( ( RULE_INT ) )
+            // InternalExpAuto.g:5398:2: ( RULE_INT )
             {
-            // InternalExpAuto.g:5402:2: ( RULE_INT )
-            // InternalExpAuto.g:5403:3: RULE_INT
+            // InternalExpAuto.g:5398:2: ( RULE_INT )
+            // InternalExpAuto.g:5399:3: RULE_INT
             {
              before(grammarAccess.getStopTimeConditionAccess().getStopParamINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -15869,21 +15861,21 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StopCountCondition__StopTypAssignment_2"
-    // InternalExpAuto.g:5412:1: rule__StopCountCondition__StopTypAssignment_2 : ( ( 'measurementCount' ) ) ;
+    // InternalExpAuto.g:5408:1: rule__StopCountCondition__StopTypAssignment_2 : ( ( 'measurementCount' ) ) ;
     public final void rule__StopCountCondition__StopTypAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5416:1: ( ( ( 'measurementCount' ) ) )
-            // InternalExpAuto.g:5417:2: ( ( 'measurementCount' ) )
+            // InternalExpAuto.g:5412:1: ( ( ( 'measurementCount' ) ) )
+            // InternalExpAuto.g:5413:2: ( ( 'measurementCount' ) )
             {
-            // InternalExpAuto.g:5417:2: ( ( 'measurementCount' ) )
-            // InternalExpAuto.g:5418:3: ( 'measurementCount' )
+            // InternalExpAuto.g:5413:2: ( ( 'measurementCount' ) )
+            // InternalExpAuto.g:5414:3: ( 'measurementCount' )
             {
              before(grammarAccess.getStopCountConditionAccess().getStopTypMeasurementCountKeyword_2_0()); 
-            // InternalExpAuto.g:5419:3: ( 'measurementCount' )
-            // InternalExpAuto.g:5420:4: 'measurementCount'
+            // InternalExpAuto.g:5415:3: ( 'measurementCount' )
+            // InternalExpAuto.g:5416:4: 'measurementCount'
             {
              before(grammarAccess.getStopCountConditionAccess().getStopTypMeasurementCountKeyword_2_0()); 
             match(input,49,FOLLOW_2); 
@@ -15914,17 +15906,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StopCountCondition__StopParamAssignment_4"
-    // InternalExpAuto.g:5431:1: rule__StopCountCondition__StopParamAssignment_4 : ( RULE_INT ) ;
+    // InternalExpAuto.g:5427:1: rule__StopCountCondition__StopParamAssignment_4 : ( RULE_INT ) ;
     public final void rule__StopCountCondition__StopParamAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5435:1: ( ( RULE_INT ) )
-            // InternalExpAuto.g:5436:2: ( RULE_INT )
+            // InternalExpAuto.g:5431:1: ( ( RULE_INT ) )
+            // InternalExpAuto.g:5432:2: ( RULE_INT )
             {
-            // InternalExpAuto.g:5436:2: ( RULE_INT )
-            // InternalExpAuto.g:5437:3: RULE_INT
+            // InternalExpAuto.g:5432:2: ( RULE_INT )
+            // InternalExpAuto.g:5433:3: RULE_INT
             {
              before(grammarAccess.getStopCountConditionAccess().getStopParamINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -15951,17 +15943,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumberOfExperiments__NumberOfRepetitionsAssignment_2"
-    // InternalExpAuto.g:5446:1: rule__NumberOfExperiments__NumberOfRepetitionsAssignment_2 : ( RULE_INT ) ;
+    // InternalExpAuto.g:5442:1: rule__NumberOfExperiments__NumberOfRepetitionsAssignment_2 : ( RULE_INT ) ;
     public final void rule__NumberOfExperiments__NumberOfRepetitionsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5450:1: ( ( RULE_INT ) )
-            // InternalExpAuto.g:5451:2: ( RULE_INT )
+            // InternalExpAuto.g:5446:1: ( ( RULE_INT ) )
+            // InternalExpAuto.g:5447:2: ( RULE_INT )
             {
-            // InternalExpAuto.g:5451:2: ( RULE_INT )
-            // InternalExpAuto.g:5452:3: RULE_INT
+            // InternalExpAuto.g:5447:2: ( RULE_INT )
+            // InternalExpAuto.g:5448:3: RULE_INT
             {
              before(grammarAccess.getNumberOfExperimentsAccess().getNumberOfRepetitionsINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -15988,17 +15980,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SeedDefinition__SeedListsAssignment_3"
-    // InternalExpAuto.g:5461:1: rule__SeedDefinition__SeedListsAssignment_3 : ( ruleListOfSeeds ) ;
+    // InternalExpAuto.g:5457:1: rule__SeedDefinition__SeedListsAssignment_3 : ( ruleListOfSeeds ) ;
     public final void rule__SeedDefinition__SeedListsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5465:1: ( ( ruleListOfSeeds ) )
-            // InternalExpAuto.g:5466:2: ( ruleListOfSeeds )
+            // InternalExpAuto.g:5461:1: ( ( ruleListOfSeeds ) )
+            // InternalExpAuto.g:5462:2: ( ruleListOfSeeds )
             {
-            // InternalExpAuto.g:5466:2: ( ruleListOfSeeds )
-            // InternalExpAuto.g:5467:3: ruleListOfSeeds
+            // InternalExpAuto.g:5462:2: ( ruleListOfSeeds )
+            // InternalExpAuto.g:5463:3: ruleListOfSeeds
             {
              before(grammarAccess.getSeedDefinitionAccess().getSeedListsListOfSeedsParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -16029,17 +16021,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SeedDefinition__SeedListsAssignment_4_1"
-    // InternalExpAuto.g:5476:1: rule__SeedDefinition__SeedListsAssignment_4_1 : ( ruleListOfSeeds ) ;
+    // InternalExpAuto.g:5472:1: rule__SeedDefinition__SeedListsAssignment_4_1 : ( ruleListOfSeeds ) ;
     public final void rule__SeedDefinition__SeedListsAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5480:1: ( ( ruleListOfSeeds ) )
-            // InternalExpAuto.g:5481:2: ( ruleListOfSeeds )
+            // InternalExpAuto.g:5476:1: ( ( ruleListOfSeeds ) )
+            // InternalExpAuto.g:5477:2: ( ruleListOfSeeds )
             {
-            // InternalExpAuto.g:5481:2: ( ruleListOfSeeds )
-            // InternalExpAuto.g:5482:3: ruleListOfSeeds
+            // InternalExpAuto.g:5477:2: ( ruleListOfSeeds )
+            // InternalExpAuto.g:5478:3: ruleListOfSeeds
             {
              before(grammarAccess.getSeedDefinitionAccess().getSeedListsListOfSeedsParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16070,17 +16062,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ListOfSeeds__SeedsAssignment_1"
-    // InternalExpAuto.g:5491:1: rule__ListOfSeeds__SeedsAssignment_1 : ( RULE_INT ) ;
+    // InternalExpAuto.g:5487:1: rule__ListOfSeeds__SeedsAssignment_1 : ( RULE_INT ) ;
     public final void rule__ListOfSeeds__SeedsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5495:1: ( ( RULE_INT ) )
-            // InternalExpAuto.g:5496:2: ( RULE_INT )
+            // InternalExpAuto.g:5491:1: ( ( RULE_INT ) )
+            // InternalExpAuto.g:5492:2: ( RULE_INT )
             {
-            // InternalExpAuto.g:5496:2: ( RULE_INT )
-            // InternalExpAuto.g:5497:3: RULE_INT
+            // InternalExpAuto.g:5492:2: ( RULE_INT )
+            // InternalExpAuto.g:5493:3: RULE_INT
             {
              before(grammarAccess.getListOfSeedsAccess().getSeedsINTTerminalRuleCall_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -16107,17 +16099,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ListOfSeeds__SeedsAssignment_2_1"
-    // InternalExpAuto.g:5506:1: rule__ListOfSeeds__SeedsAssignment_2_1 : ( RULE_INT ) ;
+    // InternalExpAuto.g:5502:1: rule__ListOfSeeds__SeedsAssignment_2_1 : ( RULE_INT ) ;
     public final void rule__ListOfSeeds__SeedsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5510:1: ( ( RULE_INT ) )
-            // InternalExpAuto.g:5511:2: ( RULE_INT )
+            // InternalExpAuto.g:5506:1: ( ( RULE_INT ) )
+            // InternalExpAuto.g:5507:2: ( RULE_INT )
             {
-            // InternalExpAuto.g:5511:2: ( RULE_INT )
-            // InternalExpAuto.g:5512:3: RULE_INT
+            // InternalExpAuto.g:5507:2: ( RULE_INT )
+            // InternalExpAuto.g:5508:3: RULE_INT
             {
              before(grammarAccess.getListOfSeedsAccess().getSeedsINTTerminalRuleCall_2_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -16144,21 +16136,21 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExperimentDatasource__SourceAssignment_2"
-    // InternalExpAuto.g:5521:1: rule__ExperimentDatasource__SourceAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalExpAuto.g:5517:1: rule__ExperimentDatasource__SourceAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__ExperimentDatasource__SourceAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5525:1: ( ( ( RULE_ID ) ) )
-            // InternalExpAuto.g:5526:2: ( ( RULE_ID ) )
+            // InternalExpAuto.g:5521:1: ( ( ( RULE_ID ) ) )
+            // InternalExpAuto.g:5522:2: ( ( RULE_ID ) )
             {
-            // InternalExpAuto.g:5526:2: ( ( RULE_ID ) )
-            // InternalExpAuto.g:5527:3: ( RULE_ID )
+            // InternalExpAuto.g:5522:2: ( ( RULE_ID ) )
+            // InternalExpAuto.g:5523:3: ( RULE_ID )
             {
              before(grammarAccess.getExperimentDatasourceAccess().getSourceDatasourceCrossReference_2_0()); 
-            // InternalExpAuto.g:5528:3: ( RULE_ID )
-            // InternalExpAuto.g:5529:4: RULE_ID
+            // InternalExpAuto.g:5524:3: ( RULE_ID )
+            // InternalExpAuto.g:5525:4: RULE_ID
             {
              before(grammarAccess.getExperimentDatasourceAccess().getSourceDatasourceIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16189,29 +16181,21 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ToolDefinition__ToolAssignment_2"
-    // InternalExpAuto.g:5540:1: rule__ToolDefinition__ToolAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalExpAuto.g:5536:1: rule__ToolDefinition__ToolAssignment_2 : ( RULE_STRING ) ;
     public final void rule__ToolDefinition__ToolAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5544:1: ( ( ( RULE_ID ) ) )
-            // InternalExpAuto.g:5545:2: ( ( RULE_ID ) )
+            // InternalExpAuto.g:5540:1: ( ( RULE_STRING ) )
+            // InternalExpAuto.g:5541:2: ( RULE_STRING )
             {
-            // InternalExpAuto.g:5545:2: ( ( RULE_ID ) )
-            // InternalExpAuto.g:5546:3: ( RULE_ID )
+            // InternalExpAuto.g:5541:2: ( RULE_STRING )
+            // InternalExpAuto.g:5542:3: RULE_STRING
             {
-             before(grammarAccess.getToolDefinitionAccess().getToolToolConfigurationCrossReference_2_0()); 
-            // InternalExpAuto.g:5547:3: ( RULE_ID )
-            // InternalExpAuto.g:5548:4: RULE_ID
-            {
-             before(grammarAccess.getToolDefinitionAccess().getToolToolConfigurationIDTerminalRuleCall_2_0_1()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getToolDefinitionAccess().getToolToolConfigurationIDTerminalRuleCall_2_0_1()); 
-
-            }
-
-             after(grammarAccess.getToolDefinitionAccess().getToolToolConfigurationCrossReference_2_0()); 
+             before(grammarAccess.getToolDefinitionAccess().getToolSTRINGTerminalRuleCall_2_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getToolDefinitionAccess().getToolSTRINGTerminalRuleCall_2_0()); 
 
             }
 
@@ -16234,17 +16218,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ToolDefinition__ConfigParamsAssignment_4"
-    // InternalExpAuto.g:5559:1: rule__ToolDefinition__ConfigParamsAssignment_4 : ( ruleConfigurationParams ) ;
+    // InternalExpAuto.g:5551:1: rule__ToolDefinition__ConfigParamsAssignment_4 : ( ruleConfigurationParams ) ;
     public final void rule__ToolDefinition__ConfigParamsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5563:1: ( ( ruleConfigurationParams ) )
-            // InternalExpAuto.g:5564:2: ( ruleConfigurationParams )
+            // InternalExpAuto.g:5555:1: ( ( ruleConfigurationParams ) )
+            // InternalExpAuto.g:5556:2: ( ruleConfigurationParams )
             {
-            // InternalExpAuto.g:5564:2: ( ruleConfigurationParams )
-            // InternalExpAuto.g:5565:3: ruleConfigurationParams
+            // InternalExpAuto.g:5556:2: ( ruleConfigurationParams )
+            // InternalExpAuto.g:5557:3: ruleConfigurationParams
             {
              before(grammarAccess.getToolDefinitionAccess().getConfigParamsConfigurationParamsParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -16275,17 +16259,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConfigurationParams__KeyAssignment_0"
-    // InternalExpAuto.g:5574:1: rule__ConfigurationParams__KeyAssignment_0 : ( RULE_ID ) ;
+    // InternalExpAuto.g:5566:1: rule__ConfigurationParams__KeyAssignment_0 : ( RULE_ID ) ;
     public final void rule__ConfigurationParams__KeyAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5578:1: ( ( RULE_ID ) )
-            // InternalExpAuto.g:5579:2: ( RULE_ID )
+            // InternalExpAuto.g:5570:1: ( ( RULE_ID ) )
+            // InternalExpAuto.g:5571:2: ( RULE_ID )
             {
-            // InternalExpAuto.g:5579:2: ( RULE_ID )
-            // InternalExpAuto.g:5580:3: RULE_ID
+            // InternalExpAuto.g:5571:2: ( RULE_ID )
+            // InternalExpAuto.g:5572:3: RULE_ID
             {
              before(grammarAccess.getConfigurationParamsAccess().getKeyIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16312,17 +16296,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConfigurationParams__ValueAssignment_2"
-    // InternalExpAuto.g:5589:1: rule__ConfigurationParams__ValueAssignment_2 : ( ruleConfigValue ) ;
+    // InternalExpAuto.g:5581:1: rule__ConfigurationParams__ValueAssignment_2 : ( ruleConfigValue ) ;
     public final void rule__ConfigurationParams__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5593:1: ( ( ruleConfigValue ) )
-            // InternalExpAuto.g:5594:2: ( ruleConfigValue )
+            // InternalExpAuto.g:5585:1: ( ( ruleConfigValue ) )
+            // InternalExpAuto.g:5586:2: ( ruleConfigValue )
             {
-            // InternalExpAuto.g:5594:2: ( ruleConfigValue )
-            // InternalExpAuto.g:5595:3: ruleConfigValue
+            // InternalExpAuto.g:5586:2: ( ruleConfigValue )
+            // InternalExpAuto.g:5587:3: ruleConfigValue
             {
              before(grammarAccess.getConfigurationParamsAccess().getValueConfigValueParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);

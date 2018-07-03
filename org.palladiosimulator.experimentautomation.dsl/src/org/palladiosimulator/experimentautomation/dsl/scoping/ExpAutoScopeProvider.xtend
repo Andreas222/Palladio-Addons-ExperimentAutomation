@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Model
 import org.eclipse.emf.ecore.resource.Resource
 import org.palladiosimulator.experimentautomation.variation.ValueVariation
+import java.util.LinkedList
 
 /**
  * This class contains custom scoping description.
@@ -33,49 +34,42 @@ import org.palladiosimulator.experimentautomation.variation.ValueVariation
  * on how and when to use it.
  */
 class ExpAutoScopeProvider extends AbstractExpAutoScopeProvider {
-	IExtension[] extensions;
+	/*IExtension[] extensions;
 	IExtension currExtension;
 	int i;
 	int j;
 	IConfigurationElement[] elements;
 	List adapters;
-	String[] importedElementPaths;
+	String[] importEntitiesPaths;
 	Resource[] importedResources;
-	int k;
-	List<ValueVariation> valueVariationList;
+	int k;*/
+	LinkedList<ValueVariation> valueVariationList;
 	
 	override getScope(EObject context, EReference reference) {
+		//Scope VariationType
 	    if(context instanceof Variation && reference == ExpAutoPackage.Literals.VARIATION__VARIATION_TYP) {
-	    	val experimentElement = EcoreUtil2.getRootContainer(context)
-	    	val rootElement = EcoreUtil2.getRootContainer(experimentElement)
-	    	val importElements = (rootElement as Model).getImports()
+	    	val experimentSpecificationEntity = EcoreUtil2.getRootContainer(context)
+	    	val experimentEntity = EcoreUtil2.getRootContainer(experimentSpecificationEntity)
+	    	val rootEntity = EcoreUtil2.getRootContainer(experimentEntity)
+	    	val importEntities = (rootEntity as Model).getImports()
 	    	
-	    	k = 0
-	    	for(Import currImport : importElements){
-	    		importedElementPaths.set(k, currImport.getPath() as String)
-	    		k++
-	    	}
+	    	valueVariationList = new LinkedList<ValueVariation>
 	    	
-	    	k = 0
-	    	for(String currPath : importedElementPaths) {
-	    		importedResources.set(k, context.eResource.resourceSet.getResource(URI.createURI(currPath), true))
-	    		k++
-	    	}
-	    	
-	    	k = 0
-	    	for(Resource currResource : importedResources){
-	    		val currCandidates = EcoreUtil2.getAllContentsOfType(currResource as EObject, ValueVariation)
+	    	for(Import currImport : importEntities){
+	    		val path = currImport.getPath()
+	    		val importedResource = context.eResource.resourceSet.getResource(URI.createURI(path), true)
+	    		val currCandidates = EcoreUtil2.getAllContentsOfType(importedResource as EObject, ValueVariation)
 	    		for(ValueVariation currVar : currCandidates) {
-	    			valueVariationList.set(k, currVar)
+	    			valueVariationList.addFirst(currVar);
 	    		}
-	    		k++
 	    	}
 	    	
 	    	val candidates = valueVariationList
 	    	return Scopes.scopeFor(candidates)
 	    }
 	    
-	    if (context instanceof Variation && reference == ExpAutoPackage.Literals.VARIATION__TARGET) {
+	    //Scope VariationTarget
+	    /*if (context instanceof Variation && reference == ExpAutoPackage.Literals.VARIATION__TARGET) {
 	        val experimentElement = EcoreUtil2.getRootContainer(context)
 	        val initModelElement = EcoreUtil2.getAllContentsOfType(experimentElement, InitialModel).get(1)	        
 	        val usageModelElement = EcoreUtil2.getAllContentsOfType(initModelElement, UsageModel).get(1)
@@ -90,11 +84,12 @@ class ExpAutoScopeProvider extends AbstractExpAutoScopeProvider {
 	        
 	        
 	        //als Scope zurückgeben
-	    	/*val candidates = 
-	    	return Scopes.scopeFor(candidates)*/
-	    }
+	    	//val candidates = 
+	    	//return Scopes.scopeFor(candidates)
+	    }*/
 	    
-	    if(context instanceof ToolDefinition && reference == ExpAutoPackage.Literals.TOOL_DEFINITION__TOOL){
+	    //Scope ToolConfiguration
+	    /*if(context instanceof ToolDefinition && reference == ExpAutoPackage.Literals.TOOL_DEFINITION__TOOL){
 	    	adapters = new ArrayList();
 	    	extensions = Platform.getExtensionRegistry().getExtensionPoint("toolName").getExtensions();
 	    	for (i=0; i<extensions.length; i++){
@@ -112,9 +107,9 @@ class ExpAutoScopeProvider extends AbstractExpAutoScopeProvider {
 			//Toolname auslesen
 			
 			//als Scope zurückgeben
-	    	/*val candidates = 
-	    	return Scopes.scopeFor(candidates)*/
-	    }
+	    	//val candidates = 
+	    	//return Scopes.scopeFor(candidates)
+	    }*/
 	    
 	    return super.getScope(context, reference)
 	}

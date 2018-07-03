@@ -23,8 +23,6 @@ import org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParam
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition;
 
-import org.palladiosimulator.experimentautomation.experiments.ToolConfiguration;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Tool Definition</b></em>'.
@@ -42,14 +40,24 @@ import org.palladiosimulator.experimentautomation.experiments.ToolConfiguration;
 public class ToolDefinitionImpl extends MinimalEObjectImpl.Container implements ToolDefinition
 {
   /**
-   * The cached value of the '{@link #getTool() <em>Tool</em>}' reference.
+   * The default value of the '{@link #getTool() <em>Tool</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTool()
    * @generated
    * @ordered
    */
-  protected ToolConfiguration tool;
+  protected static final String TOOL_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getTool() <em>Tool</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTool()
+   * @generated
+   * @ordered
+   */
+  protected String tool = TOOL_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getConfigParams() <em>Config Params</em>}' containment reference list.
@@ -87,27 +95,7 @@ public class ToolDefinitionImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public ToolConfiguration getTool()
-  {
-    if (tool != null && tool.eIsProxy())
-    {
-      InternalEObject oldTool = (InternalEObject)tool;
-      tool = (ToolConfiguration)eResolveProxy(oldTool);
-      if (tool != oldTool)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpAutoPackage.TOOL_DEFINITION__TOOL, oldTool, tool));
-      }
-    }
-    return tool;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ToolConfiguration basicGetTool()
+  public String getTool()
   {
     return tool;
   }
@@ -117,9 +105,9 @@ public class ToolDefinitionImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTool(ToolConfiguration newTool)
+  public void setTool(String newTool)
   {
-    ToolConfiguration oldTool = tool;
+    String oldTool = tool;
     tool = newTool;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ExpAutoPackage.TOOL_DEFINITION__TOOL, oldTool, tool));
@@ -166,8 +154,7 @@ public class ToolDefinitionImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case ExpAutoPackage.TOOL_DEFINITION__TOOL:
-        if (resolve) return getTool();
-        return basicGetTool();
+        return getTool();
       case ExpAutoPackage.TOOL_DEFINITION__CONFIG_PARAMS:
         return getConfigParams();
     }
@@ -186,7 +173,7 @@ public class ToolDefinitionImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case ExpAutoPackage.TOOL_DEFINITION__TOOL:
-        setTool((ToolConfiguration)newValue);
+        setTool((String)newValue);
         return;
       case ExpAutoPackage.TOOL_DEFINITION__CONFIG_PARAMS:
         getConfigParams().clear();
@@ -207,7 +194,7 @@ public class ToolDefinitionImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case ExpAutoPackage.TOOL_DEFINITION__TOOL:
-        setTool((ToolConfiguration)null);
+        setTool(TOOL_EDEFAULT);
         return;
       case ExpAutoPackage.TOOL_DEFINITION__CONFIG_PARAMS:
         getConfigParams().clear();
@@ -227,11 +214,28 @@ public class ToolDefinitionImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case ExpAutoPackage.TOOL_DEFINITION__TOOL:
-        return tool != null;
+        return TOOL_EDEFAULT == null ? tool != null : !TOOL_EDEFAULT.equals(tool);
       case ExpAutoPackage.TOOL_DEFINITION__CONFIG_PARAMS:
         return configParams != null && !configParams.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (tool: ");
+    result.append(tool);
+    result.append(')');
+    return result.toString();
   }
 
 } //ToolDefinitionImpl

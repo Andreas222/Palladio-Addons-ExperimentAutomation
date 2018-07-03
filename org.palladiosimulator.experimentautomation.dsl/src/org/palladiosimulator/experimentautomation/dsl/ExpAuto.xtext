@@ -69,7 +69,7 @@ MonitorRepository:
 Variation:
 	'variation' '=' variationTyp = [ValueVariation] name = ID
 	'{'
-		'target' '=' target = [Identifier]
+		'target' '=' target = /*[Identifier]*/STRING
 		'maxVariations' '=' maxVariations = INT
 		'values' '=' valueProvider = (NestedIntervalsValueProvider | SetValueProvider | LinearValueProvider | ExponentialValueProvider | PolynomialValueProvider)
 	'}'
@@ -120,8 +120,7 @@ ExperimentDatasource:
 ;
 
 ToolDefinition:
-	//'tool' '=' tool = ('SimuCom' | 'SimuLizar') '{' configParams += ConfigurationParams* '}'
-	'tool' '=' tool = [exp::ToolConfiguration] '{' configParams += ConfigurationParams* '}'
+	'tool' '=' tool = /*[exp::ToolConfiguration]*/STRING '{' configParams += ConfigurationParams* '}'
 ;
 
 ConfigurationParams:

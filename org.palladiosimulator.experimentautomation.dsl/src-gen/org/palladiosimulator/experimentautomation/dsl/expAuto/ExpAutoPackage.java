@@ -513,7 +513,7 @@ public interface ExpAutoPackage extends EPackage
   int VARIATION__NAME = 1;
 
   /**
-   * The feature id for the '<em><b>Target</b></em>' reference.
+   * The feature id for the '<em><b>Target</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -912,7 +912,7 @@ public interface ExpAutoPackage extends EPackage
   int TOOL_DEFINITION = 25;
 
   /**
-   * The feature id for the '<em><b>Tool</b></em>' reference.
+   * The feature id for the '<em><b>Tool</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1359,15 +1359,15 @@ public interface ExpAutoPackage extends EPackage
   EAttribute getVariation_Name();
 
   /**
-   * Returns the meta object for the reference '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.Variation#getTarget <em>Target</em>}'.
+   * Returns the meta object for the attribute '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.Variation#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Target</em>'.
+   * @return the meta object for the attribute '<em>Target</em>'.
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.Variation#getTarget()
    * @see #getVariation()
    * @generated
    */
-  EReference getVariation_Target();
+  EAttribute getVariation_Target();
 
   /**
    * Returns the meta object for the attribute '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.Variation#getMaxVariations <em>Max Variations</em>}'.
@@ -1688,15 +1688,15 @@ public interface ExpAutoPackage extends EPackage
   EClass getToolDefinition();
 
   /**
-   * Returns the meta object for the reference '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition#getTool <em>Tool</em>}'.
+   * Returns the meta object for the attribute '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition#getTool <em>Tool</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Tool</em>'.
+   * @return the meta object for the attribute '<em>Tool</em>'.
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition#getTool()
    * @see #getToolDefinition()
    * @generated
    */
-  EReference getToolDefinition_Tool();
+  EAttribute getToolDefinition_Tool();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition#getConfigParams <em>Config Params</em>}'.
@@ -2081,12 +2081,12 @@ public interface ExpAutoPackage extends EPackage
     EAttribute VARIATION__NAME = eINSTANCE.getVariation_Name();
 
     /**
-     * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Target</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VARIATION__TARGET = eINSTANCE.getVariation_Target();
+    EAttribute VARIATION__TARGET = eINSTANCE.getVariation_Target();
 
     /**
      * The meta object literal for the '<em><b>Max Variations</b></em>' attribute feature.
@@ -2353,12 +2353,12 @@ public interface ExpAutoPackage extends EPackage
     EClass TOOL_DEFINITION = eINSTANCE.getToolDefinition();
 
     /**
-     * The meta object literal for the '<em><b>Tool</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Tool</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TOOL_DEFINITION__TOOL = eINSTANCE.getToolDefinition_Tool();
+    EAttribute TOOL_DEFINITION__TOOL = eINSTANCE.getToolDefinition_Tool();
 
     /**
      * The meta object literal for the '<em><b>Config Params</b></em>' containment reference list feature.
