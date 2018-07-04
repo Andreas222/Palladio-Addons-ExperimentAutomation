@@ -120,7 +120,7 @@ ExperimentDatasource:
 ;
 
 ToolDefinition:
-	'tool' '=' tool = /*[exp::ToolConfiguration]*/STRING '{' configParams += ConfigurationParams* '}'
+	'tool' '=' tool = STRING/*[exp::ToolConfiguration]*/ '{' configParams += ConfigurationParams* '}'
 ;
 
 ConfigurationParams:

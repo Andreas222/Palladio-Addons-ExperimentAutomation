@@ -1154,10 +1154,10 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//ToolDefinition:
-		//	'tool' '=' tool= /*[exp::ToolConfiguration]*/ STRING '{' configParams+=ConfigurationParams* '}';
+		//	'tool' '=' tool=STRING /*[exp::ToolConfiguration]*/ '{' configParams+=ConfigurationParams* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'tool' '=' tool= /*[exp::ToolConfiguration]*/ STRING '{' configParams+=ConfigurationParams* '}'
+		//'tool' '=' tool=STRING /*[exp::ToolConfiguration]*/ '{' configParams+=ConfigurationParams* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'tool'
@@ -1166,13 +1166,13 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		//'='
 		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
 		
-		//tool= /*[exp::ToolConfiguration]*/ STRING
+		//tool=STRING
 		public Assignment getToolAssignment_2() { return cToolAssignment_2; }
 		
-		///*[exp::ToolConfiguration]*/ STRING
+		//STRING
 		public RuleCall getToolSTRINGTerminalRuleCall_2_0() { return cToolSTRINGTerminalRuleCall_2_0; }
 		
-		//'{'
+		///*[exp::ToolConfiguration]*/ '{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
 		//configParams+=ConfigurationParams*
@@ -1602,7 +1602,7 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ToolDefinition:
-	//	'tool' '=' tool= /*[exp::ToolConfiguration]*/ STRING '{' configParams+=ConfigurationParams* '}';
+	//	'tool' '=' tool=STRING /*[exp::ToolConfiguration]*/ '{' configParams+=ConfigurationParams* '}';
 	public ToolDefinitionElements getToolDefinitionAccess() {
 		return pToolDefinition;
 	}

@@ -26,6 +26,8 @@ import org.palladiosimulator.experimentautomation.dsl.expAuto.Model
 import org.eclipse.emf.ecore.resource.Resource
 import org.palladiosimulator.experimentautomation.variation.ValueVariation
 import java.util.LinkedList
+import de.uka.ipd.sdq.identifier.Identifier
+import org.palladiosimulator.experimentautomation.experiments.ToolConfiguration
 
 /**
  * This class contains custom scoping description.
@@ -34,7 +36,7 @@ import java.util.LinkedList
  * on how and when to use it.
  */
 class ExpAutoScopeProvider extends AbstractExpAutoScopeProvider {
-	/*IExtension[] extensions;
+	IExtension[] extensions;
 	IExtension currExtension;
 	int i;
 	int j;
@@ -42,8 +44,10 @@ class ExpAutoScopeProvider extends AbstractExpAutoScopeProvider {
 	List adapters;
 	String[] importEntitiesPaths;
 	Resource[] importedResources;
-	int k;*/
+	int k;
 	LinkedList<ValueVariation> valueVariationList;
+	LinkedList<Identifier> possibleTargetsList;
+	LinkedList<String> possibleToolConfigurations;
 	
 	override getScope(EObject context, EReference reference) {
 		//Scope VariationType
@@ -57,8 +61,10 @@ class ExpAutoScopeProvider extends AbstractExpAutoScopeProvider {
 	    	
 	    	for(Import currImport : importEntities){
 	    		val path = currImport.getPath()
-	    		val importedResource = context.eResource.resourceSet.getResource(URI.createURI(path), true)
-	    		val currCandidates = EcoreUtil2.getAllContentsOfType(importedResource as EObject, ValueVariation)
+	    		val currUri = URI.createURI(path)
+	    		val importedResource = context.eResource.resourceSet.getResource(currUri, true)
+	    		val resourceRootEntity = importedResource.getContents().get(0)
+	    		val currCandidates = EcoreUtil2.getAllContentsOfType(resourceRootEntity, ValueVariation)
 	    		for(ValueVariation currVar : currCandidates) {
 	    			valueVariationList.addFirst(currVar);
 	    		}
@@ -70,45 +76,45 @@ class ExpAutoScopeProvider extends AbstractExpAutoScopeProvider {
 	    
 	    //Scope VariationTarget
 	    /*if (context instanceof Variation && reference == ExpAutoPackage.Literals.VARIATION__TARGET) {
-	        val experimentElement = EcoreUtil2.getRootContainer(context)
-	        val initModelElement = EcoreUtil2.getAllContentsOfType(experimentElement, InitialModel).get(1)	        
-	        val usageModelElement = EcoreUtil2.getAllContentsOfType(initModelElement, UsageModel).get(1)
+	        val experimentSpecificationEntity = EcoreUtil2.getRootContainer(context)
+	        val experimentEntity = EcoreUtil2.getRootContainer(experimentSpecificationEntity)
+	        val initModelEntity = EcoreUtil2.getAllContentsOfType(experimentEntity, InitialModel).get(0)	        
+	        val usageModelEntity = EcoreUtil2.getAllContentsOfType(initModelEntity, UsageModel).get(0)
 	        
-	        val usageResource = context.eResource.resourceSet.getResource(URI.createURI(usageModelElement.getUsageModel()), true)
+	        val usageResource = context.eResource.resourceSet.getResource(URI.createURI(usageModelEntity.getUsageModel()), true)
 	        val usageModelContents = usageResource.getAllContents()
 	        
 	        val importedStrategy = (context as Variation).getVariationTyp()
 	        val variedEntityInterface = importedStrategy.getVariedEntityInterface()
 	        
-	        // Abgleich welche Variationen im Modell mit gewählter Strategie möglich sind
+	        possibleTargetsList = new LinkedList<Identifier>();
+	           
+	        while(usageModelContents.hasNext()){
+	        	val curEntity = usageModelContents.next()
+	        	if(curEntity.getClass().equals(variedEntityInterface)){
+	        		possibleTargetsList.addFirst(curEntity as Identifier)
+	        	}
+	        }
 	        
-	        
-	        //als Scope zurückgeben
-	    	//val candidates = 
-	    	//return Scopes.scopeFor(candidates)
+	    	val candidates = possibleTargetsList
+	    	return Scopes.scopeFor(candidates)
 	    }*/
 	    
 	    //Scope ToolConfiguration
 	    /*if(context instanceof ToolDefinition && reference == ExpAutoPackage.Literals.TOOL_DEFINITION__TOOL){
 	    	adapters = new ArrayList();
-	    	extensions = Platform.getExtensionRegistry().getExtensionPoint("toolName").getExtensions();
+	    	extensions = Platform.getExtensionRegistry().getExtensionPoint("toolAdapter").getExtensions();
+	    	
+	    	possibleToolConfigurations = new LinkedList<String>
+	    		    	
 	    	for (i=0; i<extensions.length; i++){
 	    		currExtension = extensions.get(i);
-	    		elements = currExtension.getConfigurationElements();
-	    		for (j=0; j<elements.length; j++){
-	    			try {
-	    				adapters.add(elements.get(j).createExecutableExtension("class"))
-	    			} catch (CoreException ce){
-	    				System.out.println("Error during load of ExtensionPoint: " + ce.getMessage);
-	    			}
-	    		}
+				val toolName = // Name auslesen
+				possibleToolConfigurations.addFirst(toolName)
 	    	}
-		
-			//Toolname auslesen
 			
-			//als Scope zurückgeben
-	    	//val candidates = 
-	    	//return Scopes.scopeFor(candidates)
+	    	val candidates = possibleToolConfigurations
+	    	return Scopes.scopeFor(candidates)
 	    }*/
 	    
 	    return super.getScope(context, reference)
