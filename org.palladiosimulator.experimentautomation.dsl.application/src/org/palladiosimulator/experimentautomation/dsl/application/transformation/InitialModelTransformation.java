@@ -23,28 +23,6 @@ public class InitialModelTransformation {
 	
 	public InitialModel transformInitialModel(org.palladiosimulator.experimentautomation.dsl.expAuto.InitialModel old) {
 		InitialModel initialModel = factory.createInitialModel();
-		EObject[] specifications = transformInitialModelSpecifications(old.getInitSpecifications());
-		
-		initialModel.setUsageModel((UsageModel)specifications[0]);
-		initialModel.setAllocation((Allocation)specifications[1]);
-		
-		if(specifications[2] == null) {
-			//TODO
-		} else {
-			initialModel.setMonitorRepository((MonitorRepository)specifications[2]);
-		}
-		
-		if(specifications[3] == null) {
-			//TODO
-		} else {
-			initialModel.setMiddlewareRepository((Repository)specifications[3]);
-		}
-		
-		if(specifications[4] == null) {
-			//TODO
-		} else {
-			initialModel.setEventMiddleWareRepository((Repository)specifications[4]);
-		}
 		
 		//TODO
 		initialModel.setReconfigurationRules(null);
@@ -54,30 +32,45 @@ public class InitialModelTransformation {
 		initialModel.setSystem(null);
 		initialModel.setUsageEvolution(null);
 		
+		transformInitialModelSpecifications(initialModel, old.getInitSpecifications());
+		
 		return initialModel;
 	}
 	
-	public EObject[] transformInitialModelSpecifications(InitSpecifications old) {
-		//0: UsageModel, 1: AllocationModel, 2: MonitorRepository, 3: MiddlewareRepository, 4: EventMiddlewareRepository
-		EObject[] specifications = new EObject[5];
+	public void transformInitialModelSpecifications(InitialModel initialModel, InitSpecifications old) {
 		EList<EObject> oldSpecifications = old.getSpecifications();
 		
 		for(int i=0; i < oldSpecifications.size(); i++) {
 			EObject currObject = oldSpecifications.get(i);
 			if(currObject instanceof org.palladiosimulator.experimentautomation.dsl.expAuto.UsageModel) {
-				specifications[0] = transformUsageModel((org.palladiosimulator.experimentautomation.dsl.expAuto.UsageModel)currObject);
+				UsageModel usageModel = transformUsageModel((org.palladiosimulator.experimentautomation.dsl.expAuto.UsageModel)currObject);
+				initialModel.setUsageModel(usageModel);
 			} else if(currObject instanceof AllocationModel) {
-				specifications[1] = transformAllocation((AllocationModel)currObject);
+				Allocation allocation = transformAllocation((AllocationModel)currObject);
+				initialModel.setAllocation(allocation);
 			} else if(currObject instanceof org.palladiosimulator.experimentautomation.dsl.expAuto.MonitorRepository) {
-				specifications[2] = transformMonitorRepository((org.palladiosimulator.experimentautomation.dsl.expAuto.MonitorRepository)currObject);
+				MonitorRepository monitorRepository = transformMonitorRepository((org.palladiosimulator.experimentautomation.dsl.expAuto.MonitorRepository)currObject);
+				if(monitorRepository == null) {
+					//TODO
+				} else {
+					initialModel.setMonitorRepository(monitorRepository);
+				}
 			} else if(currObject instanceof MiddlewareRepository) {
-				specifications[3] = transformMiddlewareRepository((MiddlewareRepository)currObject);
+				Repository middlewareRepository = transformMiddlewareRepository((MiddlewareRepository)currObject);
+				if(middlewareRepository == null) {
+					//TODO
+				} else {
+					initialModel.setMiddlewareRepository(middlewareRepository);
+				}
 			} else if(currObject instanceof EventMiddlewareRepository) {
-				specifications[4] = transformEventMiddlewareRepository((EventMiddlewareRepository)currObject);
+				Repository eventMiddlewareRepository = transformEventMiddlewareRepository((EventMiddlewareRepository)currObject);
+				if(eventMiddlewareRepository == null) {
+					//TODO
+				} else {
+					initialModel.setEventMiddleWareRepository(eventMiddlewareRepository);
+				}
 			}	
 		}
-		
-		return specifications;
 	}
 	
 	public UsageModel transformUsageModel(org.palladiosimulator.experimentautomation.dsl.expAuto.UsageModel old) {
