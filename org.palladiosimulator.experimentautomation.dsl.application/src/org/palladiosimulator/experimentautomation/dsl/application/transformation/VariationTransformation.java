@@ -16,11 +16,11 @@ import org.palladiosimulator.experimentautomation.experiments.impl.ExperimentsFa
 public class VariationTransformation {
 	private ExperimentsFactory factory;
 	
-	public VariationTransformation() {
+	protected VariationTransformation() {
 		factory = ExperimentsFactoryImpl.init();
 	}
 	
-	public Variation transformVariation(org.palladiosimulator.experimentautomation.dsl.expAuto.Variation old) {
+	protected Variation transformVariation(org.palladiosimulator.experimentautomation.dsl.expAuto.Variation old) {
 		Variation variation = factory.createVariation();
 		
 		variation.setName(old.getName());
@@ -35,7 +35,7 @@ public class VariationTransformation {
 		return variation;
 	}
 	
-	public ValueProvider transformValueProvider(EObject valueProvider) {
+	private ValueProvider transformValueProvider(EObject valueProvider) {
 		if (valueProvider instanceof NestedIntervalsValueProvider) {
 			return transformNestedIntervalsValueProvider((NestedIntervalsValueProvider)valueProvider);
 		} else if(valueProvider instanceof org.palladiosimulator.experimentautomation.dsl.expAuto.SetValueProvider) {
@@ -51,7 +51,7 @@ public class VariationTransformation {
 		}
 	}
 	
-	public NestedIntervalsLongValueProvider transformNestedIntervalsValueProvider(NestedIntervalsValueProvider old) {
+	private NestedIntervalsLongValueProvider transformNestedIntervalsValueProvider(NestedIntervalsValueProvider old) {
 		NestedIntervalsLongValueProvider valueProvider = factory.createNestedIntervalsLongValueProvider();
 		
 		valueProvider.setMinValue(old.getMin());
@@ -60,7 +60,7 @@ public class VariationTransformation {
 		return valueProvider;
 	}
 	
-	public SetValueProvider transformSetValueProvider(org.palladiosimulator.experimentautomation.dsl.expAuto.SetValueProvider old) {
+	private SetValueProvider transformSetValueProvider(org.palladiosimulator.experimentautomation.dsl.expAuto.SetValueProvider old) {
 		SetValueProvider valueProvider = factory.createSetValueProvider();
 		
 		String currValueString = "";
@@ -74,7 +74,7 @@ public class VariationTransformation {
 		return valueProvider;
 	}
 	
-	public LinearValueProvider transformLinearValueProvider(org.palladiosimulator.experimentautomation.dsl.expAuto.LinearValueProvider old) {
+	private LinearValueProvider transformLinearValueProvider(org.palladiosimulator.experimentautomation.dsl.expAuto.LinearValueProvider old) {
 		LinearValueProvider valueProvider = factory.createLinearValueProvider();
 		
 		valueProvider.setFactor(old.getFactor());
@@ -83,7 +83,7 @@ public class VariationTransformation {
 		return valueProvider;
 	}
 	
-	public ExponentialValueProvider transformExponentialValueProvider(org.palladiosimulator.experimentautomation.dsl.expAuto.ExponentialValueProvider old) {
+	private ExponentialValueProvider transformExponentialValueProvider(org.palladiosimulator.experimentautomation.dsl.expAuto.ExponentialValueProvider old) {
 		ExponentialValueProvider valueProvider = factory.createExponentialValueProvider();
 		
 		valueProvider.setBase(old.getBase());
@@ -91,7 +91,7 @@ public class VariationTransformation {
 		return valueProvider;
 	}
 	
-	public PolynomialValueProvider transformPolynomialValueProvider(org.palladiosimulator.experimentautomation.dsl.expAuto.PolynomialValueProvider old) {
+	private PolynomialValueProvider transformPolynomialValueProvider(org.palladiosimulator.experimentautomation.dsl.expAuto.PolynomialValueProvider old) {
 		PolynomialValueProvider valueProvider = factory.createPolynomialValueProvider();
 		
 		valueProvider.setExponent(old.getExponent());

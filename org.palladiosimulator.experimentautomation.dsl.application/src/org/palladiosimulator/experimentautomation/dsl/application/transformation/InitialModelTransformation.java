@@ -17,11 +17,11 @@ import org.palladiosimulator.pcm.usagemodel.UsageModel;
 public class InitialModelTransformation {
 	private ExperimentsFactory factory;
 	
-	public InitialModelTransformation() {
+	protected InitialModelTransformation() {
 		factory = ExperimentsFactoryImpl.init();
 	}
 	
-	public InitialModel transformInitialModel(org.palladiosimulator.experimentautomation.dsl.expAuto.InitialModel old) {
+	protected InitialModel transformInitialModel(org.palladiosimulator.experimentautomation.dsl.expAuto.InitialModel old) {
 		InitialModel initialModel = factory.createInitialModel();
 		
 		//TODO
@@ -37,7 +37,7 @@ public class InitialModelTransformation {
 		return initialModel;
 	}
 	
-	public void transformInitialModelSpecifications(InitialModel initialModel, InitSpecifications old) {
+	private void transformInitialModelSpecifications(InitialModel initialModel, InitSpecifications old) {
 		EList<EObject> oldSpecifications = old.getSpecifications();
 		
 		for(int i=0; i < oldSpecifications.size(); i++) {
@@ -73,31 +73,31 @@ public class InitialModelTransformation {
 		}
 	}
 	
-	public UsageModel transformUsageModel(org.palladiosimulator.experimentautomation.dsl.expAuto.UsageModel old) {
+	private UsageModel transformUsageModel(org.palladiosimulator.experimentautomation.dsl.expAuto.UsageModel old) {
 		//UsageModel usageModel = factory.create
 		
 		return null;	//TODO
 	}
 	
-	public Allocation transformAllocation(AllocationModel old) {
+	private Allocation transformAllocation(AllocationModel old) {
 		//Allocation allocation = factory.create
 		
 		return null;	//TODO
 	}
 	
-	public MonitorRepository transformMonitorRepository(org.palladiosimulator.experimentautomation.dsl.expAuto.MonitorRepository old) {
+	private MonitorRepository transformMonitorRepository(org.palladiosimulator.experimentautomation.dsl.expAuto.MonitorRepository old) {
 		//MonitorRepository monitorRepository = factory.create
 				
 		return null;	//TODO
 	}
 	
-	public Repository transformMiddlewareRepository(MiddlewareRepository old) {
+	private Repository transformMiddlewareRepository(MiddlewareRepository old) {
 		//Repository repository = factory.create
 				
 		return null;	//TODO
 	}
 	
-	public Repository transformEventMiddlewareRepository(EventMiddlewareRepository old) {
+	private Repository transformEventMiddlewareRepository(EventMiddlewareRepository old) {
 		//Repository repository = factory.create
 		
 		return null;	//TODO
