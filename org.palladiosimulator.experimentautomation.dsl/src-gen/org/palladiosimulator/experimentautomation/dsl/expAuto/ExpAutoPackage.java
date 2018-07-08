@@ -513,7 +513,7 @@ public interface ExpAutoPackage extends EPackage
   int VARIATION__NAME = 1;
 
   /**
-   * The feature id for the '<em><b>Target</b></em>' attribute.
+   * The feature id for the '<em><b>Target</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1359,15 +1359,15 @@ public interface ExpAutoPackage extends EPackage
   EAttribute getVariation_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.Variation#getTarget <em>Target</em>}'.
+   * Returns the meta object for the reference '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.Variation#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Target</em>'.
+   * @return the meta object for the reference '<em>Target</em>'.
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.Variation#getTarget()
    * @see #getVariation()
    * @generated
    */
-  EAttribute getVariation_Target();
+  EReference getVariation_Target();
 
   /**
    * Returns the meta object for the attribute '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.Variation#getMaxVariations <em>Max Variations</em>}'.
@@ -2081,12 +2081,12 @@ public interface ExpAutoPackage extends EPackage
     EAttribute VARIATION__NAME = eINSTANCE.getVariation_Name();
 
     /**
-     * The meta object literal for the '<em><b>Target</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Target</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VARIATION__TARGET = eINSTANCE.getVariation_Target();
+    EReference VARIATION__TARGET = eINSTANCE.getVariation_Target();
 
     /**
      * The meta object literal for the '<em><b>Max Variations</b></em>' attribute feature.

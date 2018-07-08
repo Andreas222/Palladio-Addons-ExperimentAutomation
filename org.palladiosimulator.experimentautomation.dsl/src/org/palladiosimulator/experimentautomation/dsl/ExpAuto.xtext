@@ -69,7 +69,7 @@ MonitorRepository:
 Variation:
 	'variation' '=' variationTyp = [ValueVariation] name = ID
 	'{'
-		'target' '=' target = /*[Identifier]*/STRING
+		'target' '=' target = [Identifier]
 		'maxVariations' '=' maxVariations = INT
 		'values' '=' valueProvider = (NestedIntervalsValueProvider | SetValueProvider | LinearValueProvider | ExponentialValueProvider | PolynomialValueProvider)
 	'}'

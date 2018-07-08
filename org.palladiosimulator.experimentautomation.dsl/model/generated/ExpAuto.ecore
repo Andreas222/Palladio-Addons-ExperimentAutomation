@@ -61,7 +61,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Variation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="variationTyp" eType="ecore:EClass platform:/resource/org.palladiosimulator.experimentautomation/model/experimentautomation.ecore#//variation/ValueVariation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="target" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxVariations" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="valueProvider" eType="ecore:EClass platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"
         containment="true"/>

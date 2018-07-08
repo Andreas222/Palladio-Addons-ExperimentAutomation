@@ -1,4 +1,4 @@
-package org.palladiosimulator.experimentautomation.dsl;
+package org.palladiosimulator.experimentautomation.dsl.extensionPoint;
 
 import java.util.HashMap;
 

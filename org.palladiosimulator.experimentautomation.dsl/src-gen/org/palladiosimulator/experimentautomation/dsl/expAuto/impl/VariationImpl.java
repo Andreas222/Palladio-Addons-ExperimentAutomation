@@ -3,6 +3,8 @@
  */
 package org.palladiosimulator.experimentautomation.dsl.expAuto.impl;
 
+import de.uka.ipd.sdq.identifier.Identifier;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -68,24 +70,14 @@ public class VariationImpl extends MinimalEObjectImpl.Container implements Varia
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getTarget() <em>Target</em>}' attribute.
+   * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getTarget()
    * @generated
    * @ordered
    */
-  protected static final String TARGET_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getTarget() <em>Target</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTarget()
-   * @generated
-   * @ordered
-   */
-  protected String target = TARGET_EDEFAULT;
+  protected Identifier target;
 
   /**
    * The default value of the '{@link #getMaxVariations() <em>Max Variations</em>}' attribute.
@@ -209,7 +201,27 @@ public class VariationImpl extends MinimalEObjectImpl.Container implements Varia
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getTarget()
+  public Identifier getTarget()
+  {
+    if (target != null && ((EObject)target).eIsProxy())
+    {
+      InternalEObject oldTarget = (InternalEObject)target;
+      target = (Identifier)eResolveProxy(oldTarget);
+      if (target != oldTarget)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ExpAutoPackage.VARIATION__TARGET, oldTarget, target));
+      }
+    }
+    return target;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Identifier basicGetTarget()
   {
     return target;
   }
@@ -219,9 +231,9 @@ public class VariationImpl extends MinimalEObjectImpl.Container implements Varia
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTarget(String newTarget)
+  public void setTarget(Identifier newTarget)
   {
-    String oldTarget = target;
+    Identifier oldTarget = target;
     target = newTarget;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ExpAutoPackage.VARIATION__TARGET, oldTarget, target));
@@ -330,7 +342,8 @@ public class VariationImpl extends MinimalEObjectImpl.Container implements Varia
       case ExpAutoPackage.VARIATION__NAME:
         return getName();
       case ExpAutoPackage.VARIATION__TARGET:
-        return getTarget();
+        if (resolve) return getTarget();
+        return basicGetTarget();
       case ExpAutoPackage.VARIATION__MAX_VARIATIONS:
         return getMaxVariations();
       case ExpAutoPackage.VARIATION__VALUE_PROVIDER:
@@ -356,7 +369,7 @@ public class VariationImpl extends MinimalEObjectImpl.Container implements Varia
         setName((String)newValue);
         return;
       case ExpAutoPackage.VARIATION__TARGET:
-        setTarget((String)newValue);
+        setTarget((Identifier)newValue);
         return;
       case ExpAutoPackage.VARIATION__MAX_VARIATIONS:
         setMaxVariations((Integer)newValue);
@@ -385,7 +398,7 @@ public class VariationImpl extends MinimalEObjectImpl.Container implements Varia
         setName(NAME_EDEFAULT);
         return;
       case ExpAutoPackage.VARIATION__TARGET:
-        setTarget(TARGET_EDEFAULT);
+        setTarget((Identifier)null);
         return;
       case ExpAutoPackage.VARIATION__MAX_VARIATIONS:
         setMaxVariations(MAX_VARIATIONS_EDEFAULT);
@@ -412,7 +425,7 @@ public class VariationImpl extends MinimalEObjectImpl.Container implements Varia
       case ExpAutoPackage.VARIATION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ExpAutoPackage.VARIATION__TARGET:
-        return TARGET_EDEFAULT == null ? target != null : !TARGET_EDEFAULT.equals(target);
+        return target != null;
       case ExpAutoPackage.VARIATION__MAX_VARIATIONS:
         return maxVariations != MAX_VARIATIONS_EDEFAULT;
       case ExpAutoPackage.VARIATION__VALUE_PROVIDER:
@@ -434,8 +447,6 @@ public class VariationImpl extends MinimalEObjectImpl.Container implements Varia
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", target: ");
-    result.append(target);
     result.append(", maxVariations: ");
     result.append(maxVariations);
     result.append(')');

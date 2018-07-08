@@ -1036,19 +1036,14 @@ ruleVariation returns [EObject current=null]
 		}
 		(
 			(
-				lv_target_7_0=RULE_STRING
-				{
-					newLeafNode(lv_target_7_0, grammarAccess.getVariationAccess().getTargetSTRINGTerminalRuleCall_7_0());
-				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getVariationRule());
 					}
-					setWithLastConsumed(
-						$current,
-						"target",
-						lv_target_7_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+				otherlv_7=RULE_ID
+				{
+					newLeafNode(otherlv_7, grammarAccess.getVariationAccess().getTargetIdentifierCrossReference_7_0());
 				}
 			)
 		)

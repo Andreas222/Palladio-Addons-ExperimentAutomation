@@ -71,34 +71,36 @@ class ExpAutoScopeProvider extends AbstractExpAutoScopeProvider {
 	    	}
 	    	
 	    	val candidates = valueVariationList
-	    	return Scopes.scopeFor(candidates)
+	    	val newScope = Scopes.scopeFor(candidates)
+	    	return newScope
 	    }
 	    
 	    //Scope VariationTarget
-	    /*if (context instanceof Variation && reference == ExpAutoPackage.Literals.VARIATION__TARGET) {
+	    if (context instanceof Variation && reference == ExpAutoPackage.Literals.VARIATION__TARGET) {
 	        val experimentSpecificationEntity = EcoreUtil2.getRootContainer(context)
 	        val experimentEntity = EcoreUtil2.getRootContainer(experimentSpecificationEntity)
 	        val initModelEntity = EcoreUtil2.getAllContentsOfType(experimentEntity, InitialModel).get(0)	        
 	        val usageModelEntity = EcoreUtil2.getAllContentsOfType(initModelEntity, UsageModel).get(0)
 	        
 	        val usageResource = context.eResource.resourceSet.getResource(URI.createURI(usageModelEntity.getUsageModel()), true)
-	        val usageModelContents = usageResource.getAllContents()
+	        val usageRootEntity = usageResource.getContents().get(0)
+	        val usageModelContents = EcoreUtil2.getAllContentsOfType(usageRootEntity, Identifier)
 	        
 	        val importedStrategy = (context as Variation).getVariationTyp()
 	        val variedEntityInterface = importedStrategy.getVariedEntityInterface()
 	        
 	        possibleTargetsList = new LinkedList<Identifier>();
-	           
-	        while(usageModelContents.hasNext()){
-	        	val curEntity = usageModelContents.next()
-	        	if(curEntity.getClass().equals(variedEntityInterface)){
-	        		possibleTargetsList.addFirst(curEntity as Identifier)
+	        
+	        for(Identifier currIdentifier : usageModelContents){
+	        	if(/*curEntity.getClass().equals(variedEntityInterface)*/true){
+	        		possibleTargetsList.addFirst(currIdentifier)
 	        	}
 	        }
 	        
 	    	val candidates = possibleTargetsList
-	    	return Scopes.scopeFor(candidates)
-	    }*/
+	    	val newScope = Scopes.scopeFor(candidates)
+	    	return newScope
+	    }
 	    
 	    //Scope ToolConfiguration
 	    /*if(context instanceof ToolDefinition && reference == ExpAutoPackage.Literals.TOOL_DEFINITION__TOOL){

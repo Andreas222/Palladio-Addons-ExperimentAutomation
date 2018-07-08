@@ -5137,9 +5137,13 @@ rule__Variation__TargetAssignment_7
 	}
 :
 	(
-		{ before(grammarAccess.getVariationAccess().getTargetSTRINGTerminalRuleCall_7_0()); }
-		RULE_STRING
-		{ after(grammarAccess.getVariationAccess().getTargetSTRINGTerminalRuleCall_7_0()); }
+		{ before(grammarAccess.getVariationAccess().getTargetIdentifierCrossReference_7_0()); }
+		(
+			{ before(grammarAccess.getVariationAccess().getTargetIdentifierIDTerminalRuleCall_7_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getVariationAccess().getTargetIdentifierIDTerminalRuleCall_7_0_1()); }
+		)
+		{ after(grammarAccess.getVariationAccess().getTargetIdentifierCrossReference_7_0()); }
 	)
 ;
 finally {
