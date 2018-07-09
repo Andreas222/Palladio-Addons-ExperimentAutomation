@@ -13,6 +13,8 @@ import org.palladiosimulator.experimentautomation.experiments.SetValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.ValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.impl.ExperimentsFactoryImpl;
 
+import de.uka.ipd.sdq.identifier.Identifier;
+
 public class VariationTransformation {
 	private ExperimentsFactory factory;
 	
@@ -26,13 +28,19 @@ public class VariationTransformation {
 		variation.setName(old.getName());
 		variation.setMaxVariations(old.getMaxVariations());
 		variation.setType(old.getVariationTyp());
-		//variation.setVariedObjectId(old.getTarget());
-		//TODO
-		variation.setMinValue(0);	// !!!
-		variation.setMaxValue(0);	// !!!
+		variation.setVariedObjectId(transformVariationTarget(old.getTarget()));
+		
+		//TODO Defaultwerte setzen
+		//variation.setMinValue(0);
+		//variation.setMaxValue(0);
+		
 		variation.setValueProvider(transformValueProvider(old.getValueProvider()));
 		
 		return variation;
+	}
+	
+	private String transformVariationTarget(Identifier old) {
+		return old.getId();
 	}
 	
 	private ValueProvider transformValueProvider(EObject valueProvider) {

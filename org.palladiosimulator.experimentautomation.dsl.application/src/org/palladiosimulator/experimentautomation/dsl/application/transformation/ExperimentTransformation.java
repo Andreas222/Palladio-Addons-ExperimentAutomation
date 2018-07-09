@@ -2,6 +2,7 @@ package org.palladiosimulator.experimentautomation.dsl.application.transformatio
 
 import java.util.LinkedList;
 
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.palladiosimulator.experimentautomation.abstractsimulation.AbstractsimulationFactory;
@@ -38,10 +39,10 @@ public class ExperimentTransformation {
 		Experiment experiment = expFactory.createExperiment();
 		
 		experiment.setName(old.getName());
+		experiment.setId(old.getName());
 		experiment.setExperimentDesign(transformDesign(old.getDesign()));
 		
-		//TODO
-		experiment.setId(null);
+		//TODO Defaultwert setzen
 		experiment.setResponseMeasurement(null);
 		
 		transformExperimentSpecifications(experiment, old.getExperimentSpecifications());
@@ -61,7 +62,9 @@ public class ExperimentTransformation {
 	
 	private void transformExperimentSpecifications(Experiment experiment, ExperimentSpecifications old) {
 		EList<EObject> specifications = old.getSpecifications();
-		LinkedList<Variation> variations = new LinkedList<Variation>();
+		EList<Variation> variations = new BasicEList<Variation>();
+		EList<StopCondition> stopConditions = new BasicEList<StopCondition>();
+		EList<ToolConfiguration> toolConfigurations = new BasicEList<ToolConfiguration>();
 		VariationTransformation variationTransformation = new VariationTransformation();
 		InitialModelTransformation initialModelTransformation = new InitialModelTransformation();
 		
@@ -71,29 +74,37 @@ public class ExperimentTransformation {
 				experiment.setDescription(transformDescription((Description)currObject));
 			} else if(currObject instanceof org.palladiosimulator.experimentautomation.dsl.expAuto.Variation) {
 				Variation variation = variationTransformation.transformVariation((org.palladiosimulator.experimentautomation.dsl.expAuto.Variation)currObject);
-				variations.addFirst(variation);
+				variations.add(variation);
 			} else if(currObject instanceof org.palladiosimulator.experimentautomation.dsl.expAuto.InitialModel) {
 				InitialModel initialModel = initialModelTransformation.transformInitialModel((org.palladiosimulator.experimentautomation.dsl.expAuto.InitialModel)currObject);
 				experiment.setInitialModel(initialModel);
 			} else if(currObject instanceof StopTimeCondition) {
-				//TODO
+				StopCondition condition = transformStopTimeCondition((StopTimeCondition)currObject);
+				stopConditions.add(condition);
 			} else if(currObject instanceof StopCountCondition) {
-				//TODO
+				StopCondition condition = transformStopCountCondition((StopCountCondition)currObject);
+				stopConditions.add(condition);
 			} else if(currObject instanceof NumberOfExperiments) {
 				experiment.setRepetitions(transformNumberOfExperiments((NumberOfExperiments)currObject));
 			} else if(currObject instanceof ToolDefinition) {
-				//TODO
+				ToolConfiguration configuration = transformToolDefinition((ToolDefinition)currObject);
+				toolConfigurations.add(configuration);
 			} else if(currObject instanceof SeedDefinition) {
-				//TODO
+				//TODO Dummyimplementierung austauschen
+				transformSeedDefinition((SeedDefinition)currObject);
 			} else if(currObject instanceof ExperimentDatasource) {
-				//TODO
+				//TODO Dummyimplementierung austauschen
+				transformExperimentDatasource((ExperimentDatasource)currObject);
 			} else {
 				// Never possible
 			}
 		}
 		
-		//TODO
-		//experiment.setVariations(variations)
+		//TODO Zugriff auf das entsprechende EStructuralFeature ??
+		//experiment.eSet(, variations)
+		//experiment.eSet(, stopConditions);
+		//experiment.eSet(, toolConfigurations);
+		//TODO Listen anlegen notwendig? vgl. Beschreibung in Klasse ExpautoToExperiments
 	}
 	
 	private String transformDescription(Description old) {
@@ -117,11 +128,11 @@ public class ExperimentTransformation {
 	}
 	
 	private ToolConfiguration transformToolDefinition(ToolDefinition old) {
-		//TODO
+		//TODO entweder konkrete Erstellung des Tooladapters (String in Grammatik) oder keine Transformation notwendig (Abhängig von Grammatik)
 		return null;
 	}
 	
-	//TODO
+	//TODO Entsprechung in Zielmodell finden
 	private void transformSeedDefinition(SeedDefinition old) {
 	}
 	

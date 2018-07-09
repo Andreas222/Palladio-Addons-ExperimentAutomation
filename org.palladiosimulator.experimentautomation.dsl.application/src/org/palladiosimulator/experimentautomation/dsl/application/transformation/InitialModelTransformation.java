@@ -10,27 +10,43 @@ import org.palladiosimulator.experimentautomation.experiments.ExperimentsFactory
 import org.palladiosimulator.experimentautomation.experiments.InitialModel;
 import org.palladiosimulator.experimentautomation.experiments.impl.ExperimentsFactoryImpl;
 import org.palladiosimulator.monitorrepository.MonitorRepository;
+import org.palladiosimulator.monitorrepository.MonitorRepositoryFactory;
+import org.palladiosimulator.monitorrepository.impl.MonitorRepositoryFactoryImpl;
 import org.palladiosimulator.pcm.allocation.Allocation;
+import org.palladiosimulator.pcm.allocation.AllocationFactory;
+import org.palladiosimulator.pcm.allocation.impl.AllocationFactoryImpl;
 import org.palladiosimulator.pcm.repository.Repository;
+import org.palladiosimulator.pcm.repository.RepositoryFactory;
+import org.palladiosimulator.pcm.repository.impl.RepositoryFactoryImpl;
 import org.palladiosimulator.pcm.usagemodel.UsageModel;
+import org.palladiosimulator.pcm.usagemodel.UsagemodelFactory;
+import org.palladiosimulator.pcm.usagemodel.impl.UsagemodelFactoryImpl;
 
 public class InitialModelTransformation {
-	private ExperimentsFactory factory;
+	private ExperimentsFactory experimentsfactory;
+	private UsagemodelFactory usageFactory;
+	private RepositoryFactory repositoryFactory;
+	private AllocationFactory allocationFactory;
+	private MonitorRepositoryFactory monitorFactory;
 	
 	protected InitialModelTransformation() {
-		factory = ExperimentsFactoryImpl.init();
+		experimentsfactory = ExperimentsFactoryImpl.init();
+		usageFactory = UsagemodelFactoryImpl.init();
+		repositoryFactory = RepositoryFactoryImpl.init();
+		allocationFactory = AllocationFactoryImpl.init();
+		monitorFactory = MonitorRepositoryFactoryImpl.init();
 	}
 	
 	protected InitialModel transformInitialModel(org.palladiosimulator.experimentautomation.dsl.expAuto.InitialModel old) {
-		InitialModel initialModel = factory.createInitialModel();
+		InitialModel initialModel = experimentsfactory.createInitialModel();
 		
-		//TODO
-		initialModel.setReconfigurationRules(null);
-		initialModel.setRepository(null);
-		initialModel.setResourceEnvironment(null);
-		initialModel.setServiceLevelObjectives(null);
-		initialModel.setSystem(null);
-		initialModel.setUsageEvolution(null);
+		//TODO Defaultwerte setzen
+		//initialModel.setReconfigurationRules(null);
+		//initialModel.setRepository(null);
+		//initialModel.setResourceEnvironment(null);
+		//initialModel.setServiceLevelObjectives(null);
+		//initialModel.setSystem(null);
+		//initialModel.setUsageEvolution(null);
 		
 		transformInitialModelSpecifications(initialModel, old.getInitSpecifications());
 		
@@ -51,21 +67,21 @@ public class InitialModelTransformation {
 			} else if(currObject instanceof org.palladiosimulator.experimentautomation.dsl.expAuto.MonitorRepository) {
 				MonitorRepository monitorRepository = transformMonitorRepository((org.palladiosimulator.experimentautomation.dsl.expAuto.MonitorRepository)currObject);
 				if(monitorRepository == null) {
-					//TODO
+					//TODO Defaultwert setzen
 				} else {
 					initialModel.setMonitorRepository(monitorRepository);
 				}
 			} else if(currObject instanceof MiddlewareRepository) {
 				Repository middlewareRepository = transformMiddlewareRepository((MiddlewareRepository)currObject);
 				if(middlewareRepository == null) {
-					//TODO
+					//TODO Defaultwert setzen
 				} else {
 					initialModel.setMiddlewareRepository(middlewareRepository);
 				}
 			} else if(currObject instanceof EventMiddlewareRepository) {
 				Repository eventMiddlewareRepository = transformEventMiddlewareRepository((EventMiddlewareRepository)currObject);
 				if(eventMiddlewareRepository == null) {
-					//TODO
+					//TODO Defaultwert setzen
 				} else {
 					initialModel.setEventMiddleWareRepository(eventMiddlewareRepository);
 				}
@@ -73,33 +89,34 @@ public class InitialModelTransformation {
 		}
 	}
 	
+	//TODO Eigenschaften der Modelle setzen (Pfadangabe ausreichend?, vgl. espresso.experiments)
 	private UsageModel transformUsageModel(org.palladiosimulator.experimentautomation.dsl.expAuto.UsageModel old) {
-		//UsageModel usageModel = factory.create
-		
-		return null;	//TODO
+		UsageModel usageModel = usageFactory.createUsageModel();
+		//
+		return usageModel;
 	}
 	
 	private Allocation transformAllocation(AllocationModel old) {
-		//Allocation allocation = factory.create
-		
-		return null;	//TODO
+		Allocation allocation = allocationFactory.createAllocation();
+		//
+		return allocation;
 	}
 	
 	private MonitorRepository transformMonitorRepository(org.palladiosimulator.experimentautomation.dsl.expAuto.MonitorRepository old) {
-		//MonitorRepository monitorRepository = factory.create
-				
-		return null;	//TODO
+		MonitorRepository monitorRepository = monitorFactory.createMonitorRepository();
+		//
+		return monitorRepository;
 	}
 	
 	private Repository transformMiddlewareRepository(MiddlewareRepository old) {
-		//Repository repository = factory.create
-				
-		return null;	//TODO
+		Repository repository = repositoryFactory.createRepository();
+		//
+		return repository;
 	}
 	
 	private Repository transformEventMiddlewareRepository(EventMiddlewareRepository old) {
-		//Repository repository = factory.create
-		
-		return null;	//TODO
+		Repository repository = repositoryFactory.createRepository();
+		//
+		return repository;
 	}
 }
