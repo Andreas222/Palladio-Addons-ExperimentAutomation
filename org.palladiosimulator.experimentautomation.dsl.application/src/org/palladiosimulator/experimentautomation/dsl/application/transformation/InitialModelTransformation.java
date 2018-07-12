@@ -1,7 +1,10 @@
 package org.palladiosimulator.experimentautomation.dsl.application.transformation;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.AllocationModel;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.EventMiddlewareRepository;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.InitSpecifications;
@@ -28,25 +31,26 @@ public class InitialModelTransformation {
 	private RepositoryFactory repositoryFactory;
 	private AllocationFactory allocationFactory;
 	private MonitorRepositoryFactory monitorFactory;
+	private ResourceSet rs;
 	
-	protected InitialModelTransformation() {
+	protected InitialModelTransformation(ResourceSet rs) {
 		experimentsfactory = ExperimentsFactoryImpl.init();
 		usageFactory = UsagemodelFactoryImpl.init();
 		repositoryFactory = RepositoryFactoryImpl.init();
 		allocationFactory = AllocationFactoryImpl.init();
 		monitorFactory = MonitorRepositoryFactoryImpl.init();
+		this.rs = rs;
 	}
 	
 	protected InitialModel transformInitialModel(org.palladiosimulator.experimentautomation.dsl.expAuto.InitialModel old) {
 		InitialModel initialModel = experimentsfactory.createInitialModel();
 		
-		//TODO Defaultwerte setzen
-		//initialModel.setReconfigurationRules(null);
-		//initialModel.setRepository(null);
-		//initialModel.setResourceEnvironment(null);
-		//initialModel.setServiceLevelObjectives(null);
-		//initialModel.setSystem(null);
-		//initialModel.setUsageEvolution(null);
+		initialModel.setReconfigurationRules(null);
+		initialModel.setRepository(null);
+		initialModel.setResourceEnvironment(null);
+		initialModel.setServiceLevelObjectives(null);
+		initialModel.setSystem(null);
+		initialModel.setUsageEvolution(null);
 		
 		transformInitialModelSpecifications(initialModel, old.getInitSpecifications());
 		
@@ -89,34 +93,38 @@ public class InitialModelTransformation {
 		}
 	}
 	
-	//TODO Eigenschaften der Modelle setzen (Pfadangabe ausreichend?, vgl. espresso.experiments)
 	private UsageModel transformUsageModel(org.palladiosimulator.experimentautomation.dsl.expAuto.UsageModel old) {
-		UsageModel usageModel = usageFactory.createUsageModel();
-		//
+		URI currUri = URI.createURI(old.getUsageModel());
+		Resource importedResource = rs.getResource(currUri, true);
+		UsageModel usageModel = (UsageModel)importedResource.getContents().get(0);
 		return usageModel;
 	}
 	
 	private Allocation transformAllocation(AllocationModel old) {
-		Allocation allocation = allocationFactory.createAllocation();
-		//
+		URI currUri = URI.createURI(old.getAllocation());
+		Resource importedResource = rs.getResource(currUri, true);
+		Allocation allocation = (Allocation)importedResource.getContents().get(0);
 		return allocation;
 	}
 	
 	private MonitorRepository transformMonitorRepository(org.palladiosimulator.experimentautomation.dsl.expAuto.MonitorRepository old) {
-		MonitorRepository monitorRepository = monitorFactory.createMonitorRepository();
-		//
+		URI currUri = URI.createURI(old.getMonitorRepository());
+		Resource importedResource = rs.getResource(currUri, true);
+		MonitorRepository monitorRepository = (MonitorRepository)importedResource.getContents().get(0);
 		return monitorRepository;
 	}
 	
 	private Repository transformMiddlewareRepository(MiddlewareRepository old) {
-		Repository repository = repositoryFactory.createRepository();
-		//
+		URI currUri = URI.createURI(old.getMiddlewareRepository());
+		Resource importedResource = rs.getResource(currUri, true);
+		Repository repository = (Repository)importedResource.getContents().get(0);
 		return repository;
 	}
 	
 	private Repository transformEventMiddlewareRepository(EventMiddlewareRepository old) {
-		Repository repository = repositoryFactory.createRepository();
-		//
+		URI currUri = URI.createURI(old.getEventMiddelwareRepository());
+		Resource importedResource = rs.getResource(currUri, true);
+		Repository repository = (Repository)importedResource.getContents().get(0);
 		return repository;
 	}
 }

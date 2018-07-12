@@ -25,14 +25,13 @@ public class VariationTransformation {
 	protected Variation transformVariation(org.palladiosimulator.experimentautomation.dsl.expAuto.Variation old) {
 		Variation variation = factory.createVariation();
 		
+		variation.setMinValue(0);
+		variation.setMaxValue(0);
+		
 		variation.setName(old.getName());
 		variation.setMaxVariations(old.getMaxVariations());
 		variation.setType(old.getVariationTyp());
 		variation.setVariedObjectId(transformVariationTarget(old.getTarget()));
-		
-		//TODO Defaultwerte setzen
-		//variation.setMinValue(0);
-		//variation.setMaxValue(0);
 		
 		variation.setValueProvider(transformValueProvider(old.getValueProvider()));
 		

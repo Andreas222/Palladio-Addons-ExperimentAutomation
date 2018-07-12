@@ -1,10 +1,9 @@
 package org.palladiosimulator.experimentautomation.dsl.application.transformation;
 
-import java.util.LinkedList;
-
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.palladiosimulator.experimentautomation.abstractsimulation.AbstractsimulationFactory;
 import org.palladiosimulator.experimentautomation.abstractsimulation.MeasurementCountStopCondition;
 import org.palladiosimulator.experimentautomation.abstractsimulation.SimTimeStopCondition;
@@ -29,10 +28,12 @@ import org.palladiosimulator.experimentautomation.experiments.impl.ExperimentsFa
 public class ExperimentTransformation {
 	private ExperimentsFactory expFactory;
 	private AbstractsimulationFactory absFactory;
+	private ResourceSet rs;
 	
-	protected ExperimentTransformation() {
+	protected ExperimentTransformation(ResourceSet rs) {
 		expFactory = ExperimentsFactoryImpl.init();
 		absFactory = AbstractsimulationFactoryImpl.init();
+		this.rs = rs;
 	}
 	
 	protected Experiment transformExperiment(org.palladiosimulator.experimentautomation.dsl.expAuto.Experiment old) {
@@ -62,11 +63,10 @@ public class ExperimentTransformation {
 	
 	private void transformExperimentSpecifications(Experiment experiment, ExperimentSpecifications old) {
 		EList<EObject> specifications = old.getSpecifications();
-		EList<Variation> variations = new BasicEList<Variation>();
 		EList<StopCondition> stopConditions = new BasicEList<StopCondition>();
-		EList<ToolConfiguration> toolConfigurations = new BasicEList<ToolConfiguration>();
 		VariationTransformation variationTransformation = new VariationTransformation();
-		InitialModelTransformation initialModelTransformation = new InitialModelTransformation();
+		InitialModelTransformation initialModelTransformation = new InitialModelTransformation(rs);
+		ToolConfigurationTransformation toolConfigurationTransformation = new ToolConfigurationTransformation();
 		
 		for(int i = 0; i < specifications.size(); i++) {
 			EObject currObject = specifications.get(i);
@@ -74,7 +74,7 @@ public class ExperimentTransformation {
 				experiment.setDescription(transformDescription((Description)currObject));
 			} else if(currObject instanceof org.palladiosimulator.experimentautomation.dsl.expAuto.Variation) {
 				Variation variation = variationTransformation.transformVariation((org.palladiosimulator.experimentautomation.dsl.expAuto.Variation)currObject);
-				variations.add(variation);
+				experiment.getVariations().add(variation);
 			} else if(currObject instanceof org.palladiosimulator.experimentautomation.dsl.expAuto.InitialModel) {
 				InitialModel initialModel = initialModelTransformation.transformInitialModel((org.palladiosimulator.experimentautomation.dsl.expAuto.InitialModel)currObject);
 				experiment.setInitialModel(initialModel);
@@ -87,24 +87,16 @@ public class ExperimentTransformation {
 			} else if(currObject instanceof NumberOfExperiments) {
 				experiment.setRepetitions(transformNumberOfExperiments((NumberOfExperiments)currObject));
 			} else if(currObject instanceof ToolDefinition) {
-				ToolConfiguration configuration = transformToolDefinition((ToolDefinition)currObject);
-				toolConfigurations.add(configuration);
+				ToolConfiguration configuration = toolConfigurationTransformation.transformToolDefinition((ToolDefinition)currObject);
+				experiment.getToolConfiguration().add(configuration);
 			} else if(currObject instanceof SeedDefinition) {
-				//TODO Dummyimplementierung austauschen
-				transformSeedDefinition((SeedDefinition)currObject);
+				//TODO Grammatik anpassen?
 			} else if(currObject instanceof ExperimentDatasource) {
-				//TODO Dummyimplementierung austauschen
-				transformExperimentDatasource((ExperimentDatasource)currObject);
+				//TODO Grammatik anpassen?
 			} else {
 				// Never possible
 			}
 		}
-		
-		//TODO Zugriff auf das entsprechende EStructuralFeature ??
-		//experiment.eSet(, variations)
-		//experiment.eSet(, stopConditions);
-		//experiment.eSet(, toolConfigurations);
-		//TODO Listen anlegen notwendig? vgl. Beschreibung in Klasse ExpautoToExperiments
 	}
 	
 	private String transformDescription(Description old) {
@@ -125,17 +117,5 @@ public class ExperimentTransformation {
 	
 	private int transformNumberOfExperiments(NumberOfExperiments old) {
 		return old.getNumberOfRepetitions();
-	}
-	
-	private ToolConfiguration transformToolDefinition(ToolDefinition old) {
-		//TODO entweder konkrete Erstellung des Tooladapters (String in Grammatik) oder keine Transformation notwendig (Abhängig von Grammatik)
-		return null;
-	}
-	
-	//TODO Entsprechung in Zielmodell finden
-	private void transformSeedDefinition(SeedDefinition old) {
-	}
-	
-	private void transformExperimentDatasource(ExperimentDatasource old) {
 	}
 }
