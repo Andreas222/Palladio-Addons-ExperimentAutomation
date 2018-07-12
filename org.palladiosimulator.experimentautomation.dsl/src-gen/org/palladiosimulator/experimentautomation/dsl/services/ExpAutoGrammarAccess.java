@@ -85,6 +85,25 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class DatasourceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.Datasource");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cFileDatasourceParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cMemoryDatasourceParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Datasource:
+		//	FileDatasource | MemoryDatasource;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//FileDatasource | MemoryDatasource
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//FileDatasource
+		public RuleCall getFileDatasourceParserRuleCall_0() { return cFileDatasourceParserRuleCall_0; }
+		
+		//MemoryDatasource
+		public RuleCall getMemoryDatasourceParserRuleCall_1() { return cMemoryDatasourceParserRuleCall_1; }
+	}
+	public class FileDatasourceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.FileDatasource");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cDatasourceKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -97,7 +116,7 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSourceURISTRINGTerminalRuleCall_5_0 = (RuleCall)cSourceURIAssignment_5.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
-		//Datasource:
+		//FileDatasource:
 		//	'datasource' name=ID ':' sourceType='EDP2' '(' sourceURI=STRING ')';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -133,6 +152,41 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
+	}
+	public class MemoryDatasourceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.MemoryDatasource");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDatasourceKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cSourceTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Keyword cSourceTypeEDP2Keyword_3_0 = (Keyword)cSourceTypeAssignment_3.eContents().get(0);
+		
+		//MemoryDatasource:
+		//	'datasource' name=ID ':' sourceType='EDP2';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'datasource' name=ID ':' sourceType='EDP2'
+		public Group getGroup() { return cGroup; }
+		
+		//'datasource'
+		public Keyword getDatasourceKeyword_0() { return cDatasourceKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//':'
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		
+		//sourceType='EDP2'
+		public Assignment getSourceTypeAssignment_3() { return cSourceTypeAssignment_3; }
+		
+		//'EDP2'
+		public Keyword getSourceTypeEDP2Keyword_3_0() { return cSourceTypeEDP2Keyword_3_0; }
 	}
 	public class ExperimentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.Experiment");
@@ -1247,6 +1301,8 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 	private final ModelElements pModel;
 	private final ImportElements pImport;
 	private final DatasourceElements pDatasource;
+	private final FileDatasourceElements pFileDatasource;
+	private final MemoryDatasourceElements pMemoryDatasource;
 	private final ExperimentElements pExperiment;
 	private final ExperimentSpecificationsElements pExperimentSpecifications;
 	private final DescriptionElements pDescription;
@@ -1285,6 +1341,8 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		this.pModel = new ModelElements();
 		this.pImport = new ImportElements();
 		this.pDatasource = new DatasourceElements();
+		this.pFileDatasource = new FileDatasourceElements();
+		this.pMemoryDatasource = new MemoryDatasourceElements();
 		this.pExperiment = new ExperimentElements();
 		this.pExperimentSpecifications = new ExperimentSpecificationsElements();
 		this.pDescription = new DescriptionElements();
@@ -1362,13 +1420,33 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Datasource:
-	//	'datasource' name=ID ':' sourceType='EDP2' '(' sourceURI=STRING ')';
+	//	FileDatasource | MemoryDatasource;
 	public DatasourceElements getDatasourceAccess() {
 		return pDatasource;
 	}
 	
 	public ParserRule getDatasourceRule() {
 		return getDatasourceAccess().getRule();
+	}
+	
+	//FileDatasource:
+	//	'datasource' name=ID ':' sourceType='EDP2' '(' sourceURI=STRING ')';
+	public FileDatasourceElements getFileDatasourceAccess() {
+		return pFileDatasource;
+	}
+	
+	public ParserRule getFileDatasourceRule() {
+		return getFileDatasourceAccess().getRule();
+	}
+	
+	//MemoryDatasource:
+	//	'datasource' name=ID ':' sourceType='EDP2';
+	public MemoryDatasourceElements getMemoryDatasourceAccess() {
+		return pMemoryDatasource;
+	}
+	
+	public ParserRule getMemoryDatasourceRule() {
+		return getMemoryDatasourceAccess().getRule();
 	}
 	
 	//Experiment:

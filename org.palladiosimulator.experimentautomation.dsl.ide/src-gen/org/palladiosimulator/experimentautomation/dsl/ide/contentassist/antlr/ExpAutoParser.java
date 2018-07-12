@@ -31,6 +31,7 @@ public class ExpAutoParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getDatasourceAccess().getAlternatives(), "rule__Datasource__Alternatives");
 					put(grammarAccess.getExperimentAccess().getDesignAlternatives_3_0(), "rule__Experiment__DesignAlternatives_3_0");
 					put(grammarAccess.getExperimentSpecificationsAccess().getSpecificationsAlternatives_0(), "rule__ExperimentSpecifications__SpecificationsAlternatives_0");
 					put(grammarAccess.getInitSpecificationsAccess().getSpecificationsAlternatives_0(), "rule__InitSpecifications__SpecificationsAlternatives_0");
@@ -40,7 +41,8 @@ public class ExpAutoParser extends AbstractContentAssistParser {
 					put(grammarAccess.getConfigValueAccess().getAlternatives(), "rule__ConfigValue__Alternatives");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
-					put(grammarAccess.getDatasourceAccess().getGroup(), "rule__Datasource__Group__0");
+					put(grammarAccess.getFileDatasourceAccess().getGroup(), "rule__FileDatasource__Group__0");
+					put(grammarAccess.getMemoryDatasourceAccess().getGroup(), "rule__MemoryDatasource__Group__0");
 					put(grammarAccess.getExperimentAccess().getGroup(), "rule__Experiment__Group__0");
 					put(grammarAccess.getDescriptionAccess().getGroup(), "rule__Description__Group__0");
 					put(grammarAccess.getInitialModelAccess().getGroup(), "rule__InitialModel__Group__0");
@@ -73,9 +75,11 @@ public class ExpAutoParser extends AbstractContentAssistParser {
 					put(grammarAccess.getModelAccess().getDatasourcesAssignment_1(), "rule__Model__DatasourcesAssignment_1");
 					put(grammarAccess.getModelAccess().getExperimentsAssignment_2(), "rule__Model__ExperimentsAssignment_2");
 					put(grammarAccess.getImportAccess().getPathAssignment_1(), "rule__Import__PathAssignment_1");
-					put(grammarAccess.getDatasourceAccess().getNameAssignment_1(), "rule__Datasource__NameAssignment_1");
-					put(grammarAccess.getDatasourceAccess().getSourceTypeAssignment_3(), "rule__Datasource__SourceTypeAssignment_3");
-					put(grammarAccess.getDatasourceAccess().getSourceURIAssignment_5(), "rule__Datasource__SourceURIAssignment_5");
+					put(grammarAccess.getFileDatasourceAccess().getNameAssignment_1(), "rule__FileDatasource__NameAssignment_1");
+					put(grammarAccess.getFileDatasourceAccess().getSourceTypeAssignment_3(), "rule__FileDatasource__SourceTypeAssignment_3");
+					put(grammarAccess.getFileDatasourceAccess().getSourceURIAssignment_5(), "rule__FileDatasource__SourceURIAssignment_5");
+					put(grammarAccess.getMemoryDatasourceAccess().getNameAssignment_1(), "rule__MemoryDatasource__NameAssignment_1");
+					put(grammarAccess.getMemoryDatasourceAccess().getSourceTypeAssignment_3(), "rule__MemoryDatasource__SourceTypeAssignment_3");
 					put(grammarAccess.getExperimentAccess().getNameAssignment_1(), "rule__Experiment__NameAssignment_1");
 					put(grammarAccess.getExperimentAccess().getDesignAssignment_3(), "rule__Experiment__DesignAssignment_3");
 					put(grammarAccess.getExperimentAccess().getExperimentSpecificationsAssignment_5(), "rule__Experiment__ExperimentSpecificationsAssignment_5");

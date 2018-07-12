@@ -91,6 +91,16 @@ public class ExpAutoAdapterFactory extends AdapterFactoryImpl
         return createDatasourceAdapter();
       }
       @Override
+      public Adapter caseFileDatasource(FileDatasource object)
+      {
+        return createFileDatasourceAdapter();
+      }
+      @Override
+      public Adapter caseMemoryDatasource(MemoryDatasource object)
+      {
+        return createMemoryDatasourceAdapter();
+      }
+      @Override
       public Adapter caseExperiment(Experiment object)
       {
         return createExperimentAdapter();
@@ -273,6 +283,36 @@ public class ExpAutoAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDatasourceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.FileDatasource <em>File Datasource</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.FileDatasource
+   * @generated
+   */
+  public Adapter createFileDatasourceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.MemoryDatasource <em>Memory Datasource</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.MemoryDatasource
+   * @generated
+   */
+  public Adapter createMemoryDatasourceAdapter()
   {
     return null;
   }

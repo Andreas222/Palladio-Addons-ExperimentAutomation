@@ -23,7 +23,6 @@ import org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage;
  * <ul>
  *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.DatasourceImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.DatasourceImpl#getSourceType <em>Source Type</em>}</li>
- *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.DatasourceImpl#getSourceURI <em>Source URI</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,26 +68,6 @@ public class DatasourceImpl extends MinimalEObjectImpl.Container implements Data
    * @ordered
    */
   protected String sourceType = SOURCE_TYPE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getSourceURI() <em>Source URI</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSourceURI()
-   * @generated
-   * @ordered
-   */
-  protected static final String SOURCE_URI_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getSourceURI() <em>Source URI</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSourceURI()
-   * @generated
-   * @ordered
-   */
-  protected String sourceURI = SOURCE_URI_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -162,29 +141,6 @@ public class DatasourceImpl extends MinimalEObjectImpl.Container implements Data
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getSourceURI()
-  {
-    return sourceURI;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setSourceURI(String newSourceURI)
-  {
-    String oldSourceURI = sourceURI;
-    sourceURI = newSourceURI;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExpAutoPackage.DATASOURCE__SOURCE_URI, oldSourceURI, sourceURI));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -194,8 +150,6 @@ public class DatasourceImpl extends MinimalEObjectImpl.Container implements Data
         return getName();
       case ExpAutoPackage.DATASOURCE__SOURCE_TYPE:
         return getSourceType();
-      case ExpAutoPackage.DATASOURCE__SOURCE_URI:
-        return getSourceURI();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -215,9 +169,6 @@ public class DatasourceImpl extends MinimalEObjectImpl.Container implements Data
         return;
       case ExpAutoPackage.DATASOURCE__SOURCE_TYPE:
         setSourceType((String)newValue);
-        return;
-      case ExpAutoPackage.DATASOURCE__SOURCE_URI:
-        setSourceURI((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -239,9 +190,6 @@ public class DatasourceImpl extends MinimalEObjectImpl.Container implements Data
       case ExpAutoPackage.DATASOURCE__SOURCE_TYPE:
         setSourceType(SOURCE_TYPE_EDEFAULT);
         return;
-      case ExpAutoPackage.DATASOURCE__SOURCE_URI:
-        setSourceURI(SOURCE_URI_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -260,8 +208,6 @@ public class DatasourceImpl extends MinimalEObjectImpl.Container implements Data
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ExpAutoPackage.DATASOURCE__SOURCE_TYPE:
         return SOURCE_TYPE_EDEFAULT == null ? sourceType != null : !SOURCE_TYPE_EDEFAULT.equals(sourceType);
-      case ExpAutoPackage.DATASOURCE__SOURCE_URI:
-        return SOURCE_URI_EDEFAULT == null ? sourceURI != null : !SOURCE_URI_EDEFAULT.equals(sourceURI);
     }
     return super.eIsSet(featureID);
   }
@@ -281,8 +227,6 @@ public class DatasourceImpl extends MinimalEObjectImpl.Container implements Data
     result.append(name);
     result.append(", sourceType: ");
     result.append(sourceType);
-    result.append(", sourceURI: ");
-    result.append(sourceURI);
     result.append(')');
     return result.toString();
   }

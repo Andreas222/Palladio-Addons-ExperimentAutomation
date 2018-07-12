@@ -68,6 +68,8 @@ public class ExpAutoFactoryImpl extends EFactoryImpl implements ExpAutoFactory
       case ExpAutoPackage.MODEL: return createModel();
       case ExpAutoPackage.IMPORT: return createImport();
       case ExpAutoPackage.DATASOURCE: return createDatasource();
+      case ExpAutoPackage.FILE_DATASOURCE: return createFileDatasource();
+      case ExpAutoPackage.MEMORY_DATASOURCE: return createMemoryDatasource();
       case ExpAutoPackage.EXPERIMENT: return createExperiment();
       case ExpAutoPackage.EXPERIMENT_SPECIFICATIONS: return createExperimentSpecifications();
       case ExpAutoPackage.DESCRIPTION: return createDescription();
@@ -128,6 +130,28 @@ public class ExpAutoFactoryImpl extends EFactoryImpl implements ExpAutoFactory
   {
     DatasourceImpl datasource = new DatasourceImpl();
     return datasource;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FileDatasource createFileDatasource()
+  {
+    FileDatasourceImpl fileDatasource = new FileDatasourceImpl();
+    return fileDatasource;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MemoryDatasource createMemoryDatasource()
+  {
+    MemoryDatasourceImpl memoryDatasource = new MemoryDatasourceImpl();
+    return memoryDatasource;
   }
 
   /**

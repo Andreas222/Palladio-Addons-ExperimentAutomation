@@ -160,22 +160,96 @@ public interface ExpAutoPackage extends EPackage
   int DATASOURCE__SOURCE_TYPE = 1;
 
   /**
-   * The feature id for the '<em><b>Source URI</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATASOURCE__SOURCE_URI = 2;
-
-  /**
    * The number of structural features of the '<em>Datasource</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DATASOURCE_FEATURE_COUNT = 3;
+  int DATASOURCE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.FileDatasourceImpl <em>File Datasource</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.FileDatasourceImpl
+   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getFileDatasource()
+   * @generated
+   */
+  int FILE_DATASOURCE = 3;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FILE_DATASOURCE__NAME = DATASOURCE__NAME;
+
+  /**
+   * The feature id for the '<em><b>Source Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FILE_DATASOURCE__SOURCE_TYPE = DATASOURCE__SOURCE_TYPE;
+
+  /**
+   * The feature id for the '<em><b>Source URI</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FILE_DATASOURCE__SOURCE_URI = DATASOURCE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>File Datasource</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FILE_DATASOURCE_FEATURE_COUNT = DATASOURCE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.MemoryDatasourceImpl <em>Memory Datasource</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.MemoryDatasourceImpl
+   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getMemoryDatasource()
+   * @generated
+   */
+  int MEMORY_DATASOURCE = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MEMORY_DATASOURCE__NAME = DATASOURCE__NAME;
+
+  /**
+   * The feature id for the '<em><b>Source Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MEMORY_DATASOURCE__SOURCE_TYPE = DATASOURCE__SOURCE_TYPE;
+
+  /**
+   * The number of structural features of the '<em>Memory Datasource</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MEMORY_DATASOURCE_FEATURE_COUNT = DATASOURCE_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExperimentImpl <em>Experiment</em>}' class.
@@ -185,7 +259,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getExperiment()
    * @generated
    */
-  int EXPERIMENT = 3;
+  int EXPERIMENT = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -231,7 +305,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getExperimentSpecifications()
    * @generated
    */
-  int EXPERIMENT_SPECIFICATIONS = 4;
+  int EXPERIMENT_SPECIFICATIONS = 6;
 
   /**
    * The feature id for the '<em><b>Specifications</b></em>' containment reference list.
@@ -259,7 +333,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getDescription()
    * @generated
    */
-  int DESCRIPTION = 5;
+  int DESCRIPTION = 7;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -287,7 +361,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getInitialModel()
    * @generated
    */
-  int INITIAL_MODEL = 6;
+  int INITIAL_MODEL = 8;
 
   /**
    * The feature id for the '<em><b>Modeltyp</b></em>' attribute.
@@ -324,7 +398,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getInitSpecifications()
    * @generated
    */
-  int INIT_SPECIFICATIONS = 7;
+  int INIT_SPECIFICATIONS = 9;
 
   /**
    * The feature id for the '<em><b>Specifications</b></em>' containment reference list.
@@ -352,7 +426,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getAllocationModel()
    * @generated
    */
-  int ALLOCATION_MODEL = 8;
+  int ALLOCATION_MODEL = 10;
 
   /**
    * The feature id for the '<em><b>Allocation</b></em>' attribute.
@@ -380,7 +454,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getUsageModel()
    * @generated
    */
-  int USAGE_MODEL = 9;
+  int USAGE_MODEL = 11;
 
   /**
    * The feature id for the '<em><b>Usage Model</b></em>' attribute.
@@ -408,7 +482,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getMiddlewareRepository()
    * @generated
    */
-  int MIDDLEWARE_REPOSITORY = 10;
+  int MIDDLEWARE_REPOSITORY = 12;
 
   /**
    * The feature id for the '<em><b>Middleware Repository</b></em>' attribute.
@@ -436,7 +510,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getEventMiddlewareRepository()
    * @generated
    */
-  int EVENT_MIDDLEWARE_REPOSITORY = 11;
+  int EVENT_MIDDLEWARE_REPOSITORY = 13;
 
   /**
    * The feature id for the '<em><b>Event Middelware Repository</b></em>' attribute.
@@ -464,7 +538,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getMonitorRepository()
    * @generated
    */
-  int MONITOR_REPOSITORY = 12;
+  int MONITOR_REPOSITORY = 14;
 
   /**
    * The feature id for the '<em><b>Monitor Repository</b></em>' attribute.
@@ -492,7 +566,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getVariation()
    * @generated
    */
-  int VARIATION = 13;
+  int VARIATION = 15;
 
   /**
    * The feature id for the '<em><b>Variation Typ</b></em>' reference.
@@ -556,7 +630,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getNestedIntervalsValueProvider()
    * @generated
    */
-  int NESTED_INTERVALS_VALUE_PROVIDER = 14;
+  int NESTED_INTERVALS_VALUE_PROVIDER = 16;
 
   /**
    * The feature id for the '<em><b>Min</b></em>' attribute.
@@ -593,7 +667,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getSetValueProvider()
    * @generated
    */
-  int SET_VALUE_PROVIDER = 15;
+  int SET_VALUE_PROVIDER = 17;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -621,7 +695,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getLinearValueProvider()
    * @generated
    */
-  int LINEAR_VALUE_PROVIDER = 16;
+  int LINEAR_VALUE_PROVIDER = 18;
 
   /**
    * The feature id for the '<em><b>Summand</b></em>' attribute.
@@ -658,7 +732,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getExponentialValueProvider()
    * @generated
    */
-  int EXPONENTIAL_VALUE_PROVIDER = 17;
+  int EXPONENTIAL_VALUE_PROVIDER = 19;
 
   /**
    * The feature id for the '<em><b>Base</b></em>' attribute.
@@ -686,7 +760,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getPolynomialValueProvider()
    * @generated
    */
-  int POLYNOMIAL_VALUE_PROVIDER = 18;
+  int POLYNOMIAL_VALUE_PROVIDER = 20;
 
   /**
    * The feature id for the '<em><b>Exponent</b></em>' attribute.
@@ -723,7 +797,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getStopTimeCondition()
    * @generated
    */
-  int STOP_TIME_CONDITION = 19;
+  int STOP_TIME_CONDITION = 21;
 
   /**
    * The feature id for the '<em><b>Stop Typ</b></em>' attribute.
@@ -760,7 +834,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getStopCountCondition()
    * @generated
    */
-  int STOP_COUNT_CONDITION = 20;
+  int STOP_COUNT_CONDITION = 22;
 
   /**
    * The feature id for the '<em><b>Stop Typ</b></em>' attribute.
@@ -797,7 +871,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getNumberOfExperiments()
    * @generated
    */
-  int NUMBER_OF_EXPERIMENTS = 21;
+  int NUMBER_OF_EXPERIMENTS = 23;
 
   /**
    * The feature id for the '<em><b>Number Of Repetitions</b></em>' attribute.
@@ -825,7 +899,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getSeedDefinition()
    * @generated
    */
-  int SEED_DEFINITION = 22;
+  int SEED_DEFINITION = 24;
 
   /**
    * The feature id for the '<em><b>Seed Lists</b></em>' containment reference list.
@@ -853,7 +927,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getListOfSeeds()
    * @generated
    */
-  int LIST_OF_SEEDS = 23;
+  int LIST_OF_SEEDS = 25;
 
   /**
    * The feature id for the '<em><b>Seeds</b></em>' attribute list.
@@ -881,7 +955,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getExperimentDatasource()
    * @generated
    */
-  int EXPERIMENT_DATASOURCE = 24;
+  int EXPERIMENT_DATASOURCE = 26;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' reference.
@@ -909,7 +983,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getToolDefinition()
    * @generated
    */
-  int TOOL_DEFINITION = 25;
+  int TOOL_DEFINITION = 27;
 
   /**
    * The feature id for the '<em><b>Tool</b></em>' attribute.
@@ -946,7 +1020,7 @@ public interface ExpAutoPackage extends EPackage
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getConfigurationParams()
    * @generated
    */
-  int CONFIGURATION_PARAMS = 26;
+  int CONFIGURATION_PARAMS = 28;
 
   /**
    * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -1073,15 +1147,35 @@ public interface ExpAutoPackage extends EPackage
   EAttribute getDatasource_SourceType();
 
   /**
-   * Returns the meta object for the attribute '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.Datasource#getSourceURI <em>Source URI</em>}'.
+   * Returns the meta object for class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.FileDatasource <em>File Datasource</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>File Datasource</em>'.
+   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.FileDatasource
+   * @generated
+   */
+  EClass getFileDatasource();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.FileDatasource#getSourceURI <em>Source URI</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Source URI</em>'.
-   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.Datasource#getSourceURI()
-   * @see #getDatasource()
+   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.FileDatasource#getSourceURI()
+   * @see #getFileDatasource()
    * @generated
    */
-  EAttribute getDatasource_SourceURI();
+  EAttribute getFileDatasource_SourceURI();
+
+  /**
+   * Returns the meta object for class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.MemoryDatasource <em>Memory Datasource</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Memory Datasource</em>'.
+   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.MemoryDatasource
+   * @generated
+   */
+  EClass getMemoryDatasource();
 
   /**
    * Returns the meta object for class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.Experiment <em>Experiment</em>}'.
@@ -1843,12 +1937,32 @@ public interface ExpAutoPackage extends EPackage
     EAttribute DATASOURCE__SOURCE_TYPE = eINSTANCE.getDatasource_SourceType();
 
     /**
+     * The meta object literal for the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.FileDatasourceImpl <em>File Datasource</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.FileDatasourceImpl
+     * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getFileDatasource()
+     * @generated
+     */
+    EClass FILE_DATASOURCE = eINSTANCE.getFileDatasource();
+
+    /**
      * The meta object literal for the '<em><b>Source URI</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DATASOURCE__SOURCE_URI = eINSTANCE.getDatasource_SourceURI();
+    EAttribute FILE_DATASOURCE__SOURCE_URI = eINSTANCE.getFileDatasource_SourceURI();
+
+    /**
+     * The meta object literal for the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.MemoryDatasourceImpl <em>Memory Datasource</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.MemoryDatasourceImpl
+     * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getMemoryDatasource()
+     * @generated
+     */
+    EClass MEMORY_DATASOURCE = eINSTANCE.getMemoryDatasource();
 
     /**
      * The meta object literal for the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExperimentImpl <em>Experiment</em>}' class.

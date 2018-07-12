@@ -177,12 +177,10 @@ class ExpAutoValidator extends AbstractExpAutoValidator {
 			error('Es darf maximal eine Zählabbruchbedingung angegeben werden', ExpAutoPackage.Literals.EXPERIMENT_SPECIFICATIONS__SPECIFICATIONS, 'invalidExperiment')
 		} else if(numberOfTimeConditions + numberOfCountConditions < 1){
 			error('Es muss mindestens eine Abbruchbedingung angegeben werden', ExpAutoPackage.Literals.EXPERIMENT_SPECIFICATIONS__SPECIFICATIONS, 'invalidExperiment')
-		} else if(numberOfExperimentCounter > 1){
-			error('Die Anzahl der Experimentdurchläufe darf maximal einmal angegeben werden', ExpAutoPackage.Literals.EXPERIMENT_SPECIFICATIONS__SPECIFICATIONS, 'invalidExperiment')
+		} else if(numberOfExperimentCounter != 1){
+			error('Die Anzahl der Experimentdurchläufe muss genau einmal angegeben werden', ExpAutoPackage.Literals.EXPERIMENT_SPECIFICATIONS__SPECIFICATIONS, 'invalidExperiment')
 		} else if(numberOfSeedDefinitions > 1){
 			error('Die Seeds dürfen maximal einmal angegeben werden', ExpAutoPackage.Literals.EXPERIMENT_SPECIFICATIONS__SPECIFICATIONS, 'invalidExperiment')
-		} else if(numberOfExperimentCounter + numberOfSeedDefinitions < 1){
-			error('Es muss entweder die Anzahl der Experimentdurchläufe oder eine Menge an Seeds angegeben werden', ExpAutoPackage.Literals.EXPERIMENT_SPECIFICATIONS__SPECIFICATIONS, 'invalidExperiment')
 		} else if(numberOfDatasources != 1){
 			error('Es muss genau eine Datenquelle angegeben werden', ExpAutoPackage.Literals.EXPERIMENT_SPECIFICATIONS__SPECIFICATIONS, 'invalidExperiment')
 		} else if(numberOfTooldefinitions < 1){

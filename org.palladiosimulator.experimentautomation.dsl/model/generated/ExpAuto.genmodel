@@ -17,8 +17,11 @@
     <genClasses ecoreClass="ExpAuto.ecore#//Datasource">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//Datasource/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//Datasource/sourceType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//Datasource/sourceURI"/>
     </genClasses>
+    <genClasses ecoreClass="ExpAuto.ecore#//FileDatasource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//FileDatasource/sourceURI"/>
+    </genClasses>
+    <genClasses ecoreClass="ExpAuto.ecore#//MemoryDatasource"/>
     <genClasses ecoreClass="ExpAuto.ecore#//Experiment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//Experiment/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//Experiment/design"/>

@@ -3741,7 +3741,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_EJx8MA6eEeSlordmsC7PkQ" name="measurementCount : EInt = 0" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_EJx8MA6eEeSlordmsC7PkQ" name="measurementCount : EInt" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="experimentautomation.ecore#//abstractsimulation/MeasurementCountStopCondition/measurementCount"/>
         <semanticElements xmi:type="ecore:EAttribute" href="experimentautomation.ecore#//abstractsimulation/MeasurementCountStopCondition/measurementCount"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_EJyjRA6eEeSlordmsC7PkQ" labelAlignment="LEFT" description="_EJpZUw6eEeSlordmsC7PkQ">
@@ -3771,7 +3771,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_EJ1mkA6eEeSlordmsC7PkQ" name="seed0 : EInt = 0" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_EJ1mkA6eEeSlordmsC7PkQ" name="seed0 : EInt" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="experimentautomation.ecore#//abstractsimulation/RandomNumberGeneratorSeed/seed0"/>
         <semanticElements xmi:type="ecore:EAttribute" href="experimentautomation.ecore#//abstractsimulation/RandomNumberGeneratorSeed/seed0"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_EJ2NoA6eEeSlordmsC7PkQ" labelAlignment="LEFT" description="_EJpZUw6eEeSlordmsC7PkQ">
@@ -3779,7 +3779,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_EJ2NpA6eEeSlordmsC7PkQ" name="seed1 : EInt = 0" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_EJ2NpA6eEeSlordmsC7PkQ" name="seed1 : EInt" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="experimentautomation.ecore#//abstractsimulation/RandomNumberGeneratorSeed/seed1"/>
         <semanticElements xmi:type="ecore:EAttribute" href="experimentautomation.ecore#//abstractsimulation/RandomNumberGeneratorSeed/seed1"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_EJ3bwA6eEeSlordmsC7PkQ" labelAlignment="LEFT" description="_EJpZUw6eEeSlordmsC7PkQ">
@@ -3787,7 +3787,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_EJ3bxA6eEeSlordmsC7PkQ" name="seed2 : EInt = 0" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_EJ3bxA6eEeSlordmsC7PkQ" name="seed2 : EInt" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="experimentautomation.ecore#//abstractsimulation/RandomNumberGeneratorSeed/seed2"/>
         <semanticElements xmi:type="ecore:EAttribute" href="experimentautomation.ecore#//abstractsimulation/RandomNumberGeneratorSeed/seed2"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_EJ4p4A6eEeSlordmsC7PkQ" labelAlignment="LEFT" description="_EJpZUw6eEeSlordmsC7PkQ">
@@ -3795,7 +3795,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_EJ4p5A6eEeSlordmsC7PkQ" name="seed3 : EInt = 0" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_EJ4p5A6eEeSlordmsC7PkQ" name="seed3 : EInt" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="experimentautomation.ecore#//abstractsimulation/RandomNumberGeneratorSeed/seed3"/>
         <semanticElements xmi:type="ecore:EAttribute" href="experimentautomation.ecore#//abstractsimulation/RandomNumberGeneratorSeed/seed3"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_EJ5Q9A6eEeSlordmsC7PkQ" labelAlignment="LEFT" description="_EJpZUw6eEeSlordmsC7PkQ">
@@ -3803,7 +3803,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_EJ54AA6eEeSlordmsC7PkQ" name="seed4 : EInt = 0" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_EJ54AA6eEeSlordmsC7PkQ" name="seed4 : EInt" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="experimentautomation.ecore#//abstractsimulation/RandomNumberGeneratorSeed/seed4"/>
         <semanticElements xmi:type="ecore:EAttribute" href="experimentautomation.ecore#//abstractsimulation/RandomNumberGeneratorSeed/seed4"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_EJ6fEw6eEeSlordmsC7PkQ" labelAlignment="LEFT" description="_EJpZUw6eEeSlordmsC7PkQ">
@@ -3811,7 +3811,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_EJ7GIA6eEeSlordmsC7PkQ" name="seed5 : EInt = 0" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_EJ7GIA6eEeSlordmsC7PkQ" name="seed5 : EInt" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="experimentautomation.ecore#//abstractsimulation/RandomNumberGeneratorSeed/seed5"/>
         <semanticElements xmi:type="ecore:EAttribute" href="experimentautomation.ecore#//abstractsimulation/RandomNumberGeneratorSeed/seed5"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_EJ7tMA6eEeSlordmsC7PkQ" labelAlignment="LEFT" description="_EJpZUw6eEeSlordmsC7PkQ">
@@ -3850,7 +3850,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_EJ87UA6eEeSlordmsC7PkQ" name="simulationTime : EInt = 0" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_EJ87UA6eEeSlordmsC7PkQ" name="simulationTime : EInt" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="experimentautomation.ecore#//abstractsimulation/SimTimeStopCondition/simulationTime"/>
         <semanticElements xmi:type="ecore:EAttribute" href="experimentautomation.ecore#//abstractsimulation/SimTimeStopCondition/simulationTime"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_EJ9iYA6eEeSlordmsC7PkQ" labelAlignment="LEFT" description="_EJpZUw6eEeSlordmsC7PkQ">
@@ -3911,7 +3911,7 @@
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_EKOoIA6eEeSlordmsC7PkQ" sourceNode="_EIDd4A6eEeSlordmsC7PkQ" targetNode="_EIPrIA6eEeSlordmsC7PkQ">
       <target xmi:type="ecore:EClass" href="experimentautomation.ecore#//abstractsimulation/FileDatasource"/>
-      <semanticElements xmi:type="ecore:EGenericType" href="experimentautomation.ecore#//abstractsimulation/FileDatasource/@eGenericSuperTypes.0"/>
+      <semanticElements xmi:type="ecore:EClass" href="experimentautomation.ecore#//abstractsimulation/FileDatasource"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_EKOoIQ6eEeSlordmsC7PkQ" targetArrow="InputClosedArrow" routingStyle="tree">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_EKOoIw6eEeSlordmsC7PkQ" showIcon="false">
@@ -3923,7 +3923,7 @@
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_EKPPMA6eEeSlordmsC7PkQ" sourceNode="_EIFTEA6eEeSlordmsC7PkQ" targetNode="_EITVgA6eEeSlordmsC7PkQ">
       <target xmi:type="ecore:EClass" href="experimentautomation.ecore#//abstractsimulation/MeasurementCountStopCondition"/>
-      <semanticElements xmi:type="ecore:EGenericType" href="experimentautomation.ecore#//abstractsimulation/MeasurementCountStopCondition/@eGenericSuperTypes.0"/>
+      <semanticElements xmi:type="ecore:EClass" href="experimentautomation.ecore#//abstractsimulation/MeasurementCountStopCondition"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_EKP2QA6eEeSlordmsC7PkQ" targetArrow="InputClosedArrow" routingStyle="tree">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_EKP2Qg6eEeSlordmsC7PkQ" showIcon="false">
@@ -3935,7 +3935,7 @@
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_EKQdUA6eEeSlordmsC7PkQ" sourceNode="_EIHIQA6eEeSlordmsC7PkQ" targetNode="_EIPrIA6eEeSlordmsC7PkQ">
       <target xmi:type="ecore:EClass" href="experimentautomation.ecore#//abstractsimulation/MemoryDatasource"/>
-      <semanticElements xmi:type="ecore:EGenericType" href="experimentautomation.ecore#//abstractsimulation/MemoryDatasource/@eGenericSuperTypes.0"/>
+      <semanticElements xmi:type="ecore:EClass" href="experimentautomation.ecore#//abstractsimulation/MemoryDatasource"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_EKQdUQ6eEeSlordmsC7PkQ" targetArrow="InputClosedArrow" routingStyle="tree">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_EKQdUw6eEeSlordmsC7PkQ" showIcon="false">
@@ -3947,7 +3947,7 @@
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_EKSSgA6eEeSlordmsC7PkQ" sourceNode="_EIRgUA6eEeSlordmsC7PkQ" targetNode="_EITVgA6eEeSlordmsC7PkQ">
       <target xmi:type="ecore:EClass" href="experimentautomation.ecore#//abstractsimulation/SimTimeStopCondition"/>
-      <semanticElements xmi:type="ecore:EGenericType" href="experimentautomation.ecore#//abstractsimulation/SimTimeStopCondition/@eGenericSuperTypes.0"/>
+      <semanticElements xmi:type="ecore:EClass" href="experimentautomation.ecore#//abstractsimulation/SimTimeStopCondition"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_EKSSgQ6eEeSlordmsC7PkQ" targetArrow="InputClosedArrow" routingStyle="tree">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_EKSSgw6eEeSlordmsC7PkQ" showIcon="false">
@@ -3982,7 +3982,7 @@
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_RwtE4A6eEeSlordmsC7PkQ" sourceNode="_EHdoAA6eEeSlordmsC7PkQ" targetNode="_RvpU8A6eEeSlordmsC7PkQ">
       <target xmi:type="ecore:EClass" href="experimentautomation.ecore#//abstractsimulation/AbstractSimulationConfiguration"/>
-      <semanticElements xmi:type="ecore:EGenericType" href="experimentautomation.ecore#//abstractsimulation/AbstractSimulationConfiguration/@eGenericSuperTypes.0"/>
+      <semanticElements xmi:type="ecore:EClass" href="experimentautomation.ecore#//abstractsimulation/AbstractSimulationConfiguration"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_Rwtr8A6eEeSlordmsC7PkQ" targetArrow="InputClosedArrow" routingStyle="tree">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_RwuTAQ6eEeSlordmsC7PkQ" showIcon="false">

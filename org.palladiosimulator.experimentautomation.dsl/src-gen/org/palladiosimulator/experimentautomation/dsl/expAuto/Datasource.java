@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.Datasource#getName <em>Name</em>}</li>
  *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.Datasource#getSourceType <em>Source Type</em>}</li>
- *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.Datasource#getSourceURI <em>Source URI</em>}</li>
  * </ul>
  *
  * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage#getDatasource()
@@ -76,31 +75,5 @@ public interface Datasource extends EObject
    * @generated
    */
   void setSourceType(String value);
-
-  /**
-   * Returns the value of the '<em><b>Source URI</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Source URI</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Source URI</em>' attribute.
-   * @see #setSourceURI(String)
-   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage#getDatasource_SourceURI()
-   * @model
-   * @generated
-   */
-  String getSourceURI();
-
-  /**
-   * Sets the value of the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.Datasource#getSourceURI <em>Source URI</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Source URI</em>' attribute.
-   * @see #getSourceURI()
-   * @generated
-   */
-  void setSourceURI(String value);
 
 } // Datasource

@@ -17,8 +17,17 @@ Import:
 ;
 
 Datasource:
+	FileDatasource | MemoryDatasource
+;
+
+FileDatasource:
 	'datasource' name = ID ':' sourceType = 'EDP2' '(' sourceURI = STRING ')'
 ;
+
+MemoryDatasource:
+	'datasource' name = ID ':' sourceType = 'EDP2'
+;
+
 
 Experiment:
 	'experiment' name = ID ':' design = ('FullFactorial' | 'OneFactor')

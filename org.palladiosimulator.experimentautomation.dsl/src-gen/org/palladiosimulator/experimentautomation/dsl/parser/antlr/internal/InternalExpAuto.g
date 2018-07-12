@@ -193,19 +193,55 @@ ruleDatasource returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		{
+			newCompositeNode(grammarAccess.getDatasourceAccess().getFileDatasourceParserRuleCall_0());
+		}
+		this_FileDatasource_0=ruleFileDatasource
+		{
+			$current = $this_FileDatasource_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getDatasourceAccess().getMemoryDatasourceParserRuleCall_1());
+		}
+		this_MemoryDatasource_1=ruleMemoryDatasource
+		{
+			$current = $this_MemoryDatasource_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleFileDatasource
+entryRuleFileDatasource returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFileDatasourceRule()); }
+	iv_ruleFileDatasource=ruleFileDatasource
+	{ $current=$iv_ruleFileDatasource.current; }
+	EOF;
+
+// Rule FileDatasource
+ruleFileDatasource returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
 		otherlv_0='datasource'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getDatasourceAccess().getDatasourceKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getFileDatasourceAccess().getDatasourceKeyword_0());
 		}
 		(
 			(
 				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getDatasourceAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getFileDatasourceAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDatasourceRule());
+						$current = createModelElement(grammarAccess.getFileDatasourceRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -217,17 +253,17 @@ ruleDatasource returns [EObject current=null]
 		)
 		otherlv_2=':'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getDatasourceAccess().getColonKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getFileDatasourceAccess().getColonKeyword_2());
 		}
 		(
 			(
 				lv_sourceType_3_0='EDP2'
 				{
-					newLeafNode(lv_sourceType_3_0, grammarAccess.getDatasourceAccess().getSourceTypeEDP2Keyword_3_0());
+					newLeafNode(lv_sourceType_3_0, grammarAccess.getFileDatasourceAccess().getSourceTypeEDP2Keyword_3_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDatasourceRule());
+						$current = createModelElement(grammarAccess.getFileDatasourceRule());
 					}
 					setWithLastConsumed($current, "sourceType", lv_sourceType_3_0, "EDP2");
 				}
@@ -235,17 +271,17 @@ ruleDatasource returns [EObject current=null]
 		)
 		otherlv_4='('
 		{
-			newLeafNode(otherlv_4, grammarAccess.getDatasourceAccess().getLeftParenthesisKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getFileDatasourceAccess().getLeftParenthesisKeyword_4());
 		}
 		(
 			(
 				lv_sourceURI_5_0=RULE_STRING
 				{
-					newLeafNode(lv_sourceURI_5_0, grammarAccess.getDatasourceAccess().getSourceURISTRINGTerminalRuleCall_5_0());
+					newLeafNode(lv_sourceURI_5_0, grammarAccess.getFileDatasourceAccess().getSourceURISTRINGTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDatasourceRule());
+						$current = createModelElement(grammarAccess.getFileDatasourceRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -257,8 +293,67 @@ ruleDatasource returns [EObject current=null]
 		)
 		otherlv_6=')'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getDatasourceAccess().getRightParenthesisKeyword_6());
+			newLeafNode(otherlv_6, grammarAccess.getFileDatasourceAccess().getRightParenthesisKeyword_6());
 		}
+	)
+;
+
+// Entry rule entryRuleMemoryDatasource
+entryRuleMemoryDatasource returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMemoryDatasourceRule()); }
+	iv_ruleMemoryDatasource=ruleMemoryDatasource
+	{ $current=$iv_ruleMemoryDatasource.current; }
+	EOF;
+
+// Rule MemoryDatasource
+ruleMemoryDatasource returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='datasource'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getMemoryDatasourceAccess().getDatasourceKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getMemoryDatasourceAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMemoryDatasourceRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2=':'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getMemoryDatasourceAccess().getColonKeyword_2());
+		}
+		(
+			(
+				lv_sourceType_3_0='EDP2'
+				{
+					newLeafNode(lv_sourceType_3_0, grammarAccess.getMemoryDatasourceAccess().getSourceTypeEDP2Keyword_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMemoryDatasourceRule());
+					}
+					setWithLastConsumed($current, "sourceType", lv_sourceType_3_0, "EDP2");
+				}
+			)
+		)
 	)
 ;
 

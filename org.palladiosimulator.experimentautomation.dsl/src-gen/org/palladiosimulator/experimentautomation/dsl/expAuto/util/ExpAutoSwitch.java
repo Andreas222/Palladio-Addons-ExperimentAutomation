@@ -94,6 +94,22 @@ public class ExpAutoSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ExpAutoPackage.FILE_DATASOURCE:
+      {
+        FileDatasource fileDatasource = (FileDatasource)theEObject;
+        T result = caseFileDatasource(fileDatasource);
+        if (result == null) result = caseDatasource(fileDatasource);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ExpAutoPackage.MEMORY_DATASOURCE:
+      {
+        MemoryDatasource memoryDatasource = (MemoryDatasource)theEObject;
+        T result = caseMemoryDatasource(memoryDatasource);
+        if (result == null) result = caseDatasource(memoryDatasource);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ExpAutoPackage.EXPERIMENT:
       {
         Experiment experiment = (Experiment)theEObject;
@@ -310,6 +326,38 @@ public class ExpAutoSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDatasource(Datasource object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>File Datasource</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>File Datasource</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFileDatasource(FileDatasource object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Memory Datasource</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Memory Datasource</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMemoryDatasource(MemoryDatasource object)
   {
     return null;
   }
