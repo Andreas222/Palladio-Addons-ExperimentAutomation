@@ -68,8 +68,9 @@ public class ExpAutoFactoryImpl extends EFactoryImpl implements ExpAutoFactory
       case ExpAutoPackage.MODEL: return createModel();
       case ExpAutoPackage.IMPORT: return createImport();
       case ExpAutoPackage.DATASOURCE: return createDatasource();
-      case ExpAutoPackage.FILE_DATASOURCE: return createFileDatasource();
-      case ExpAutoPackage.MEMORY_DATASOURCE: return createMemoryDatasource();
+      case ExpAutoPackage.DATASOURCE_SPECIFICATION: return createDatasourceSpecification();
+      case ExpAutoPackage.FILE_DATASOURCE_SPECIFICATION: return createFileDatasourceSpecification();
+      case ExpAutoPackage.MEMORY_DATASOURCE_SPECIFICATION: return createMemoryDatasourceSpecification();
       case ExpAutoPackage.EXPERIMENT: return createExperiment();
       case ExpAutoPackage.EXPERIMENT_SPECIFICATIONS: return createExperimentSpecifications();
       case ExpAutoPackage.DESCRIPTION: return createDescription();
@@ -137,10 +138,10 @@ public class ExpAutoFactoryImpl extends EFactoryImpl implements ExpAutoFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public FileDatasource createFileDatasource()
+  public DatasourceSpecification createDatasourceSpecification()
   {
-    FileDatasourceImpl fileDatasource = new FileDatasourceImpl();
-    return fileDatasource;
+    DatasourceSpecificationImpl datasourceSpecification = new DatasourceSpecificationImpl();
+    return datasourceSpecification;
   }
 
   /**
@@ -148,10 +149,21 @@ public class ExpAutoFactoryImpl extends EFactoryImpl implements ExpAutoFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public MemoryDatasource createMemoryDatasource()
+  public FileDatasourceSpecification createFileDatasourceSpecification()
   {
-    MemoryDatasourceImpl memoryDatasource = new MemoryDatasourceImpl();
-    return memoryDatasource;
+    FileDatasourceSpecificationImpl fileDatasourceSpecification = new FileDatasourceSpecificationImpl();
+    return fileDatasourceSpecification;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MemoryDatasourceSpecification createMemoryDatasourceSpecification()
+  {
+    MemoryDatasourceSpecificationImpl memoryDatasourceSpecification = new MemoryDatasourceSpecificationImpl();
+    return memoryDatasourceSpecification;
   }
 
   /**

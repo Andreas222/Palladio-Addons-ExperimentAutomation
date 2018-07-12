@@ -51,22 +51,31 @@ public interface ExpAutoFactory extends EFactory
   Datasource createDatasource();
 
   /**
-   * Returns a new object of class '<em>File Datasource</em>'.
+   * Returns a new object of class '<em>Datasource Specification</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>File Datasource</em>'.
+   * @return a new object of class '<em>Datasource Specification</em>'.
    * @generated
    */
-  FileDatasource createFileDatasource();
+  DatasourceSpecification createDatasourceSpecification();
 
   /**
-   * Returns a new object of class '<em>Memory Datasource</em>'.
+   * Returns a new object of class '<em>File Datasource Specification</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Memory Datasource</em>'.
+   * @return a new object of class '<em>File Datasource Specification</em>'.
    * @generated
    */
-  MemoryDatasource createMemoryDatasource();
+  FileDatasourceSpecification createFileDatasourceSpecification();
+
+  /**
+   * Returns a new object of class '<em>Memory Datasource Specification</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Memory Datasource Specification</em>'.
+   * @generated
+   */
+  MemoryDatasourceSpecification createMemoryDatasourceSpecification();
 
   /**
    * Returns a new object of class '<em>Experiment</em>'.

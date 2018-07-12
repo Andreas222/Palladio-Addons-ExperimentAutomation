@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.AllocationModel;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Datasource;
+import org.palladiosimulator.experimentautomation.dsl.expAuto.DatasourceSpecification;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Description;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.EventMiddlewareRepository;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoFactory;
@@ -24,13 +25,13 @@ import org.palladiosimulator.experimentautomation.dsl.expAuto.Experiment;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ExperimentDatasource;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ExperimentSpecifications;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ExponentialValueProvider;
-import org.palladiosimulator.experimentautomation.dsl.expAuto.FileDatasource;
+import org.palladiosimulator.experimentautomation.dsl.expAuto.FileDatasourceSpecification;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Import;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.InitSpecifications;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.InitialModel;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.LinearValueProvider;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ListOfSeeds;
-import org.palladiosimulator.experimentautomation.dsl.expAuto.MemoryDatasource;
+import org.palladiosimulator.experimentautomation.dsl.expAuto.MemoryDatasourceSpecification;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.MiddlewareRepository;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Model;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.MonitorRepository;
@@ -81,14 +82,21 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass fileDatasourceEClass = null;
+  private EClass datasourceSpecificationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass memoryDatasourceEClass = null;
+  private EClass fileDatasourceSpecificationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass memoryDatasourceSpecificationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -411,9 +419,9 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDatasource_SourceType()
+  public EReference getDatasource_Specification()
   {
-    return (EAttribute)datasourceEClass.getEStructuralFeatures().get(1);
+    return (EReference)datasourceEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -421,9 +429,9 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getFileDatasource()
+  public EClass getDatasourceSpecification()
   {
-    return fileDatasourceEClass;
+    return datasourceSpecificationEClass;
   }
 
   /**
@@ -431,9 +439,9 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFileDatasource_SourceURI()
+  public EReference getDatasourceSpecification_Specification()
   {
-    return (EAttribute)fileDatasourceEClass.getEStructuralFeatures().get(0);
+    return (EReference)datasourceSpecificationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -441,9 +449,49 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMemoryDatasource()
+  public EClass getFileDatasourceSpecification()
   {
-    return memoryDatasourceEClass;
+    return fileDatasourceSpecificationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFileDatasourceSpecification_SourceType()
+  {
+    return (EAttribute)fileDatasourceSpecificationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFileDatasourceSpecification_SourceURI()
+  {
+    return (EAttribute)fileDatasourceSpecificationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMemoryDatasourceSpecification()
+  {
+    return memoryDatasourceSpecificationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMemoryDatasourceSpecification_SourceType()
+  {
+    return (EAttribute)memoryDatasourceSpecificationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1106,12 +1154,17 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
 
     datasourceEClass = createEClass(DATASOURCE);
     createEAttribute(datasourceEClass, DATASOURCE__NAME);
-    createEAttribute(datasourceEClass, DATASOURCE__SOURCE_TYPE);
+    createEReference(datasourceEClass, DATASOURCE__SPECIFICATION);
 
-    fileDatasourceEClass = createEClass(FILE_DATASOURCE);
-    createEAttribute(fileDatasourceEClass, FILE_DATASOURCE__SOURCE_URI);
+    datasourceSpecificationEClass = createEClass(DATASOURCE_SPECIFICATION);
+    createEReference(datasourceSpecificationEClass, DATASOURCE_SPECIFICATION__SPECIFICATION);
 
-    memoryDatasourceEClass = createEClass(MEMORY_DATASOURCE);
+    fileDatasourceSpecificationEClass = createEClass(FILE_DATASOURCE_SPECIFICATION);
+    createEAttribute(fileDatasourceSpecificationEClass, FILE_DATASOURCE_SPECIFICATION__SOURCE_TYPE);
+    createEAttribute(fileDatasourceSpecificationEClass, FILE_DATASOURCE_SPECIFICATION__SOURCE_URI);
+
+    memoryDatasourceSpecificationEClass = createEClass(MEMORY_DATASOURCE_SPECIFICATION);
+    createEAttribute(memoryDatasourceSpecificationEClass, MEMORY_DATASOURCE_SPECIFICATION__SOURCE_TYPE);
 
     experimentEClass = createEClass(EXPERIMENT);
     createEAttribute(experimentEClass, EXPERIMENT__NAME);
@@ -1234,8 +1287,6 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    fileDatasourceEClass.getESuperTypes().add(this.getDatasource());
-    memoryDatasourceEClass.getESuperTypes().add(this.getDatasource());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1248,12 +1299,17 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
 
     initEClass(datasourceEClass, Datasource.class, "Datasource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDatasource_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Datasource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDatasource_SourceType(), theEcorePackage.getEString(), "sourceType", null, 0, 1, Datasource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDatasource_Specification(), this.getDatasourceSpecification(), null, "specification", null, 0, 1, Datasource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(fileDatasourceEClass, FileDatasource.class, "FileDatasource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFileDatasource_SourceURI(), theEcorePackage.getEString(), "sourceURI", null, 0, 1, FileDatasource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(datasourceSpecificationEClass, DatasourceSpecification.class, "DatasourceSpecification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDatasourceSpecification_Specification(), theEcorePackage.getEObject(), null, "specification", null, 0, 1, DatasourceSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(memoryDatasourceEClass, MemoryDatasource.class, "MemoryDatasource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(fileDatasourceSpecificationEClass, FileDatasourceSpecification.class, "FileDatasourceSpecification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFileDatasourceSpecification_SourceType(), theEcorePackage.getEString(), "sourceType", null, 0, 1, FileDatasourceSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFileDatasourceSpecification_SourceURI(), theEcorePackage.getEString(), "sourceURI", null, 0, 1, FileDatasourceSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(memoryDatasourceSpecificationEClass, MemoryDatasourceSpecification.class, "MemoryDatasourceSpecification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMemoryDatasourceSpecification_SourceType(), theEcorePackage.getEString(), "sourceType", null, 0, 1, MemoryDatasourceSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(experimentEClass, Experiment.class, "Experiment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExperiment_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Experiment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

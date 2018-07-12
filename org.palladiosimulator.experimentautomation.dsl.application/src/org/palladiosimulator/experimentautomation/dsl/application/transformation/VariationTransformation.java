@@ -32,7 +32,6 @@ public class VariationTransformation {
 		variation.setMaxVariations(old.getMaxVariations());
 		variation.setType(old.getVariationTyp());
 		variation.setVariedObjectId(transformVariationTarget(old.getTarget()));
-		
 		variation.setValueProvider(transformValueProvider(old.getValueProvider()));
 		
 		return variation;

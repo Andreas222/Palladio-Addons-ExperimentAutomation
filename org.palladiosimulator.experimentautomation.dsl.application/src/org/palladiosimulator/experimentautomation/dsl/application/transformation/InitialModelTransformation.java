@@ -13,32 +13,16 @@ import org.palladiosimulator.experimentautomation.experiments.ExperimentsFactory
 import org.palladiosimulator.experimentautomation.experiments.InitialModel;
 import org.palladiosimulator.experimentautomation.experiments.impl.ExperimentsFactoryImpl;
 import org.palladiosimulator.monitorrepository.MonitorRepository;
-import org.palladiosimulator.monitorrepository.MonitorRepositoryFactory;
-import org.palladiosimulator.monitorrepository.impl.MonitorRepositoryFactoryImpl;
 import org.palladiosimulator.pcm.allocation.Allocation;
-import org.palladiosimulator.pcm.allocation.AllocationFactory;
-import org.palladiosimulator.pcm.allocation.impl.AllocationFactoryImpl;
 import org.palladiosimulator.pcm.repository.Repository;
-import org.palladiosimulator.pcm.repository.RepositoryFactory;
-import org.palladiosimulator.pcm.repository.impl.RepositoryFactoryImpl;
 import org.palladiosimulator.pcm.usagemodel.UsageModel;
-import org.palladiosimulator.pcm.usagemodel.UsagemodelFactory;
-import org.palladiosimulator.pcm.usagemodel.impl.UsagemodelFactoryImpl;
 
 public class InitialModelTransformation {
 	private ExperimentsFactory experimentsfactory;
-	private UsagemodelFactory usageFactory;
-	private RepositoryFactory repositoryFactory;
-	private AllocationFactory allocationFactory;
-	private MonitorRepositoryFactory monitorFactory;
 	private ResourceSet rs;
 	
 	protected InitialModelTransformation(ResourceSet rs) {
 		experimentsfactory = ExperimentsFactoryImpl.init();
-		usageFactory = UsagemodelFactoryImpl.init();
-		repositoryFactory = RepositoryFactoryImpl.init();
-		allocationFactory = AllocationFactoryImpl.init();
-		monitorFactory = MonitorRepositoryFactoryImpl.init();
 		this.rs = rs;
 	}
 	

@@ -16,12 +16,18 @@
     </genClasses>
     <genClasses ecoreClass="ExpAuto.ecore#//Datasource">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//Datasource/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//Datasource/sourceType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpAuto.ecore#//Datasource/specification"/>
     </genClasses>
-    <genClasses ecoreClass="ExpAuto.ecore#//FileDatasource">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//FileDatasource/sourceURI"/>
+    <genClasses ecoreClass="ExpAuto.ecore#//DatasourceSpecification">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpAuto.ecore#//DatasourceSpecification/specification"/>
     </genClasses>
-    <genClasses ecoreClass="ExpAuto.ecore#//MemoryDatasource"/>
+    <genClasses ecoreClass="ExpAuto.ecore#//FileDatasourceSpecification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//FileDatasourceSpecification/sourceType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//FileDatasourceSpecification/sourceURI"/>
+    </genClasses>
+    <genClasses ecoreClass="ExpAuto.ecore#//MemoryDatasourceSpecification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//MemoryDatasourceSpecification/sourceType"/>
+    </genClasses>
     <genClasses ecoreClass="ExpAuto.ecore#//Experiment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//Experiment/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//Experiment/design"/>

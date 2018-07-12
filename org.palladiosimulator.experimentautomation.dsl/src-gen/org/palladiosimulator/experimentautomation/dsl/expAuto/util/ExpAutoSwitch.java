@@ -94,19 +94,24 @@ public class ExpAutoSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ExpAutoPackage.FILE_DATASOURCE:
+      case ExpAutoPackage.DATASOURCE_SPECIFICATION:
       {
-        FileDatasource fileDatasource = (FileDatasource)theEObject;
-        T result = caseFileDatasource(fileDatasource);
-        if (result == null) result = caseDatasource(fileDatasource);
+        DatasourceSpecification datasourceSpecification = (DatasourceSpecification)theEObject;
+        T result = caseDatasourceSpecification(datasourceSpecification);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ExpAutoPackage.MEMORY_DATASOURCE:
+      case ExpAutoPackage.FILE_DATASOURCE_SPECIFICATION:
       {
-        MemoryDatasource memoryDatasource = (MemoryDatasource)theEObject;
-        T result = caseMemoryDatasource(memoryDatasource);
-        if (result == null) result = caseDatasource(memoryDatasource);
+        FileDatasourceSpecification fileDatasourceSpecification = (FileDatasourceSpecification)theEObject;
+        T result = caseFileDatasourceSpecification(fileDatasourceSpecification);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ExpAutoPackage.MEMORY_DATASOURCE_SPECIFICATION:
+      {
+        MemoryDatasourceSpecification memoryDatasourceSpecification = (MemoryDatasourceSpecification)theEObject;
+        T result = caseMemoryDatasourceSpecification(memoryDatasourceSpecification);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -331,33 +336,49 @@ public class ExpAutoSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>File Datasource</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Datasource Specification</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>File Datasource</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Datasource Specification</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseFileDatasource(FileDatasource object)
+  public T caseDatasourceSpecification(DatasourceSpecification object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Memory Datasource</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>File Datasource Specification</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Memory Datasource</em>'.
+   * @return the result of interpreting the object as an instance of '<em>File Datasource Specification</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseMemoryDatasource(MemoryDatasource object)
+  public T caseFileDatasourceSpecification(FileDatasourceSpecification object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Memory Datasource Specification</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Memory Datasource Specification</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMemoryDatasourceSpecification(MemoryDatasourceSpecification object)
   {
     return null;
   }

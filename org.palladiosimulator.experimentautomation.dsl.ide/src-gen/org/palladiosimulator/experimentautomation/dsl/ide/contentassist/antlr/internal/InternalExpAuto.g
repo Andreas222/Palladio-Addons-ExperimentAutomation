@@ -115,59 +115,84 @@ ruleDatasource
 	}
 	:
 	(
-		{ before(grammarAccess.getDatasourceAccess().getAlternatives()); }
-		(rule__Datasource__Alternatives)
-		{ after(grammarAccess.getDatasourceAccess().getAlternatives()); }
+		{ before(grammarAccess.getDatasourceAccess().getGroup()); }
+		(rule__Datasource__Group__0)
+		{ after(grammarAccess.getDatasourceAccess().getGroup()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleFileDatasource
-entryRuleFileDatasource
+// Entry rule entryRuleDatasourceSpecification
+entryRuleDatasourceSpecification
 :
-{ before(grammarAccess.getFileDatasourceRule()); }
-	 ruleFileDatasource
-{ after(grammarAccess.getFileDatasourceRule()); } 
+{ before(grammarAccess.getDatasourceSpecificationRule()); }
+	 ruleDatasourceSpecification
+{ after(grammarAccess.getDatasourceSpecificationRule()); } 
 	 EOF 
 ;
 
-// Rule FileDatasource
-ruleFileDatasource 
+// Rule DatasourceSpecification
+ruleDatasourceSpecification 
 	@init {
 		int stackSize = keepStackSize();
 	}
 	:
 	(
-		{ before(grammarAccess.getFileDatasourceAccess().getGroup()); }
-		(rule__FileDatasource__Group__0)
-		{ after(grammarAccess.getFileDatasourceAccess().getGroup()); }
+		{ before(grammarAccess.getDatasourceSpecificationAccess().getSpecificationAssignment()); }
+		(rule__DatasourceSpecification__SpecificationAssignment)
+		{ after(grammarAccess.getDatasourceSpecificationAccess().getSpecificationAssignment()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleMemoryDatasource
-entryRuleMemoryDatasource
+// Entry rule entryRuleFileDatasourceSpecification
+entryRuleFileDatasourceSpecification
 :
-{ before(grammarAccess.getMemoryDatasourceRule()); }
-	 ruleMemoryDatasource
-{ after(grammarAccess.getMemoryDatasourceRule()); } 
+{ before(grammarAccess.getFileDatasourceSpecificationRule()); }
+	 ruleFileDatasourceSpecification
+{ after(grammarAccess.getFileDatasourceSpecificationRule()); } 
 	 EOF 
 ;
 
-// Rule MemoryDatasource
-ruleMemoryDatasource 
+// Rule FileDatasourceSpecification
+ruleFileDatasourceSpecification 
 	@init {
 		int stackSize = keepStackSize();
 	}
 	:
 	(
-		{ before(grammarAccess.getMemoryDatasourceAccess().getGroup()); }
-		(rule__MemoryDatasource__Group__0)
-		{ after(grammarAccess.getMemoryDatasourceAccess().getGroup()); }
+		{ before(grammarAccess.getFileDatasourceSpecificationAccess().getGroup()); }
+		(rule__FileDatasourceSpecification__Group__0)
+		{ after(grammarAccess.getFileDatasourceSpecificationAccess().getGroup()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+// Entry rule entryRuleMemoryDatasourceSpecification
+entryRuleMemoryDatasourceSpecification
+:
+{ before(grammarAccess.getMemoryDatasourceSpecificationRule()); }
+	 ruleMemoryDatasourceSpecification
+{ after(grammarAccess.getMemoryDatasourceSpecificationRule()); } 
+	 EOF 
+;
+
+// Rule MemoryDatasourceSpecification
+ruleMemoryDatasourceSpecification 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getMemoryDatasourceSpecificationAccess().getSourceTypeAssignment()); }
+		(rule__MemoryDatasourceSpecification__SourceTypeAssignment)
+		{ after(grammarAccess.getMemoryDatasourceSpecificationAccess().getSourceTypeAssignment()); }
 	)
 ;
 finally {
@@ -813,21 +838,21 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Datasource__Alternatives
+rule__DatasourceSpecification__SpecificationAlternatives_0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getDatasourceAccess().getFileDatasourceParserRuleCall_0()); }
-		ruleFileDatasource
-		{ after(grammarAccess.getDatasourceAccess().getFileDatasourceParserRuleCall_0()); }
+		{ before(grammarAccess.getDatasourceSpecificationAccess().getSpecificationFileDatasourceSpecificationParserRuleCall_0_0()); }
+		ruleFileDatasourceSpecification
+		{ after(grammarAccess.getDatasourceSpecificationAccess().getSpecificationFileDatasourceSpecificationParserRuleCall_0_0()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getDatasourceAccess().getMemoryDatasourceParserRuleCall_1()); }
-		ruleMemoryDatasource
-		{ after(grammarAccess.getDatasourceAccess().getMemoryDatasourceParserRuleCall_1()); }
+		{ before(grammarAccess.getDatasourceSpecificationAccess().getSpecificationMemoryDatasourceSpecificationParserRuleCall_0_1()); }
+		ruleMemoryDatasourceSpecification
+		{ after(grammarAccess.getDatasourceSpecificationAccess().getSpecificationMemoryDatasourceSpecificationParserRuleCall_0_1()); }
 	)
 ;
 finally {
@@ -1215,296 +1240,215 @@ finally {
 }
 
 
-rule__FileDatasource__Group__0
+rule__Datasource__Group__0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__FileDatasource__Group__0__Impl
-	rule__FileDatasource__Group__1
+	rule__Datasource__Group__0__Impl
+	rule__Datasource__Group__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FileDatasource__Group__0__Impl
+rule__Datasource__Group__0__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFileDatasourceAccess().getDatasourceKeyword_0()); }
+	{ before(grammarAccess.getDatasourceAccess().getDatasourceKeyword_0()); }
 	'datasource'
-	{ after(grammarAccess.getFileDatasourceAccess().getDatasourceKeyword_0()); }
+	{ after(grammarAccess.getDatasourceAccess().getDatasourceKeyword_0()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FileDatasource__Group__1
+rule__Datasource__Group__1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__FileDatasource__Group__1__Impl
-	rule__FileDatasource__Group__2
+	rule__Datasource__Group__1__Impl
+	rule__Datasource__Group__2
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FileDatasource__Group__1__Impl
+rule__Datasource__Group__1__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFileDatasourceAccess().getNameAssignment_1()); }
-	(rule__FileDatasource__NameAssignment_1)
-	{ after(grammarAccess.getFileDatasourceAccess().getNameAssignment_1()); }
+	{ before(grammarAccess.getDatasourceAccess().getNameAssignment_1()); }
+	(rule__Datasource__NameAssignment_1)
+	{ after(grammarAccess.getDatasourceAccess().getNameAssignment_1()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FileDatasource__Group__2
+rule__Datasource__Group__2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__FileDatasource__Group__2__Impl
-	rule__FileDatasource__Group__3
+	rule__Datasource__Group__2__Impl
+	rule__Datasource__Group__3
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FileDatasource__Group__2__Impl
+rule__Datasource__Group__2__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFileDatasourceAccess().getColonKeyword_2()); }
+	{ before(grammarAccess.getDatasourceAccess().getColonKeyword_2()); }
 	':'
-	{ after(grammarAccess.getFileDatasourceAccess().getColonKeyword_2()); }
+	{ after(grammarAccess.getDatasourceAccess().getColonKeyword_2()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FileDatasource__Group__3
+rule__Datasource__Group__3
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__FileDatasource__Group__3__Impl
-	rule__FileDatasource__Group__4
+	rule__Datasource__Group__3__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FileDatasource__Group__3__Impl
+rule__Datasource__Group__3__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFileDatasourceAccess().getSourceTypeAssignment_3()); }
-	(rule__FileDatasource__SourceTypeAssignment_3)
-	{ after(grammarAccess.getFileDatasourceAccess().getSourceTypeAssignment_3()); }
+	{ before(grammarAccess.getDatasourceAccess().getSpecificationAssignment_3()); }
+	(rule__Datasource__SpecificationAssignment_3)
+	{ after(grammarAccess.getDatasourceAccess().getSpecificationAssignment_3()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FileDatasource__Group__4
+
+rule__FileDatasourceSpecification__Group__0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__FileDatasource__Group__4__Impl
-	rule__FileDatasource__Group__5
+	rule__FileDatasourceSpecification__Group__0__Impl
+	rule__FileDatasourceSpecification__Group__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FileDatasource__Group__4__Impl
+rule__FileDatasourceSpecification__Group__0__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFileDatasourceAccess().getLeftParenthesisKeyword_4()); }
+	{ before(grammarAccess.getFileDatasourceSpecificationAccess().getSourceTypeAssignment_0()); }
+	(rule__FileDatasourceSpecification__SourceTypeAssignment_0)
+	{ after(grammarAccess.getFileDatasourceSpecificationAccess().getSourceTypeAssignment_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__FileDatasourceSpecification__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__FileDatasourceSpecification__Group__1__Impl
+	rule__FileDatasourceSpecification__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__FileDatasourceSpecification__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getFileDatasourceSpecificationAccess().getLeftParenthesisKeyword_1()); }
 	'('
-	{ after(grammarAccess.getFileDatasourceAccess().getLeftParenthesisKeyword_4()); }
+	{ after(grammarAccess.getFileDatasourceSpecificationAccess().getLeftParenthesisKeyword_1()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FileDatasource__Group__5
+rule__FileDatasourceSpecification__Group__2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__FileDatasource__Group__5__Impl
-	rule__FileDatasource__Group__6
+	rule__FileDatasourceSpecification__Group__2__Impl
+	rule__FileDatasourceSpecification__Group__3
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FileDatasource__Group__5__Impl
+rule__FileDatasourceSpecification__Group__2__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFileDatasourceAccess().getSourceURIAssignment_5()); }
-	(rule__FileDatasource__SourceURIAssignment_5)
-	{ after(grammarAccess.getFileDatasourceAccess().getSourceURIAssignment_5()); }
+	{ before(grammarAccess.getFileDatasourceSpecificationAccess().getSourceURIAssignment_2()); }
+	(rule__FileDatasourceSpecification__SourceURIAssignment_2)
+	{ after(grammarAccess.getFileDatasourceSpecificationAccess().getSourceURIAssignment_2()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FileDatasource__Group__6
+rule__FileDatasourceSpecification__Group__3
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__FileDatasource__Group__6__Impl
+	rule__FileDatasourceSpecification__Group__3__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FileDatasource__Group__6__Impl
+rule__FileDatasourceSpecification__Group__3__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getFileDatasourceAccess().getRightParenthesisKeyword_6()); }
+	{ before(grammarAccess.getFileDatasourceSpecificationAccess().getRightParenthesisKeyword_3()); }
 	')'
-	{ after(grammarAccess.getFileDatasourceAccess().getRightParenthesisKeyword_6()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__MemoryDatasource__Group__0
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__MemoryDatasource__Group__0__Impl
-	rule__MemoryDatasource__Group__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__MemoryDatasource__Group__0__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getMemoryDatasourceAccess().getDatasourceKeyword_0()); }
-	'datasource'
-	{ after(grammarAccess.getMemoryDatasourceAccess().getDatasourceKeyword_0()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__MemoryDatasource__Group__1
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__MemoryDatasource__Group__1__Impl
-	rule__MemoryDatasource__Group__2
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__MemoryDatasource__Group__1__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getMemoryDatasourceAccess().getNameAssignment_1()); }
-	(rule__MemoryDatasource__NameAssignment_1)
-	{ after(grammarAccess.getMemoryDatasourceAccess().getNameAssignment_1()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__MemoryDatasource__Group__2
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__MemoryDatasource__Group__2__Impl
-	rule__MemoryDatasource__Group__3
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__MemoryDatasource__Group__2__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getMemoryDatasourceAccess().getColonKeyword_2()); }
-	':'
-	{ after(grammarAccess.getMemoryDatasourceAccess().getColonKeyword_2()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__MemoryDatasource__Group__3
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__MemoryDatasource__Group__3__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__MemoryDatasource__Group__3__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getMemoryDatasourceAccess().getSourceTypeAssignment_3()); }
-	(rule__MemoryDatasource__SourceTypeAssignment_3)
-	{ after(grammarAccess.getMemoryDatasourceAccess().getSourceTypeAssignment_3()); }
+	{ after(grammarAccess.getFileDatasourceSpecificationAccess().getRightParenthesisKeyword_3()); }
 )
 ;
 finally {
@@ -5028,83 +4972,98 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FileDatasource__NameAssignment_1
+rule__Datasource__NameAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getFileDatasourceAccess().getNameIDTerminalRuleCall_1_0()); }
+		{ before(grammarAccess.getDatasourceAccess().getNameIDTerminalRuleCall_1_0()); }
 		RULE_ID
-		{ after(grammarAccess.getFileDatasourceAccess().getNameIDTerminalRuleCall_1_0()); }
+		{ after(grammarAccess.getDatasourceAccess().getNameIDTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FileDatasource__SourceTypeAssignment_3
+rule__Datasource__SpecificationAssignment_3
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getFileDatasourceAccess().getSourceTypeEDP2Keyword_3_0()); }
+		{ before(grammarAccess.getDatasourceAccess().getSpecificationDatasourceSpecificationParserRuleCall_3_0()); }
+		ruleDatasourceSpecification
+		{ after(grammarAccess.getDatasourceAccess().getSpecificationDatasourceSpecificationParserRuleCall_3_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__DatasourceSpecification__SpecificationAssignment
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getDatasourceSpecificationAccess().getSpecificationAlternatives_0()); }
+		(rule__DatasourceSpecification__SpecificationAlternatives_0)
+		{ after(grammarAccess.getDatasourceSpecificationAccess().getSpecificationAlternatives_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__FileDatasourceSpecification__SourceTypeAssignment_0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getFileDatasourceSpecificationAccess().getSourceTypeEDP2Keyword_0_0()); }
 		(
-			{ before(grammarAccess.getFileDatasourceAccess().getSourceTypeEDP2Keyword_3_0()); }
+			{ before(grammarAccess.getFileDatasourceSpecificationAccess().getSourceTypeEDP2Keyword_0_0()); }
 			'EDP2'
-			{ after(grammarAccess.getFileDatasourceAccess().getSourceTypeEDP2Keyword_3_0()); }
+			{ after(grammarAccess.getFileDatasourceSpecificationAccess().getSourceTypeEDP2Keyword_0_0()); }
 		)
-		{ after(grammarAccess.getFileDatasourceAccess().getSourceTypeEDP2Keyword_3_0()); }
+		{ after(grammarAccess.getFileDatasourceSpecificationAccess().getSourceTypeEDP2Keyword_0_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__FileDatasource__SourceURIAssignment_5
+rule__FileDatasourceSpecification__SourceURIAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getFileDatasourceAccess().getSourceURISTRINGTerminalRuleCall_5_0()); }
+		{ before(grammarAccess.getFileDatasourceSpecificationAccess().getSourceURISTRINGTerminalRuleCall_2_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getFileDatasourceAccess().getSourceURISTRINGTerminalRuleCall_5_0()); }
+		{ after(grammarAccess.getFileDatasourceSpecificationAccess().getSourceURISTRINGTerminalRuleCall_2_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__MemoryDatasource__NameAssignment_1
+rule__MemoryDatasourceSpecification__SourceTypeAssignment
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getMemoryDatasourceAccess().getNameIDTerminalRuleCall_1_0()); }
-		RULE_ID
-		{ after(grammarAccess.getMemoryDatasourceAccess().getNameIDTerminalRuleCall_1_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__MemoryDatasource__SourceTypeAssignment_3
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getMemoryDatasourceAccess().getSourceTypeEDP2Keyword_3_0()); }
+		{ before(grammarAccess.getMemoryDatasourceSpecificationAccess().getSourceTypeEDP2Keyword_0()); }
 		(
-			{ before(grammarAccess.getMemoryDatasourceAccess().getSourceTypeEDP2Keyword_3_0()); }
+			{ before(grammarAccess.getMemoryDatasourceSpecificationAccess().getSourceTypeEDP2Keyword_0()); }
 			'EDP2'
-			{ after(grammarAccess.getMemoryDatasourceAccess().getSourceTypeEDP2Keyword_3_0()); }
+			{ after(grammarAccess.getMemoryDatasourceSpecificationAccess().getSourceTypeEDP2Keyword_0()); }
 		)
-		{ after(grammarAccess.getMemoryDatasourceAccess().getSourceTypeEDP2Keyword_3_0()); }
+		{ after(grammarAccess.getMemoryDatasourceSpecificationAccess().getSourceTypeEDP2Keyword_0()); }
 	)
 ;
 finally {

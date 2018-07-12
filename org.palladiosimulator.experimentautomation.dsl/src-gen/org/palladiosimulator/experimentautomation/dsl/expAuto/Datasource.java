@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.Datasource#getName <em>Name</em>}</li>
- *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.Datasource#getSourceType <em>Source Type</em>}</li>
+ *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.Datasource#getSpecification <em>Specification</em>}</li>
  * </ul>
  *
  * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage#getDatasource()
@@ -51,29 +51,29 @@ public interface Datasource extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Source Type</b></em>' attribute.
+   * Returns the value of the '<em><b>Specification</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Source Type</em>' attribute isn't clear,
+   * If the meaning of the '<em>Specification</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Source Type</em>' attribute.
-   * @see #setSourceType(String)
-   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage#getDatasource_SourceType()
-   * @model
+   * @return the value of the '<em>Specification</em>' containment reference.
+   * @see #setSpecification(DatasourceSpecification)
+   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage#getDatasource_Specification()
+   * @model containment="true"
    * @generated
    */
-  String getSourceType();
+  DatasourceSpecification getSpecification();
 
   /**
-   * Sets the value of the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.Datasource#getSourceType <em>Source Type</em>}' attribute.
+   * Sets the value of the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.Datasource#getSpecification <em>Specification</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Source Type</em>' attribute.
-   * @see #getSourceType()
+   * @param value the new value of the '<em>Specification</em>' containment reference.
+   * @see #getSpecification()
    * @generated
    */
-  void setSourceType(String value);
+  void setSpecification(DatasourceSpecification value);
 
 } // Datasource

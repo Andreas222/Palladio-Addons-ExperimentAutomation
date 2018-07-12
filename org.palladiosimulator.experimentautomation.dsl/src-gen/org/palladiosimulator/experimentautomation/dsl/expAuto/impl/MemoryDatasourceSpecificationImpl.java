@@ -8,51 +8,52 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage;
-import org.palladiosimulator.experimentautomation.dsl.expAuto.FileDatasource;
+import org.palladiosimulator.experimentautomation.dsl.expAuto.MemoryDatasourceSpecification;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>File Datasource</b></em>'.
+ * An implementation of the model object '<em><b>Memory Datasource Specification</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.FileDatasourceImpl#getSourceURI <em>Source URI</em>}</li>
+ *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.MemoryDatasourceSpecificationImpl#getSourceType <em>Source Type</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class FileDatasourceImpl extends DatasourceImpl implements FileDatasource
+public class MemoryDatasourceSpecificationImpl extends MinimalEObjectImpl.Container implements MemoryDatasourceSpecification
 {
   /**
-   * The default value of the '{@link #getSourceURI() <em>Source URI</em>}' attribute.
+   * The default value of the '{@link #getSourceType() <em>Source Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSourceURI()
+   * @see #getSourceType()
    * @generated
    * @ordered
    */
-  protected static final String SOURCE_URI_EDEFAULT = null;
+  protected static final String SOURCE_TYPE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getSourceURI() <em>Source URI</em>}' attribute.
+   * The cached value of the '{@link #getSourceType() <em>Source Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSourceURI()
+   * @see #getSourceType()
    * @generated
    * @ordered
    */
-  protected String sourceURI = SOURCE_URI_EDEFAULT;
+  protected String sourceType = SOURCE_TYPE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected FileDatasourceImpl()
+  protected MemoryDatasourceSpecificationImpl()
   {
     super();
   }
@@ -65,7 +66,7 @@ public class FileDatasourceImpl extends DatasourceImpl implements FileDatasource
   @Override
   protected EClass eStaticClass()
   {
-    return ExpAutoPackage.Literals.FILE_DATASOURCE;
+    return ExpAutoPackage.Literals.MEMORY_DATASOURCE_SPECIFICATION;
   }
 
   /**
@@ -73,9 +74,9 @@ public class FileDatasourceImpl extends DatasourceImpl implements FileDatasource
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getSourceURI()
+  public String getSourceType()
   {
-    return sourceURI;
+    return sourceType;
   }
 
   /**
@@ -83,12 +84,12 @@ public class FileDatasourceImpl extends DatasourceImpl implements FileDatasource
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSourceURI(String newSourceURI)
+  public void setSourceType(String newSourceType)
   {
-    String oldSourceURI = sourceURI;
-    sourceURI = newSourceURI;
+    String oldSourceType = sourceType;
+    sourceType = newSourceType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExpAutoPackage.FILE_DATASOURCE__SOURCE_URI, oldSourceURI, sourceURI));
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpAutoPackage.MEMORY_DATASOURCE_SPECIFICATION__SOURCE_TYPE, oldSourceType, sourceType));
   }
 
   /**
@@ -101,8 +102,8 @@ public class FileDatasourceImpl extends DatasourceImpl implements FileDatasource
   {
     switch (featureID)
     {
-      case ExpAutoPackage.FILE_DATASOURCE__SOURCE_URI:
-        return getSourceURI();
+      case ExpAutoPackage.MEMORY_DATASOURCE_SPECIFICATION__SOURCE_TYPE:
+        return getSourceType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,8 +118,8 @@ public class FileDatasourceImpl extends DatasourceImpl implements FileDatasource
   {
     switch (featureID)
     {
-      case ExpAutoPackage.FILE_DATASOURCE__SOURCE_URI:
-        setSourceURI((String)newValue);
+      case ExpAutoPackage.MEMORY_DATASOURCE_SPECIFICATION__SOURCE_TYPE:
+        setSourceType((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +135,8 @@ public class FileDatasourceImpl extends DatasourceImpl implements FileDatasource
   {
     switch (featureID)
     {
-      case ExpAutoPackage.FILE_DATASOURCE__SOURCE_URI:
-        setSourceURI(SOURCE_URI_EDEFAULT);
+      case ExpAutoPackage.MEMORY_DATASOURCE_SPECIFICATION__SOURCE_TYPE:
+        setSourceType(SOURCE_TYPE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -151,8 +152,8 @@ public class FileDatasourceImpl extends DatasourceImpl implements FileDatasource
   {
     switch (featureID)
     {
-      case ExpAutoPackage.FILE_DATASOURCE__SOURCE_URI:
-        return SOURCE_URI_EDEFAULT == null ? sourceURI != null : !SOURCE_URI_EDEFAULT.equals(sourceURI);
+      case ExpAutoPackage.MEMORY_DATASOURCE_SPECIFICATION__SOURCE_TYPE:
+        return SOURCE_TYPE_EDEFAULT == null ? sourceType != null : !SOURCE_TYPE_EDEFAULT.equals(sourceType);
     }
     return super.eIsSet(featureID);
   }
@@ -168,10 +169,10 @@ public class FileDatasourceImpl extends DatasourceImpl implements FileDatasource
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (sourceURI: ");
-    result.append(sourceURI);
+    result.append(" (sourceType: ");
+    result.append(sourceType);
     result.append(')');
     return result.toString();
   }
 
-} //FileDatasourceImpl
+} //MemoryDatasourceSpecificationImpl

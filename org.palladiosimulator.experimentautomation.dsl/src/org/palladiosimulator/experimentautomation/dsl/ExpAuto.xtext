@@ -17,15 +17,19 @@ Import:
 ;
 
 Datasource:
-	FileDatasource | MemoryDatasource
+	'datasource' name = ID ':' specification = DatasourceSpecification
 ;
 
-FileDatasource:
-	'datasource' name = ID ':' sourceType = 'EDP2' '(' sourceURI = STRING ')'
+DatasourceSpecification:
+	specification = (FileDatasourceSpecification | MemoryDatasourceSpecification)
 ;
 
-MemoryDatasource:
-	'datasource' name = ID ':' sourceType = 'EDP2'
+FileDatasourceSpecification:
+	sourceType = 'EDP2' '(' sourceURI = STRING ')'
+;
+
+MemoryDatasourceSpecification:
+	sourceType = 'EDP2'
 ;
 
 

@@ -1,15 +1,19 @@
 package org.palladiosimulator.experimentautomation.dsl.application.transformation;
 
 import java.util.LinkedList;
+
+import org.eclipse.emf.ecore.EObject;
 import org.palladiosimulator.experimentautomation.abstractsimulation.AbstractsimulationFactory;
+import org.palladiosimulator.experimentautomation.abstractsimulation.EDP2Datasource;
 import org.palladiosimulator.experimentautomation.abstractsimulation.FileDatasource;
 import org.palladiosimulator.experimentautomation.abstractsimulation.MemoryDatasource;
 import org.palladiosimulator.experimentautomation.abstractsimulation.RandomNumberGeneratorSeed;
 import org.palladiosimulator.experimentautomation.abstractsimulation.impl.AbstractsimulationFactoryImpl;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.SeedDefinition;
-//import org.palladiosimulator.experimentautomation.dsl.expAuto.ExperimentFileDatasource;
-//import org.palladiosimulator.experimentautomation.dsl.expAuto.ExperimentMemoryDatasource;
+import org.palladiosimulator.experimentautomation.dsl.expAuto.ExperimentDatasource;
+import org.palladiosimulator.experimentautomation.dsl.expAuto.FileDatasourceSpecification;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ListOfSeeds;
+import org.palladiosimulator.experimentautomation.dsl.expAuto.MemoryDatasourceSpecification;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition;
 import org.palladiosimulator.experimentautomation.experiments.ToolConfiguration;
 
@@ -52,22 +56,32 @@ public class ToolConfigurationTransformation {
 		return generatorSeed;
 	}
 	
-	//TODO: Anpassung an Grammatik
-	/*
-	private FileDatasource transformExperimentFileDatasource(ExperimentFileDatasource old) {
-		FileDatasource datasource = factory.createFileDatasource();
+	private EDP2Datasource transformExperimentDatasource(ExperimentDatasource old) {
+		EDP2Datasource datasource;
+		EObject specification = old.getSource().getSpecification().getSpecification();
+		
+		if(specification instanceof FileDatasourceSpecification) {
+			datasource = transformFileDatasource((FileDatasourceSpecification)specification);
+		} else if(specification instanceof MemoryDatasourceSpecification) {
+			datasource = transformMemoryDatasource((MemoryDatasourceSpecification)specification);
+		} else {
+			//sollte nie passieren
+			return null;
+		}
 		
 		datasource.setId(old.getSource().getName());
-		datasource.setLocation(old.getSource().getSourceURI());
 		
 		return datasource;
 	}
 	
-	private MemoryDatasource transformExperimentMemoryDatasource(ExperimentMemoryDatasource old) {
-		MemoryDatasource datasource = factory.createMemoryDatasource();
-		
-		datasource.setId(old.getSource().getName());
-		
+	private FileDatasource transformFileDatasource(FileDatasourceSpecification old) {
+		FileDatasource datasource = factory.createFileDatasource();
+		datasource.setLocation(old.getSourceURI());
 		return datasource;
-	}*/
+	}
+	
+	private MemoryDatasource transformMemoryDatasource(MemoryDatasourceSpecification old) {
+		MemoryDatasource datasource = factory.createMemoryDatasource();
+		return datasource;
+	}
 }
