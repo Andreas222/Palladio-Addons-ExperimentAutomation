@@ -90,11 +90,12 @@ public class ExpAutoFactoryImpl extends EFactoryImpl implements ExpAutoFactory
       case ExpAutoPackage.STOP_TIME_CONDITION: return createStopTimeCondition();
       case ExpAutoPackage.STOP_COUNT_CONDITION: return createStopCountCondition();
       case ExpAutoPackage.NUMBER_OF_EXPERIMENTS: return createNumberOfExperiments();
+      case ExpAutoPackage.TOOL_DEFINITION: return createToolDefinition();
+      case ExpAutoPackage.CONFIGURATION_PARAMS: return createConfigurationParams();
       case ExpAutoPackage.SEED_DEFINITION: return createSeedDefinition();
       case ExpAutoPackage.LIST_OF_SEEDS: return createListOfSeeds();
       case ExpAutoPackage.EXPERIMENT_DATASOURCE: return createExperimentDatasource();
-      case ExpAutoPackage.TOOL_DEFINITION: return createToolDefinition();
-      case ExpAutoPackage.CONFIGURATION_PARAMS: return createConfigurationParams();
+      case ExpAutoPackage.KEY_VALUE: return createKeyValue();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -380,6 +381,28 @@ public class ExpAutoFactoryImpl extends EFactoryImpl implements ExpAutoFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public ToolDefinition createToolDefinition()
+  {
+    ToolDefinitionImpl toolDefinition = new ToolDefinitionImpl();
+    return toolDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ConfigurationParams createConfigurationParams()
+  {
+    ConfigurationParamsImpl configurationParams = new ConfigurationParamsImpl();
+    return configurationParams;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public SeedDefinition createSeedDefinition()
   {
     SeedDefinitionImpl seedDefinition = new SeedDefinitionImpl();
@@ -413,21 +436,10 @@ public class ExpAutoFactoryImpl extends EFactoryImpl implements ExpAutoFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ToolDefinition createToolDefinition()
+  public KeyValue createKeyValue()
   {
-    ToolDefinitionImpl toolDefinition = new ToolDefinitionImpl();
-    return toolDefinition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ConfigurationParams createConfigurationParams()
-  {
-    ConfigurationParamsImpl configurationParams = new ConfigurationParamsImpl();
-    return configurationParams;
+    KeyValueImpl keyValue = new KeyValueImpl();
+    return keyValue;
   }
 
   /**

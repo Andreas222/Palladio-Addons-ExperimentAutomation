@@ -3,8 +3,6 @@
  */
 package org.palladiosimulator.experimentautomation.dsl.expAuto;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -53,19 +51,29 @@ public interface ToolDefinition extends EObject
   void setTool(String value);
 
   /**
-   * Returns the value of the '<em><b>Config Params</b></em>' containment reference list.
-   * The list contents are of type {@link org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams}.
+   * Returns the value of the '<em><b>Config Params</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Config Params</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Config Params</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Config Params</em>' containment reference list.
+   * @return the value of the '<em>Config Params</em>' containment reference.
+   * @see #setConfigParams(ConfigurationParams)
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage#getToolDefinition_ConfigParams()
    * @model containment="true"
    * @generated
    */
-  EList<ConfigurationParams> getConfigParams();
+  ConfigurationParams getConfigParams();
+
+  /**
+   * Sets the value of the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition#getConfigParams <em>Config Params</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Config Params</em>' containment reference.
+   * @see #getConfigParams()
+   * @generated
+   */
+  void setConfigParams(ConfigurationParams value);
 
 } // ToolDefinition

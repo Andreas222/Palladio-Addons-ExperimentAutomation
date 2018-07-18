@@ -1,6 +1,5 @@
 package org.palladiosimulator.experimentautomation.dsl.application.transformation;
 
-import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -10,10 +9,8 @@ import org.palladiosimulator.experimentautomation.abstractsimulation.SimTimeStop
 import org.palladiosimulator.experimentautomation.abstractsimulation.StopCondition;
 import org.palladiosimulator.experimentautomation.abstractsimulation.impl.AbstractsimulationFactoryImpl;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Description;
-import org.palladiosimulator.experimentautomation.dsl.expAuto.ExperimentDatasource;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ExperimentSpecifications;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.NumberOfExperiments;
-import org.palladiosimulator.experimentautomation.dsl.expAuto.SeedDefinition;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.StopCountCondition;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.StopTimeCondition;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition;
@@ -21,7 +18,6 @@ import org.palladiosimulator.experimentautomation.experiments.Experiment;
 import org.palladiosimulator.experimentautomation.experiments.ExperimentDesign;
 import org.palladiosimulator.experimentautomation.experiments.ExperimentsFactory;
 import org.palladiosimulator.experimentautomation.experiments.InitialModel;
-import org.palladiosimulator.experimentautomation.experiments.ToolConfiguration;
 import org.palladiosimulator.experimentautomation.experiments.Variation;
 import org.palladiosimulator.experimentautomation.experiments.impl.ExperimentsFactoryImpl;
 
@@ -63,7 +59,6 @@ public class ExperimentTransformation {
 	
 	private void transformExperimentSpecifications(Experiment experiment, ExperimentSpecifications old) {
 		EList<EObject> specifications = old.getSpecifications();
-		EList<StopCondition> stopConditions = new BasicEList<StopCondition>();
 		VariationTransformation variationTransformation = new VariationTransformation();
 		InitialModelTransformation initialModelTransformation = new InitialModelTransformation(rs);
 		ToolConfigurationTransformation toolConfigurationTransformation = new ToolConfigurationTransformation();
@@ -79,20 +74,13 @@ public class ExperimentTransformation {
 				InitialModel initialModel = initialModelTransformation.transformInitialModel((org.palladiosimulator.experimentautomation.dsl.expAuto.InitialModel)currObject);
 				experiment.setInitialModel(initialModel);
 			} else if(currObject instanceof StopTimeCondition) {
-				StopCondition condition = transformStopTimeCondition((StopTimeCondition)currObject);
-				stopConditions.add(condition);
+				experiment.getStopConditions().add(transformStopTimeCondition((StopTimeCondition)currObject));
 			} else if(currObject instanceof StopCountCondition) {
-				StopCondition condition = transformStopCountCondition((StopCountCondition)currObject);
-				stopConditions.add(condition);
+				experiment.getStopConditions().add(transformStopCountCondition((StopCountCondition)currObject));
 			} else if(currObject instanceof NumberOfExperiments) {
 				experiment.setRepetitions(transformNumberOfExperiments((NumberOfExperiments)currObject));
 			} else if(currObject instanceof ToolDefinition) {
-				ToolConfiguration configuration = toolConfigurationTransformation.transformToolDefinition((ToolDefinition)currObject);
-				experiment.getToolConfiguration().add(configuration);
-			} else if(currObject instanceof SeedDefinition) {
-				//TODO Grammatik anpassen?
-			} else if(currObject instanceof ExperimentDatasource) {
-				//TODO Grammatik anpassen?
+				experiment.getToolConfiguration().add(toolConfigurationTransformation.transformToolDefinition((ToolDefinition)currObject));
 			} else {
 				// Never possible
 			}
@@ -112,7 +100,7 @@ public class ExperimentTransformation {
 	private StopCondition transformStopCountCondition(StopCountCondition old) {
 		MeasurementCountStopCondition stopCondition = absFactory.createMeasurementCountStopCondition();
 		stopCondition.setMeasurementCount(old.getStopParam());
-		return null;
+		return stopCondition;
 	}
 	
 	private int transformNumberOfExperiments(NumberOfExperiments old) {

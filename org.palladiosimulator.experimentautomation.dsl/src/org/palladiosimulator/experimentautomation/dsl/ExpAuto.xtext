@@ -32,7 +32,6 @@ MemoryDatasourceSpecification:
 	sourceType = 'EDP2'
 ;
 
-
 Experiment:
 	'experiment' name = ID ':' design = ('FullFactorial' | 'OneFactor')
 	'{' 
@@ -41,7 +40,7 @@ Experiment:
 ;
 
 ExperimentSpecifications:
-	specifications += (Description | InitialModel | Variation | StopTimeCondition | StopCountCondition | NumberOfExperiments | SeedDefinition | ExperimentDatasource | ToolDefinition)+
+	specifications += (Description | InitialModel | Variation | StopTimeCondition | StopCountCondition | NumberOfExperiments | ToolDefinition)+
 ;
 
 Description:
@@ -120,6 +119,14 @@ NumberOfExperiments:
 	'repetitions' '=' numberOfRepetitions = INT
 ;
 
+ToolDefinition:
+	'tool' '=' tool = STRING/*[exp::ToolConfiguration]*/ '{' configParams = ConfigurationParams '}'
+;
+
+ConfigurationParams:
+	 params += (SeedDefinition | ExperimentDatasource | StopTimeCondition | StopCountCondition | KeyValue)+
+;
+
 SeedDefinition:
 	'seeds' '=' '{' seedLists += ListOfSeeds (',' seedLists += ListOfSeeds)* '}'
 ;
@@ -132,12 +139,8 @@ ExperimentDatasource:
 	'datasource' '=' source = [Datasource]
 ;
 
-ToolDefinition:
-	'tool' '=' tool = STRING/*[exp::ToolConfiguration]*/ '{' configParams += ConfigurationParams* '}'
-;
-
-ConfigurationParams:
-	key = ID '=' value = ConfigValue ';'
+KeyValue:
+	key = ID '=' value = ConfigValue
 ;
 
 ConfigValue:

@@ -599,9 +599,9 @@ ruleExperimentSpecifications returns [EObject current=null]
 				}
 				    |
 				{
-					newCompositeNode(grammarAccess.getExperimentSpecificationsAccess().getSpecificationsSeedDefinitionParserRuleCall_0_6());
+					newCompositeNode(grammarAccess.getExperimentSpecificationsAccess().getSpecificationsToolDefinitionParserRuleCall_0_6());
 				}
-				lv_specifications_0_7=ruleSeedDefinition
+				lv_specifications_0_7=ruleToolDefinition
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getExperimentSpecificationsRule());
@@ -610,38 +610,6 @@ ruleExperimentSpecifications returns [EObject current=null]
 						$current,
 						"specifications",
 						lv_specifications_0_7,
-						"org.palladiosimulator.experimentautomation.dsl.ExpAuto.SeedDefinition");
-					afterParserOrEnumRuleCall();
-				}
-				    |
-				{
-					newCompositeNode(grammarAccess.getExperimentSpecificationsAccess().getSpecificationsExperimentDatasourceParserRuleCall_0_7());
-				}
-				lv_specifications_0_8=ruleExperimentDatasource
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getExperimentSpecificationsRule());
-					}
-					add(
-						$current,
-						"specifications",
-						lv_specifications_0_8,
-						"org.palladiosimulator.experimentautomation.dsl.ExpAuto.ExperimentDatasource");
-					afterParserOrEnumRuleCall();
-				}
-				    |
-				{
-					newCompositeNode(grammarAccess.getExperimentSpecificationsAccess().getSpecificationsToolDefinitionParserRuleCall_0_8());
-				}
-				lv_specifications_0_9=ruleToolDefinition
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getExperimentSpecificationsRule());
-					}
-					add(
-						$current,
-						"specifications",
-						lv_specifications_0_9,
 						"org.palladiosimulator.experimentautomation.dsl.ExpAuto.ToolDefinition");
 					afterParserOrEnumRuleCall();
 				}
@@ -1918,6 +1886,180 @@ ruleNumberOfExperiments returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleToolDefinition
+entryRuleToolDefinition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getToolDefinitionRule()); }
+	iv_ruleToolDefinition=ruleToolDefinition
+	{ $current=$iv_ruleToolDefinition.current; }
+	EOF;
+
+// Rule ToolDefinition
+ruleToolDefinition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='tool'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getToolDefinitionAccess().getToolKeyword_0());
+		}
+		otherlv_1='='
+		{
+			newLeafNode(otherlv_1, grammarAccess.getToolDefinitionAccess().getEqualsSignKeyword_1());
+		}
+		(
+			(
+				lv_tool_2_0=RULE_STRING
+				{
+					newLeafNode(lv_tool_2_0, grammarAccess.getToolDefinitionAccess().getToolSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getToolDefinitionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"tool",
+						lv_tool_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_3='{'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getToolDefinitionAccess().getLeftCurlyBracketKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getToolDefinitionAccess().getConfigParamsConfigurationParamsParserRuleCall_4_0());
+				}
+				lv_configParams_4_0=ruleConfigurationParams
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getToolDefinitionRule());
+					}
+					set(
+						$current,
+						"configParams",
+						lv_configParams_4_0,
+						"org.palladiosimulator.experimentautomation.dsl.ExpAuto.ConfigurationParams");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_5='}'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getToolDefinitionAccess().getRightCurlyBracketKeyword_5());
+		}
+	)
+;
+
+// Entry rule entryRuleConfigurationParams
+entryRuleConfigurationParams returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getConfigurationParamsRule()); }
+	iv_ruleConfigurationParams=ruleConfigurationParams
+	{ $current=$iv_ruleConfigurationParams.current; }
+	EOF;
+
+// Rule ConfigurationParams
+ruleConfigurationParams returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getConfigurationParamsAccess().getParamsSeedDefinitionParserRuleCall_0_0());
+				}
+				lv_params_0_1=ruleSeedDefinition
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConfigurationParamsRule());
+					}
+					add(
+						$current,
+						"params",
+						lv_params_0_1,
+						"org.palladiosimulator.experimentautomation.dsl.ExpAuto.SeedDefinition");
+					afterParserOrEnumRuleCall();
+				}
+				    |
+				{
+					newCompositeNode(grammarAccess.getConfigurationParamsAccess().getParamsExperimentDatasourceParserRuleCall_0_1());
+				}
+				lv_params_0_2=ruleExperimentDatasource
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConfigurationParamsRule());
+					}
+					add(
+						$current,
+						"params",
+						lv_params_0_2,
+						"org.palladiosimulator.experimentautomation.dsl.ExpAuto.ExperimentDatasource");
+					afterParserOrEnumRuleCall();
+				}
+				    |
+				{
+					newCompositeNode(grammarAccess.getConfigurationParamsAccess().getParamsStopTimeConditionParserRuleCall_0_2());
+				}
+				lv_params_0_3=ruleStopTimeCondition
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConfigurationParamsRule());
+					}
+					add(
+						$current,
+						"params",
+						lv_params_0_3,
+						"org.palladiosimulator.experimentautomation.dsl.ExpAuto.StopTimeCondition");
+					afterParserOrEnumRuleCall();
+				}
+				    |
+				{
+					newCompositeNode(grammarAccess.getConfigurationParamsAccess().getParamsStopCountConditionParserRuleCall_0_3());
+				}
+				lv_params_0_4=ruleStopCountCondition
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConfigurationParamsRule());
+					}
+					add(
+						$current,
+						"params",
+						lv_params_0_4,
+						"org.palladiosimulator.experimentautomation.dsl.ExpAuto.StopCountCondition");
+					afterParserOrEnumRuleCall();
+				}
+				    |
+				{
+					newCompositeNode(grammarAccess.getConfigurationParamsAccess().getParamsKeyValueParserRuleCall_0_4());
+				}
+				lv_params_0_5=ruleKeyValue
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConfigurationParamsRule());
+					}
+					add(
+						$current,
+						"params",
+						lv_params_0_5,
+						"org.palladiosimulator.experimentautomation.dsl.ExpAuto.KeyValue");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)+
+;
+
 // Entry rule entryRuleSeedDefinition
 entryRuleSeedDefinition returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getSeedDefinitionRule()); }
@@ -2106,87 +2248,15 @@ ruleExperimentDatasource returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleToolDefinition
-entryRuleToolDefinition returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getToolDefinitionRule()); }
-	iv_ruleToolDefinition=ruleToolDefinition
-	{ $current=$iv_ruleToolDefinition.current; }
+// Entry rule entryRuleKeyValue
+entryRuleKeyValue returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getKeyValueRule()); }
+	iv_ruleKeyValue=ruleKeyValue
+	{ $current=$iv_ruleKeyValue.current; }
 	EOF;
 
-// Rule ToolDefinition
-ruleToolDefinition returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='tool'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getToolDefinitionAccess().getToolKeyword_0());
-		}
-		otherlv_1='='
-		{
-			newLeafNode(otherlv_1, grammarAccess.getToolDefinitionAccess().getEqualsSignKeyword_1());
-		}
-		(
-			(
-				lv_tool_2_0=RULE_STRING
-				{
-					newLeafNode(lv_tool_2_0, grammarAccess.getToolDefinitionAccess().getToolSTRINGTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getToolDefinitionRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"tool",
-						lv_tool_2_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
-		)
-		otherlv_3='{'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getToolDefinitionAccess().getLeftCurlyBracketKeyword_3());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getToolDefinitionAccess().getConfigParamsConfigurationParamsParserRuleCall_4_0());
-				}
-				lv_configParams_4_0=ruleConfigurationParams
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getToolDefinitionRule());
-					}
-					add(
-						$current,
-						"configParams",
-						lv_configParams_4_0,
-						"org.palladiosimulator.experimentautomation.dsl.ExpAuto.ConfigurationParams");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		otherlv_5='}'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getToolDefinitionAccess().getRightCurlyBracketKeyword_5());
-		}
-	)
-;
-
-// Entry rule entryRuleConfigurationParams
-entryRuleConfigurationParams returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getConfigurationParamsRule()); }
-	iv_ruleConfigurationParams=ruleConfigurationParams
-	{ $current=$iv_ruleConfigurationParams.current; }
-	EOF;
-
-// Rule ConfigurationParams
-ruleConfigurationParams returns [EObject current=null]
+// Rule KeyValue
+ruleKeyValue returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -2198,11 +2268,11 @@ ruleConfigurationParams returns [EObject current=null]
 			(
 				lv_key_0_0=RULE_ID
 				{
-					newLeafNode(lv_key_0_0, grammarAccess.getConfigurationParamsAccess().getKeyIDTerminalRuleCall_0_0());
+					newLeafNode(lv_key_0_0, grammarAccess.getKeyValueAccess().getKeyIDTerminalRuleCall_0_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getConfigurationParamsRule());
+						$current = createModelElement(grammarAccess.getKeyValueRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -2214,17 +2284,17 @@ ruleConfigurationParams returns [EObject current=null]
 		)
 		otherlv_1='='
 		{
-			newLeafNode(otherlv_1, grammarAccess.getConfigurationParamsAccess().getEqualsSignKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getKeyValueAccess().getEqualsSignKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getConfigurationParamsAccess().getValueConfigValueParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getKeyValueAccess().getValueConfigValueParserRuleCall_2_0());
 				}
 				lv_value_2_0=ruleConfigValue
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConfigurationParamsRule());
+						$current = createModelElementForParent(grammarAccess.getKeyValueRule());
 					}
 					set(
 						$current,
@@ -2235,10 +2305,6 @@ ruleConfigurationParams returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3=';'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getConfigurationParamsAccess().getSemicolonKeyword_3());
-		}
 	)
 ;
 

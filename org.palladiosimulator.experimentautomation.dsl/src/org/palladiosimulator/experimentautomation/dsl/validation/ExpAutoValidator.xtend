@@ -25,6 +25,7 @@ import org.palladiosimulator.experimentautomation.dsl.expAuto.StopTimeCondition
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition
 import org.palladiosimulator.experimentautomation.dsl.expAuto.UsageModel
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Variation
+import org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams
 
 /**
  * This class contains custom validation rules. 
@@ -127,8 +128,6 @@ class ExpAutoValidator extends AbstractExpAutoValidator {
 	int numberOfTimeConditions;
 	int numberOfCountConditions;
 	int numberOfExperimentCounter;
-	int numberOfSeedDefinitions;
-	int numberOfDatasources;
 	int numberOfTooldefinitions;
 	
 	@Check
@@ -139,8 +138,6 @@ class ExpAutoValidator extends AbstractExpAutoValidator {
 		numberOfTimeConditions = 0;
 		numberOfCountConditions = 0;
 		numberOfExperimentCounter = 0;
-		numberOfSeedDefinitions = 0;
-		numberOfDatasources = 0;
 		numberOfTooldefinitions = 0;
 		
 		for(EObject currObj : specifications.getSpecifications()){
@@ -156,10 +153,6 @@ class ExpAutoValidator extends AbstractExpAutoValidator {
 				numberOfCountConditions++;
 			} else if(currObj instanceof NumberOfExperiments){
 				numberOfExperimentCounter++;
-			} else if(currObj instanceof SeedDefinition){
-				numberOfSeedDefinitions++;
-			} else if(currObj instanceof ExperimentDatasource){
-				numberOfDatasources++;
 			} else if(currObj instanceof ToolDefinition){
 				numberOfTooldefinitions++;
 			}
@@ -175,16 +168,47 @@ class ExpAutoValidator extends AbstractExpAutoValidator {
 			error('Es darf maximal eine Zeitabbruchbedingung angegeben werden', ExpAutoPackage.Literals.EXPERIMENT_SPECIFICATIONS__SPECIFICATIONS, 'invalidExperiment')
 		} else if(numberOfCountConditions > 1){
 			error('Es darf maximal eine Zählabbruchbedingung angegeben werden', ExpAutoPackage.Literals.EXPERIMENT_SPECIFICATIONS__SPECIFICATIONS, 'invalidExperiment')
-		} else if(numberOfTimeConditions + numberOfCountConditions < 1){
-			error('Es muss mindestens eine Abbruchbedingung angegeben werden', ExpAutoPackage.Literals.EXPERIMENT_SPECIFICATIONS__SPECIFICATIONS, 'invalidExperiment')
 		} else if(numberOfExperimentCounter != 1){
 			error('Die Anzahl der Experimentdurchläufe muss genau einmal angegeben werden', ExpAutoPackage.Literals.EXPERIMENT_SPECIFICATIONS__SPECIFICATIONS, 'invalidExperiment')
-		} else if(numberOfSeedDefinitions > 1){
-			error('Die Seeds dürfen maximal einmal angegeben werden', ExpAutoPackage.Literals.EXPERIMENT_SPECIFICATIONS__SPECIFICATIONS, 'invalidExperiment')
-		} else if(numberOfDatasources != 1){
-			error('Es muss genau eine Datenquelle angegeben werden', ExpAutoPackage.Literals.EXPERIMENT_SPECIFICATIONS__SPECIFICATIONS, 'invalidExperiment')
 		} else if(numberOfTooldefinitions < 1){
 			error('Es muss mindestens eine Toolkonfiguration angegeben werden', ExpAutoPackage.Literals.EXPERIMENT_SPECIFICATIONS__SPECIFICATIONS, 'invalidExperiment')
+		}
+	}
+	
+	int numberOfToolTimeConditions;
+	int numberOfToolCountConditions;
+	int numberOfSeedDefinitions
+	int numberOfDatasources;
+	
+	@Check
+	def void checkToolConfigurationParams(ConfigurationParams params){
+		numberOfToolTimeConditions = 0;
+		numberOfToolCountConditions = 0;
+		numberOfSeedDefinitions = 0;
+		numberOfDatasources = 0;
+		
+		for(EObject currObj : params.getParams()){
+			if(currObj instanceof StopTimeCondition){
+				numberOfTimeConditions++;
+			} else if(currObj instanceof StopCountCondition){
+				numberOfCountConditions++;
+			} else if(currObj instanceof SeedDefinition){
+				numberOfSeedDefinitions++;
+			} else if(currObj instanceof ExperimentDatasource){
+				numberOfDatasources++;
+			}
+		}
+		
+		if(numberOfToolTimeConditions > 1){
+			error('Es darf maximal eine Zeitabbruchbedingung angegeben werden', ExpAutoPackage.Literals.CONFIGURATION_PARAMS__PARAMS, 'invalidExperiment')
+		} else if(numberOfToolCountConditions > 1){
+			error('Es darf maximal eine Zählabbruchbedingung angegeben werden', ExpAutoPackage.Literals.CONFIGURATION_PARAMS__PARAMS, 'invalidExperiment')
+		} else if(numberOfToolCountConditions + numberOfToolTimeConditions < 1){
+			error('Es muss mindestens eine Abbruchbedingung angegeben werden', ExpAutoPackage.Literals.CONFIGURATION_PARAMS__PARAMS, 'invalidExperiment')
+		} else if(numberOfSeedDefinitions > 1){
+			error('Die Seeds dürfen maximal einmal angegeben werden', ExpAutoPackage.Literals.CONFIGURATION_PARAMS__PARAMS, 'invalidExperiment')
+		} else if(numberOfDatasources != 1){
+			error('Es muss genau eine Datasource angegeben werden', ExpAutoPackage.Literals.CONFIGURATION_PARAMS__PARAMS, 'invalidExperiment')
 		}
 	}
 }

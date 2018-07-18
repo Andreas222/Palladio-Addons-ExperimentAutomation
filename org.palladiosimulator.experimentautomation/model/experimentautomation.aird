@@ -346,7 +346,7 @@
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_m0MGIBY7EeSOwq7oB4WALw" sourceNode="_myXhMBY7EeSOwq7oB4WALw" targetNode="_myjHYBY7EeSOwq7oB4WALw">
       <target xmi:type="ecore:EClass" href="experimentautomation.ecore#//variation/StructuralVariation"/>
-      <semanticElements xmi:type="ecore:EGenericType" href="experimentautomation.ecore#//variation/StructuralVariation/@eGenericSuperTypes.0"/>
+      <semanticElements xmi:type="ecore:EClass" href="experimentautomation.ecore#//variation/StructuralVariation"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_m0MtMBY7EeSOwq7oB4WALw" targetArrow="InputClosedArrow" routingStyle="tree">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_m0MtMhY7EeSOwq7oB4WALw" showIcon="false">
@@ -358,7 +358,7 @@
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_m0N7UBY7EeSOwq7oB4WALw" sourceNode="_myfdABY7EeSOwq7oB4WALw" targetNode="_myjHYBY7EeSOwq7oB4WALw">
       <target xmi:type="ecore:EClass" href="experimentautomation.ecore#//variation/ValueVariation"/>
-      <semanticElements xmi:type="ecore:EGenericType" href="experimentautomation.ecore#//variation/ValueVariation/@eGenericSuperTypes.0"/>
+      <semanticElements xmi:type="ecore:EClass" href="experimentautomation.ecore#//variation/ValueVariation"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_m0OiYBY7EeSOwq7oB4WALw" targetArrow="InputClosedArrow" routingStyle="tree">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']/@style"/>
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_m0OiYhY7EeSOwq7oB4WALw" showIcon="false">

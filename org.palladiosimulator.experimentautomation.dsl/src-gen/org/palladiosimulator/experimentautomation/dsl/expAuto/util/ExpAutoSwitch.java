@@ -248,6 +248,20 @@ public class ExpAutoSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ExpAutoPackage.TOOL_DEFINITION:
+      {
+        ToolDefinition toolDefinition = (ToolDefinition)theEObject;
+        T result = caseToolDefinition(toolDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ExpAutoPackage.CONFIGURATION_PARAMS:
+      {
+        ConfigurationParams configurationParams = (ConfigurationParams)theEObject;
+        T result = caseConfigurationParams(configurationParams);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ExpAutoPackage.SEED_DEFINITION:
       {
         SeedDefinition seedDefinition = (SeedDefinition)theEObject;
@@ -269,17 +283,10 @@ public class ExpAutoSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ExpAutoPackage.TOOL_DEFINITION:
+      case ExpAutoPackage.KEY_VALUE:
       {
-        ToolDefinition toolDefinition = (ToolDefinition)theEObject;
-        T result = caseToolDefinition(toolDefinition);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ExpAutoPackage.CONFIGURATION_PARAMS:
-      {
-        ConfigurationParams configurationParams = (ConfigurationParams)theEObject;
-        T result = caseConfigurationParams(configurationParams);
+        KeyValue keyValue = (KeyValue)theEObject;
+        T result = caseKeyValue(keyValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -688,6 +695,38 @@ public class ExpAutoSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Tool Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Tool Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseToolDefinition(ToolDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Configuration Params</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Configuration Params</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConfigurationParams(ConfigurationParams object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Seed Definition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -736,33 +775,17 @@ public class ExpAutoSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Tool Definition</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Key Value</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Tool Definition</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Key Value</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseToolDefinition(ToolDefinition object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Configuration Params</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Configuration Params</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseConfigurationParams(ConfigurationParams object)
+  public T caseKeyValue(KeyValue object)
   {
     return null;
   }

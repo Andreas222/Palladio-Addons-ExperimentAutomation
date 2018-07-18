@@ -29,6 +29,7 @@ import org.palladiosimulator.experimentautomation.dsl.expAuto.FileDatasourceSpec
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Import;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.InitSpecifications;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.InitialModel;
+import org.palladiosimulator.experimentautomation.dsl.expAuto.KeyValue;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.LinearValueProvider;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ListOfSeeds;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.MemoryDatasourceSpecification;
@@ -102,6 +103,9 @@ public class ExpAutoSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case ExpAutoPackage.INITIAL_MODEL:
 				sequence_InitialModel(context, (InitialModel) semanticObject); 
+				return; 
+			case ExpAutoPackage.KEY_VALUE:
+				sequence_KeyValue(context, (KeyValue) semanticObject); 
 				return; 
 			case ExpAutoPackage.LINEAR_VALUE_PROVIDER:
 				sequence_LinearValueProvider(context, (LinearValueProvider) semanticObject); 
@@ -179,19 +183,10 @@ public class ExpAutoSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ConfigurationParams returns ConfigurationParams
 	 *
 	 * Constraint:
-	 *     (key=ID value=ConfigValue)
+	 *     (params+=SeedDefinition | params+=ExperimentDatasource | params+=StopTimeCondition | params+=StopCountCondition | params+=KeyValue)+
 	 */
 	protected void sequence_ConfigurationParams(ISerializationContext context, ConfigurationParams semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ExpAutoPackage.Literals.CONFIGURATION_PARAMS__KEY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpAutoPackage.Literals.CONFIGURATION_PARAMS__KEY));
-			if (transientValues.isValueTransient(semanticObject, ExpAutoPackage.Literals.CONFIGURATION_PARAMS__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpAutoPackage.Literals.CONFIGURATION_PARAMS__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getConfigurationParamsAccess().getKeyIDTerminalRuleCall_0_0(), semanticObject.getKey());
-		feeder.accept(grammarAccess.getConfigurationParamsAccess().getValueConfigValueParserRuleCall_2_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -294,8 +289,6 @@ public class ExpAutoSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         specifications+=StopTimeCondition | 
 	 *         specifications+=StopCountCondition | 
 	 *         specifications+=NumberOfExperiments | 
-	 *         specifications+=SeedDefinition | 
-	 *         specifications+=ExperimentDatasource | 
 	 *         specifications+=ToolDefinition
 	 *     )+
 	 */
@@ -408,6 +401,27 @@ public class ExpAutoSemanticSequencer extends AbstractDelegatingSemanticSequence
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getInitialModelAccess().getModeltypPCMKeyword_2_0(), semanticObject.getModeltyp());
 		feeder.accept(grammarAccess.getInitialModelAccess().getInitSpecificationsInitSpecificationsParserRuleCall_4_0(), semanticObject.getInitSpecifications());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     KeyValue returns KeyValue
+	 *
+	 * Constraint:
+	 *     (key=ID value=ConfigValue)
+	 */
+	protected void sequence_KeyValue(ISerializationContext context, KeyValue semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ExpAutoPackage.Literals.KEY_VALUE__KEY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpAutoPackage.Literals.KEY_VALUE__KEY));
+			if (transientValues.isValueTransient(semanticObject, ExpAutoPackage.Literals.KEY_VALUE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpAutoPackage.Literals.KEY_VALUE__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getKeyValueAccess().getKeyIDTerminalRuleCall_0_0(), semanticObject.getKey());
+		feeder.accept(grammarAccess.getKeyValueAccess().getValueConfigValueParserRuleCall_2_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -633,10 +647,19 @@ public class ExpAutoSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ToolDefinition returns ToolDefinition
 	 *
 	 * Constraint:
-	 *     (tool=STRING configParams+=ConfigurationParams*)
+	 *     (tool=STRING configParams=ConfigurationParams)
 	 */
 	protected void sequence_ToolDefinition(ISerializationContext context, ToolDefinition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ExpAutoPackage.Literals.TOOL_DEFINITION__TOOL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpAutoPackage.Literals.TOOL_DEFINITION__TOOL));
+			if (transientValues.isValueTransient(semanticObject, ExpAutoPackage.Literals.TOOL_DEFINITION__CONFIG_PARAMS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpAutoPackage.Literals.TOOL_DEFINITION__CONFIG_PARAMS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getToolDefinitionAccess().getToolSTRINGTerminalRuleCall_2_0(), semanticObject.getTool());
+		feeder.accept(grammarAccess.getToolDefinitionAccess().getConfigParamsConfigurationParamsParserRuleCall_4_0(), semanticObject.getConfigParams());
+		feeder.finish();
 	}
 	
 	

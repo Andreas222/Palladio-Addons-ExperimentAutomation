@@ -201,6 +201,16 @@ public class ExpAutoAdapterFactory extends AdapterFactoryImpl
         return createNumberOfExperimentsAdapter();
       }
       @Override
+      public Adapter caseToolDefinition(ToolDefinition object)
+      {
+        return createToolDefinitionAdapter();
+      }
+      @Override
+      public Adapter caseConfigurationParams(ConfigurationParams object)
+      {
+        return createConfigurationParamsAdapter();
+      }
+      @Override
       public Adapter caseSeedDefinition(SeedDefinition object)
       {
         return createSeedDefinitionAdapter();
@@ -216,14 +226,9 @@ public class ExpAutoAdapterFactory extends AdapterFactoryImpl
         return createExperimentDatasourceAdapter();
       }
       @Override
-      public Adapter caseToolDefinition(ToolDefinition object)
+      public Adapter caseKeyValue(KeyValue object)
       {
-        return createToolDefinitionAdapter();
-      }
-      @Override
-      public Adapter caseConfigurationParams(ConfigurationParams object)
-      {
-        return createConfigurationParamsAdapter();
+        return createKeyValueAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -623,6 +628,36 @@ public class ExpAutoAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition <em>Tool Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition
+   * @generated
+   */
+  public Adapter createToolDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams <em>Configuration Params</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams
+   * @generated
+   */
+  public Adapter createConfigurationParamsAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.SeedDefinition <em>Seed Definition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -668,31 +703,16 @@ public class ExpAutoAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition <em>Tool Definition</em>}'.
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.KeyValue <em>Key Value</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition
+   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.KeyValue
    * @generated
    */
-  public Adapter createToolDefinitionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams <em>Configuration Params</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams
-   * @generated
-   */
-  public Adapter createConfigurationParamsAdapter()
+  public Adapter createKeyValueAdapter()
   {
     return null;
   }

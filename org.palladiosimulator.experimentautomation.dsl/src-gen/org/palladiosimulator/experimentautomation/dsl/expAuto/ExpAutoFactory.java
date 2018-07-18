@@ -249,6 +249,24 @@ public interface ExpAutoFactory extends EFactory
   NumberOfExperiments createNumberOfExperiments();
 
   /**
+   * Returns a new object of class '<em>Tool Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Tool Definition</em>'.
+   * @generated
+   */
+  ToolDefinition createToolDefinition();
+
+  /**
+   * Returns a new object of class '<em>Configuration Params</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Configuration Params</em>'.
+   * @generated
+   */
+  ConfigurationParams createConfigurationParams();
+
+  /**
    * Returns a new object of class '<em>Seed Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -276,22 +294,13 @@ public interface ExpAutoFactory extends EFactory
   ExperimentDatasource createExperimentDatasource();
 
   /**
-   * Returns a new object of class '<em>Tool Definition</em>'.
+   * Returns a new object of class '<em>Key Value</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Tool Definition</em>'.
+   * @return a new object of class '<em>Key Value</em>'.
    * @generated
    */
-  ToolDefinition createToolDefinition();
-
-  /**
-   * Returns a new object of class '<em>Configuration Params</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Configuration Params</em>'.
-   * @generated
-   */
-  ConfigurationParams createConfigurationParams();
+  KeyValue createKeyValue();
 
   /**
    * Returns the package supported by this factory.
