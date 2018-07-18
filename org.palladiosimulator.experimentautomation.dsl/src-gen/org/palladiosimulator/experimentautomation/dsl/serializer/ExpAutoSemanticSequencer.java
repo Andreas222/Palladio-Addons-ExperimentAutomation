@@ -179,7 +179,7 @@ public class ExpAutoSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ConfigurationParams returns ConfigurationParams
 	 *
 	 * Constraint:
-	 *     (key=ID value=ConfigValue)
+	 *     (key=ID value?=ConfigValue)
 	 */
 	protected void sequence_ConfigurationParams(ISerializationContext context, ConfigurationParams semanticObject) {
 		if (errorAcceptor != null) {
@@ -190,7 +190,7 @@ public class ExpAutoSemanticSequencer extends AbstractDelegatingSemanticSequence
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getConfigurationParamsAccess().getKeyIDTerminalRuleCall_0_0(), semanticObject.getKey());
-		feeder.accept(grammarAccess.getConfigurationParamsAccess().getValueConfigValueParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getConfigurationParamsAccess().getValueConfigValueParserRuleCall_2_0(), semanticObject.isValue());
 		feeder.finish();
 	}
 	

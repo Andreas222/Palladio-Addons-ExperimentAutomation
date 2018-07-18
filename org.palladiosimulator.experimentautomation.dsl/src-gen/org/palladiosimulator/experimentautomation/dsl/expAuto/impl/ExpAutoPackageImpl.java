@@ -1386,7 +1386,7 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
 
     initEClass(configurationParamsEClass, ConfigurationParams.class, "ConfigurationParams", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getConfigurationParams_Key(), theEcorePackage.getEString(), "key", null, 0, 1, ConfigurationParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getConfigurationParams_Value(), theEcorePackage.getEString(), "value", null, 0, 1, ConfigurationParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getConfigurationParams_Value(), theEcorePackage.getEBoolean(), "value", null, 0, 1, ConfigurationParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(seedDefinitionEClass, SeedDefinition.class, "SeedDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSeedDefinition_SeedLists(), this.getListOfSeeds(), null, "seedLists", null, 0, -1, SeedDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

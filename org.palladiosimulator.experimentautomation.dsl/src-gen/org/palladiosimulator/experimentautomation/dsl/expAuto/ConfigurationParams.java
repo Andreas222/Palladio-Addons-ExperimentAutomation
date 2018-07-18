@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams#getKey <em>Key</em>}</li>
- *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams#getValue <em>Value</em>}</li>
+ *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams#isValue <em>Value</em>}</li>
  * </ul>
  *
  * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage#getConfigurationParams()
@@ -59,21 +59,21 @@ public interface ConfigurationParams extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' attribute.
-   * @see #setValue(String)
+   * @see #setValue(boolean)
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage#getConfigurationParams_Value()
    * @model
    * @generated
    */
-  String getValue();
+  boolean isValue();
 
   /**
-   * Sets the value of the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams#getValue <em>Value</em>}' attribute.
+   * Sets the value of the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams#isValue <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Value</em>' attribute.
-   * @see #getValue()
+   * @see #isValue()
    * @generated
    */
-  void setValue(String value);
+  void setValue(boolean value);
 
 } // ConfigurationParams

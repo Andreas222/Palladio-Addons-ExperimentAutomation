@@ -65,6 +65,7 @@ public class ExpAutoParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStopCountConditionAccess().getGroup(), "rule__StopCountCondition__Group__0");
 					put(grammarAccess.getNumberOfExperimentsAccess().getGroup(), "rule__NumberOfExperiments__Group__0");
 					put(grammarAccess.getToolDefinitionAccess().getGroup(), "rule__ToolDefinition__Group__0");
+					put(grammarAccess.getToolDefinitionAccess().getGroup_3(), "rule__ToolDefinition__Group_3__0");
 					put(grammarAccess.getConfigurationParamsAccess().getGroup(), "rule__ConfigurationParams__Group__0");
 					put(grammarAccess.getSeedDefinitionAccess().getGroup(), "rule__SeedDefinition__Group__0");
 					put(grammarAccess.getSeedDefinitionAccess().getGroup_4(), "rule__SeedDefinition__Group_4__0");
@@ -118,7 +119,7 @@ public class ExpAutoParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStopCountConditionAccess().getStopParamAssignment_4(), "rule__StopCountCondition__StopParamAssignment_4");
 					put(grammarAccess.getNumberOfExperimentsAccess().getNumberOfRepetitionsAssignment_2(), "rule__NumberOfExperiments__NumberOfRepetitionsAssignment_2");
 					put(grammarAccess.getToolDefinitionAccess().getToolAssignment_2(), "rule__ToolDefinition__ToolAssignment_2");
-					put(grammarAccess.getToolDefinitionAccess().getConfigParamsAssignment_4(), "rule__ToolDefinition__ConfigParamsAssignment_4");
+					put(grammarAccess.getToolDefinitionAccess().getConfigParamsAssignment_3_1(), "rule__ToolDefinition__ConfigParamsAssignment_3_1");
 					put(grammarAccess.getConfigurationParamsAccess().getKeyAssignment_0(), "rule__ConfigurationParams__KeyAssignment_0");
 					put(grammarAccess.getConfigurationParamsAccess().getValueAssignment_2(), "rule__ConfigurationParams__ValueAssignment_2");
 					put(grammarAccess.getSeedDefinitionAccess().getSeedListsAssignment_3(), "rule__SeedDefinition__SeedListsAssignment_3");

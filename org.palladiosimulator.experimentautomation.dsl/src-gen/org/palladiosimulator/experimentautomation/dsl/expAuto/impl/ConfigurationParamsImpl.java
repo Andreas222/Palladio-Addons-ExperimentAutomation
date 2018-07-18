@@ -22,7 +22,7 @@ import org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage;
  * </p>
  * <ul>
  *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ConfigurationParamsImpl#getKey <em>Key</em>}</li>
- *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ConfigurationParamsImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ConfigurationParamsImpl#isValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,24 +50,24 @@ public class ConfigurationParamsImpl extends MinimalEObjectImpl.Container implem
   protected String key = KEY_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The default value of the '{@link #isValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #isValue()
    * @generated
    * @ordered
    */
-  protected static final String VALUE_EDEFAULT = null;
+  protected static final boolean VALUE_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #isValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #isValue()
    * @generated
    * @ordered
    */
-  protected String value = VALUE_EDEFAULT;
+  protected boolean value = VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -118,7 +118,7 @@ public class ConfigurationParamsImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getValue()
+  public boolean isValue()
   {
     return value;
   }
@@ -128,9 +128,9 @@ public class ConfigurationParamsImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(String newValue)
+  public void setValue(boolean newValue)
   {
-    String oldValue = value;
+    boolean oldValue = value;
     value = newValue;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ExpAutoPackage.CONFIGURATION_PARAMS__VALUE, oldValue, value));
@@ -149,7 +149,7 @@ public class ConfigurationParamsImpl extends MinimalEObjectImpl.Container implem
       case ExpAutoPackage.CONFIGURATION_PARAMS__KEY:
         return getKey();
       case ExpAutoPackage.CONFIGURATION_PARAMS__VALUE:
-        return getValue();
+        return isValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -168,7 +168,7 @@ public class ConfigurationParamsImpl extends MinimalEObjectImpl.Container implem
         setKey((String)newValue);
         return;
       case ExpAutoPackage.CONFIGURATION_PARAMS__VALUE:
-        setValue((String)newValue);
+        setValue((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -207,7 +207,7 @@ public class ConfigurationParamsImpl extends MinimalEObjectImpl.Container implem
       case ExpAutoPackage.CONFIGURATION_PARAMS__KEY:
         return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
       case ExpAutoPackage.CONFIGURATION_PARAMS__VALUE:
-        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+        return value != VALUE_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }

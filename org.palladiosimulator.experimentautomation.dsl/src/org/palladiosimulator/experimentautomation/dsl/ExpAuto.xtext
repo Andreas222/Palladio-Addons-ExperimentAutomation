@@ -1,7 +1,6 @@
 grammar org.palladiosimulator.experimentautomation.dsl.ExpAuto with org.eclipse.xtext.common.Terminals
 
 import "platform:/resource/org.palladiosimulator.experimentautomation/model/experimentautomation.ecore#//variation"
-import "platform:/resource/org.palladiosimulator.experimentautomation/model/experimentautomation.ecore#//experiments" as exp
 import "platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.ecore"
 
 generate expAuto "http://www.palladiosimulator.org/experimentautomation/dsl/ExpAuto"
@@ -120,11 +119,11 @@ NumberOfExperiments:
 ;
 
 ToolDefinition:
-	'tool' '=' tool = STRING/*[exp::ToolConfiguration]*/ '{' (configParams += ConfigurationParams)* '}'
+	'tool' '=' tool = STRING ('{' (configParams += ConfigurationParams)* '}')?
 ;
 
 ConfigurationParams:
-	 key = ID '=' value = ConfigValue
+	 key = ID '=' value ?= ConfigValue
 ;
 
 ConfigValue:

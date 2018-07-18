@@ -1960,33 +1960,35 @@ ruleToolDefinition returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3='{'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getToolDefinitionAccess().getLeftCurlyBracketKeyword_3());
-		}
 		(
+			otherlv_3='{'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getToolDefinitionAccess().getLeftCurlyBracketKeyword_3_0());
+			}
 			(
-				{
-					newCompositeNode(grammarAccess.getToolDefinitionAccess().getConfigParamsConfigurationParamsParserRuleCall_4_0());
-				}
-				lv_configParams_4_0=ruleConfigurationParams
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getToolDefinitionRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getToolDefinitionAccess().getConfigParamsConfigurationParamsParserRuleCall_3_1_0());
 					}
-					add(
-						$current,
-						"configParams",
-						lv_configParams_4_0,
-						"org.palladiosimulator.experimentautomation.dsl.ExpAuto.ConfigurationParams");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		otherlv_5='}'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getToolDefinitionAccess().getRightCurlyBracketKeyword_5());
-		}
+					lv_configParams_4_0=ruleConfigurationParams
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getToolDefinitionRule());
+						}
+						add(
+							$current,
+							"configParams",
+							lv_configParams_4_0,
+							"org.palladiosimulator.experimentautomation.dsl.ExpAuto.ConfigurationParams");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+			otherlv_5='}'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getToolDefinitionAccess().getRightCurlyBracketKeyword_3_2());
+			}
+		)?
 	)
 ;
 
@@ -2041,7 +2043,7 @@ ruleConfigurationParams returns [EObject current=null]
 					set(
 						$current,
 						"value",
-						lv_value_2_0,
+						true,
 						"org.palladiosimulator.experimentautomation.dsl.ExpAuto.ConfigValue");
 					afterParserOrEnumRuleCall();
 				}

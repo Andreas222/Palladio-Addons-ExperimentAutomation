@@ -1815,11 +1815,11 @@ public interface ExpAutoPackage extends EPackage
   EAttribute getConfigurationParams_Key();
 
   /**
-   * Returns the meta object for the attribute '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams#isValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams#getValue()
+   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams#isValue()
    * @see #getConfigurationParams()
    * @generated
    */

@@ -1084,16 +1084,17 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cToolAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cToolSTRINGTerminalRuleCall_2_0 = (RuleCall)cToolAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cConfigParamsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cConfigParamsConfigurationParamsParserRuleCall_4_0 = (RuleCall)cConfigParamsAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cConfigParamsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cConfigParamsConfigurationParamsParserRuleCall_3_1_0 = (RuleCall)cConfigParamsAssignment_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
 		
 		//ToolDefinition:
-		//	'tool' '=' tool=STRING /*[exp::ToolConfiguration]*/ '{' configParams+=ConfigurationParams* '}';
+		//	'tool' '=' tool=STRING ('{' configParams+=ConfigurationParams* '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'tool' '=' tool=STRING /*[exp::ToolConfiguration]*/ '{' configParams+=ConfigurationParams* '}'
+		//'tool' '=' tool=STRING ('{' configParams+=ConfigurationParams* '}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'tool'
@@ -1108,17 +1109,20 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getToolSTRINGTerminalRuleCall_2_0() { return cToolSTRINGTerminalRuleCall_2_0; }
 		
-		///*[exp::ToolConfiguration]*/ '{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		//('{' configParams+=ConfigurationParams* '}')?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3_0() { return cLeftCurlyBracketKeyword_3_0; }
 		
 		//configParams+=ConfigurationParams*
-		public Assignment getConfigParamsAssignment_4() { return cConfigParamsAssignment_4; }
+		public Assignment getConfigParamsAssignment_3_1() { return cConfigParamsAssignment_3_1; }
 		
 		//ConfigurationParams
-		public RuleCall getConfigParamsConfigurationParamsParserRuleCall_4_0() { return cConfigParamsConfigurationParamsParserRuleCall_4_0; }
+		public RuleCall getConfigParamsConfigurationParamsParserRuleCall_3_1_0() { return cConfigParamsConfigurationParamsParserRuleCall_3_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_3_2() { return cRightCurlyBracketKeyword_3_2; }
 	}
 	public class ConfigurationParamsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.ConfigurationParams");
@@ -1130,10 +1134,10 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueConfigValueParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
 		//ConfigurationParams:
-		//	key=ID '=' value=ConfigValue;
+		//	key=ID '=' value?=ConfigValue;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//key=ID '=' value=ConfigValue
+		//key=ID '=' value?=ConfigValue
 		public Group getGroup() { return cGroup; }
 		
 		//key=ID
@@ -1145,7 +1149,7 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		//'='
 		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
 		
-		//value=ConfigValue
+		//value?=ConfigValue
 		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 		
 		//ConfigValue
@@ -1665,7 +1669,7 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ToolDefinition:
-	//	'tool' '=' tool=STRING /*[exp::ToolConfiguration]*/ '{' configParams+=ConfigurationParams* '}';
+	//	'tool' '=' tool=STRING ('{' configParams+=ConfigurationParams* '}')?;
 	public ToolDefinitionElements getToolDefinitionAccess() {
 		return pToolDefinition;
 	}
@@ -1675,7 +1679,7 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ConfigurationParams:
-	//	key=ID '=' value=ConfigValue;
+	//	key=ID '=' value?=ConfigValue;
 	public ConfigurationParamsElements getConfigurationParamsAccess() {
 		return pConfigurationParams;
 	}
