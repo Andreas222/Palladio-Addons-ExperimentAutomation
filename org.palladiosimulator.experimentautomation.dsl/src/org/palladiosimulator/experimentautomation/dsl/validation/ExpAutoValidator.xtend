@@ -189,9 +189,9 @@ class ExpAutoValidator extends AbstractExpAutoValidator {
 		
 		for(EObject currObj : params.getParams()){
 			if(currObj instanceof StopTimeCondition){
-				numberOfTimeConditions++;
+				numberOfToolTimeConditions++;
 			} else if(currObj instanceof StopCountCondition){
-				numberOfCountConditions++;
+				numberOfToolCountConditions++;
 			} else if(currObj instanceof SeedDefinition){
 				numberOfSeedDefinitions++;
 			} else if(currObj instanceof ExperimentDatasource){

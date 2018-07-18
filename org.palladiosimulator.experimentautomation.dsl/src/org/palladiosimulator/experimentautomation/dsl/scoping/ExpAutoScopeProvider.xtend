@@ -12,7 +12,6 @@ import org.eclipse.core.runtime.IExtension
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
-import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.EcoreUtil2
 import org.eclipse.xtext.naming.IQualifiedNameProvider
 import org.eclipse.xtext.scoping.Scopes
@@ -25,6 +24,10 @@ import org.palladiosimulator.experimentautomation.dsl.expAuto.UsageModel
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Variation
 import org.palladiosimulator.experimentautomation.variation.ValueVariation
 import org.eclipse.xtext.scoping.IScope
+import org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition
+import java.util.ArrayList
+import org.eclipse.core.runtime.Platform
+import org.palladiosimulator.experimentautomation.abstractsimulation.AbstractSimulationConfiguration
 
 /**
  * This class contains custom scoping description.
@@ -36,15 +39,13 @@ class ExpAutoScopeProvider extends AbstractExpAutoScopeProvider {
 	IExtension[] extensions;
 	IExtension currExtension;
 	int i;
-	int j;
-	IConfigurationElement[] elements;
 	List adapters;
-	String[] importEntitiesPaths;
-	Resource[] importedResources;
-	int k;
 	LinkedList<ValueVariation> valueVariationList;
 	LinkedList<Identifier> possibleTargetsList;
-	LinkedList<String> possibleToolConfigurations;
+	LinkedList<AbstractSimulationConfiguration> possibleToolConfigurations;
+	Class actualVariedInterfaceClassObject;
+	String toolName;
+	AbstractSimulationConfiguration config;
 
 	@Inject
 	IQualifiedNameProvider nameProvider;
@@ -95,19 +96,20 @@ class ExpAutoScopeProvider extends AbstractExpAutoScopeProvider {
 
 			val importedStrategy = (context as Variation).getVariationTyp()
 			val variedEntityInterface = importedStrategy.getVariedEntityInterface()
+			actualVariedInterfaceClassObject = Class.forName(variedEntityInterface)
 
 			possibleTargetsList = new LinkedList<Identifier>();
 
 			for (Identifier currIdentifier : usageModelContents) {
-				//if(currIdentifier.getClass().equals(variedEntityInterface)) {
+				if(actualVariedInterfaceClassObject.isInstance(currIdentifier)){
 					possibleTargetsList.addFirst(currIdentifier)
-				//}
+				}
 			}
 
 			for (Identifier currIdentifier : allocationModelContents) {
-				//if(currIdentifier.getClass().equals(variedEntityInterface)) {
+				if(actualVariedInterfaceClassObject.isInstance(currIdentifier)){
 					possibleTargetsList.addFirst(currIdentifier)
-				//}
+				}
 			}
 
 			val candidates = possibleTargetsList
@@ -116,24 +118,31 @@ class ExpAutoScopeProvider extends AbstractExpAutoScopeProvider {
 		}
 
 		// Scope ToolConfiguration
-		/*if(context instanceof ToolDefinition && reference == ExpAutoPackage.Literals.TOOL_DEFINITION__TOOL){
-		 * 	adapters = new ArrayList();
-		 * 	extensions = Platform.getExtensionRegistry().getExtensionPoint("toolAdapter").getExtensions();
-		 * 	
-		 * 	possibleToolConfigurations = new LinkedList<String>
-		 * 		    	
-		 * 	for (i=0; i<extensions.length; i++){
-		 * 		currExtension = extensions.get(i);
-		 * 				val toolName = // Name auslesen
-		 * 				possibleToolConfigurations.addFirst(toolName)
-		 * 	}
-		 * 			
-		 * 	val candidates = possibleToolConfigurations
-		 * 	return Scopes.scopeFor(candidates)
-		 }*/
+//		if(context instanceof ToolDefinition && reference == ExpAutoPackage.Literals.TOOL_DEFINITION__TOOL){
+//		  	adapters = new ArrayList();
+//		  	extensions = Platform.getExtensionRegistry().getExtensionPoint("toolAdapter").getExtensions();
+//		  	
+//		  	possibleToolConfigurations = new LinkedList<AbstractSimulationConfiguration>
+//		  		    	
+//		  	for (i=0; i<extensions.length; i++){
+//		  		currExtension = extensions.get(i);
+//		  				val extensionElements = currExtension.configurationElements
+//		  				for(IConfigurationElement currElem : extensionElements){
+//		  					toolName = currElem.getAttribute("toolName")
+//		  				}
+//		  				if(toolName !== null){
+//		  					//config = aus Extension Factory holen, Config erstellen
+//		  					possibleToolConfigurations.addFirst(config)
+//		  				}
+//		  	}
+//		  			
+//		  	val candidates = possibleToolConfigurations
+//		  	return Scopes.scopeFor(candidates)
+//		}
+
 		return super.getScope(context, reference)
 	}
-
+	
 /*private <T> List<T> loadPluginObjects(String extensionPointId) {
  * 	List<T> adapters = new ArrayList<T>();
  * 	IExtensionRegistry registry = Platform.getExtensionRegistry();
