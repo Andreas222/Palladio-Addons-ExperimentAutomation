@@ -3,14 +3,21 @@
  */
 package org.palladiosimulator.experimentautomation.dsl.expAuto.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage;
@@ -53,14 +60,14 @@ public class ToolDefinitionImpl extends MinimalEObjectImpl.Container implements 
   protected String tool = TOOL_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getConfigParams() <em>Config Params</em>}' containment reference.
+   * The cached value of the '{@link #getConfigParams() <em>Config Params</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getConfigParams()
    * @generated
    * @ordered
    */
-  protected ConfigurationParams configParams;
+  protected EList<ConfigurationParams> configParams;
 
   /**
    * <!-- begin-user-doc -->
@@ -111,47 +118,13 @@ public class ToolDefinitionImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public ConfigurationParams getConfigParams()
+  public EList<ConfigurationParams> getConfigParams()
   {
+    if (configParams == null)
+    {
+      configParams = new EObjectContainmentEList<ConfigurationParams>(ConfigurationParams.class, this, ExpAutoPackage.TOOL_DEFINITION__CONFIG_PARAMS);
+    }
     return configParams;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetConfigParams(ConfigurationParams newConfigParams, NotificationChain msgs)
-  {
-    ConfigurationParams oldConfigParams = configParams;
-    configParams = newConfigParams;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpAutoPackage.TOOL_DEFINITION__CONFIG_PARAMS, oldConfigParams, newConfigParams);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setConfigParams(ConfigurationParams newConfigParams)
-  {
-    if (newConfigParams != configParams)
-    {
-      NotificationChain msgs = null;
-      if (configParams != null)
-        msgs = ((InternalEObject)configParams).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpAutoPackage.TOOL_DEFINITION__CONFIG_PARAMS, null, msgs);
-      if (newConfigParams != null)
-        msgs = ((InternalEObject)newConfigParams).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpAutoPackage.TOOL_DEFINITION__CONFIG_PARAMS, null, msgs);
-      msgs = basicSetConfigParams(newConfigParams, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExpAutoPackage.TOOL_DEFINITION__CONFIG_PARAMS, newConfigParams, newConfigParams));
   }
 
   /**
@@ -165,7 +138,7 @@ public class ToolDefinitionImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case ExpAutoPackage.TOOL_DEFINITION__CONFIG_PARAMS:
-        return basicSetConfigParams(null, msgs);
+        return ((InternalEList<?>)getConfigParams()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -193,6 +166,7 @@ public class ToolDefinitionImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -202,7 +176,8 @@ public class ToolDefinitionImpl extends MinimalEObjectImpl.Container implements 
         setTool((String)newValue);
         return;
       case ExpAutoPackage.TOOL_DEFINITION__CONFIG_PARAMS:
-        setConfigParams((ConfigurationParams)newValue);
+        getConfigParams().clear();
+        getConfigParams().addAll((Collection<? extends ConfigurationParams>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -222,7 +197,7 @@ public class ToolDefinitionImpl extends MinimalEObjectImpl.Container implements 
         setTool(TOOL_EDEFAULT);
         return;
       case ExpAutoPackage.TOOL_DEFINITION__CONFIG_PARAMS:
-        setConfigParams((ConfigurationParams)null);
+        getConfigParams().clear();
         return;
     }
     super.eUnset(featureID);
@@ -241,7 +216,7 @@ public class ToolDefinitionImpl extends MinimalEObjectImpl.Container implements 
       case ExpAutoPackage.TOOL_DEFINITION__TOOL:
         return TOOL_EDEFAULT == null ? tool != null : !TOOL_EDEFAULT.equals(tool);
       case ExpAutoPackage.TOOL_DEFINITION__CONFIG_PARAMS:
-        return configParams != null;
+        return configParams != null && !configParams.isEmpty();
     }
     return super.eIsSet(featureID);
   }

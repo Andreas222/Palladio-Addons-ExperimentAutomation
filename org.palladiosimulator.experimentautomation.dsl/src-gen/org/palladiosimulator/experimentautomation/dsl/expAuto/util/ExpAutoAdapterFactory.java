@@ -226,11 +226,6 @@ public class ExpAutoAdapterFactory extends AdapterFactoryImpl
         return createExperimentDatasourceAdapter();
       }
       @Override
-      public Adapter caseKeyValue(KeyValue object)
-      {
-        return createKeyValueAdapter();
-      }
-      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -698,21 +693,6 @@ public class ExpAutoAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExperimentDatasourceAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.KeyValue <em>Key Value</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.KeyValue
-   * @generated
-   */
-  public Adapter createKeyValueAdapter()
   {
     return null;
   }

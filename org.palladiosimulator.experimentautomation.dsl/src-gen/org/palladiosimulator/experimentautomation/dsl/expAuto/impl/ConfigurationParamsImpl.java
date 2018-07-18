@@ -3,20 +3,12 @@
  */
 package org.palladiosimulator.experimentautomation.dsl.expAuto.impl;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage;
@@ -29,7 +21,8 @@ import org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ConfigurationParamsImpl#getParams <em>Params</em>}</li>
+ *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ConfigurationParamsImpl#getKey <em>Key</em>}</li>
+ *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ConfigurationParamsImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +30,44 @@ import org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage;
 public class ConfigurationParamsImpl extends MinimalEObjectImpl.Container implements ConfigurationParams
 {
   /**
-   * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
+   * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParams()
+   * @see #getKey()
    * @generated
    * @ordered
    */
-  protected EList<EObject> params;
+  protected static final String KEY_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getKey() <em>Key</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getKey()
+   * @generated
+   * @ordered
+   */
+  protected String key = KEY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected static final String VALUE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected String value = VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,13 +95,9 @@ public class ConfigurationParamsImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EObject> getParams()
+  public String getKey()
   {
-    if (params == null)
-    {
-      params = new EObjectContainmentEList<EObject>(EObject.class, this, ExpAutoPackage.CONFIGURATION_PARAMS__PARAMS);
-    }
-    return params;
+    return key;
   }
 
   /**
@@ -86,15 +105,35 @@ public class ConfigurationParamsImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public void setKey(String newKey)
   {
-    switch (featureID)
-    {
-      case ExpAutoPackage.CONFIGURATION_PARAMS__PARAMS:
-        return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    String oldKey = key;
+    key = newKey;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpAutoPackage.CONFIGURATION_PARAMS__KEY, oldKey, key));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getValue()
+  {
+    return value;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setValue(String newValue)
+  {
+    String oldValue = value;
+    value = newValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpAutoPackage.CONFIGURATION_PARAMS__VALUE, oldValue, value));
   }
 
   /**
@@ -107,8 +146,10 @@ public class ConfigurationParamsImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case ExpAutoPackage.CONFIGURATION_PARAMS__PARAMS:
-        return getParams();
+      case ExpAutoPackage.CONFIGURATION_PARAMS__KEY:
+        return getKey();
+      case ExpAutoPackage.CONFIGURATION_PARAMS__VALUE:
+        return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,15 +159,16 @@ public class ConfigurationParamsImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case ExpAutoPackage.CONFIGURATION_PARAMS__PARAMS:
-        getParams().clear();
-        getParams().addAll((Collection<? extends EObject>)newValue);
+      case ExpAutoPackage.CONFIGURATION_PARAMS__KEY:
+        setKey((String)newValue);
+        return;
+      case ExpAutoPackage.CONFIGURATION_PARAMS__VALUE:
+        setValue((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +184,11 @@ public class ConfigurationParamsImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case ExpAutoPackage.CONFIGURATION_PARAMS__PARAMS:
-        getParams().clear();
+      case ExpAutoPackage.CONFIGURATION_PARAMS__KEY:
+        setKey(KEY_EDEFAULT);
+        return;
+      case ExpAutoPackage.CONFIGURATION_PARAMS__VALUE:
+        setValue(VALUE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -159,10 +204,31 @@ public class ConfigurationParamsImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case ExpAutoPackage.CONFIGURATION_PARAMS__PARAMS:
-        return params != null && !params.isEmpty();
+      case ExpAutoPackage.CONFIGURATION_PARAMS__KEY:
+        return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
+      case ExpAutoPackage.CONFIGURATION_PARAMS__VALUE:
+        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (key: ");
+    result.append(key);
+    result.append(", value: ");
+    result.append(value);
+    result.append(')');
+    return result.toString();
   }
 
 } //ConfigurationParamsImpl

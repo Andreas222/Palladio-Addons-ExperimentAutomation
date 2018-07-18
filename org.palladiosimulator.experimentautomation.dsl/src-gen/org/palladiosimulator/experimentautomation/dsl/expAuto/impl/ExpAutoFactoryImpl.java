@@ -95,7 +95,6 @@ public class ExpAutoFactoryImpl extends EFactoryImpl implements ExpAutoFactory
       case ExpAutoPackage.SEED_DEFINITION: return createSeedDefinition();
       case ExpAutoPackage.LIST_OF_SEEDS: return createListOfSeeds();
       case ExpAutoPackage.EXPERIMENT_DATASOURCE: return createExperimentDatasource();
-      case ExpAutoPackage.KEY_VALUE: return createKeyValue();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -429,17 +428,6 @@ public class ExpAutoFactoryImpl extends EFactoryImpl implements ExpAutoFactory
   {
     ExperimentDatasourceImpl experimentDatasource = new ExperimentDatasourceImpl();
     return experimentDatasource;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public KeyValue createKeyValue()
-  {
-    KeyValueImpl keyValue = new KeyValueImpl();
-    return keyValue;
   }
 
   /**

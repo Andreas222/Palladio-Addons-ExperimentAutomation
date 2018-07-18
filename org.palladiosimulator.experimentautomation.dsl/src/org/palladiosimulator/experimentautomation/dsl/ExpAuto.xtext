@@ -40,7 +40,7 @@ Experiment:
 ;
 
 ExperimentSpecifications:
-	specifications += (Description | InitialModel | Variation | StopTimeCondition | StopCountCondition | NumberOfExperiments | ToolDefinition)+
+	specifications += (Description | InitialModel | Variation | StopTimeCondition | StopCountCondition | NumberOfExperiments | ToolDefinition | SeedDefinition | ExperimentDatasource)+
 ;
 
 Description:
@@ -120,11 +120,15 @@ NumberOfExperiments:
 ;
 
 ToolDefinition:
-	'tool' '=' tool = STRING/*[exp::ToolConfiguration]*/ '{' configParams = ConfigurationParams '}'
+	'tool' '=' tool = STRING/*[exp::ToolConfiguration]*/ '{' (configParams += ConfigurationParams)* '}'
 ;
 
 ConfigurationParams:
-	 params += (SeedDefinition | ExperimentDatasource | StopTimeCondition | StopCountCondition | KeyValue)+
+	 key = ID '=' value = ConfigValue
+;
+
+ConfigValue:
+	STRING | INT
 ;
 
 SeedDefinition:
@@ -137,12 +141,4 @@ ListOfSeeds:
 
 ExperimentDatasource:
 	'datasource' '=' source = [Datasource]
-;
-
-KeyValue:
-	key = ID '=' value = ConfigValue
-;
-
-ConfigValue:
-	STRING | INT
 ;

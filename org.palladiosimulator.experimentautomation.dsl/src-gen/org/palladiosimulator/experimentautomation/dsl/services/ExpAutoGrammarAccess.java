@@ -265,17 +265,20 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSpecificationsStopCountConditionParserRuleCall_0_4 = (RuleCall)cSpecificationsAlternatives_0.eContents().get(4);
 		private final RuleCall cSpecificationsNumberOfExperimentsParserRuleCall_0_5 = (RuleCall)cSpecificationsAlternatives_0.eContents().get(5);
 		private final RuleCall cSpecificationsToolDefinitionParserRuleCall_0_6 = (RuleCall)cSpecificationsAlternatives_0.eContents().get(6);
+		private final RuleCall cSpecificationsSeedDefinitionParserRuleCall_0_7 = (RuleCall)cSpecificationsAlternatives_0.eContents().get(7);
+		private final RuleCall cSpecificationsExperimentDatasourceParserRuleCall_0_8 = (RuleCall)cSpecificationsAlternatives_0.eContents().get(8);
 		
 		//ExperimentSpecifications:
 		//	specifications+=(Description | InitialModel | Variation | StopTimeCondition | StopCountCondition |
-		//	NumberOfExperiments | ToolDefinition)+;
+		//	NumberOfExperiments | ToolDefinition | SeedDefinition | ExperimentDatasource)+;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//specifications+=(Description | InitialModel | Variation | StopTimeCondition | StopCountCondition | NumberOfExperiments |
-		//ToolDefinition)+
+		//ToolDefinition | SeedDefinition | ExperimentDatasource)+
 		public Assignment getSpecificationsAssignment() { return cSpecificationsAssignment; }
 		
-		//(Description | InitialModel | Variation | StopTimeCondition | StopCountCondition | NumberOfExperiments | ToolDefinition)
+		//(Description | InitialModel | Variation | StopTimeCondition | StopCountCondition | NumberOfExperiments | ToolDefinition
+		//| SeedDefinition | ExperimentDatasource)
 		public Alternatives getSpecificationsAlternatives_0() { return cSpecificationsAlternatives_0; }
 		
 		//Description
@@ -298,6 +301,12 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ToolDefinition
 		public RuleCall getSpecificationsToolDefinitionParserRuleCall_0_6() { return cSpecificationsToolDefinitionParserRuleCall_0_6; }
+		
+		//SeedDefinition
+		public RuleCall getSpecificationsSeedDefinitionParserRuleCall_0_7() { return cSpecificationsSeedDefinitionParserRuleCall_0_7; }
+		
+		//ExperimentDatasource
+		public RuleCall getSpecificationsExperimentDatasourceParserRuleCall_0_8() { return cSpecificationsExperimentDatasourceParserRuleCall_0_8; }
 	}
 	public class DescriptionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.Description");
@@ -1081,10 +1090,10 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//ToolDefinition:
-		//	'tool' '=' tool=STRING /*[exp::ToolConfiguration]*/ '{' configParams=ConfigurationParams '}';
+		//	'tool' '=' tool=STRING /*[exp::ToolConfiguration]*/ '{' configParams+=ConfigurationParams* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'tool' '=' tool=STRING /*[exp::ToolConfiguration]*/ '{' configParams=ConfigurationParams '}'
+		//'tool' '=' tool=STRING /*[exp::ToolConfiguration]*/ '{' configParams+=ConfigurationParams* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'tool'
@@ -1102,7 +1111,7 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		///*[exp::ToolConfiguration]*/ '{'
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
-		//configParams=ConfigurationParams
+		//configParams+=ConfigurationParams*
 		public Assignment getConfigParamsAssignment_4() { return cConfigParamsAssignment_4; }
 		
 		//ConfigurationParams
@@ -1113,38 +1122,53 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class ConfigurationParamsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.ConfigurationParams");
-		private final Assignment cParamsAssignment = (Assignment)rule.eContents().get(1);
-		private final Alternatives cParamsAlternatives_0 = (Alternatives)cParamsAssignment.eContents().get(0);
-		private final RuleCall cParamsSeedDefinitionParserRuleCall_0_0 = (RuleCall)cParamsAlternatives_0.eContents().get(0);
-		private final RuleCall cParamsExperimentDatasourceParserRuleCall_0_1 = (RuleCall)cParamsAlternatives_0.eContents().get(1);
-		private final RuleCall cParamsStopTimeConditionParserRuleCall_0_2 = (RuleCall)cParamsAlternatives_0.eContents().get(2);
-		private final RuleCall cParamsStopCountConditionParserRuleCall_0_3 = (RuleCall)cParamsAlternatives_0.eContents().get(3);
-		private final RuleCall cParamsKeyValueParserRuleCall_0_4 = (RuleCall)cParamsAlternatives_0.eContents().get(4);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cKeyAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cKeyIDTerminalRuleCall_0_0 = (RuleCall)cKeyAssignment_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueConfigValueParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		
 		//ConfigurationParams:
-		//	params+=(SeedDefinition | ExperimentDatasource | StopTimeCondition | StopCountCondition | KeyValue)+;
+		//	key=ID '=' value=ConfigValue;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//params+=(SeedDefinition | ExperimentDatasource | StopTimeCondition | StopCountCondition | KeyValue)+
-		public Assignment getParamsAssignment() { return cParamsAssignment; }
+		//key=ID '=' value=ConfigValue
+		public Group getGroup() { return cGroup; }
 		
-		//(SeedDefinition | ExperimentDatasource | StopTimeCondition | StopCountCondition | KeyValue)
-		public Alternatives getParamsAlternatives_0() { return cParamsAlternatives_0; }
+		//key=ID
+		public Assignment getKeyAssignment_0() { return cKeyAssignment_0; }
 		
-		//SeedDefinition
-		public RuleCall getParamsSeedDefinitionParserRuleCall_0_0() { return cParamsSeedDefinitionParserRuleCall_0_0; }
+		//ID
+		public RuleCall getKeyIDTerminalRuleCall_0_0() { return cKeyIDTerminalRuleCall_0_0; }
 		
-		//ExperimentDatasource
-		public RuleCall getParamsExperimentDatasourceParserRuleCall_0_1() { return cParamsExperimentDatasourceParserRuleCall_0_1; }
+		//'='
+		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
 		
-		//StopTimeCondition
-		public RuleCall getParamsStopTimeConditionParserRuleCall_0_2() { return cParamsStopTimeConditionParserRuleCall_0_2; }
+		//value=ConfigValue
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 		
-		//StopCountCondition
-		public RuleCall getParamsStopCountConditionParserRuleCall_0_3() { return cParamsStopCountConditionParserRuleCall_0_3; }
+		//ConfigValue
+		public RuleCall getValueConfigValueParserRuleCall_2_0() { return cValueConfigValueParserRuleCall_2_0; }
+	}
+	public class ConfigValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.ConfigValue");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//KeyValue
-		public RuleCall getParamsKeyValueParserRuleCall_0_4() { return cParamsKeyValueParserRuleCall_0_4; }
+		//ConfigValue:
+		//	STRING | INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//STRING | INT
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_0() { return cSTRINGTerminalRuleCall_0; }
+		
+		//INT
+		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
 	}
 	public class SeedDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.SeedDefinition");
@@ -1271,56 +1295,6 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getSourceDatasourceIDTerminalRuleCall_2_0_1() { return cSourceDatasourceIDTerminalRuleCall_2_0_1; }
 	}
-	public class KeyValueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.KeyValue");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cKeyAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cKeyIDTerminalRuleCall_0_0 = (RuleCall)cKeyAssignment_0.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueConfigValueParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
-		
-		//KeyValue:
-		//	key=ID '=' value=ConfigValue;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//key=ID '=' value=ConfigValue
-		public Group getGroup() { return cGroup; }
-		
-		//key=ID
-		public Assignment getKeyAssignment_0() { return cKeyAssignment_0; }
-		
-		//ID
-		public RuleCall getKeyIDTerminalRuleCall_0_0() { return cKeyIDTerminalRuleCall_0_0; }
-		
-		//'='
-		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
-		
-		//value=ConfigValue
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
-		
-		//ConfigValue
-		public RuleCall getValueConfigValueParserRuleCall_2_0() { return cValueConfigValueParserRuleCall_2_0; }
-	}
-	public class ConfigValueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.ConfigValue");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//ConfigValue:
-		//	STRING | INT;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//STRING | INT
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_0() { return cSTRINGTerminalRuleCall_0; }
-		
-		//INT
-		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
-	}
 	
 	
 	private final ModelElements pModel;
@@ -1350,11 +1324,10 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 	private final NumberOfExperimentsElements pNumberOfExperiments;
 	private final ToolDefinitionElements pToolDefinition;
 	private final ConfigurationParamsElements pConfigurationParams;
+	private final ConfigValueElements pConfigValue;
 	private final SeedDefinitionElements pSeedDefinition;
 	private final ListOfSeedsElements pListOfSeeds;
 	private final ExperimentDatasourceElements pExperimentDatasource;
-	private final KeyValueElements pKeyValue;
-	private final ConfigValueElements pConfigValue;
 	
 	private final Grammar grammar;
 	
@@ -1392,11 +1365,10 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		this.pNumberOfExperiments = new NumberOfExperimentsElements();
 		this.pToolDefinition = new ToolDefinitionElements();
 		this.pConfigurationParams = new ConfigurationParamsElements();
+		this.pConfigValue = new ConfigValueElements();
 		this.pSeedDefinition = new SeedDefinitionElements();
 		this.pListOfSeeds = new ListOfSeedsElements();
 		this.pExperimentDatasource = new ExperimentDatasourceElements();
-		this.pKeyValue = new KeyValueElements();
-		this.pConfigValue = new ConfigValueElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -1503,7 +1475,7 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//ExperimentSpecifications:
 	//	specifications+=(Description | InitialModel | Variation | StopTimeCondition | StopCountCondition |
-	//	NumberOfExperiments | ToolDefinition)+;
+	//	NumberOfExperiments | ToolDefinition | SeedDefinition | ExperimentDatasource)+;
 	public ExperimentSpecificationsElements getExperimentSpecificationsAccess() {
 		return pExperimentSpecifications;
 	}
@@ -1693,7 +1665,7 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ToolDefinition:
-	//	'tool' '=' tool=STRING /*[exp::ToolConfiguration]*/ '{' configParams=ConfigurationParams '}';
+	//	'tool' '=' tool=STRING /*[exp::ToolConfiguration]*/ '{' configParams+=ConfigurationParams* '}';
 	public ToolDefinitionElements getToolDefinitionAccess() {
 		return pToolDefinition;
 	}
@@ -1703,13 +1675,23 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ConfigurationParams:
-	//	params+=(SeedDefinition | ExperimentDatasource | StopTimeCondition | StopCountCondition | KeyValue)+;
+	//	key=ID '=' value=ConfigValue;
 	public ConfigurationParamsElements getConfigurationParamsAccess() {
 		return pConfigurationParams;
 	}
 	
 	public ParserRule getConfigurationParamsRule() {
 		return getConfigurationParamsAccess().getRule();
+	}
+	
+	//ConfigValue:
+	//	STRING | INT;
+	public ConfigValueElements getConfigValueAccess() {
+		return pConfigValue;
+	}
+	
+	public ParserRule getConfigValueRule() {
+		return getConfigValueAccess().getRule();
 	}
 	
 	//SeedDefinition:
@@ -1740,26 +1722,6 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getExperimentDatasourceRule() {
 		return getExperimentDatasourceAccess().getRule();
-	}
-	
-	//KeyValue:
-	//	key=ID '=' value=ConfigValue;
-	public KeyValueElements getKeyValueAccess() {
-		return pKeyValue;
-	}
-	
-	public ParserRule getKeyValueRule() {
-		return getKeyValueAccess().getRule();
-	}
-	
-	//ConfigValue:
-	//	STRING | INT;
-	public ConfigValueElements getConfigValueAccess() {
-		return pConfigValue;
-	}
-	
-	public ParserRule getConfigValueRule() {
-		return getConfigValueAccess().getRule();
 	}
 	
 	//terminal ID:

@@ -1,16 +1,28 @@
 package org.palladiosimulator.experimentautomation.dsl.application.transformation;
 
+import java.util.LinkedList;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.palladiosimulator.experimentautomation.abstractsimulation.AbstractSimulationConfiguration;
 import org.palladiosimulator.experimentautomation.abstractsimulation.AbstractsimulationFactory;
+import org.palladiosimulator.experimentautomation.abstractsimulation.EDP2Datasource;
+import org.palladiosimulator.experimentautomation.abstractsimulation.FileDatasource;
 import org.palladiosimulator.experimentautomation.abstractsimulation.MeasurementCountStopCondition;
+import org.palladiosimulator.experimentautomation.abstractsimulation.MemoryDatasource;
+import org.palladiosimulator.experimentautomation.abstractsimulation.RandomNumberGeneratorSeed;
 import org.palladiosimulator.experimentautomation.abstractsimulation.SimTimeStopCondition;
 import org.palladiosimulator.experimentautomation.abstractsimulation.StopCondition;
 import org.palladiosimulator.experimentautomation.abstractsimulation.impl.AbstractsimulationFactoryImpl;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Description;
+import org.palladiosimulator.experimentautomation.dsl.expAuto.ExperimentDatasource;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ExperimentSpecifications;
+import org.palladiosimulator.experimentautomation.dsl.expAuto.FileDatasourceSpecification;
+import org.palladiosimulator.experimentautomation.dsl.expAuto.ListOfSeeds;
+import org.palladiosimulator.experimentautomation.dsl.expAuto.MemoryDatasourceSpecification;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.NumberOfExperiments;
+import org.palladiosimulator.experimentautomation.dsl.expAuto.SeedDefinition;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.StopCountCondition;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.StopTimeCondition;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition;
@@ -18,6 +30,7 @@ import org.palladiosimulator.experimentautomation.experiments.Experiment;
 import org.palladiosimulator.experimentautomation.experiments.ExperimentDesign;
 import org.palladiosimulator.experimentautomation.experiments.ExperimentsFactory;
 import org.palladiosimulator.experimentautomation.experiments.InitialModel;
+import org.palladiosimulator.experimentautomation.experiments.ToolConfiguration;
 import org.palladiosimulator.experimentautomation.experiments.Variation;
 import org.palladiosimulator.experimentautomation.experiments.impl.ExperimentsFactoryImpl;
 
@@ -62,6 +75,8 @@ public class ExperimentTransformation {
 		VariationTransformation variationTransformation = new VariationTransformation();
 		InitialModelTransformation initialModelTransformation = new InitialModelTransformation(rs);
 		ToolConfigurationTransformation toolConfigurationTransformation = new ToolConfigurationTransformation();
+		RandomNumberGeneratorSeed generatorSeeds = null;
+		EDP2Datasource datasource = null;
 		
 		for(int i = 0; i < specifications.size(); i++) {
 			EObject currObject = specifications.get(i);
@@ -81,8 +96,18 @@ public class ExperimentTransformation {
 				experiment.setRepetitions(transformNumberOfExperiments((NumberOfExperiments)currObject));
 			} else if(currObject instanceof ToolDefinition) {
 				experiment.getToolConfiguration().add(toolConfigurationTransformation.transformToolDefinition((ToolDefinition)currObject));
+			} else if(currObject instanceof SeedDefinition) {
+				generatorSeeds = transformSeedDefinition((SeedDefinition)currObject);
+			} else if(currObject instanceof ExperimentDatasource) {
+				datasource = transformExperimentDatasource((ExperimentDatasource)currObject);
 			} else {
 				// Never possible
+			}
+		}
+		
+		for(ToolConfiguration currConfig : experiment.getToolConfiguration()) {
+			if(currConfig instanceof AbstractSimulationConfiguration) {
+				toolConfigurationTransformation.completeToolConfigurationTransformation((AbstractSimulationConfiguration)currConfig, generatorSeeds, datasource);
 			}
 		}
 	}
@@ -105,5 +130,61 @@ public class ExperimentTransformation {
 	
 	private int transformNumberOfExperiments(NumberOfExperiments old) {
 		return old.getNumberOfRepetitions();
+	}
+	
+	private RandomNumberGeneratorSeed transformSeedDefinition(SeedDefinition old) {
+		RandomNumberGeneratorSeed generatorSeed = absFactory.createRandomNumberGeneratorSeed();
+		LinkedList<Integer> seeds = new LinkedList<Integer>();
+		
+		for(ListOfSeeds currList : old.getSeedLists()){
+			for(int currSeed : currList.getSeeds()){
+				seeds.addLast(currSeed);
+			}
+		}
+		
+		int currIndex = 0;
+		generatorSeed.setSeed0(seeds.get(currIndex));
+		currIndex = (currIndex + 1) % seeds.size();
+		generatorSeed.setSeed1(seeds.get(currIndex));
+		currIndex = (currIndex + 1) % seeds.size();
+		generatorSeed.setSeed2(seeds.get(currIndex));
+		currIndex = (currIndex + 1) % seeds.size();
+		generatorSeed.setSeed3(seeds.get(currIndex));
+		currIndex = (currIndex + 1) % seeds.size();
+		generatorSeed.setSeed4(seeds.get(currIndex));
+		currIndex = (currIndex + 1) % seeds.size();
+		generatorSeed.setSeed5(seeds.get(currIndex));
+		currIndex = (currIndex + 1) % seeds.size();
+		
+		return generatorSeed;
+	}
+	
+	private EDP2Datasource transformExperimentDatasource(ExperimentDatasource old) {
+		EDP2Datasource datasource;
+		EObject specification = old.getSource().getSpecification().getSpecification();
+		
+		if(specification instanceof FileDatasourceSpecification) {
+			datasource = transformFileDatasource((FileDatasourceSpecification)specification);
+		} else if(specification instanceof MemoryDatasourceSpecification) {
+			datasource = transformMemoryDatasource((MemoryDatasourceSpecification)specification);
+		} else {
+			//sollte nie passieren
+			return null;
+		}
+		
+		datasource.setId(old.getSource().getName());
+		
+		return datasource;
+	}
+	
+	private FileDatasource transformFileDatasource(FileDatasourceSpecification old) {
+		FileDatasource datasource = absFactory.createFileDatasource();
+		datasource.setLocation(old.getSourceURI());
+		return datasource;
+	}
+	
+	private MemoryDatasource transformMemoryDatasource(MemoryDatasourceSpecification old) {
+		MemoryDatasource datasource = absFactory.createMemoryDatasource();
+		return datasource;
 	}
 }

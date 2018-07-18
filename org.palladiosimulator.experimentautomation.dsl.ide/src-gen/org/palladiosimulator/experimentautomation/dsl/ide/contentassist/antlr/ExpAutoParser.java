@@ -38,7 +38,6 @@ public class ExpAutoParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVariationAccess().getValueProviderAlternatives_13_0(), "rule__Variation__ValueProviderAlternatives_13_0");
 					put(grammarAccess.getNestedIntervalsValueProviderAccess().getAlternatives(), "rule__NestedIntervalsValueProvider__Alternatives");
 					put(grammarAccess.getSetValueProviderAccess().getAlternatives(), "rule__SetValueProvider__Alternatives");
-					put(grammarAccess.getConfigurationParamsAccess().getParamsAlternatives_0(), "rule__ConfigurationParams__ParamsAlternatives_0");
 					put(grammarAccess.getConfigValueAccess().getAlternatives(), "rule__ConfigValue__Alternatives");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
@@ -66,12 +65,12 @@ public class ExpAutoParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStopCountConditionAccess().getGroup(), "rule__StopCountCondition__Group__0");
 					put(grammarAccess.getNumberOfExperimentsAccess().getGroup(), "rule__NumberOfExperiments__Group__0");
 					put(grammarAccess.getToolDefinitionAccess().getGroup(), "rule__ToolDefinition__Group__0");
+					put(grammarAccess.getConfigurationParamsAccess().getGroup(), "rule__ConfigurationParams__Group__0");
 					put(grammarAccess.getSeedDefinitionAccess().getGroup(), "rule__SeedDefinition__Group__0");
 					put(grammarAccess.getSeedDefinitionAccess().getGroup_4(), "rule__SeedDefinition__Group_4__0");
 					put(grammarAccess.getListOfSeedsAccess().getGroup(), "rule__ListOfSeeds__Group__0");
 					put(grammarAccess.getListOfSeedsAccess().getGroup_2(), "rule__ListOfSeeds__Group_2__0");
 					put(grammarAccess.getExperimentDatasourceAccess().getGroup(), "rule__ExperimentDatasource__Group__0");
-					put(grammarAccess.getKeyValueAccess().getGroup(), "rule__KeyValue__Group__0");
 					put(grammarAccess.getModelAccess().getImportsAssignment_0(), "rule__Model__ImportsAssignment_0");
 					put(grammarAccess.getModelAccess().getDatasourcesAssignment_1(), "rule__Model__DatasourcesAssignment_1");
 					put(grammarAccess.getModelAccess().getExperimentsAssignment_2(), "rule__Model__ExperimentsAssignment_2");
@@ -120,14 +119,13 @@ public class ExpAutoParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNumberOfExperimentsAccess().getNumberOfRepetitionsAssignment_2(), "rule__NumberOfExperiments__NumberOfRepetitionsAssignment_2");
 					put(grammarAccess.getToolDefinitionAccess().getToolAssignment_2(), "rule__ToolDefinition__ToolAssignment_2");
 					put(grammarAccess.getToolDefinitionAccess().getConfigParamsAssignment_4(), "rule__ToolDefinition__ConfigParamsAssignment_4");
-					put(grammarAccess.getConfigurationParamsAccess().getParamsAssignment(), "rule__ConfigurationParams__ParamsAssignment");
+					put(grammarAccess.getConfigurationParamsAccess().getKeyAssignment_0(), "rule__ConfigurationParams__KeyAssignment_0");
+					put(grammarAccess.getConfigurationParamsAccess().getValueAssignment_2(), "rule__ConfigurationParams__ValueAssignment_2");
 					put(grammarAccess.getSeedDefinitionAccess().getSeedListsAssignment_3(), "rule__SeedDefinition__SeedListsAssignment_3");
 					put(grammarAccess.getSeedDefinitionAccess().getSeedListsAssignment_4_1(), "rule__SeedDefinition__SeedListsAssignment_4_1");
 					put(grammarAccess.getListOfSeedsAccess().getSeedsAssignment_1(), "rule__ListOfSeeds__SeedsAssignment_1");
 					put(grammarAccess.getListOfSeedsAccess().getSeedsAssignment_2_1(), "rule__ListOfSeeds__SeedsAssignment_2_1");
 					put(grammarAccess.getExperimentDatasourceAccess().getSourceAssignment_2(), "rule__ExperimentDatasource__SourceAssignment_2");
-					put(grammarAccess.getKeyValueAccess().getKeyAssignment_0(), "rule__KeyValue__KeyAssignment_0");
-					put(grammarAccess.getKeyValueAccess().getValueAssignment_2(), "rule__KeyValue__ValueAssignment_2");
 				}
 			};
 		}

@@ -294,15 +294,6 @@ public interface ExpAutoFactory extends EFactory
   ExperimentDatasource createExperimentDatasource();
 
   /**
-   * Returns a new object of class '<em>Key Value</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Key Value</em>'.
-   * @generated
-   */
-  KeyValue createKeyValue();
-
-  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

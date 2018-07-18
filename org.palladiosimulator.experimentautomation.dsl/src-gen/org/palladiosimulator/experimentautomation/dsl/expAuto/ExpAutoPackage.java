@@ -921,7 +921,7 @@ public interface ExpAutoPackage extends EPackage
   int TOOL_DEFINITION__TOOL = 0;
 
   /**
-   * The feature id for the '<em><b>Config Params</b></em>' containment reference.
+   * The feature id for the '<em><b>Config Params</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -949,13 +949,22 @@ public interface ExpAutoPackage extends EPackage
   int CONFIGURATION_PARAMS = 26;
 
   /**
-   * The feature id for the '<em><b>Params</b></em>' containment reference list.
+   * The feature id for the '<em><b>Key</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONFIGURATION_PARAMS__PARAMS = 0;
+  int CONFIGURATION_PARAMS__KEY = 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONFIGURATION_PARAMS__VALUE = 1;
 
   /**
    * The number of structural features of the '<em>Configuration Params</em>' class.
@@ -964,7 +973,7 @@ public interface ExpAutoPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONFIGURATION_PARAMS_FEATURE_COUNT = 1;
+  int CONFIGURATION_PARAMS_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.SeedDefinitionImpl <em>Seed Definition</em>}' class.
@@ -1049,43 +1058,6 @@ public interface ExpAutoPackage extends EPackage
    * @ordered
    */
   int EXPERIMENT_DATASOURCE_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.KeyValueImpl <em>Key Value</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.KeyValueImpl
-   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getKeyValue()
-   * @generated
-   */
-  int KEY_VALUE = 30;
-
-  /**
-   * The feature id for the '<em><b>Key</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int KEY_VALUE__KEY = 0;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int KEY_VALUE__VALUE = 1;
-
-  /**
-   * The number of structural features of the '<em>Key Value</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int KEY_VALUE_FEATURE_COUNT = 2;
 
 
   /**
@@ -1811,10 +1783,10 @@ public interface ExpAutoPackage extends EPackage
   EAttribute getToolDefinition_Tool();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition#getConfigParams <em>Config Params</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition#getConfigParams <em>Config Params</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Config Params</em>'.
+   * @return the meta object for the containment reference list '<em>Config Params</em>'.
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition#getConfigParams()
    * @see #getToolDefinition()
    * @generated
@@ -1832,15 +1804,26 @@ public interface ExpAutoPackage extends EPackage
   EClass getConfigurationParams();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams#getParams <em>Params</em>}'.
+   * Returns the meta object for the attribute '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams#getKey <em>Key</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Params</em>'.
-   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams#getParams()
+   * @return the meta object for the attribute '<em>Key</em>'.
+   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams#getKey()
    * @see #getConfigurationParams()
    * @generated
    */
-  EReference getConfigurationParams_Params();
+  EAttribute getConfigurationParams_Key();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams#getValue()
+   * @see #getConfigurationParams()
+   * @generated
+   */
+  EAttribute getConfigurationParams_Value();
 
   /**
    * Returns the meta object for class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.SeedDefinition <em>Seed Definition</em>}'.
@@ -1904,38 +1887,6 @@ public interface ExpAutoPackage extends EPackage
    * @generated
    */
   EReference getExperimentDatasource_Source();
-
-  /**
-   * Returns the meta object for class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.KeyValue <em>Key Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Key Value</em>'.
-   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.KeyValue
-   * @generated
-   */
-  EClass getKeyValue();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.KeyValue#getKey <em>Key</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Key</em>'.
-   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.KeyValue#getKey()
-   * @see #getKeyValue()
-   * @generated
-   */
-  EAttribute getKeyValue_Key();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.KeyValue#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.KeyValue#getValue()
-   * @see #getKeyValue()
-   * @generated
-   */
-  EAttribute getKeyValue_Value();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -2557,7 +2508,7 @@ public interface ExpAutoPackage extends EPackage
     EAttribute TOOL_DEFINITION__TOOL = eINSTANCE.getToolDefinition_Tool();
 
     /**
-     * The meta object literal for the '<em><b>Config Params</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Config Params</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -2575,12 +2526,20 @@ public interface ExpAutoPackage extends EPackage
     EClass CONFIGURATION_PARAMS = eINSTANCE.getConfigurationParams();
 
     /**
-     * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CONFIGURATION_PARAMS__PARAMS = eINSTANCE.getConfigurationParams_Params();
+    EAttribute CONFIGURATION_PARAMS__KEY = eINSTANCE.getConfigurationParams_Key();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONFIGURATION_PARAMS__VALUE = eINSTANCE.getConfigurationParams_Value();
 
     /**
      * The meta object literal for the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.SeedDefinitionImpl <em>Seed Definition</em>}' class.
@@ -2635,32 +2594,6 @@ public interface ExpAutoPackage extends EPackage
      * @generated
      */
     EReference EXPERIMENT_DATASOURCE__SOURCE = eINSTANCE.getExperimentDatasource_Source();
-
-    /**
-     * The meta object literal for the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.KeyValueImpl <em>Key Value</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.KeyValueImpl
-     * @see org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoPackageImpl#getKeyValue()
-     * @generated
-     */
-    EClass KEY_VALUE = eINSTANCE.getKeyValue();
-
-    /**
-     * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute KEY_VALUE__KEY = eINSTANCE.getKeyValue_Key();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute KEY_VALUE__VALUE = eINSTANCE.getKeyValue_Value();
 
   }
 
