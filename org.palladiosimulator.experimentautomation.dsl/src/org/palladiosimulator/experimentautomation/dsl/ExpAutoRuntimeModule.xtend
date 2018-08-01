@@ -4,7 +4,7 @@
 package org.palladiosimulator.experimentautomation.dsl
 
 //import org.eclipse.xtext.naming.DefaultDeclarativeQualifiedNameProvider
-import org.palladiosimulator.experimentautomation.dsl.naming.DeclarativeQualifiedNameProviderForIdentifier
+import org.palladiosimulator.experimentautomation.dsl.naming.DeclarativeQualifiedNameProviderForEObject
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
@@ -12,8 +12,7 @@ import org.palladiosimulator.experimentautomation.dsl.naming.DeclarativeQualifie
 class ExpAutoRuntimeModule extends AbstractExpAutoRuntimeModule {
 	
 	override bindIQualifiedNameProvider() {
-		//DefaultDeclarativeQualifiedNameProvider
-		DeclarativeQualifiedNameProviderForIdentifier
+		DeclarativeQualifiedNameProviderForEObject
 	}
 	
 }

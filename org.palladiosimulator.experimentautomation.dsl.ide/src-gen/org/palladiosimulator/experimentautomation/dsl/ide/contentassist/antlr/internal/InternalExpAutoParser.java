@@ -7542,7 +7542,7 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
             // InternalExpAuto.g:2462:1: ( rule__Variation__Group__6__Impl rule__Variation__Group__7 )
             // InternalExpAuto.g:2463:2: rule__Variation__Group__6__Impl rule__Variation__Group__7
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_10);
             rule__Variation__Group__6__Impl();
 
             state._fsp--;
@@ -12618,7 +12618,7 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
             // InternalExpAuto.g:4217:1: ( rule__ToolDefinition__Group__1__Impl rule__ToolDefinition__Group__2 )
             // InternalExpAuto.g:4218:2: rule__ToolDefinition__Group__1__Impl rule__ToolDefinition__Group__2
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_11);
             rule__ToolDefinition__Group__1__Impl();
 
             state._fsp--;
@@ -15725,29 +15725,29 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Variation__TargetAssignment_7"
-    // InternalExpAuto.g:5306:1: rule__Variation__TargetAssignment_7 : ( ( RULE_ID ) ) ;
+    // InternalExpAuto.g:5306:1: rule__Variation__TargetAssignment_7 : ( ( RULE_STRING ) ) ;
     public final void rule__Variation__TargetAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5310:1: ( ( ( RULE_ID ) ) )
-            // InternalExpAuto.g:5311:2: ( ( RULE_ID ) )
+            // InternalExpAuto.g:5310:1: ( ( ( RULE_STRING ) ) )
+            // InternalExpAuto.g:5311:2: ( ( RULE_STRING ) )
             {
-            // InternalExpAuto.g:5311:2: ( ( RULE_ID ) )
-            // InternalExpAuto.g:5312:3: ( RULE_ID )
+            // InternalExpAuto.g:5311:2: ( ( RULE_STRING ) )
+            // InternalExpAuto.g:5312:3: ( RULE_STRING )
             {
-             before(grammarAccess.getVariationAccess().getTargetIdentifierCrossReference_7_0()); 
-            // InternalExpAuto.g:5313:3: ( RULE_ID )
-            // InternalExpAuto.g:5314:4: RULE_ID
+             before(grammarAccess.getVariationAccess().getTargetEObjectCrossReference_7_0()); 
+            // InternalExpAuto.g:5313:3: ( RULE_STRING )
+            // InternalExpAuto.g:5314:4: RULE_STRING
             {
-             before(grammarAccess.getVariationAccess().getTargetIdentifierIDTerminalRuleCall_7_0_1()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getVariationAccess().getTargetIdentifierIDTerminalRuleCall_7_0_1()); 
+             before(grammarAccess.getVariationAccess().getTargetEObjectSTRINGTerminalRuleCall_7_0_1()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getVariationAccess().getTargetEObjectSTRINGTerminalRuleCall_7_0_1()); 
 
             }
 
-             after(grammarAccess.getVariationAccess().getTargetIdentifierCrossReference_7_0()); 
+             after(grammarAccess.getVariationAccess().getTargetEObjectCrossReference_7_0()); 
 
             }
 
@@ -16536,21 +16536,29 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ToolDefinition__ToolAssignment_2"
-    // InternalExpAuto.g:5633:1: rule__ToolDefinition__ToolAssignment_2 : ( RULE_STRING ) ;
+    // InternalExpAuto.g:5633:1: rule__ToolDefinition__ToolAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__ToolDefinition__ToolAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5637:1: ( ( RULE_STRING ) )
-            // InternalExpAuto.g:5638:2: ( RULE_STRING )
+            // InternalExpAuto.g:5637:1: ( ( ( RULE_ID ) ) )
+            // InternalExpAuto.g:5638:2: ( ( RULE_ID ) )
             {
-            // InternalExpAuto.g:5638:2: ( RULE_STRING )
-            // InternalExpAuto.g:5639:3: RULE_STRING
+            // InternalExpAuto.g:5638:2: ( ( RULE_ID ) )
+            // InternalExpAuto.g:5639:3: ( RULE_ID )
             {
-             before(grammarAccess.getToolDefinitionAccess().getToolSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getToolDefinitionAccess().getToolSTRINGTerminalRuleCall_2_0()); 
+             before(grammarAccess.getToolDefinitionAccess().getToolEObjectWithNameCrossReference_2_0()); 
+            // InternalExpAuto.g:5640:3: ( RULE_ID )
+            // InternalExpAuto.g:5641:4: RULE_ID
+            {
+             before(grammarAccess.getToolDefinitionAccess().getToolEObjectWithNameIDTerminalRuleCall_2_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getToolDefinitionAccess().getToolEObjectWithNameIDTerminalRuleCall_2_0_1()); 
+
+            }
+
+             after(grammarAccess.getToolDefinitionAccess().getToolEObjectWithNameCrossReference_2_0()); 
 
             }
 
@@ -16573,17 +16581,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ToolDefinition__ConfigParamsAssignment_3_1"
-    // InternalExpAuto.g:5648:1: rule__ToolDefinition__ConfigParamsAssignment_3_1 : ( ruleConfigurationParams ) ;
+    // InternalExpAuto.g:5652:1: rule__ToolDefinition__ConfigParamsAssignment_3_1 : ( ruleConfigurationParams ) ;
     public final void rule__ToolDefinition__ConfigParamsAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5652:1: ( ( ruleConfigurationParams ) )
-            // InternalExpAuto.g:5653:2: ( ruleConfigurationParams )
+            // InternalExpAuto.g:5656:1: ( ( ruleConfigurationParams ) )
+            // InternalExpAuto.g:5657:2: ( ruleConfigurationParams )
             {
-            // InternalExpAuto.g:5653:2: ( ruleConfigurationParams )
-            // InternalExpAuto.g:5654:3: ruleConfigurationParams
+            // InternalExpAuto.g:5657:2: ( ruleConfigurationParams )
+            // InternalExpAuto.g:5658:3: ruleConfigurationParams
             {
              before(grammarAccess.getToolDefinitionAccess().getConfigParamsConfigurationParamsParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16614,17 +16622,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConfigurationParams__KeyAssignment_0"
-    // InternalExpAuto.g:5663:1: rule__ConfigurationParams__KeyAssignment_0 : ( RULE_ID ) ;
+    // InternalExpAuto.g:5667:1: rule__ConfigurationParams__KeyAssignment_0 : ( RULE_ID ) ;
     public final void rule__ConfigurationParams__KeyAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5667:1: ( ( RULE_ID ) )
-            // InternalExpAuto.g:5668:2: ( RULE_ID )
+            // InternalExpAuto.g:5671:1: ( ( RULE_ID ) )
+            // InternalExpAuto.g:5672:2: ( RULE_ID )
             {
-            // InternalExpAuto.g:5668:2: ( RULE_ID )
-            // InternalExpAuto.g:5669:3: RULE_ID
+            // InternalExpAuto.g:5672:2: ( RULE_ID )
+            // InternalExpAuto.g:5673:3: RULE_ID
             {
              before(grammarAccess.getConfigurationParamsAccess().getKeyIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16651,17 +16659,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConfigurationParams__ValueAssignment_2"
-    // InternalExpAuto.g:5678:1: rule__ConfigurationParams__ValueAssignment_2 : ( ruleConfigValue ) ;
+    // InternalExpAuto.g:5682:1: rule__ConfigurationParams__ValueAssignment_2 : ( ruleConfigValue ) ;
     public final void rule__ConfigurationParams__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5682:1: ( ( ruleConfigValue ) )
-            // InternalExpAuto.g:5683:2: ( ruleConfigValue )
+            // InternalExpAuto.g:5686:1: ( ( ruleConfigValue ) )
+            // InternalExpAuto.g:5687:2: ( ruleConfigValue )
             {
-            // InternalExpAuto.g:5683:2: ( ruleConfigValue )
-            // InternalExpAuto.g:5684:3: ruleConfigValue
+            // InternalExpAuto.g:5687:2: ( ruleConfigValue )
+            // InternalExpAuto.g:5688:3: ruleConfigValue
             {
              before(grammarAccess.getConfigurationParamsAccess().getValueConfigValueParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -16692,17 +16700,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SeedDefinition__SeedListsAssignment_3"
-    // InternalExpAuto.g:5693:1: rule__SeedDefinition__SeedListsAssignment_3 : ( ruleListOfSeeds ) ;
+    // InternalExpAuto.g:5697:1: rule__SeedDefinition__SeedListsAssignment_3 : ( ruleListOfSeeds ) ;
     public final void rule__SeedDefinition__SeedListsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5697:1: ( ( ruleListOfSeeds ) )
-            // InternalExpAuto.g:5698:2: ( ruleListOfSeeds )
+            // InternalExpAuto.g:5701:1: ( ( ruleListOfSeeds ) )
+            // InternalExpAuto.g:5702:2: ( ruleListOfSeeds )
             {
-            // InternalExpAuto.g:5698:2: ( ruleListOfSeeds )
-            // InternalExpAuto.g:5699:3: ruleListOfSeeds
+            // InternalExpAuto.g:5702:2: ( ruleListOfSeeds )
+            // InternalExpAuto.g:5703:3: ruleListOfSeeds
             {
              before(grammarAccess.getSeedDefinitionAccess().getSeedListsListOfSeedsParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -16733,17 +16741,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SeedDefinition__SeedListsAssignment_4_1"
-    // InternalExpAuto.g:5708:1: rule__SeedDefinition__SeedListsAssignment_4_1 : ( ruleListOfSeeds ) ;
+    // InternalExpAuto.g:5712:1: rule__SeedDefinition__SeedListsAssignment_4_1 : ( ruleListOfSeeds ) ;
     public final void rule__SeedDefinition__SeedListsAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5712:1: ( ( ruleListOfSeeds ) )
-            // InternalExpAuto.g:5713:2: ( ruleListOfSeeds )
+            // InternalExpAuto.g:5716:1: ( ( ruleListOfSeeds ) )
+            // InternalExpAuto.g:5717:2: ( ruleListOfSeeds )
             {
-            // InternalExpAuto.g:5713:2: ( ruleListOfSeeds )
-            // InternalExpAuto.g:5714:3: ruleListOfSeeds
+            // InternalExpAuto.g:5717:2: ( ruleListOfSeeds )
+            // InternalExpAuto.g:5718:3: ruleListOfSeeds
             {
              before(grammarAccess.getSeedDefinitionAccess().getSeedListsListOfSeedsParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16774,17 +16782,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ListOfSeeds__SeedsAssignment_1"
-    // InternalExpAuto.g:5723:1: rule__ListOfSeeds__SeedsAssignment_1 : ( RULE_INT ) ;
+    // InternalExpAuto.g:5727:1: rule__ListOfSeeds__SeedsAssignment_1 : ( RULE_INT ) ;
     public final void rule__ListOfSeeds__SeedsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5727:1: ( ( RULE_INT ) )
-            // InternalExpAuto.g:5728:2: ( RULE_INT )
+            // InternalExpAuto.g:5731:1: ( ( RULE_INT ) )
+            // InternalExpAuto.g:5732:2: ( RULE_INT )
             {
-            // InternalExpAuto.g:5728:2: ( RULE_INT )
-            // InternalExpAuto.g:5729:3: RULE_INT
+            // InternalExpAuto.g:5732:2: ( RULE_INT )
+            // InternalExpAuto.g:5733:3: RULE_INT
             {
              before(grammarAccess.getListOfSeedsAccess().getSeedsINTTerminalRuleCall_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -16811,17 +16819,17 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ListOfSeeds__SeedsAssignment_2_1"
-    // InternalExpAuto.g:5738:1: rule__ListOfSeeds__SeedsAssignment_2_1 : ( RULE_INT ) ;
+    // InternalExpAuto.g:5742:1: rule__ListOfSeeds__SeedsAssignment_2_1 : ( RULE_INT ) ;
     public final void rule__ListOfSeeds__SeedsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5742:1: ( ( RULE_INT ) )
-            // InternalExpAuto.g:5743:2: ( RULE_INT )
+            // InternalExpAuto.g:5746:1: ( ( RULE_INT ) )
+            // InternalExpAuto.g:5747:2: ( RULE_INT )
             {
-            // InternalExpAuto.g:5743:2: ( RULE_INT )
-            // InternalExpAuto.g:5744:3: RULE_INT
+            // InternalExpAuto.g:5747:2: ( RULE_INT )
+            // InternalExpAuto.g:5748:3: RULE_INT
             {
              before(grammarAccess.getListOfSeedsAccess().getSeedsINTTerminalRuleCall_2_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -16848,21 +16856,21 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExperimentDatasource__SourceAssignment_2"
-    // InternalExpAuto.g:5753:1: rule__ExperimentDatasource__SourceAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalExpAuto.g:5757:1: rule__ExperimentDatasource__SourceAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__ExperimentDatasource__SourceAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5757:1: ( ( ( RULE_ID ) ) )
-            // InternalExpAuto.g:5758:2: ( ( RULE_ID ) )
+            // InternalExpAuto.g:5761:1: ( ( ( RULE_ID ) ) )
+            // InternalExpAuto.g:5762:2: ( ( RULE_ID ) )
             {
-            // InternalExpAuto.g:5758:2: ( ( RULE_ID ) )
-            // InternalExpAuto.g:5759:3: ( RULE_ID )
+            // InternalExpAuto.g:5762:2: ( ( RULE_ID ) )
+            // InternalExpAuto.g:5763:3: ( RULE_ID )
             {
              before(grammarAccess.getExperimentDatasourceAccess().getSourceDatasourceCrossReference_2_0()); 
-            // InternalExpAuto.g:5760:3: ( RULE_ID )
-            // InternalExpAuto.g:5761:4: RULE_ID
+            // InternalExpAuto.g:5764:3: ( RULE_ID )
+            // InternalExpAuto.g:5765:4: RULE_ID
             {
              before(grammarAccess.getExperimentDatasourceAccess().getSourceDatasourceIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 

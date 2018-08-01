@@ -27,30 +27,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface ToolDefinition extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Tool</b></em>' attribute.
+   * Returns the value of the '<em><b>Tool</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Tool</em>' attribute isn't clear,
+   * If the meaning of the '<em>Tool</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Tool</em>' attribute.
-   * @see #setTool(String)
+   * @return the value of the '<em>Tool</em>' reference.
+   * @see #setTool(EObjectWithName)
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage#getToolDefinition_Tool()
    * @model
    * @generated
    */
-  String getTool();
+  EObjectWithName getTool();
 
   /**
-   * Sets the value of the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition#getTool <em>Tool</em>}' attribute.
+   * Sets the value of the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition#getTool <em>Tool</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Tool</em>' attribute.
+   * @param value the new value of the '<em>Tool</em>' reference.
    * @see #getTool()
    * @generated
    */
-  void setTool(String value);
+  void setTool(EObjectWithName value);
 
   /**
    * Returns the value of the '<em><b>Config Params</b></em>' containment reference list.

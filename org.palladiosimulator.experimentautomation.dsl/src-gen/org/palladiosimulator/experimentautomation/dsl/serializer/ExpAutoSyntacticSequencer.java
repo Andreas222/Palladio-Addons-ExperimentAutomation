@@ -64,7 +64,7 @@ public class ExpAutoSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     tool=STRING (ambiguity) (rule end)
+	 *     tool=[EObjectWithName|ID] (ambiguity) (rule end)
 	 */
 	protected void emit_ToolDefinition___LeftCurlyBracketKeyword_3_0_RightCurlyBracketKeyword_3_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

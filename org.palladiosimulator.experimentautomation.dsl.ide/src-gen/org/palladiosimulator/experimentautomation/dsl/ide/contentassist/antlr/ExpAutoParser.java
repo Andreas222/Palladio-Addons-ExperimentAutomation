@@ -120,6 +120,7 @@ public class ExpAutoParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNumberOfExperimentsAccess().getNumberOfRepetitionsAssignment_2(), "rule__NumberOfExperiments__NumberOfRepetitionsAssignment_2");
 					put(grammarAccess.getToolDefinitionAccess().getToolAssignment_2(), "rule__ToolDefinition__ToolAssignment_2");
 					put(grammarAccess.getToolDefinitionAccess().getConfigParamsAssignment_3_1(), "rule__ToolDefinition__ConfigParamsAssignment_3_1");
+					put(grammarAccess.getEObjectWithNameAccess().getNameAssignment(), "rule__EObjectWithName__NameAssignment");
 					put(grammarAccess.getConfigurationParamsAccess().getKeyAssignment_0(), "rule__ConfigurationParams__KeyAssignment_0");
 					put(grammarAccess.getConfigurationParamsAccess().getValueAssignment_2(), "rule__ConfigurationParams__ValueAssignment_2");
 					put(grammarAccess.getSeedDefinitionAccess().getSeedListsAssignment_3(), "rule__SeedDefinition__SeedListsAssignment_3");

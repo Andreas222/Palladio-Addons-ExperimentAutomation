@@ -25,7 +25,6 @@ import org.palladiosimulator.experimentautomation.dsl.expAuto.StopTimeCondition
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition
 import org.palladiosimulator.experimentautomation.dsl.expAuto.UsageModel
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Variation
-import org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams
 
 /**
  * This class contains custom validation rules. 

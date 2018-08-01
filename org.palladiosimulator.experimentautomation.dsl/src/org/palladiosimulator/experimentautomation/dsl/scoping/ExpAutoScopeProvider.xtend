@@ -28,6 +28,12 @@ import org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition
 import java.util.ArrayList
 import org.eclipse.core.runtime.Platform
 import org.palladiosimulator.experimentautomation.abstractsimulation.AbstractSimulationConfiguration
+import org.eclipse.xtext.resource.IEObjectDescription
+import org.eclipse.xtext.resource.EObjectDescription
+import org.palladiosimulator.experimentautomation.dsl.expAuto.EObjectWithName
+import org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoFactoryImpl
+import java.util.Collections
+import java.util.Arrays
 
 /**
  * This class contains custom scoping description.
@@ -41,12 +47,14 @@ class ExpAutoScopeProvider extends AbstractExpAutoScopeProvider {
 	int i;
 	List adapters;
 	LinkedList<ValueVariation> valueVariationList;
-	LinkedList<Identifier> possibleTargetsList;
-	LinkedList<AbstractSimulationConfiguration> possibleToolConfigurations;
+	LinkedList<EObject> possibleTargetsList;
+	LinkedList<EObjectWithName> possibleToolConfigurations;
 	Class actualVariedInterfaceClassObject;
 	String toolName;
 	AbstractSimulationConfiguration config;
-
+	ExpAutoFactoryImpl factory;
+	EObjectWithName curr;
+	
 	@Inject
 	IQualifiedNameProvider nameProvider;
 
@@ -87,28 +95,28 @@ class ExpAutoScopeProvider extends AbstractExpAutoScopeProvider {
 			val usageResource = context.eResource.resourceSet.getResource(
 				URI.createURI(usageModelEntity.getUsageModel()), true)
 			val usageRootEntity = usageResource.getContents().get(0)
-			val usageModelContents = EcoreUtil2.getAllContentsOfType(usageRootEntity, Identifier)
+			val usageModelContents = EcoreUtil2.getAllContentsOfType(usageRootEntity, EObject)
 
 			val allocationResource = context.eResource.resourceSet.getResource(
 				URI.createURI(allocationModelEntity.getAllocation()), true)
 			val allocationRootEntity = allocationResource.getContents().get(0)
-			val allocationModelContents = EcoreUtil2.getAllContentsOfType(allocationRootEntity, Identifier)
+			val allocationModelContents = EcoreUtil2.getAllContentsOfType(allocationRootEntity, EObject)
 
 			val importedStrategy = (context as Variation).getVariationTyp()
 			val variedEntityInterface = importedStrategy.getVariedEntityInterface()
 			actualVariedInterfaceClassObject = Class.forName(variedEntityInterface)
 
-			possibleTargetsList = new LinkedList<Identifier>();
+			possibleTargetsList = new LinkedList<EObject>();
 
-			for (Identifier currIdentifier : usageModelContents) {
-				if(actualVariedInterfaceClassObject.isInstance(currIdentifier)){
-					possibleTargetsList.addFirst(currIdentifier)
+			for (EObject currObject : usageModelContents) {
+				if(actualVariedInterfaceClassObject.isInstance(currObject)){
+					possibleTargetsList.addFirst(currObject)
 				}
 			}
 
-			for (Identifier currIdentifier : allocationModelContents) {
-				if(actualVariedInterfaceClassObject.isInstance(currIdentifier)){
-					possibleTargetsList.addFirst(currIdentifier)
+			for (EObject currObject : allocationModelContents) {
+				if(actualVariedInterfaceClassObject.isInstance(currObject)){
+					possibleTargetsList.addFirst(currObject)
 				}
 			}
 
@@ -116,14 +124,27 @@ class ExpAutoScopeProvider extends AbstractExpAutoScopeProvider {
 			val newScope = Scopes.scopeFor(candidates, this.nameProvider, IScope.NULLSCOPE)
 			return newScope
 		}
-
+		
 		// Scope ToolConfiguration
-//		if(context instanceof ToolDefinition && reference == ExpAutoPackage.Literals.TOOL_DEFINITION__TOOL){
-//		  	adapters = new ArrayList();
-//		  	extensions = Platform.getExtensionRegistry().getExtensionPoint("toolAdapter").getExtensions();
-//		  	
-//		  	possibleToolConfigurations = new LinkedList<AbstractSimulationConfiguration>
-//		  		    	
+		if(context instanceof ToolDefinition && reference == ExpAutoPackage.Literals.TOOL_DEFINITION__TOOL){
+		  	adapters = new ArrayList();
+		  	//extensions = Platform.getExtensionRegistry().getExtensionPoint("org.palladiosimulator.experimentautomation.dsl.toolAdapter").getExtensions();
+		  	//extensions = Collections.unmodifiableList(Arrays.asList(Platform.getExtensionRegistry().getExtensionPoint("toolAdapter").getExtensions()));
+		  	val a = Platform.getExtensionRegistry
+		  	val b = a.getExtensionPoint("org.palladiosimulator.experimentautomation.dsl.toolAdapter")
+		  	//b.getExtensions()
+		  	
+		  	factory = new ExpAutoFactoryImpl();
+		  	possibleToolConfigurations = new LinkedList<EObjectWithName>
+		  	
+		  	curr = factory.createEObjectWithName();
+		  	curr.name = "First";
+  		    possibleToolConfigurations.add(0, curr);
+  		    
+  		    curr = factory.createEObjectWithName();
+		  	curr.name = "Second";
+  		    possibleToolConfigurations.add(1, curr);
+  		    
 //		  	for (i=0; i<extensions.length; i++){
 //		  		currExtension = extensions.get(i);
 //		  				val extensionElements = currExtension.configurationElements
@@ -135,10 +156,12 @@ class ExpAutoScopeProvider extends AbstractExpAutoScopeProvider {
 //		  					possibleToolConfigurations.addFirst(config)
 //		  				}
 //		  	}
-//		  			
-//		  	val candidates = possibleToolConfigurations
-//		  	return Scopes.scopeFor(candidates)
-//		}
+
+			
+		  	val candidates = possibleToolConfigurations
+		  	val newScope = Scopes.scopeFor(candidates)
+		  	return newScope
+		}
 
 		return super.getScope(context, reference)
 	}

@@ -258,6 +258,15 @@ public interface ExpAutoFactory extends EFactory
   ToolDefinition createToolDefinition();
 
   /**
+   * Returns a new object of class '<em>EObject With Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>EObject With Name</em>'.
+   * @generated
+   */
+  EObjectWithName createEObjectWithName();
+
+  /**
    * Returns a new object of class '<em>Configuration Params</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

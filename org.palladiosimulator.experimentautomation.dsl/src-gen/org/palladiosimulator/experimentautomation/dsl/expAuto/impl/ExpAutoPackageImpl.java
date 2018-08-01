@@ -18,6 +18,7 @@ import org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParam
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Datasource;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.DatasourceSpecification;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Description;
+import org.palladiosimulator.experimentautomation.dsl.expAuto.EObjectWithName;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.EventMiddlewareRepository;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoFactory;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage;
@@ -243,6 +244,13 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass eObjectWithNameEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass configurationParamsEClass = null;
 
   /**
@@ -315,9 +323,9 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
     isInited = true;
 
     // Initialize simple dependencies
-    IdentifierPackage.eINSTANCE.eClass();
     EcorePackage.eINSTANCE.eClass();
     VariationPackage.eINSTANCE.eClass();
+    IdentifierPackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
     theExpAutoPackage.createPackageContents();
@@ -1009,9 +1017,9 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getToolDefinition_Tool()
+  public EReference getToolDefinition_Tool()
   {
-    return (EAttribute)toolDefinitionEClass.getEStructuralFeatures().get(0);
+    return (EReference)toolDefinitionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1022,6 +1030,26 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
   public EReference getToolDefinition_ConfigParams()
   {
     return (EReference)toolDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEObjectWithName()
+  {
+    return eObjectWithNameEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEObjectWithName_Name()
+  {
+    return (EAttribute)eObjectWithNameEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1236,8 +1264,11 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
     createEAttribute(numberOfExperimentsEClass, NUMBER_OF_EXPERIMENTS__NUMBER_OF_REPETITIONS);
 
     toolDefinitionEClass = createEClass(TOOL_DEFINITION);
-    createEAttribute(toolDefinitionEClass, TOOL_DEFINITION__TOOL);
+    createEReference(toolDefinitionEClass, TOOL_DEFINITION__TOOL);
     createEReference(toolDefinitionEClass, TOOL_DEFINITION__CONFIG_PARAMS);
+
+    eObjectWithNameEClass = createEClass(EOBJECT_WITH_NAME);
+    createEAttribute(eObjectWithNameEClass, EOBJECT_WITH_NAME__NAME);
 
     configurationParamsEClass = createEClass(CONFIGURATION_PARAMS);
     createEAttribute(configurationParamsEClass, CONFIGURATION_PARAMS__KEY);
@@ -1280,7 +1311,6 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
     // Obtain other dependent packages
     EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
     VariationPackage theVariationPackage = (VariationPackage)EPackage.Registry.INSTANCE.getEPackage(VariationPackage.eNS_URI);
-    IdentifierPackage theIdentifierPackage = (IdentifierPackage)EPackage.Registry.INSTANCE.getEPackage(IdentifierPackage.eNS_URI);
 
     // Create type parameters
 
@@ -1347,7 +1377,7 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
     initEClass(variationEClass, Variation.class, "Variation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVariation_VariationTyp(), theVariationPackage.getValueVariation(), null, "variationTyp", null, 0, 1, Variation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVariation_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Variation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVariation_Target(), theIdentifierPackage.getIdentifier(), null, "target", null, 0, 1, Variation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariation_Target(), theEcorePackage.getEObject(), null, "target", null, 0, 1, Variation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVariation_MaxVariations(), theEcorePackage.getEInt(), "maxVariations", null, 0, 1, Variation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVariation_ValueProvider(), theEcorePackage.getEObject(), null, "valueProvider", null, 0, 1, Variation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1381,8 +1411,11 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
     initEAttribute(getNumberOfExperiments_NumberOfRepetitions(), theEcorePackage.getEInt(), "numberOfRepetitions", null, 0, 1, NumberOfExperiments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(toolDefinitionEClass, ToolDefinition.class, "ToolDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getToolDefinition_Tool(), theEcorePackage.getEString(), "tool", null, 0, 1, ToolDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getToolDefinition_Tool(), this.getEObjectWithName(), null, "tool", null, 0, 1, ToolDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getToolDefinition_ConfigParams(), this.getConfigurationParams(), null, "configParams", null, 0, -1, ToolDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(eObjectWithNameEClass, EObjectWithName.class, "EObjectWithName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEObjectWithName_Name(), theEcorePackage.getEString(), "name", null, 0, 1, EObjectWithName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(configurationParamsEClass, ConfigurationParams.class, "ConfigurationParams", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getConfigurationParams_Key(), theEcorePackage.getEString(), "key", null, 0, 1, ConfigurationParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

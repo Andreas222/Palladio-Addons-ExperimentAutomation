@@ -19,6 +19,7 @@ import org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParam
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Datasource;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.DatasourceSpecification;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Description;
+import org.palladiosimulator.experimentautomation.dsl.expAuto.EObjectWithName;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.EventMiddlewareRepository;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Experiment;
@@ -75,6 +76,9 @@ public class ExpAutoSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case ExpAutoPackage.DESCRIPTION:
 				sequence_Description(context, (Description) semanticObject); 
+				return; 
+			case ExpAutoPackage.EOBJECT_WITH_NAME:
+				sequence_EObjectWithName(context, (EObjectWithName) semanticObject); 
 				return; 
 			case ExpAutoPackage.EVENT_MIDDLEWARE_REPOSITORY:
 				sequence_EventMiddlewareRepository(context, (EventMiddlewareRepository) semanticObject); 
@@ -242,6 +246,24 @@ public class ExpAutoSemanticSequencer extends AbstractDelegatingSemanticSequence
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getDescriptionAccess().getDescriptionSTRINGTerminalRuleCall_2_0(), semanticObject.getDescription());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     EObjectWithName returns EObjectWithName
+	 *
+	 * Constraint:
+	 *     name=STRING
+	 */
+	protected void sequence_EObjectWithName(ISerializationContext context, EObjectWithName semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ExpAutoPackage.Literals.EOBJECT_WITH_NAME__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpAutoPackage.Literals.EOBJECT_WITH_NAME__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEObjectWithNameAccess().getNameSTRINGTerminalRuleCall_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -633,7 +655,7 @@ public class ExpAutoSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ToolDefinition returns ToolDefinition
 	 *
 	 * Constraint:
-	 *     (tool=STRING configParams+=ConfigurationParams*)
+	 *     (tool=[EObjectWithName|ID] configParams+=ConfigurationParams*)
 	 */
 	protected void sequence_ToolDefinition(ISerializationContext context, ToolDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -666,7 +688,7 @@ public class ExpAutoSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (
 	 *         variationTyp=[ValueVariation|ID] 
 	 *         name=ID 
-	 *         target=[Identifier|ID] 
+	 *         target=[EObject|STRING] 
 	 *         maxVariations=INT 
 	 *         (
 	 *             valueProvider=NestedIntervalsValueProvider | 

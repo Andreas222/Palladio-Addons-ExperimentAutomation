@@ -566,8 +566,8 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cTargetKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cTargetAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final CrossReference cTargetIdentifierCrossReference_7_0 = (CrossReference)cTargetAssignment_7.eContents().get(0);
-		private final RuleCall cTargetIdentifierIDTerminalRuleCall_7_0_1 = (RuleCall)cTargetIdentifierCrossReference_7_0.eContents().get(1);
+		private final CrossReference cTargetEObjectCrossReference_7_0 = (CrossReference)cTargetAssignment_7.eContents().get(0);
+		private final RuleCall cTargetEObjectSTRINGTerminalRuleCall_7_0_1 = (RuleCall)cTargetEObjectCrossReference_7_0.eContents().get(1);
 		private final Keyword cMaxVariationsKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		private final Keyword cEqualsSignKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		private final Assignment cMaxVariationsAssignment_10 = (Assignment)cGroup.eContents().get(10);
@@ -586,14 +586,14 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		//Variation:
 		//	'variation' '=' variationTyp=[ValueVariation] name=ID
 		//	'{'
-		//	'target' '=' target=[Identifier]
+		//	'target' '=' target=[EObject|STRING]
 		//	'maxVariations' '=' maxVariations=INT
 		//	'values' '=' valueProvider=(NestedIntervalsValueProvider | SetValueProvider | LinearValueProvider |
 		//	ExponentialValueProvider | PolynomialValueProvider)
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'variation' '=' variationTyp=[ValueVariation] name=ID '{' 'target' '=' target=[Identifier] 'maxVariations' '='
+		//'variation' '=' variationTyp=[ValueVariation] name=ID '{' 'target' '=' target=[EObject|STRING] 'maxVariations' '='
 		//maxVariations=INT 'values' '=' valueProvider=(NestedIntervalsValueProvider | SetValueProvider | LinearValueProvider |
 		//ExponentialValueProvider | PolynomialValueProvider) '}'
 		public Group getGroup() { return cGroup; }
@@ -628,14 +628,14 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		//'='
 		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
 		
-		//target=[Identifier]
+		//target=[EObject|STRING]
 		public Assignment getTargetAssignment_7() { return cTargetAssignment_7; }
 		
-		//[Identifier]
-		public CrossReference getTargetIdentifierCrossReference_7_0() { return cTargetIdentifierCrossReference_7_0; }
+		//[EObject|STRING]
+		public CrossReference getTargetEObjectCrossReference_7_0() { return cTargetEObjectCrossReference_7_0; }
 		
-		//ID
-		public RuleCall getTargetIdentifierIDTerminalRuleCall_7_0_1() { return cTargetIdentifierIDTerminalRuleCall_7_0_1; }
+		//STRING
+		public RuleCall getTargetEObjectSTRINGTerminalRuleCall_7_0_1() { return cTargetEObjectSTRINGTerminalRuleCall_7_0_1; }
 		
 		//'maxVariations'
 		public Keyword getMaxVariationsKeyword_8() { return cMaxVariationsKeyword_8; }
@@ -1083,7 +1083,8 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cToolKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cToolAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cToolSTRINGTerminalRuleCall_2_0 = (RuleCall)cToolAssignment_2.eContents().get(0);
+		private final CrossReference cToolEObjectWithNameCrossReference_2_0 = (CrossReference)cToolAssignment_2.eContents().get(0);
+		private final RuleCall cToolEObjectWithNameIDTerminalRuleCall_2_0_1 = (RuleCall)cToolEObjectWithNameCrossReference_2_0.eContents().get(1);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cConfigParamsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
@@ -1091,10 +1092,10 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
 		
 		//ToolDefinition:
-		//	'tool' '=' tool=STRING ('{' configParams+=ConfigurationParams* '}')?;
+		//	'tool' '=' tool=[EObjectWithName] ('{' configParams+=ConfigurationParams* '}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'tool' '=' tool=STRING ('{' configParams+=ConfigurationParams* '}')?
+		//'tool' '=' tool=[EObjectWithName] ('{' configParams+=ConfigurationParams* '}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'tool'
@@ -1103,11 +1104,14 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		//'='
 		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
 		
-		//tool=STRING
+		//tool=[EObjectWithName]
 		public Assignment getToolAssignment_2() { return cToolAssignment_2; }
 		
-		//STRING
-		public RuleCall getToolSTRINGTerminalRuleCall_2_0() { return cToolSTRINGTerminalRuleCall_2_0; }
+		//[EObjectWithName]
+		public CrossReference getToolEObjectWithNameCrossReference_2_0() { return cToolEObjectWithNameCrossReference_2_0; }
+		
+		//ID
+		public RuleCall getToolEObjectWithNameIDTerminalRuleCall_2_0_1() { return cToolEObjectWithNameIDTerminalRuleCall_2_0_1; }
 		
 		//('{' configParams+=ConfigurationParams* '}')?
 		public Group getGroup_3() { return cGroup_3; }
@@ -1123,6 +1127,21 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_3_2() { return cRightCurlyBracketKeyword_3_2; }
+	}
+	public class EObjectWithNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.EObjectWithName");
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNameSTRINGTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		
+		//EObjectWithName:
+		//	name=STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name=STRING
+		public Assignment getNameAssignment() { return cNameAssignment; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_0() { return cNameSTRINGTerminalRuleCall_0; }
 	}
 	public class ConfigurationParamsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.ConfigurationParams");
@@ -1327,6 +1346,7 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 	private final StopCountConditionElements pStopCountCondition;
 	private final NumberOfExperimentsElements pNumberOfExperiments;
 	private final ToolDefinitionElements pToolDefinition;
+	private final EObjectWithNameElements pEObjectWithName;
 	private final ConfigurationParamsElements pConfigurationParams;
 	private final ConfigValueElements pConfigValue;
 	private final SeedDefinitionElements pSeedDefinition;
@@ -1368,6 +1388,7 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		this.pStopCountCondition = new StopCountConditionElements();
 		this.pNumberOfExperiments = new NumberOfExperimentsElements();
 		this.pToolDefinition = new ToolDefinitionElements();
+		this.pEObjectWithName = new EObjectWithNameElements();
 		this.pConfigurationParams = new ConfigurationParamsElements();
 		this.pConfigValue = new ConfigValueElements();
 		this.pSeedDefinition = new SeedDefinitionElements();
@@ -1575,7 +1596,7 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 	//Variation:
 	//	'variation' '=' variationTyp=[ValueVariation] name=ID
 	//	'{'
-	//	'target' '=' target=[Identifier]
+	//	'target' '=' target=[EObject|STRING]
 	//	'maxVariations' '=' maxVariations=INT
 	//	'values' '=' valueProvider=(NestedIntervalsValueProvider | SetValueProvider | LinearValueProvider |
 	//	ExponentialValueProvider | PolynomialValueProvider)
@@ -1669,13 +1690,23 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ToolDefinition:
-	//	'tool' '=' tool=STRING ('{' configParams+=ConfigurationParams* '}')?;
+	//	'tool' '=' tool=[EObjectWithName] ('{' configParams+=ConfigurationParams* '}')?;
 	public ToolDefinitionElements getToolDefinitionAccess() {
 		return pToolDefinition;
 	}
 	
 	public ParserRule getToolDefinitionRule() {
 		return getToolDefinitionAccess().getRule();
+	}
+	
+	//EObjectWithName:
+	//	name=STRING;
+	public EObjectWithNameElements getEObjectWithNameAccess() {
+		return pEObjectWithName;
+	}
+	
+	public ParserRule getEObjectWithNameRule() {
+		return getEObjectWithNameAccess().getRule();
 	}
 	
 	//ConfigurationParams:

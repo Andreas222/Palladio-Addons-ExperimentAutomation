@@ -255,6 +255,13 @@ public class ExpAutoSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ExpAutoPackage.EOBJECT_WITH_NAME:
+      {
+        EObjectWithName eObjectWithName = (EObjectWithName)theEObject;
+        T result = caseEObjectWithName(eObjectWithName);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ExpAutoPackage.CONFIGURATION_PARAMS:
       {
         ConfigurationParams configurationParams = (ConfigurationParams)theEObject;
@@ -699,6 +706,22 @@ public class ExpAutoSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseToolDefinition(ToolDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>EObject With Name</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>EObject With Name</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEObjectWithName(EObjectWithName object)
   {
     return null;
   }

@@ -2,6 +2,7 @@ grammar org.palladiosimulator.experimentautomation.dsl.ExpAuto with org.eclipse.
 
 import "platform:/resource/org.palladiosimulator.experimentautomation/model/experimentautomation.ecore#//variation"
 import "platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.ecore"
+import "http://www.eclipse.org/emf/2002/Ecore"
 
 generate expAuto "http://www.palladiosimulator.org/experimentautomation/dsl/ExpAuto"
 
@@ -80,7 +81,7 @@ MonitorRepository:
 Variation:
 	'variation' '=' variationTyp = [ValueVariation] name = ID
 	'{'
-		'target' '=' target = [Identifier]
+		'target' '=' target = [EObject | STRING]
 		'maxVariations' '=' maxVariations = INT
 		'values' '=' valueProvider = (NestedIntervalsValueProvider | SetValueProvider | LinearValueProvider | ExponentialValueProvider | PolynomialValueProvider)
 	'}'
@@ -119,7 +120,11 @@ NumberOfExperiments:
 ;
 
 ToolDefinition:
-	'tool' '=' tool = STRING ('{' (configParams += ConfigurationParams)* '}')?
+	'tool' '=' tool = [EObjectWithName] ('{' (configParams += ConfigurationParams)* '}')?
+;
+
+EObjectWithName:
+	name = STRING
 ;
 
 ConfigurationParams:

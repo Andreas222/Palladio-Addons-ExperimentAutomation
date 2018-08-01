@@ -1164,9 +1164,9 @@ ruleVariation returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getVariationRule());
 					}
 				}
-				otherlv_7=RULE_ID
+				otherlv_7=RULE_STRING
 				{
-					newLeafNode(otherlv_7, grammarAccess.getVariationAccess().getTargetIdentifierCrossReference_7_0());
+					newLeafNode(otherlv_7, grammarAccess.getVariationAccess().getTargetEObjectCrossReference_7_0());
 				}
 			)
 		)
@@ -1944,19 +1944,14 @@ ruleToolDefinition returns [EObject current=null]
 		}
 		(
 			(
-				lv_tool_2_0=RULE_STRING
-				{
-					newLeafNode(lv_tool_2_0, grammarAccess.getToolDefinitionAccess().getToolSTRINGTerminalRuleCall_2_0());
-				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getToolDefinitionRule());
 					}
-					setWithLastConsumed(
-						$current,
-						"tool",
-						lv_tool_2_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+				otherlv_2=RULE_ID
+				{
+					newLeafNode(otherlv_2, grammarAccess.getToolDefinitionAccess().getToolEObjectWithNameCrossReference_2_0());
 				}
 			)
 		)

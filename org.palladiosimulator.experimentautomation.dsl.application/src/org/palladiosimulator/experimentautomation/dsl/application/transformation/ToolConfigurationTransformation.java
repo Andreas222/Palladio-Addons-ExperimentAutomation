@@ -12,10 +12,10 @@ public class ToolConfigurationTransformation {
 	}
 	
 	protected ToolConfiguration transformToolDefinition(ToolDefinition old) {
-		//TODO entweder konkrete Erstellung des Tooladapters (Factory aus Extension)
+		//TODO konkrete Erstellung des Tooladapters (Factory aus Extension)
 		AbstractSimulationConfiguration config = null;
 		
-		config.setName(old.getTool());
+		
 		
 		return config;
 	}

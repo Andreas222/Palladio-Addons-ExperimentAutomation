@@ -3,8 +3,6 @@
  */
 package org.palladiosimulator.experimentautomation.dsl.expAuto;
 
-import de.uka.ipd.sdq.identifier.Identifier;
-
 import org.eclipse.emf.ecore.EObject;
 
 import org.palladiosimulator.experimentautomation.variation.ValueVariation;
@@ -92,12 +90,12 @@ public interface Variation extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Target</em>' reference.
-   * @see #setTarget(Identifier)
+   * @see #setTarget(EObject)
    * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage#getVariation_Target()
    * @model
    * @generated
    */
-  Identifier getTarget();
+  EObject getTarget();
 
   /**
    * Sets the value of the '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.Variation#getTarget <em>Target</em>}' reference.
@@ -107,7 +105,7 @@ public interface Variation extends EObject
    * @see #getTarget()
    * @generated
    */
-  void setTarget(Identifier value);
+  void setTarget(EObject value);
 
   /**
    * Returns the value of the '<em><b>Max Variations</b></em>' attribute.

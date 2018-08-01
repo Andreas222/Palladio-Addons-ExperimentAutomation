@@ -91,6 +91,7 @@ public class ExpAutoFactoryImpl extends EFactoryImpl implements ExpAutoFactory
       case ExpAutoPackage.STOP_COUNT_CONDITION: return createStopCountCondition();
       case ExpAutoPackage.NUMBER_OF_EXPERIMENTS: return createNumberOfExperiments();
       case ExpAutoPackage.TOOL_DEFINITION: return createToolDefinition();
+      case ExpAutoPackage.EOBJECT_WITH_NAME: return createEObjectWithName();
       case ExpAutoPackage.CONFIGURATION_PARAMS: return createConfigurationParams();
       case ExpAutoPackage.SEED_DEFINITION: return createSeedDefinition();
       case ExpAutoPackage.LIST_OF_SEEDS: return createListOfSeeds();
@@ -384,6 +385,17 @@ public class ExpAutoFactoryImpl extends EFactoryImpl implements ExpAutoFactory
   {
     ToolDefinitionImpl toolDefinition = new ToolDefinitionImpl();
     return toolDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EObjectWithName createEObjectWithName()
+  {
+    EObjectWithNameImpl eObjectWithName = new EObjectWithNameImpl();
+    return eObjectWithName;
   }
 
   /**
