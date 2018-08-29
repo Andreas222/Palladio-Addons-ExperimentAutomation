@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.AllocationModel;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Datasource;
-import org.palladiosimulator.experimentautomation.dsl.expAuto.DatasourceSpecification;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Description;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.EObjectWithName;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.EventMiddlewareRepository;
@@ -26,13 +25,11 @@ import org.palladiosimulator.experimentautomation.dsl.expAuto.Experiment;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ExperimentDatasource;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ExperimentSpecifications;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ExponentialValueProvider;
-import org.palladiosimulator.experimentautomation.dsl.expAuto.FileDatasourceSpecification;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Import;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.InitSpecifications;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.InitialModel;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.LinearValueProvider;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ListOfSeeds;
-import org.palladiosimulator.experimentautomation.dsl.expAuto.MemoryDatasourceSpecification;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.MiddlewareRepository;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Model;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.MonitorRepository;
@@ -77,27 +74,6 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
    * @generated
    */
   private EClass datasourceEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass datasourceSpecificationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass fileDatasourceSpecificationEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass memoryDatasourceSpecificationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -237,27 +213,6 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass toolDefinitionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass eObjectWithNameEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass configurationParamsEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass seedDefinitionEClass = null;
 
   /**
@@ -273,6 +228,27 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
    * @generated
    */
   private EClass experimentDatasourceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass toolDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass configurationParamsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass eObjectWithNameEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -427,9 +403,9 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDatasource_Specification()
+  public EAttribute getDatasource_SourceType()
   {
-    return (EReference)datasourceEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)datasourceEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -437,69 +413,9 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getDatasourceSpecification()
+  public EAttribute getDatasource_SourceURI()
   {
-    return datasourceSpecificationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getDatasourceSpecification_Specification()
-  {
-    return (EReference)datasourceSpecificationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getFileDatasourceSpecification()
-  {
-    return fileDatasourceSpecificationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFileDatasourceSpecification_SourceType()
-  {
-    return (EAttribute)fileDatasourceSpecificationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFileDatasourceSpecification_SourceURI()
-  {
-    return (EAttribute)fileDatasourceSpecificationEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getMemoryDatasourceSpecification()
-  {
-    return memoryDatasourceSpecificationEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getMemoryDatasourceSpecification_SourceType()
-  {
-    return (EAttribute)memoryDatasourceSpecificationEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)datasourceEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1007,86 +923,6 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getToolDefinition()
-  {
-    return toolDefinitionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getToolDefinition_Tool()
-  {
-    return (EReference)toolDefinitionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getToolDefinition_ConfigParams()
-  {
-    return (EReference)toolDefinitionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getEObjectWithName()
-  {
-    return eObjectWithNameEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getEObjectWithName_Name()
-  {
-    return (EAttribute)eObjectWithNameEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getConfigurationParams()
-  {
-    return configurationParamsEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getConfigurationParams_Key()
-  {
-    return (EAttribute)configurationParamsEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getConfigurationParams_Value()
-  {
-    return (EAttribute)configurationParamsEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getSeedDefinition()
   {
     return seedDefinitionEClass;
@@ -1147,6 +983,86 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getToolDefinition()
+  {
+    return toolDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getToolDefinition_Tool()
+  {
+    return (EReference)toolDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getToolDefinition_ConfigParams()
+  {
+    return (EReference)toolDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getConfigurationParams()
+  {
+    return configurationParamsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getConfigurationParams_Key()
+  {
+    return (EAttribute)configurationParamsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getConfigurationParams_Value()
+  {
+    return (EAttribute)configurationParamsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEObjectWithName()
+  {
+    return eObjectWithNameEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEObjectWithName_Name()
+  {
+    return (EAttribute)eObjectWithNameEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ExpAutoFactory getExpAutoFactory()
   {
     return (ExpAutoFactory)getEFactoryInstance();
@@ -1182,17 +1098,8 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
 
     datasourceEClass = createEClass(DATASOURCE);
     createEAttribute(datasourceEClass, DATASOURCE__NAME);
-    createEReference(datasourceEClass, DATASOURCE__SPECIFICATION);
-
-    datasourceSpecificationEClass = createEClass(DATASOURCE_SPECIFICATION);
-    createEReference(datasourceSpecificationEClass, DATASOURCE_SPECIFICATION__SPECIFICATION);
-
-    fileDatasourceSpecificationEClass = createEClass(FILE_DATASOURCE_SPECIFICATION);
-    createEAttribute(fileDatasourceSpecificationEClass, FILE_DATASOURCE_SPECIFICATION__SOURCE_TYPE);
-    createEAttribute(fileDatasourceSpecificationEClass, FILE_DATASOURCE_SPECIFICATION__SOURCE_URI);
-
-    memoryDatasourceSpecificationEClass = createEClass(MEMORY_DATASOURCE_SPECIFICATION);
-    createEAttribute(memoryDatasourceSpecificationEClass, MEMORY_DATASOURCE_SPECIFICATION__SOURCE_TYPE);
+    createEAttribute(datasourceEClass, DATASOURCE__SOURCE_TYPE);
+    createEAttribute(datasourceEClass, DATASOURCE__SOURCE_URI);
 
     experimentEClass = createEClass(EXPERIMENT);
     createEAttribute(experimentEClass, EXPERIMENT__NAME);
@@ -1263,17 +1170,6 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
     numberOfExperimentsEClass = createEClass(NUMBER_OF_EXPERIMENTS);
     createEAttribute(numberOfExperimentsEClass, NUMBER_OF_EXPERIMENTS__NUMBER_OF_REPETITIONS);
 
-    toolDefinitionEClass = createEClass(TOOL_DEFINITION);
-    createEReference(toolDefinitionEClass, TOOL_DEFINITION__TOOL);
-    createEReference(toolDefinitionEClass, TOOL_DEFINITION__CONFIG_PARAMS);
-
-    eObjectWithNameEClass = createEClass(EOBJECT_WITH_NAME);
-    createEAttribute(eObjectWithNameEClass, EOBJECT_WITH_NAME__NAME);
-
-    configurationParamsEClass = createEClass(CONFIGURATION_PARAMS);
-    createEAttribute(configurationParamsEClass, CONFIGURATION_PARAMS__KEY);
-    createEAttribute(configurationParamsEClass, CONFIGURATION_PARAMS__VALUE);
-
     seedDefinitionEClass = createEClass(SEED_DEFINITION);
     createEReference(seedDefinitionEClass, SEED_DEFINITION__SEED_LISTS);
 
@@ -1282,6 +1178,17 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
 
     experimentDatasourceEClass = createEClass(EXPERIMENT_DATASOURCE);
     createEReference(experimentDatasourceEClass, EXPERIMENT_DATASOURCE__SOURCE);
+
+    toolDefinitionEClass = createEClass(TOOL_DEFINITION);
+    createEReference(toolDefinitionEClass, TOOL_DEFINITION__TOOL);
+    createEReference(toolDefinitionEClass, TOOL_DEFINITION__CONFIG_PARAMS);
+
+    configurationParamsEClass = createEClass(CONFIGURATION_PARAMS);
+    createEAttribute(configurationParamsEClass, CONFIGURATION_PARAMS__KEY);
+    createEAttribute(configurationParamsEClass, CONFIGURATION_PARAMS__VALUE);
+
+    eObjectWithNameEClass = createEClass(EOBJECT_WITH_NAME);
+    createEAttribute(eObjectWithNameEClass, EOBJECT_WITH_NAME__NAME);
   }
 
   /**
@@ -1329,17 +1236,8 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
 
     initEClass(datasourceEClass, Datasource.class, "Datasource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDatasource_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Datasource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDatasource_Specification(), this.getDatasourceSpecification(), null, "specification", null, 0, 1, Datasource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(datasourceSpecificationEClass, DatasourceSpecification.class, "DatasourceSpecification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDatasourceSpecification_Specification(), theEcorePackage.getEObject(), null, "specification", null, 0, 1, DatasourceSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(fileDatasourceSpecificationEClass, FileDatasourceSpecification.class, "FileDatasourceSpecification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFileDatasourceSpecification_SourceType(), theEcorePackage.getEString(), "sourceType", null, 0, 1, FileDatasourceSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFileDatasourceSpecification_SourceURI(), theEcorePackage.getEString(), "sourceURI", null, 0, 1, FileDatasourceSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(memoryDatasourceSpecificationEClass, MemoryDatasourceSpecification.class, "MemoryDatasourceSpecification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMemoryDatasourceSpecification_SourceType(), theEcorePackage.getEString(), "sourceType", null, 0, 1, MemoryDatasourceSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDatasource_SourceType(), theEcorePackage.getEString(), "sourceType", null, 0, 1, Datasource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDatasource_SourceURI(), theEcorePackage.getEString(), "sourceURI", null, 0, 1, Datasource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(experimentEClass, Experiment.class, "Experiment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExperiment_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Experiment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1410,17 +1308,6 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
     initEClass(numberOfExperimentsEClass, NumberOfExperiments.class, "NumberOfExperiments", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNumberOfExperiments_NumberOfRepetitions(), theEcorePackage.getEInt(), "numberOfRepetitions", null, 0, 1, NumberOfExperiments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(toolDefinitionEClass, ToolDefinition.class, "ToolDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getToolDefinition_Tool(), this.getEObjectWithName(), null, "tool", null, 0, 1, ToolDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getToolDefinition_ConfigParams(), this.getConfigurationParams(), null, "configParams", null, 0, -1, ToolDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(eObjectWithNameEClass, EObjectWithName.class, "EObjectWithName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEObjectWithName_Name(), theEcorePackage.getEString(), "name", null, 0, 1, EObjectWithName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(configurationParamsEClass, ConfigurationParams.class, "ConfigurationParams", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getConfigurationParams_Key(), theEcorePackage.getEString(), "key", null, 0, 1, ConfigurationParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getConfigurationParams_Value(), theEcorePackage.getEBoolean(), "value", null, 0, 1, ConfigurationParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(seedDefinitionEClass, SeedDefinition.class, "SeedDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSeedDefinition_SeedLists(), this.getListOfSeeds(), null, "seedLists", null, 0, -1, SeedDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1429,6 +1316,17 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
 
     initEClass(experimentDatasourceEClass, ExperimentDatasource.class, "ExperimentDatasource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExperimentDatasource_Source(), this.getDatasource(), null, "source", null, 0, 1, ExperimentDatasource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(toolDefinitionEClass, ToolDefinition.class, "ToolDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getToolDefinition_Tool(), this.getEObjectWithName(), null, "tool", null, 0, 1, ToolDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getToolDefinition_ConfigParams(), this.getConfigurationParams(), null, "configParams", null, 0, -1, ToolDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(configurationParamsEClass, ConfigurationParams.class, "ConfigurationParams", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getConfigurationParams_Key(), theEcorePackage.getEString(), "key", null, 0, 1, ConfigurationParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getConfigurationParams_Value(), theEcorePackage.getEBoolean(), "value", null, 0, 1, ConfigurationParams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(eObjectWithNameEClass, EObjectWithName.class, "EObjectWithName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEObjectWithName_Name(), theEcorePackage.getEString(), "name", null, 0, 1, EObjectWithName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

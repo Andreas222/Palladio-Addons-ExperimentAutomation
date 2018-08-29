@@ -4,16 +4,13 @@
 package org.palladiosimulator.experimentautomation.dsl.expAuto.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Datasource;
-import org.palladiosimulator.experimentautomation.dsl.expAuto.DatasourceSpecification;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage;
 
 /**
@@ -25,7 +22,8 @@ import org.palladiosimulator.experimentautomation.dsl.expAuto.ExpAutoPackage;
  * </p>
  * <ul>
  *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.DatasourceImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.DatasourceImpl#getSpecification <em>Specification</em>}</li>
+ *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.DatasourceImpl#getSourceType <em>Source Type</em>}</li>
+ *   <li>{@link org.palladiosimulator.experimentautomation.dsl.expAuto.impl.DatasourceImpl#getSourceURI <em>Source URI</em>}</li>
  * </ul>
  *
  * @generated
@@ -53,14 +51,44 @@ public class DatasourceImpl extends MinimalEObjectImpl.Container implements Data
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getSpecification() <em>Specification</em>}' containment reference.
+   * The default value of the '{@link #getSourceType() <em>Source Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSpecification()
+   * @see #getSourceType()
    * @generated
    * @ordered
    */
-  protected DatasourceSpecification specification;
+  protected static final String SOURCE_TYPE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getSourceType() <em>Source Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSourceType()
+   * @generated
+   * @ordered
+   */
+  protected String sourceType = SOURCE_TYPE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getSourceURI() <em>Source URI</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSourceURI()
+   * @generated
+   * @ordered
+   */
+  protected static final String SOURCE_URI_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getSourceURI() <em>Source URI</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSourceURI()
+   * @generated
+   * @ordered
+   */
+  protected String sourceURI = SOURCE_URI_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -111,9 +139,9 @@ public class DatasourceImpl extends MinimalEObjectImpl.Container implements Data
    * <!-- end-user-doc -->
    * @generated
    */
-  public DatasourceSpecification getSpecification()
+  public String getSourceType()
   {
-    return specification;
+    return sourceType;
   }
 
   /**
@@ -121,16 +149,12 @@ public class DatasourceImpl extends MinimalEObjectImpl.Container implements Data
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetSpecification(DatasourceSpecification newSpecification, NotificationChain msgs)
+  public void setSourceType(String newSourceType)
   {
-    DatasourceSpecification oldSpecification = specification;
-    specification = newSpecification;
+    String oldSourceType = sourceType;
+    sourceType = newSourceType;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExpAutoPackage.DATASOURCE__SPECIFICATION, oldSpecification, newSpecification);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpAutoPackage.DATASOURCE__SOURCE_TYPE, oldSourceType, sourceType));
   }
 
   /**
@@ -138,20 +162,9 @@ public class DatasourceImpl extends MinimalEObjectImpl.Container implements Data
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSpecification(DatasourceSpecification newSpecification)
+  public String getSourceURI()
   {
-    if (newSpecification != specification)
-    {
-      NotificationChain msgs = null;
-      if (specification != null)
-        msgs = ((InternalEObject)specification).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpAutoPackage.DATASOURCE__SPECIFICATION, null, msgs);
-      if (newSpecification != null)
-        msgs = ((InternalEObject)newSpecification).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExpAutoPackage.DATASOURCE__SPECIFICATION, null, msgs);
-      msgs = basicSetSpecification(newSpecification, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ExpAutoPackage.DATASOURCE__SPECIFICATION, newSpecification, newSpecification));
+    return sourceURI;
   }
 
   /**
@@ -159,15 +172,12 @@ public class DatasourceImpl extends MinimalEObjectImpl.Container implements Data
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public void setSourceURI(String newSourceURI)
   {
-    switch (featureID)
-    {
-      case ExpAutoPackage.DATASOURCE__SPECIFICATION:
-        return basicSetSpecification(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    String oldSourceURI = sourceURI;
+    sourceURI = newSourceURI;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ExpAutoPackage.DATASOURCE__SOURCE_URI, oldSourceURI, sourceURI));
   }
 
   /**
@@ -182,8 +192,10 @@ public class DatasourceImpl extends MinimalEObjectImpl.Container implements Data
     {
       case ExpAutoPackage.DATASOURCE__NAME:
         return getName();
-      case ExpAutoPackage.DATASOURCE__SPECIFICATION:
-        return getSpecification();
+      case ExpAutoPackage.DATASOURCE__SOURCE_TYPE:
+        return getSourceType();
+      case ExpAutoPackage.DATASOURCE__SOURCE_URI:
+        return getSourceURI();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -201,8 +213,11 @@ public class DatasourceImpl extends MinimalEObjectImpl.Container implements Data
       case ExpAutoPackage.DATASOURCE__NAME:
         setName((String)newValue);
         return;
-      case ExpAutoPackage.DATASOURCE__SPECIFICATION:
-        setSpecification((DatasourceSpecification)newValue);
+      case ExpAutoPackage.DATASOURCE__SOURCE_TYPE:
+        setSourceType((String)newValue);
+        return;
+      case ExpAutoPackage.DATASOURCE__SOURCE_URI:
+        setSourceURI((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -221,8 +236,11 @@ public class DatasourceImpl extends MinimalEObjectImpl.Container implements Data
       case ExpAutoPackage.DATASOURCE__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case ExpAutoPackage.DATASOURCE__SPECIFICATION:
-        setSpecification((DatasourceSpecification)null);
+      case ExpAutoPackage.DATASOURCE__SOURCE_TYPE:
+        setSourceType(SOURCE_TYPE_EDEFAULT);
+        return;
+      case ExpAutoPackage.DATASOURCE__SOURCE_URI:
+        setSourceURI(SOURCE_URI_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -240,8 +258,10 @@ public class DatasourceImpl extends MinimalEObjectImpl.Container implements Data
     {
       case ExpAutoPackage.DATASOURCE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case ExpAutoPackage.DATASOURCE__SPECIFICATION:
-        return specification != null;
+      case ExpAutoPackage.DATASOURCE__SOURCE_TYPE:
+        return SOURCE_TYPE_EDEFAULT == null ? sourceType != null : !SOURCE_TYPE_EDEFAULT.equals(sourceType);
+      case ExpAutoPackage.DATASOURCE__SOURCE_URI:
+        return SOURCE_URI_EDEFAULT == null ? sourceURI != null : !SOURCE_URI_EDEFAULT.equals(sourceURI);
     }
     return super.eIsSet(featureID);
   }
@@ -259,6 +279,10 @@ public class DatasourceImpl extends MinimalEObjectImpl.Container implements Data
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", sourceType: ");
+    result.append(sourceType);
+    result.append(", sourceURI: ");
+    result.append(sourceURI);
     result.append(')');
     return result.toString();
   }

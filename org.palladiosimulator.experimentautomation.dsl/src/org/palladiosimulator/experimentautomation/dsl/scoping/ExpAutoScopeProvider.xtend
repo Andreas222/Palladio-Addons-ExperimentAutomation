@@ -115,6 +115,8 @@ class ExpAutoScopeProvider extends AbstractExpAutoScopeProvider {
 		
 		// Scope ToolConfiguration
 		if(context instanceof ToolDefinition && reference == ExpAutoPackage.Literals.TOOL_DEFINITION__TOOL){
+		  	possibleToolConfigurations = new LinkedList<EObjectWithName>
+		  	
 		  	val registry = Platform.getExtensionRegistry
 		  	val extensionPoint = registry.getExtensionPoint("org.palladiosimulator.experimentautomation.dsl.org.palladiosimulator.experimentautomation.dsl.toolAdapter")
 		  	
@@ -133,10 +135,10 @@ class ExpAutoScopeProvider extends AbstractExpAutoScopeProvider {
   				}
   				if(toolName !== null){
   					config = factory.createEObjectWithName()
+  					config.name = toolName
   					possibleToolConfigurations.addFirst(config)
   				}
 		  	}
-
 			
 		  	val candidates = possibleToolConfigurations
 		  	val newScope = Scopes.scopeFor(candidates)

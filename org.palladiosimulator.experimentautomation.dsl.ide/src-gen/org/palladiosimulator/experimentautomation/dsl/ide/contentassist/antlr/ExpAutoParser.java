@@ -31,7 +31,6 @@ public class ExpAutoParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getDatasourceSpecificationAccess().getSpecificationAlternatives_0(), "rule__DatasourceSpecification__SpecificationAlternatives_0");
 					put(grammarAccess.getExperimentAccess().getDesignAlternatives_3_0(), "rule__Experiment__DesignAlternatives_3_0");
 					put(grammarAccess.getExperimentSpecificationsAccess().getSpecificationsAlternatives_0(), "rule__ExperimentSpecifications__SpecificationsAlternatives_0");
 					put(grammarAccess.getInitSpecificationsAccess().getSpecificationsAlternatives_0(), "rule__InitSpecifications__SpecificationsAlternatives_0");
@@ -42,7 +41,7 @@ public class ExpAutoParser extends AbstractContentAssistParser {
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
 					put(grammarAccess.getDatasourceAccess().getGroup(), "rule__Datasource__Group__0");
-					put(grammarAccess.getFileDatasourceSpecificationAccess().getGroup(), "rule__FileDatasourceSpecification__Group__0");
+					put(grammarAccess.getDatasourceAccess().getGroup_4(), "rule__Datasource__Group_4__0");
 					put(grammarAccess.getExperimentAccess().getGroup(), "rule__Experiment__Group__0");
 					put(grammarAccess.getDescriptionAccess().getGroup(), "rule__Description__Group__0");
 					put(grammarAccess.getInitialModelAccess().getGroup(), "rule__InitialModel__Group__0");
@@ -64,24 +63,21 @@ public class ExpAutoParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStopTimeConditionAccess().getGroup(), "rule__StopTimeCondition__Group__0");
 					put(grammarAccess.getStopCountConditionAccess().getGroup(), "rule__StopCountCondition__Group__0");
 					put(grammarAccess.getNumberOfExperimentsAccess().getGroup(), "rule__NumberOfExperiments__Group__0");
-					put(grammarAccess.getToolDefinitionAccess().getGroup(), "rule__ToolDefinition__Group__0");
-					put(grammarAccess.getToolDefinitionAccess().getGroup_3(), "rule__ToolDefinition__Group_3__0");
-					put(grammarAccess.getConfigurationParamsAccess().getGroup(), "rule__ConfigurationParams__Group__0");
 					put(grammarAccess.getSeedDefinitionAccess().getGroup(), "rule__SeedDefinition__Group__0");
 					put(grammarAccess.getSeedDefinitionAccess().getGroup_4(), "rule__SeedDefinition__Group_4__0");
 					put(grammarAccess.getListOfSeedsAccess().getGroup(), "rule__ListOfSeeds__Group__0");
 					put(grammarAccess.getListOfSeedsAccess().getGroup_2(), "rule__ListOfSeeds__Group_2__0");
 					put(grammarAccess.getExperimentDatasourceAccess().getGroup(), "rule__ExperimentDatasource__Group__0");
+					put(grammarAccess.getToolDefinitionAccess().getGroup(), "rule__ToolDefinition__Group__0");
+					put(grammarAccess.getToolDefinitionAccess().getGroup_3(), "rule__ToolDefinition__Group_3__0");
+					put(grammarAccess.getConfigurationParamsAccess().getGroup(), "rule__ConfigurationParams__Group__0");
 					put(grammarAccess.getModelAccess().getImportsAssignment_0(), "rule__Model__ImportsAssignment_0");
 					put(grammarAccess.getModelAccess().getDatasourcesAssignment_1(), "rule__Model__DatasourcesAssignment_1");
 					put(grammarAccess.getModelAccess().getExperimentsAssignment_2(), "rule__Model__ExperimentsAssignment_2");
 					put(grammarAccess.getImportAccess().getPathAssignment_1(), "rule__Import__PathAssignment_1");
 					put(grammarAccess.getDatasourceAccess().getNameAssignment_1(), "rule__Datasource__NameAssignment_1");
-					put(grammarAccess.getDatasourceAccess().getSpecificationAssignment_3(), "rule__Datasource__SpecificationAssignment_3");
-					put(grammarAccess.getDatasourceSpecificationAccess().getSpecificationAssignment(), "rule__DatasourceSpecification__SpecificationAssignment");
-					put(grammarAccess.getFileDatasourceSpecificationAccess().getSourceTypeAssignment_0(), "rule__FileDatasourceSpecification__SourceTypeAssignment_0");
-					put(grammarAccess.getFileDatasourceSpecificationAccess().getSourceURIAssignment_2(), "rule__FileDatasourceSpecification__SourceURIAssignment_2");
-					put(grammarAccess.getMemoryDatasourceSpecificationAccess().getSourceTypeAssignment(), "rule__MemoryDatasourceSpecification__SourceTypeAssignment");
+					put(grammarAccess.getDatasourceAccess().getSourceTypeAssignment_3(), "rule__Datasource__SourceTypeAssignment_3");
+					put(grammarAccess.getDatasourceAccess().getSourceURIAssignment_4_1(), "rule__Datasource__SourceURIAssignment_4_1");
 					put(grammarAccess.getExperimentAccess().getNameAssignment_1(), "rule__Experiment__NameAssignment_1");
 					put(grammarAccess.getExperimentAccess().getDesignAssignment_3(), "rule__Experiment__DesignAssignment_3");
 					put(grammarAccess.getExperimentAccess().getExperimentSpecificationsAssignment_5(), "rule__Experiment__ExperimentSpecificationsAssignment_5");
@@ -118,16 +114,16 @@ public class ExpAutoParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStopCountConditionAccess().getStopTypAssignment_2(), "rule__StopCountCondition__StopTypAssignment_2");
 					put(grammarAccess.getStopCountConditionAccess().getStopParamAssignment_4(), "rule__StopCountCondition__StopParamAssignment_4");
 					put(grammarAccess.getNumberOfExperimentsAccess().getNumberOfRepetitionsAssignment_2(), "rule__NumberOfExperiments__NumberOfRepetitionsAssignment_2");
-					put(grammarAccess.getToolDefinitionAccess().getToolAssignment_2(), "rule__ToolDefinition__ToolAssignment_2");
-					put(grammarAccess.getToolDefinitionAccess().getConfigParamsAssignment_3_1(), "rule__ToolDefinition__ConfigParamsAssignment_3_1");
-					put(grammarAccess.getEObjectWithNameAccess().getNameAssignment(), "rule__EObjectWithName__NameAssignment");
-					put(grammarAccess.getConfigurationParamsAccess().getKeyAssignment_0(), "rule__ConfigurationParams__KeyAssignment_0");
-					put(grammarAccess.getConfigurationParamsAccess().getValueAssignment_2(), "rule__ConfigurationParams__ValueAssignment_2");
 					put(grammarAccess.getSeedDefinitionAccess().getSeedListsAssignment_3(), "rule__SeedDefinition__SeedListsAssignment_3");
 					put(grammarAccess.getSeedDefinitionAccess().getSeedListsAssignment_4_1(), "rule__SeedDefinition__SeedListsAssignment_4_1");
 					put(grammarAccess.getListOfSeedsAccess().getSeedsAssignment_1(), "rule__ListOfSeeds__SeedsAssignment_1");
 					put(grammarAccess.getListOfSeedsAccess().getSeedsAssignment_2_1(), "rule__ListOfSeeds__SeedsAssignment_2_1");
 					put(grammarAccess.getExperimentDatasourceAccess().getSourceAssignment_2(), "rule__ExperimentDatasource__SourceAssignment_2");
+					put(grammarAccess.getToolDefinitionAccess().getToolAssignment_2(), "rule__ToolDefinition__ToolAssignment_2");
+					put(grammarAccess.getToolDefinitionAccess().getConfigParamsAssignment_3_1(), "rule__ToolDefinition__ConfigParamsAssignment_3_1");
+					put(grammarAccess.getConfigurationParamsAccess().getKeyAssignment_0(), "rule__ConfigurationParams__KeyAssignment_0");
+					put(grammarAccess.getConfigurationParamsAccess().getValueAssignment_2(), "rule__ConfigurationParams__ValueAssignment_2");
+					put(grammarAccess.getEObjectWithNameAccess().getNameAssignment(), "rule__EObjectWithName__NameAssignment");
 				}
 			};
 		}

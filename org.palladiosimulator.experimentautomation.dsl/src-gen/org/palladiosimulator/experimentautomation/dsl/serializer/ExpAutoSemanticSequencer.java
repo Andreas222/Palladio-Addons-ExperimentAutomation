@@ -17,7 +17,6 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import org.palladiosimulator.experimentautomation.dsl.expAuto.AllocationModel;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Datasource;
-import org.palladiosimulator.experimentautomation.dsl.expAuto.DatasourceSpecification;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Description;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.EObjectWithName;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.EventMiddlewareRepository;
@@ -26,13 +25,11 @@ import org.palladiosimulator.experimentautomation.dsl.expAuto.Experiment;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ExperimentDatasource;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ExperimentSpecifications;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ExponentialValueProvider;
-import org.palladiosimulator.experimentautomation.dsl.expAuto.FileDatasourceSpecification;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Import;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.InitSpecifications;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.InitialModel;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.LinearValueProvider;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ListOfSeeds;
-import org.palladiosimulator.experimentautomation.dsl.expAuto.MemoryDatasourceSpecification;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.MiddlewareRepository;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Model;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.MonitorRepository;
@@ -71,9 +68,6 @@ public class ExpAutoSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case ExpAutoPackage.DATASOURCE:
 				sequence_Datasource(context, (Datasource) semanticObject); 
 				return; 
-			case ExpAutoPackage.DATASOURCE_SPECIFICATION:
-				sequence_DatasourceSpecification(context, (DatasourceSpecification) semanticObject); 
-				return; 
 			case ExpAutoPackage.DESCRIPTION:
 				sequence_Description(context, (Description) semanticObject); 
 				return; 
@@ -95,9 +89,6 @@ public class ExpAutoSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case ExpAutoPackage.EXPONENTIAL_VALUE_PROVIDER:
 				sequence_ExponentialValueProvider(context, (ExponentialValueProvider) semanticObject); 
 				return; 
-			case ExpAutoPackage.FILE_DATASOURCE_SPECIFICATION:
-				sequence_FileDatasourceSpecification(context, (FileDatasourceSpecification) semanticObject); 
-				return; 
 			case ExpAutoPackage.IMPORT:
 				sequence_Import(context, (Import) semanticObject); 
 				return; 
@@ -112,9 +103,6 @@ public class ExpAutoSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case ExpAutoPackage.LIST_OF_SEEDS:
 				sequence_ListOfSeeds(context, (ListOfSeeds) semanticObject); 
-				return; 
-			case ExpAutoPackage.MEMORY_DATASOURCE_SPECIFICATION:
-				sequence_MemoryDatasourceSpecification(context, (MemoryDatasourceSpecification) semanticObject); 
 				return; 
 			case ExpAutoPackage.MIDDLEWARE_REPOSITORY:
 				sequence_MiddlewareRepository(context, (MiddlewareRepository) semanticObject); 
@@ -201,34 +189,13 @@ public class ExpAutoSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     DatasourceSpecification returns DatasourceSpecification
-	 *
-	 * Constraint:
-	 *     (specification=FileDatasourceSpecification | specification=MemoryDatasourceSpecification)
-	 */
-	protected void sequence_DatasourceSpecification(ISerializationContext context, DatasourceSpecification semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Datasource returns Datasource
 	 *
 	 * Constraint:
-	 *     (name=ID specification=DatasourceSpecification)
+	 *     (name=ID sourceType='EDP2' sourceURI=STRING?)
 	 */
 	protected void sequence_Datasource(ISerializationContext context, Datasource semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ExpAutoPackage.Literals.DATASOURCE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpAutoPackage.Literals.DATASOURCE__NAME));
-			if (transientValues.isValueTransient(semanticObject, ExpAutoPackage.Literals.DATASOURCE__SPECIFICATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpAutoPackage.Literals.DATASOURCE__SPECIFICATION));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDatasourceAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getDatasourceAccess().getSpecificationDatasourceSpecificationParserRuleCall_3_0(), semanticObject.getSpecification());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -358,27 +325,6 @@ public class ExpAutoSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     FileDatasourceSpecification returns FileDatasourceSpecification
-	 *
-	 * Constraint:
-	 *     (sourceType='EDP2' sourceURI=STRING)
-	 */
-	protected void sequence_FileDatasourceSpecification(ISerializationContext context, FileDatasourceSpecification semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ExpAutoPackage.Literals.FILE_DATASOURCE_SPECIFICATION__SOURCE_TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpAutoPackage.Literals.FILE_DATASOURCE_SPECIFICATION__SOURCE_TYPE));
-			if (transientValues.isValueTransient(semanticObject, ExpAutoPackage.Literals.FILE_DATASOURCE_SPECIFICATION__SOURCE_URI) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpAutoPackage.Literals.FILE_DATASOURCE_SPECIFICATION__SOURCE_URI));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFileDatasourceSpecificationAccess().getSourceTypeEDP2Keyword_0_0(), semanticObject.getSourceType());
-		feeder.accept(grammarAccess.getFileDatasourceSpecificationAccess().getSourceURISTRINGTerminalRuleCall_2_0(), semanticObject.getSourceURI());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Import returns Import
 	 *
 	 * Constraint:
@@ -464,24 +410,6 @@ public class ExpAutoSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 */
 	protected void sequence_ListOfSeeds(ISerializationContext context, ListOfSeeds semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     MemoryDatasourceSpecification returns MemoryDatasourceSpecification
-	 *
-	 * Constraint:
-	 *     sourceType='EDP2'
-	 */
-	protected void sequence_MemoryDatasourceSpecification(ISerializationContext context, MemoryDatasourceSpecification semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ExpAutoPackage.Literals.MEMORY_DATASOURCE_SPECIFICATION__SOURCE_TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ExpAutoPackage.Literals.MEMORY_DATASOURCE_SPECIFICATION__SOURCE_TYPE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getMemoryDatasourceSpecificationAccess().getSourceTypeEDP2Keyword_0(), semanticObject.getSourceType());
-		feeder.finish();
 	}
 	
 	

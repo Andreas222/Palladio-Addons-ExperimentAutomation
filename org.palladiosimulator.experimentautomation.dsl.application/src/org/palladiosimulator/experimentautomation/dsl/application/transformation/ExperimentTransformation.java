@@ -10,7 +10,7 @@ import org.palladiosimulator.experimentautomation.abstractsimulation.Abstractsim
 import org.palladiosimulator.experimentautomation.abstractsimulation.EDP2Datasource;
 import org.palladiosimulator.experimentautomation.abstractsimulation.FileDatasource;
 import org.palladiosimulator.experimentautomation.abstractsimulation.MeasurementCountStopCondition;
-import org.palladiosimulator.experimentautomation.abstractsimulation.MemoryDatasource;
+//import org.palladiosimulator.experimentautomation.abstractsimulation.MemoryDatasource;
 import org.palladiosimulator.experimentautomation.abstractsimulation.RandomNumberGeneratorSeed;
 import org.palladiosimulator.experimentautomation.abstractsimulation.SimTimeStopCondition;
 import org.palladiosimulator.experimentautomation.abstractsimulation.StopCondition;
@@ -18,9 +18,9 @@ import org.palladiosimulator.experimentautomation.abstractsimulation.impl.Abstra
 import org.palladiosimulator.experimentautomation.dsl.expAuto.Description;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ExperimentDatasource;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ExperimentSpecifications;
-import org.palladiosimulator.experimentautomation.dsl.expAuto.FileDatasourceSpecification;
+//import org.palladiosimulator.experimentautomation.dsl.expAuto.FileDatasourceSpecification;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ListOfSeeds;
-import org.palladiosimulator.experimentautomation.dsl.expAuto.MemoryDatasourceSpecification;
+//import org.palladiosimulator.experimentautomation.dsl.expAuto.MemoryDatasourceSpecification;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.NumberOfExperiments;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.SeedDefinition;
 import org.palladiosimulator.experimentautomation.dsl.expAuto.StopCountCondition;
@@ -159,6 +159,7 @@ public class ExperimentTransformation {
 		return generatorSeed;
 	}
 	
+	/*
 	private EDP2Datasource transformExperimentDatasource(ExperimentDatasource old) {
 		EDP2Datasource datasource;
 		EObject specification = old.getSource().getSpecification().getSpecification();
@@ -185,6 +186,23 @@ public class ExperimentTransformation {
 	
 	private MemoryDatasource transformMemoryDatasource(MemoryDatasourceSpecification old) {
 		MemoryDatasource datasource = absFactory.createMemoryDatasource();
+		return datasource;
+	}
+	*/
+	
+	private EDP2Datasource transformExperimentDatasource(ExperimentDatasource old) {
+		EDP2Datasource datasource;
+		String sourceURI = old.getSource().getSourceURI();
+		
+		if(sourceURI != null && !sourceURI.isEmpty()) {
+			FileDatasource fds = absFactory.createFileDatasource();
+			fds.setLocation(old.getSource().getSourceURI());
+			datasource = fds;
+		} else {
+			datasource = absFactory.createMemoryDatasource();
+		}
+		
+		datasource.setId(old.getSource().getName());
 		return datasource;
 	}
 }

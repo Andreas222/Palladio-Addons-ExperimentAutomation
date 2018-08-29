@@ -90,14 +90,35 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cSpecificationAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cSpecificationDatasourceSpecificationParserRuleCall_3_0 = (RuleCall)cSpecificationAssignment_3.eContents().get(0);
+		private final Assignment cSourceTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Keyword cSourceTypeEDP2Keyword_3_0 = (Keyword)cSourceTypeAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cLeftParenthesisKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cSourceURIAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cSourceURISTRINGTerminalRuleCall_4_1_0 = (RuleCall)cSourceURIAssignment_4_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
 		
+		///*
 		//Datasource:
-		//	'datasource' name=ID ':' specification=DatasourceSpecification;
+		//	'datasource' name = ID ':' specification = DatasourceSpecification
+		//;
+		//
+		//DatasourceSpecification:
+		//	specification = (FileDatasourceSpecification | MemoryDatasourceSpecification)
+		//;
+		//
+		//FileDatasourceSpecification:
+		//	sourceType = 'EDP2' '(' sourceURI = STRING ')'
+		//;
+		//
+		//MemoryDatasourceSpecification:
+		//	sourceType = 'EDP2'
+		//;
+		//*/ Datasource:
+		//	'datasource' name=ID ':' sourceType='EDP2' ('(' sourceURI=STRING ')')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'datasource' name=ID ':' specification=DatasourceSpecification
+		//'datasource' name=ID ':' sourceType='EDP2' ('(' sourceURI=STRING ')')?
 		public Group getGroup() { return cGroup; }
 		
 		//'datasource'
@@ -112,84 +133,26 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		//':'
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
-		//specification=DatasourceSpecification
-		public Assignment getSpecificationAssignment_3() { return cSpecificationAssignment_3; }
-		
-		//DatasourceSpecification
-		public RuleCall getSpecificationDatasourceSpecificationParserRuleCall_3_0() { return cSpecificationDatasourceSpecificationParserRuleCall_3_0; }
-	}
-	public class DatasourceSpecificationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.DatasourceSpecification");
-		private final Assignment cSpecificationAssignment = (Assignment)rule.eContents().get(1);
-		private final Alternatives cSpecificationAlternatives_0 = (Alternatives)cSpecificationAssignment.eContents().get(0);
-		private final RuleCall cSpecificationFileDatasourceSpecificationParserRuleCall_0_0 = (RuleCall)cSpecificationAlternatives_0.eContents().get(0);
-		private final RuleCall cSpecificationMemoryDatasourceSpecificationParserRuleCall_0_1 = (RuleCall)cSpecificationAlternatives_0.eContents().get(1);
-		
-		//DatasourceSpecification:
-		//	specification=(FileDatasourceSpecification | MemoryDatasourceSpecification);
-		@Override public ParserRule getRule() { return rule; }
-		
-		//specification=(FileDatasourceSpecification | MemoryDatasourceSpecification)
-		public Assignment getSpecificationAssignment() { return cSpecificationAssignment; }
-		
-		//(FileDatasourceSpecification | MemoryDatasourceSpecification)
-		public Alternatives getSpecificationAlternatives_0() { return cSpecificationAlternatives_0; }
-		
-		//FileDatasourceSpecification
-		public RuleCall getSpecificationFileDatasourceSpecificationParserRuleCall_0_0() { return cSpecificationFileDatasourceSpecificationParserRuleCall_0_0; }
-		
-		//MemoryDatasourceSpecification
-		public RuleCall getSpecificationMemoryDatasourceSpecificationParserRuleCall_0_1() { return cSpecificationMemoryDatasourceSpecificationParserRuleCall_0_1; }
-	}
-	public class FileDatasourceSpecificationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.FileDatasourceSpecification");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cSourceTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cSourceTypeEDP2Keyword_0_0 = (Keyword)cSourceTypeAssignment_0.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cSourceURIAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cSourceURISTRINGTerminalRuleCall_2_0 = (RuleCall)cSourceURIAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		
-		//FileDatasourceSpecification:
-		//	sourceType='EDP2' '(' sourceURI=STRING ')';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//sourceType='EDP2' '(' sourceURI=STRING ')'
-		public Group getGroup() { return cGroup; }
-		
 		//sourceType='EDP2'
-		public Assignment getSourceTypeAssignment_0() { return cSourceTypeAssignment_0; }
+		public Assignment getSourceTypeAssignment_3() { return cSourceTypeAssignment_3; }
 		
 		//'EDP2'
-		public Keyword getSourceTypeEDP2Keyword_0_0() { return cSourceTypeEDP2Keyword_0_0; }
+		public Keyword getSourceTypeEDP2Keyword_3_0() { return cSourceTypeEDP2Keyword_3_0; }
+		
+		//('(' sourceURI=STRING ')')?
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		public Keyword getLeftParenthesisKeyword_4_0() { return cLeftParenthesisKeyword_4_0; }
 		
 		//sourceURI=STRING
-		public Assignment getSourceURIAssignment_2() { return cSourceURIAssignment_2; }
+		public Assignment getSourceURIAssignment_4_1() { return cSourceURIAssignment_4_1; }
 		
 		//STRING
-		public RuleCall getSourceURISTRINGTerminalRuleCall_2_0() { return cSourceURISTRINGTerminalRuleCall_2_0; }
+		public RuleCall getSourceURISTRINGTerminalRuleCall_4_1_0() { return cSourceURISTRINGTerminalRuleCall_4_1_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
-	}
-	public class MemoryDatasourceSpecificationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.MemoryDatasourceSpecification");
-		private final Assignment cSourceTypeAssignment = (Assignment)rule.eContents().get(1);
-		private final Keyword cSourceTypeEDP2Keyword_0 = (Keyword)cSourceTypeAssignment.eContents().get(0);
-		
-		//MemoryDatasourceSpecification:
-		//	sourceType='EDP2';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//sourceType='EDP2'
-		public Assignment getSourceTypeAssignment() { return cSourceTypeAssignment; }
-		
-		//'EDP2'
-		public Keyword getSourceTypeEDP2Keyword_0() { return cSourceTypeEDP2Keyword_0; }
+		public Keyword getRightParenthesisKeyword_4_2() { return cRightParenthesisKeyword_4_2; }
 	}
 	public class ExperimentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.Experiment");
@@ -1077,122 +1040,6 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getNumberOfRepetitionsINTTerminalRuleCall_2_0() { return cNumberOfRepetitionsINTTerminalRuleCall_2_0; }
 	}
-	public class ToolDefinitionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.ToolDefinition");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cToolKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cToolAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cToolEObjectWithNameCrossReference_2_0 = (CrossReference)cToolAssignment_2.eContents().get(0);
-		private final RuleCall cToolEObjectWithNameIDTerminalRuleCall_2_0_1 = (RuleCall)cToolEObjectWithNameCrossReference_2_0.eContents().get(1);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cConfigParamsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cConfigParamsConfigurationParamsParserRuleCall_3_1_0 = (RuleCall)cConfigParamsAssignment_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
-		
-		//ToolDefinition:
-		//	'tool' '=' tool=[EObjectWithName] ('{' configParams+=ConfigurationParams* '}')?;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'tool' '=' tool=[EObjectWithName] ('{' configParams+=ConfigurationParams* '}')?
-		public Group getGroup() { return cGroup; }
-		
-		//'tool'
-		public Keyword getToolKeyword_0() { return cToolKeyword_0; }
-		
-		//'='
-		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
-		
-		//tool=[EObjectWithName]
-		public Assignment getToolAssignment_2() { return cToolAssignment_2; }
-		
-		//[EObjectWithName]
-		public CrossReference getToolEObjectWithNameCrossReference_2_0() { return cToolEObjectWithNameCrossReference_2_0; }
-		
-		//ID
-		public RuleCall getToolEObjectWithNameIDTerminalRuleCall_2_0_1() { return cToolEObjectWithNameIDTerminalRuleCall_2_0_1; }
-		
-		//('{' configParams+=ConfigurationParams* '}')?
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3_0() { return cLeftCurlyBracketKeyword_3_0; }
-		
-		//configParams+=ConfigurationParams*
-		public Assignment getConfigParamsAssignment_3_1() { return cConfigParamsAssignment_3_1; }
-		
-		//ConfigurationParams
-		public RuleCall getConfigParamsConfigurationParamsParserRuleCall_3_1_0() { return cConfigParamsConfigurationParamsParserRuleCall_3_1_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_3_2() { return cRightCurlyBracketKeyword_3_2; }
-	}
-	public class EObjectWithNameElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.EObjectWithName");
-		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cNameSTRINGTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
-		
-		//EObjectWithName:
-		//	name=STRING;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//name=STRING
-		public Assignment getNameAssignment() { return cNameAssignment; }
-		
-		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_0() { return cNameSTRINGTerminalRuleCall_0; }
-	}
-	public class ConfigurationParamsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.ConfigurationParams");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cKeyAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cKeyIDTerminalRuleCall_0_0 = (RuleCall)cKeyAssignment_0.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueConfigValueParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
-		
-		//ConfigurationParams:
-		//	key=ID '=' value?=ConfigValue;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//key=ID '=' value?=ConfigValue
-		public Group getGroup() { return cGroup; }
-		
-		//key=ID
-		public Assignment getKeyAssignment_0() { return cKeyAssignment_0; }
-		
-		//ID
-		public RuleCall getKeyIDTerminalRuleCall_0_0() { return cKeyIDTerminalRuleCall_0_0; }
-		
-		//'='
-		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
-		
-		//value?=ConfigValue
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
-		
-		//ConfigValue
-		public RuleCall getValueConfigValueParserRuleCall_2_0() { return cValueConfigValueParserRuleCall_2_0; }
-	}
-	public class ConfigValueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.ConfigValue");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//ConfigValue:
-		//	STRING | INT;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//STRING | INT
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_0() { return cSTRINGTerminalRuleCall_0; }
-		
-		//INT
-		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
-	}
 	public class SeedDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.SeedDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1318,14 +1165,127 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getSourceDatasourceIDTerminalRuleCall_2_0_1() { return cSourceDatasourceIDTerminalRuleCall_2_0_1; }
 	}
+	public class ToolDefinitionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.ToolDefinition");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cToolKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cToolAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cToolEObjectWithNameCrossReference_2_0 = (CrossReference)cToolAssignment_2.eContents().get(0);
+		private final RuleCall cToolEObjectWithNameIDTerminalRuleCall_2_0_1 = (RuleCall)cToolEObjectWithNameCrossReference_2_0.eContents().get(1);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cConfigParamsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cConfigParamsConfigurationParamsParserRuleCall_3_1_0 = (RuleCall)cConfigParamsAssignment_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		
+		//ToolDefinition:
+		//	'tool' '=' tool=[EObjectWithName] ('{' configParams+=ConfigurationParams* '}')?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'tool' '=' tool=[EObjectWithName] ('{' configParams+=ConfigurationParams* '}')?
+		public Group getGroup() { return cGroup; }
+		
+		//'tool'
+		public Keyword getToolKeyword_0() { return cToolKeyword_0; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+		
+		//tool=[EObjectWithName]
+		public Assignment getToolAssignment_2() { return cToolAssignment_2; }
+		
+		//[EObjectWithName]
+		public CrossReference getToolEObjectWithNameCrossReference_2_0() { return cToolEObjectWithNameCrossReference_2_0; }
+		
+		//ID
+		public RuleCall getToolEObjectWithNameIDTerminalRuleCall_2_0_1() { return cToolEObjectWithNameIDTerminalRuleCall_2_0_1; }
+		
+		//('{' configParams+=ConfigurationParams* '}')?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3_0() { return cLeftCurlyBracketKeyword_3_0; }
+		
+		//configParams+=ConfigurationParams*
+		public Assignment getConfigParamsAssignment_3_1() { return cConfigParamsAssignment_3_1; }
+		
+		//ConfigurationParams
+		public RuleCall getConfigParamsConfigurationParamsParserRuleCall_3_1_0() { return cConfigParamsConfigurationParamsParserRuleCall_3_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3_2() { return cRightCurlyBracketKeyword_3_2; }
+	}
+	public class ConfigurationParamsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.ConfigurationParams");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cKeyAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cKeyIDTerminalRuleCall_0_0 = (RuleCall)cKeyAssignment_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueConfigValueParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		
+		//ConfigurationParams:
+		//	key=ID '=' value?=ConfigValue;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//key=ID '=' value?=ConfigValue
+		public Group getGroup() { return cGroup; }
+		
+		//key=ID
+		public Assignment getKeyAssignment_0() { return cKeyAssignment_0; }
+		
+		//ID
+		public RuleCall getKeyIDTerminalRuleCall_0_0() { return cKeyIDTerminalRuleCall_0_0; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+		
+		//value?=ConfigValue
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		
+		//ConfigValue
+		public RuleCall getValueConfigValueParserRuleCall_2_0() { return cValueConfigValueParserRuleCall_2_0; }
+	}
+	public class ConfigValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.ConfigValue");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//ConfigValue:
+		//	STRING | INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//STRING | INT
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_0() { return cSTRINGTerminalRuleCall_0; }
+		
+		//INT
+		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
+	}
+	public class EObjectWithNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.experimentautomation.dsl.ExpAuto.EObjectWithName");
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNameSTRINGTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		
+		//EObjectWithName:
+		//	name=STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name=STRING
+		public Assignment getNameAssignment() { return cNameAssignment; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_0() { return cNameSTRINGTerminalRuleCall_0; }
+	}
 	
 	
 	private final ModelElements pModel;
 	private final ImportElements pImport;
 	private final DatasourceElements pDatasource;
-	private final DatasourceSpecificationElements pDatasourceSpecification;
-	private final FileDatasourceSpecificationElements pFileDatasourceSpecification;
-	private final MemoryDatasourceSpecificationElements pMemoryDatasourceSpecification;
 	private final ExperimentElements pExperiment;
 	private final ExperimentSpecificationsElements pExperimentSpecifications;
 	private final DescriptionElements pDescription;
@@ -1345,13 +1305,13 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 	private final StopTimeConditionElements pStopTimeCondition;
 	private final StopCountConditionElements pStopCountCondition;
 	private final NumberOfExperimentsElements pNumberOfExperiments;
-	private final ToolDefinitionElements pToolDefinition;
-	private final EObjectWithNameElements pEObjectWithName;
-	private final ConfigurationParamsElements pConfigurationParams;
-	private final ConfigValueElements pConfigValue;
 	private final SeedDefinitionElements pSeedDefinition;
 	private final ListOfSeedsElements pListOfSeeds;
 	private final ExperimentDatasourceElements pExperimentDatasource;
+	private final ToolDefinitionElements pToolDefinition;
+	private final ConfigurationParamsElements pConfigurationParams;
+	private final ConfigValueElements pConfigValue;
+	private final EObjectWithNameElements pEObjectWithName;
 	
 	private final Grammar grammar;
 	
@@ -1365,9 +1325,6 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		this.pModel = new ModelElements();
 		this.pImport = new ImportElements();
 		this.pDatasource = new DatasourceElements();
-		this.pDatasourceSpecification = new DatasourceSpecificationElements();
-		this.pFileDatasourceSpecification = new FileDatasourceSpecificationElements();
-		this.pMemoryDatasourceSpecification = new MemoryDatasourceSpecificationElements();
 		this.pExperiment = new ExperimentElements();
 		this.pExperimentSpecifications = new ExperimentSpecificationsElements();
 		this.pDescription = new DescriptionElements();
@@ -1387,13 +1344,13 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		this.pStopTimeCondition = new StopTimeConditionElements();
 		this.pStopCountCondition = new StopCountConditionElements();
 		this.pNumberOfExperiments = new NumberOfExperimentsElements();
-		this.pToolDefinition = new ToolDefinitionElements();
-		this.pEObjectWithName = new EObjectWithNameElements();
-		this.pConfigurationParams = new ConfigurationParamsElements();
-		this.pConfigValue = new ConfigValueElements();
 		this.pSeedDefinition = new SeedDefinitionElements();
 		this.pListOfSeeds = new ListOfSeedsElements();
 		this.pExperimentDatasource = new ExperimentDatasourceElements();
+		this.pToolDefinition = new ToolDefinitionElements();
+		this.pConfigurationParams = new ConfigurationParamsElements();
+		this.pConfigValue = new ConfigValueElements();
+		this.pEObjectWithName = new EObjectWithNameElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -1445,44 +1402,30 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		return getImportAccess().getRule();
 	}
 	
+	///*
 	//Datasource:
-	//	'datasource' name=ID ':' specification=DatasourceSpecification;
+	//	'datasource' name = ID ':' specification = DatasourceSpecification
+	//;
+	//
+	//DatasourceSpecification:
+	//	specification = (FileDatasourceSpecification | MemoryDatasourceSpecification)
+	//;
+	//
+	//FileDatasourceSpecification:
+	//	sourceType = 'EDP2' '(' sourceURI = STRING ')'
+	//;
+	//
+	//MemoryDatasourceSpecification:
+	//	sourceType = 'EDP2'
+	//;
+	//*/ Datasource:
+	//	'datasource' name=ID ':' sourceType='EDP2' ('(' sourceURI=STRING ')')?;
 	public DatasourceElements getDatasourceAccess() {
 		return pDatasource;
 	}
 	
 	public ParserRule getDatasourceRule() {
 		return getDatasourceAccess().getRule();
-	}
-	
-	//DatasourceSpecification:
-	//	specification=(FileDatasourceSpecification | MemoryDatasourceSpecification);
-	public DatasourceSpecificationElements getDatasourceSpecificationAccess() {
-		return pDatasourceSpecification;
-	}
-	
-	public ParserRule getDatasourceSpecificationRule() {
-		return getDatasourceSpecificationAccess().getRule();
-	}
-	
-	//FileDatasourceSpecification:
-	//	sourceType='EDP2' '(' sourceURI=STRING ')';
-	public FileDatasourceSpecificationElements getFileDatasourceSpecificationAccess() {
-		return pFileDatasourceSpecification;
-	}
-	
-	public ParserRule getFileDatasourceSpecificationRule() {
-		return getFileDatasourceSpecificationAccess().getRule();
-	}
-	
-	//MemoryDatasourceSpecification:
-	//	sourceType='EDP2';
-	public MemoryDatasourceSpecificationElements getMemoryDatasourceSpecificationAccess() {
-		return pMemoryDatasourceSpecification;
-	}
-	
-	public ParserRule getMemoryDatasourceSpecificationRule() {
-		return getMemoryDatasourceSpecificationAccess().getRule();
 	}
 	
 	//Experiment:
@@ -1689,46 +1632,6 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 		return getNumberOfExperimentsAccess().getRule();
 	}
 	
-	//ToolDefinition:
-	//	'tool' '=' tool=[EObjectWithName] ('{' configParams+=ConfigurationParams* '}')?;
-	public ToolDefinitionElements getToolDefinitionAccess() {
-		return pToolDefinition;
-	}
-	
-	public ParserRule getToolDefinitionRule() {
-		return getToolDefinitionAccess().getRule();
-	}
-	
-	//EObjectWithName:
-	//	name=STRING;
-	public EObjectWithNameElements getEObjectWithNameAccess() {
-		return pEObjectWithName;
-	}
-	
-	public ParserRule getEObjectWithNameRule() {
-		return getEObjectWithNameAccess().getRule();
-	}
-	
-	//ConfigurationParams:
-	//	key=ID '=' value?=ConfigValue;
-	public ConfigurationParamsElements getConfigurationParamsAccess() {
-		return pConfigurationParams;
-	}
-	
-	public ParserRule getConfigurationParamsRule() {
-		return getConfigurationParamsAccess().getRule();
-	}
-	
-	//ConfigValue:
-	//	STRING | INT;
-	public ConfigValueElements getConfigValueAccess() {
-		return pConfigValue;
-	}
-	
-	public ParserRule getConfigValueRule() {
-		return getConfigValueAccess().getRule();
-	}
-	
 	//SeedDefinition:
 	//	'seeds' '=' '{' seedLists+=ListOfSeeds (',' seedLists+=ListOfSeeds)* '}';
 	public SeedDefinitionElements getSeedDefinitionAccess() {
@@ -1757,6 +1660,46 @@ public class ExpAutoGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getExperimentDatasourceRule() {
 		return getExperimentDatasourceAccess().getRule();
+	}
+	
+	//ToolDefinition:
+	//	'tool' '=' tool=[EObjectWithName] ('{' configParams+=ConfigurationParams* '}')?;
+	public ToolDefinitionElements getToolDefinitionAccess() {
+		return pToolDefinition;
+	}
+	
+	public ParserRule getToolDefinitionRule() {
+		return getToolDefinitionAccess().getRule();
+	}
+	
+	//ConfigurationParams:
+	//	key=ID '=' value?=ConfigValue;
+	public ConfigurationParamsElements getConfigurationParamsAccess() {
+		return pConfigurationParams;
+	}
+	
+	public ParserRule getConfigurationParamsRule() {
+		return getConfigurationParamsAccess().getRule();
+	}
+	
+	//ConfigValue:
+	//	STRING | INT;
+	public ConfigValueElements getConfigValueAccess() {
+		return pConfigValue;
+	}
+	
+	public ParserRule getConfigValueRule() {
+		return getConfigValueAccess().getRule();
+	}
+	
+	//EObjectWithName:
+	//	name=STRING;
+	public EObjectWithNameElements getEObjectWithNameAccess() {
+		return pEObjectWithName;
+	}
+	
+	public ParserRule getEObjectWithNameRule() {
+		return getEObjectWithNameAccess().getRule();
 	}
 	
 	//terminal ID:

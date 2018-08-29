@@ -94,27 +94,6 @@ public class ExpAutoSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ExpAutoPackage.DATASOURCE_SPECIFICATION:
-      {
-        DatasourceSpecification datasourceSpecification = (DatasourceSpecification)theEObject;
-        T result = caseDatasourceSpecification(datasourceSpecification);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ExpAutoPackage.FILE_DATASOURCE_SPECIFICATION:
-      {
-        FileDatasourceSpecification fileDatasourceSpecification = (FileDatasourceSpecification)theEObject;
-        T result = caseFileDatasourceSpecification(fileDatasourceSpecification);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ExpAutoPackage.MEMORY_DATASOURCE_SPECIFICATION:
-      {
-        MemoryDatasourceSpecification memoryDatasourceSpecification = (MemoryDatasourceSpecification)theEObject;
-        T result = caseMemoryDatasourceSpecification(memoryDatasourceSpecification);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case ExpAutoPackage.EXPERIMENT:
       {
         Experiment experiment = (Experiment)theEObject;
@@ -248,27 +227,6 @@ public class ExpAutoSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ExpAutoPackage.TOOL_DEFINITION:
-      {
-        ToolDefinition toolDefinition = (ToolDefinition)theEObject;
-        T result = caseToolDefinition(toolDefinition);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ExpAutoPackage.EOBJECT_WITH_NAME:
-      {
-        EObjectWithName eObjectWithName = (EObjectWithName)theEObject;
-        T result = caseEObjectWithName(eObjectWithName);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ExpAutoPackage.CONFIGURATION_PARAMS:
-      {
-        ConfigurationParams configurationParams = (ConfigurationParams)theEObject;
-        T result = caseConfigurationParams(configurationParams);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case ExpAutoPackage.SEED_DEFINITION:
       {
         SeedDefinition seedDefinition = (SeedDefinition)theEObject;
@@ -287,6 +245,27 @@ public class ExpAutoSwitch<T> extends Switch<T>
       {
         ExperimentDatasource experimentDatasource = (ExperimentDatasource)theEObject;
         T result = caseExperimentDatasource(experimentDatasource);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ExpAutoPackage.TOOL_DEFINITION:
+      {
+        ToolDefinition toolDefinition = (ToolDefinition)theEObject;
+        T result = caseToolDefinition(toolDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ExpAutoPackage.CONFIGURATION_PARAMS:
+      {
+        ConfigurationParams configurationParams = (ConfigurationParams)theEObject;
+        T result = caseConfigurationParams(configurationParams);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ExpAutoPackage.EOBJECT_WITH_NAME:
+      {
+        EObjectWithName eObjectWithName = (EObjectWithName)theEObject;
+        T result = caseEObjectWithName(eObjectWithName);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -338,54 +317,6 @@ public class ExpAutoSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDatasource(Datasource object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Datasource Specification</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Datasource Specification</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDatasourceSpecification(DatasourceSpecification object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>File Datasource Specification</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>File Datasource Specification</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseFileDatasourceSpecification(FileDatasourceSpecification object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Memory Datasource Specification</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Memory Datasource Specification</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseMemoryDatasourceSpecification(MemoryDatasourceSpecification object)
   {
     return null;
   }
@@ -695,54 +626,6 @@ public class ExpAutoSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Tool Definition</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Tool Definition</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseToolDefinition(ToolDefinition object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>EObject With Name</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>EObject With Name</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseEObjectWithName(EObjectWithName object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Configuration Params</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Configuration Params</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseConfigurationParams(ConfigurationParams object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Seed Definition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -786,6 +669,54 @@ public class ExpAutoSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseExperimentDatasource(ExperimentDatasource object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Tool Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Tool Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseToolDefinition(ToolDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Configuration Params</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Configuration Params</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConfigurationParams(ConfigurationParams object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>EObject With Name</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>EObject With Name</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEObjectWithName(EObjectWithName object)
   {
     return null;
   }

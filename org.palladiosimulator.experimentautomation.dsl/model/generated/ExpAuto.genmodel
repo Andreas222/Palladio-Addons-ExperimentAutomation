@@ -16,17 +16,8 @@
     </genClasses>
     <genClasses ecoreClass="ExpAuto.ecore#//Datasource">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//Datasource/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpAuto.ecore#//Datasource/specification"/>
-    </genClasses>
-    <genClasses ecoreClass="ExpAuto.ecore#//DatasourceSpecification">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpAuto.ecore#//DatasourceSpecification/specification"/>
-    </genClasses>
-    <genClasses ecoreClass="ExpAuto.ecore#//FileDatasourceSpecification">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//FileDatasourceSpecification/sourceType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//FileDatasourceSpecification/sourceURI"/>
-    </genClasses>
-    <genClasses ecoreClass="ExpAuto.ecore#//MemoryDatasourceSpecification">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//MemoryDatasourceSpecification/sourceType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//Datasource/sourceType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//Datasource/sourceURI"/>
     </genClasses>
     <genClasses ecoreClass="ExpAuto.ecore#//Experiment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//Experiment/name"/>
@@ -97,17 +88,6 @@
     <genClasses ecoreClass="ExpAuto.ecore#//NumberOfExperiments">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//NumberOfExperiments/numberOfRepetitions"/>
     </genClasses>
-    <genClasses ecoreClass="ExpAuto.ecore#//ToolDefinition">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpAuto.ecore#//ToolDefinition/tool"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpAuto.ecore#//ToolDefinition/configParams"/>
-    </genClasses>
-    <genClasses ecoreClass="ExpAuto.ecore#//EObjectWithName">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//EObjectWithName/name"/>
-    </genClasses>
-    <genClasses ecoreClass="ExpAuto.ecore#//ConfigurationParams">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//ConfigurationParams/key"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//ConfigurationParams/value"/>
-    </genClasses>
     <genClasses ecoreClass="ExpAuto.ecore#//SeedDefinition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpAuto.ecore#//SeedDefinition/seedLists"/>
     </genClasses>
@@ -116,6 +96,17 @@
     </genClasses>
     <genClasses ecoreClass="ExpAuto.ecore#//ExperimentDatasource">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpAuto.ecore#//ExperimentDatasource/source"/>
+    </genClasses>
+    <genClasses ecoreClass="ExpAuto.ecore#//ToolDefinition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ExpAuto.ecore#//ToolDefinition/tool"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ExpAuto.ecore#//ToolDefinition/configParams"/>
+    </genClasses>
+    <genClasses ecoreClass="ExpAuto.ecore#//ConfigurationParams">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//ConfigurationParams/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//ConfigurationParams/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ExpAuto.ecore#//EObjectWithName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ExpAuto.ecore#//EObjectWithName/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -91,21 +91,6 @@ public class ExpAutoAdapterFactory extends AdapterFactoryImpl
         return createDatasourceAdapter();
       }
       @Override
-      public Adapter caseDatasourceSpecification(DatasourceSpecification object)
-      {
-        return createDatasourceSpecificationAdapter();
-      }
-      @Override
-      public Adapter caseFileDatasourceSpecification(FileDatasourceSpecification object)
-      {
-        return createFileDatasourceSpecificationAdapter();
-      }
-      @Override
-      public Adapter caseMemoryDatasourceSpecification(MemoryDatasourceSpecification object)
-      {
-        return createMemoryDatasourceSpecificationAdapter();
-      }
-      @Override
       public Adapter caseExperiment(Experiment object)
       {
         return createExperimentAdapter();
@@ -201,21 +186,6 @@ public class ExpAutoAdapterFactory extends AdapterFactoryImpl
         return createNumberOfExperimentsAdapter();
       }
       @Override
-      public Adapter caseToolDefinition(ToolDefinition object)
-      {
-        return createToolDefinitionAdapter();
-      }
-      @Override
-      public Adapter caseEObjectWithName(EObjectWithName object)
-      {
-        return createEObjectWithNameAdapter();
-      }
-      @Override
-      public Adapter caseConfigurationParams(ConfigurationParams object)
-      {
-        return createConfigurationParamsAdapter();
-      }
-      @Override
       public Adapter caseSeedDefinition(SeedDefinition object)
       {
         return createSeedDefinitionAdapter();
@@ -229,6 +199,21 @@ public class ExpAutoAdapterFactory extends AdapterFactoryImpl
       public Adapter caseExperimentDatasource(ExperimentDatasource object)
       {
         return createExperimentDatasourceAdapter();
+      }
+      @Override
+      public Adapter caseToolDefinition(ToolDefinition object)
+      {
+        return createToolDefinitionAdapter();
+      }
+      @Override
+      public Adapter caseConfigurationParams(ConfigurationParams object)
+      {
+        return createConfigurationParamsAdapter();
+      }
+      @Override
+      public Adapter caseEObjectWithName(EObjectWithName object)
+      {
+        return createEObjectWithNameAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -293,51 +278,6 @@ public class ExpAutoAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDatasourceAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.DatasourceSpecification <em>Datasource Specification</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.DatasourceSpecification
-   * @generated
-   */
-  public Adapter createDatasourceSpecificationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.FileDatasourceSpecification <em>File Datasource Specification</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.FileDatasourceSpecification
-   * @generated
-   */
-  public Adapter createFileDatasourceSpecificationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.MemoryDatasourceSpecification <em>Memory Datasource Specification</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.MemoryDatasourceSpecification
-   * @generated
-   */
-  public Adapter createMemoryDatasourceSpecificationAdapter()
   {
     return null;
   }
@@ -628,51 +568,6 @@ public class ExpAutoAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition <em>Tool Definition</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition
-   * @generated
-   */
-  public Adapter createToolDefinitionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.EObjectWithName <em>EObject With Name</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.EObjectWithName
-   * @generated
-   */
-  public Adapter createEObjectWithNameAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams <em>Configuration Params</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams
-   * @generated
-   */
-  public Adapter createConfigurationParamsAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.SeedDefinition <em>Seed Definition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -713,6 +608,51 @@ public class ExpAutoAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExperimentDatasourceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition <em>Tool Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition
+   * @generated
+   */
+  public Adapter createToolDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams <em>Configuration Params</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.ConfigurationParams
+   * @generated
+   */
+  public Adapter createConfigurationParamsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.experimentautomation.dsl.expAuto.EObjectWithName <em>EObject With Name</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.experimentautomation.dsl.expAuto.EObjectWithName
+   * @generated
+   */
+  public Adapter createEObjectWithNameAdapter()
   {
     return null;
   }

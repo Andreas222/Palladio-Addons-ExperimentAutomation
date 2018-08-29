@@ -15,19 +15,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Datasource">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="specification" eType="#//DatasourceSpecification"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DatasourceSpecification">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="specification" eType="ecore:EClass platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FileDatasourceSpecification">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceType" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceURI" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MemoryDatasourceSpecification">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceType" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Experiment">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
@@ -107,18 +96,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="NumberOfExperiments">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfRepetitions" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ToolDefinition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tool" eType="#//EObjectWithName"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="configParams" upperBound="-1"
-        eType="#//ConfigurationParams" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EObjectWithName">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConfigurationParams">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SeedDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="seedLists" upperBound="-1"
         eType="#//ListOfSeeds" containment="true"/>
@@ -129,5 +106,17 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExperimentDatasource">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Datasource"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ToolDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tool" eType="#//EObjectWithName"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="configParams" upperBound="-1"
+        eType="#//ConfigurationParams" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfigurationParams">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EObjectWithName">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

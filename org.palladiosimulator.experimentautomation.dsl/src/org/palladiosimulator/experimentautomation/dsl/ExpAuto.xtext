@@ -15,7 +15,7 @@ Model:
 Import:
 	'import' path = STRING
 ;
-
+/*
 Datasource:
 	'datasource' name = ID ':' specification = DatasourceSpecification
 ;
@@ -30,6 +30,11 @@ FileDatasourceSpecification:
 
 MemoryDatasourceSpecification:
 	sourceType = 'EDP2'
+;
+*/
+
+Datasource:
+	'datasource' name = ID ':' sourceType = 'EDP2' ('(' sourceURI = STRING ')')?
 ;
 
 Experiment:
@@ -119,22 +124,6 @@ NumberOfExperiments:
 	'repetitions' '=' numberOfRepetitions = INT
 ;
 
-ToolDefinition:
-	'tool' '=' tool = [EObjectWithName] ('{' (configParams += ConfigurationParams)* '}')?
-;
-
-EObjectWithName:
-	name = STRING
-;
-
-ConfigurationParams:
-	 key = ID '=' value ?= ConfigValue
-;
-
-ConfigValue:
-	STRING | INT
-;
-
 SeedDefinition:
 	'seeds' '=' '{' seedLists += ListOfSeeds (',' seedLists += ListOfSeeds)* '}'
 ;
@@ -145,4 +134,20 @@ ListOfSeeds:
 
 ExperimentDatasource:
 	'datasource' '=' source = [Datasource]
+;
+
+ToolDefinition:
+	'tool' '=' tool = [EObjectWithName] ('{' (configParams += ConfigurationParams)* '}')?
+;
+
+ConfigurationParams:
+	 key = ID '=' value ?= ConfigValue
+;
+
+ConfigValue:
+	STRING | INT
+;
+
+EObjectWithName:
+	name = STRING
 ;

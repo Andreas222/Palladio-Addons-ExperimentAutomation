@@ -221,167 +221,46 @@ ruleDatasource returns [EObject current=null]
 		}
 		(
 			(
+				lv_sourceType_3_0='EDP2'
 				{
-					newCompositeNode(grammarAccess.getDatasourceAccess().getSpecificationDatasourceSpecificationParserRuleCall_3_0());
+					newLeafNode(lv_sourceType_3_0, grammarAccess.getDatasourceAccess().getSourceTypeEDP2Keyword_3_0());
 				}
-				lv_specification_3_0=ruleDatasourceSpecification
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getDatasourceRule());
+						$current = createModelElement(grammarAccess.getDatasourceRule());
 					}
-					set(
-						$current,
-						"specification",
-						lv_specification_3_0,
-						"org.palladiosimulator.experimentautomation.dsl.ExpAuto.DatasourceSpecification");
-					afterParserOrEnumRuleCall();
+					setWithLastConsumed($current, "sourceType", lv_sourceType_3_0, "EDP2");
 				}
 			)
 		)
-	)
-;
-
-// Entry rule entryRuleDatasourceSpecification
-entryRuleDatasourceSpecification returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getDatasourceSpecificationRule()); }
-	iv_ruleDatasourceSpecification=ruleDatasourceSpecification
-	{ $current=$iv_ruleDatasourceSpecification.current; }
-	EOF;
-
-// Rule DatasourceSpecification
-ruleDatasourceSpecification returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
 		(
-			(
-				{
-					newCompositeNode(grammarAccess.getDatasourceSpecificationAccess().getSpecificationFileDatasourceSpecificationParserRuleCall_0_0());
-				}
-				lv_specification_0_1=ruleFileDatasourceSpecification
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getDatasourceSpecificationRule());
-					}
-					set(
-						$current,
-						"specification",
-						lv_specification_0_1,
-						"org.palladiosimulator.experimentautomation.dsl.ExpAuto.FileDatasourceSpecification");
-					afterParserOrEnumRuleCall();
-				}
-				    |
-				{
-					newCompositeNode(grammarAccess.getDatasourceSpecificationAccess().getSpecificationMemoryDatasourceSpecificationParserRuleCall_0_1());
-				}
-				lv_specification_0_2=ruleMemoryDatasourceSpecification
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getDatasourceSpecificationRule());
-					}
-					set(
-						$current,
-						"specification",
-						lv_specification_0_2,
-						"org.palladiosimulator.experimentautomation.dsl.ExpAuto.MemoryDatasourceSpecification");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleFileDatasourceSpecification
-entryRuleFileDatasourceSpecification returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getFileDatasourceSpecificationRule()); }
-	iv_ruleFileDatasourceSpecification=ruleFileDatasourceSpecification
-	{ $current=$iv_ruleFileDatasourceSpecification.current; }
-	EOF;
-
-// Rule FileDatasourceSpecification
-ruleFileDatasourceSpecification returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				lv_sourceType_0_0='EDP2'
-				{
-					newLeafNode(lv_sourceType_0_0, grammarAccess.getFileDatasourceSpecificationAccess().getSourceTypeEDP2Keyword_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFileDatasourceSpecificationRule());
-					}
-					setWithLastConsumed($current, "sourceType", lv_sourceType_0_0, "EDP2");
-				}
-			)
-		)
-		otherlv_1='('
-		{
-			newLeafNode(otherlv_1, grammarAccess.getFileDatasourceSpecificationAccess().getLeftParenthesisKeyword_1());
-		}
-		(
-			(
-				lv_sourceURI_2_0=RULE_STRING
-				{
-					newLeafNode(lv_sourceURI_2_0, grammarAccess.getFileDatasourceSpecificationAccess().getSourceURISTRINGTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFileDatasourceSpecificationRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"sourceURI",
-						lv_sourceURI_2_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
-		)
-		otherlv_3=')'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getFileDatasourceSpecificationAccess().getRightParenthesisKeyword_3());
-		}
-	)
-;
-
-// Entry rule entryRuleMemoryDatasourceSpecification
-entryRuleMemoryDatasourceSpecification returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getMemoryDatasourceSpecificationRule()); }
-	iv_ruleMemoryDatasourceSpecification=ruleMemoryDatasourceSpecification
-	{ $current=$iv_ruleMemoryDatasourceSpecification.current; }
-	EOF;
-
-// Rule MemoryDatasourceSpecification
-ruleMemoryDatasourceSpecification returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			lv_sourceType_0_0='EDP2'
+			otherlv_4='('
 			{
-				newLeafNode(lv_sourceType_0_0, grammarAccess.getMemoryDatasourceSpecificationAccess().getSourceTypeEDP2Keyword_0());
+				newLeafNode(otherlv_4, grammarAccess.getDatasourceAccess().getLeftParenthesisKeyword_4_0());
 			}
+			(
+				(
+					lv_sourceURI_5_0=RULE_STRING
+					{
+						newLeafNode(lv_sourceURI_5_0, grammarAccess.getDatasourceAccess().getSourceURISTRINGTerminalRuleCall_4_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDatasourceRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"sourceURI",
+							lv_sourceURI_5_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+			otherlv_6=')'
 			{
-				if ($current==null) {
-					$current = createModelElement(grammarAccess.getMemoryDatasourceSpecificationRule());
-				}
-				setWithLastConsumed($current, "sourceType", lv_sourceType_0_0, "EDP2");
+				newLeafNode(otherlv_6, grammarAccess.getDatasourceAccess().getRightParenthesisKeyword_4_2());
 			}
-		)
+		)?
 	)
 ;
 
@@ -1918,169 +1797,6 @@ ruleNumberOfExperiments returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleToolDefinition
-entryRuleToolDefinition returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getToolDefinitionRule()); }
-	iv_ruleToolDefinition=ruleToolDefinition
-	{ $current=$iv_ruleToolDefinition.current; }
-	EOF;
-
-// Rule ToolDefinition
-ruleToolDefinition returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='tool'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getToolDefinitionAccess().getToolKeyword_0());
-		}
-		otherlv_1='='
-		{
-			newLeafNode(otherlv_1, grammarAccess.getToolDefinitionAccess().getEqualsSignKeyword_1());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getToolDefinitionRule());
-					}
-				}
-				otherlv_2=RULE_ID
-				{
-					newLeafNode(otherlv_2, grammarAccess.getToolDefinitionAccess().getToolEObjectWithNameCrossReference_2_0());
-				}
-			)
-		)
-		(
-			otherlv_3='{'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getToolDefinitionAccess().getLeftCurlyBracketKeyword_3_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getToolDefinitionAccess().getConfigParamsConfigurationParamsParserRuleCall_3_1_0());
-					}
-					lv_configParams_4_0=ruleConfigurationParams
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getToolDefinitionRule());
-						}
-						add(
-							$current,
-							"configParams",
-							lv_configParams_4_0,
-							"org.palladiosimulator.experimentautomation.dsl.ExpAuto.ConfigurationParams");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)*
-			otherlv_5='}'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getToolDefinitionAccess().getRightCurlyBracketKeyword_3_2());
-			}
-		)?
-	)
-;
-
-// Entry rule entryRuleConfigurationParams
-entryRuleConfigurationParams returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getConfigurationParamsRule()); }
-	iv_ruleConfigurationParams=ruleConfigurationParams
-	{ $current=$iv_ruleConfigurationParams.current; }
-	EOF;
-
-// Rule ConfigurationParams
-ruleConfigurationParams returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				lv_key_0_0=RULE_ID
-				{
-					newLeafNode(lv_key_0_0, grammarAccess.getConfigurationParamsAccess().getKeyIDTerminalRuleCall_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getConfigurationParamsRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"key",
-						lv_key_0_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		otherlv_1='='
-		{
-			newLeafNode(otherlv_1, grammarAccess.getConfigurationParamsAccess().getEqualsSignKeyword_1());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getConfigurationParamsAccess().getValueConfigValueParserRuleCall_2_0());
-				}
-				lv_value_2_0=ruleConfigValue
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConfigurationParamsRule());
-					}
-					set(
-						$current,
-						"value",
-						true,
-						"org.palladiosimulator.experimentautomation.dsl.ExpAuto.ConfigValue");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleConfigValue
-entryRuleConfigValue returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getConfigValueRule()); }
-	iv_ruleConfigValue=ruleConfigValue
-	{ $current=$iv_ruleConfigValue.current.getText(); }
-	EOF;
-
-// Rule ConfigValue
-ruleConfigValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		this_STRING_0=RULE_STRING
-		{
-			$current.merge(this_STRING_0);
-		}
-		{
-			newLeafNode(this_STRING_0, grammarAccess.getConfigValueAccess().getSTRINGTerminalRuleCall_0());
-		}
-		    |
-		this_INT_1=RULE_INT
-		{
-			$current.merge(this_INT_1);
-		}
-		{
-			newLeafNode(this_INT_1, grammarAccess.getConfigValueAccess().getINTTerminalRuleCall_1());
-		}
-	)
-;
-
 // Entry rule entryRuleSeedDefinition
 entryRuleSeedDefinition returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getSeedDefinitionRule()); }
@@ -2266,6 +1982,169 @@ ruleExperimentDatasource returns [EObject current=null]
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleToolDefinition
+entryRuleToolDefinition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getToolDefinitionRule()); }
+	iv_ruleToolDefinition=ruleToolDefinition
+	{ $current=$iv_ruleToolDefinition.current; }
+	EOF;
+
+// Rule ToolDefinition
+ruleToolDefinition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='tool'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getToolDefinitionAccess().getToolKeyword_0());
+		}
+		otherlv_1='='
+		{
+			newLeafNode(otherlv_1, grammarAccess.getToolDefinitionAccess().getEqualsSignKeyword_1());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getToolDefinitionRule());
+					}
+				}
+				otherlv_2=RULE_ID
+				{
+					newLeafNode(otherlv_2, grammarAccess.getToolDefinitionAccess().getToolEObjectWithNameCrossReference_2_0());
+				}
+			)
+		)
+		(
+			otherlv_3='{'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getToolDefinitionAccess().getLeftCurlyBracketKeyword_3_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getToolDefinitionAccess().getConfigParamsConfigurationParamsParserRuleCall_3_1_0());
+					}
+					lv_configParams_4_0=ruleConfigurationParams
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getToolDefinitionRule());
+						}
+						add(
+							$current,
+							"configParams",
+							lv_configParams_4_0,
+							"org.palladiosimulator.experimentautomation.dsl.ExpAuto.ConfigurationParams");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+			otherlv_5='}'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getToolDefinitionAccess().getRightCurlyBracketKeyword_3_2());
+			}
+		)?
+	)
+;
+
+// Entry rule entryRuleConfigurationParams
+entryRuleConfigurationParams returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getConfigurationParamsRule()); }
+	iv_ruleConfigurationParams=ruleConfigurationParams
+	{ $current=$iv_ruleConfigurationParams.current; }
+	EOF;
+
+// Rule ConfigurationParams
+ruleConfigurationParams returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_key_0_0=RULE_ID
+				{
+					newLeafNode(lv_key_0_0, grammarAccess.getConfigurationParamsAccess().getKeyIDTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getConfigurationParamsRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"key",
+						lv_key_0_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_1='='
+		{
+			newLeafNode(otherlv_1, grammarAccess.getConfigurationParamsAccess().getEqualsSignKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getConfigurationParamsAccess().getValueConfigValueParserRuleCall_2_0());
+				}
+				lv_value_2_0=ruleConfigValue
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConfigurationParamsRule());
+					}
+					set(
+						$current,
+						"value",
+						true,
+						"org.palladiosimulator.experimentautomation.dsl.ExpAuto.ConfigValue");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleConfigValue
+entryRuleConfigValue returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getConfigValueRule()); }
+	iv_ruleConfigValue=ruleConfigValue
+	{ $current=$iv_ruleConfigValue.current.getText(); }
+	EOF;
+
+// Rule ConfigValue
+ruleConfigValue returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_STRING_0=RULE_STRING
+		{
+			$current.merge(this_STRING_0);
+		}
+		{
+			newLeafNode(this_STRING_0, grammarAccess.getConfigValueAccess().getSTRINGTerminalRuleCall_0());
+		}
+		    |
+		this_INT_1=RULE_INT
+		{
+			$current.merge(this_INT_1);
+		}
+		{
+			newLeafNode(this_INT_1, grammarAccess.getConfigValueAccess().getINTTerminalRuleCall_1());
+		}
 	)
 ;
 

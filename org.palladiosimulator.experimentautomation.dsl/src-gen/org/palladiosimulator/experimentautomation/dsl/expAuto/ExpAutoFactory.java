@@ -51,33 +51,6 @@ public interface ExpAutoFactory extends EFactory
   Datasource createDatasource();
 
   /**
-   * Returns a new object of class '<em>Datasource Specification</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Datasource Specification</em>'.
-   * @generated
-   */
-  DatasourceSpecification createDatasourceSpecification();
-
-  /**
-   * Returns a new object of class '<em>File Datasource Specification</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>File Datasource Specification</em>'.
-   * @generated
-   */
-  FileDatasourceSpecification createFileDatasourceSpecification();
-
-  /**
-   * Returns a new object of class '<em>Memory Datasource Specification</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Memory Datasource Specification</em>'.
-   * @generated
-   */
-  MemoryDatasourceSpecification createMemoryDatasourceSpecification();
-
-  /**
    * Returns a new object of class '<em>Experiment</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -249,33 +222,6 @@ public interface ExpAutoFactory extends EFactory
   NumberOfExperiments createNumberOfExperiments();
 
   /**
-   * Returns a new object of class '<em>Tool Definition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Tool Definition</em>'.
-   * @generated
-   */
-  ToolDefinition createToolDefinition();
-
-  /**
-   * Returns a new object of class '<em>EObject With Name</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>EObject With Name</em>'.
-   * @generated
-   */
-  EObjectWithName createEObjectWithName();
-
-  /**
-   * Returns a new object of class '<em>Configuration Params</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Configuration Params</em>'.
-   * @generated
-   */
-  ConfigurationParams createConfigurationParams();
-
-  /**
    * Returns a new object of class '<em>Seed Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -301,6 +247,33 @@ public interface ExpAutoFactory extends EFactory
    * @generated
    */
   ExperimentDatasource createExperimentDatasource();
+
+  /**
+   * Returns a new object of class '<em>Tool Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Tool Definition</em>'.
+   * @generated
+   */
+  ToolDefinition createToolDefinition();
+
+  /**
+   * Returns a new object of class '<em>Configuration Params</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Configuration Params</em>'.
+   * @generated
+   */
+  ConfigurationParams createConfigurationParams();
+
+  /**
+   * Returns a new object of class '<em>EObject With Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>EObject With Name</em>'.
+   * @generated
+   */
+  EObjectWithName createEObjectWithName();
 
   /**
    * Returns the package supported by this factory.
