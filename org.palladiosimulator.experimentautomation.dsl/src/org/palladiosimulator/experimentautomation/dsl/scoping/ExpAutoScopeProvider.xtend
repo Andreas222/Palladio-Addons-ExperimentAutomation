@@ -3,9 +3,7 @@
  */
 package org.palladiosimulator.experimentautomation.dsl.scoping
 
-import de.uka.ipd.sdq.identifier.Identifier
 import java.util.LinkedList
-import java.util.List
 import javax.inject.Inject
 import org.eclipse.core.runtime.IConfigurationElement
 import org.eclipse.core.runtime.IExtension
@@ -25,15 +23,9 @@ import org.palladiosimulator.experimentautomation.dsl.expAuto.Variation
 import org.palladiosimulator.experimentautomation.variation.ValueVariation
 import org.eclipse.xtext.scoping.IScope
 import org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition
-import java.util.ArrayList
 import org.eclipse.core.runtime.Platform
-import org.palladiosimulator.experimentautomation.abstractsimulation.AbstractSimulationConfiguration
-import org.eclipse.xtext.resource.IEObjectDescription
-import org.eclipse.xtext.resource.EObjectDescription
 import org.palladiosimulator.experimentautomation.dsl.expAuto.EObjectWithName
 import org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoFactoryImpl
-import java.util.Collections
-import java.util.Arrays
 
 /**
  * This class contains custom scoping description.
@@ -42,18 +34,14 @@ import java.util.Arrays
  * on how and when to use it.
  */
 class ExpAutoScopeProvider extends AbstractExpAutoScopeProvider {
-	IExtension[] extensions;
 	IExtension currExtension;
 	int i;
-	List adapters;
 	LinkedList<ValueVariation> valueVariationList;
 	LinkedList<EObject> possibleTargetsList;
 	LinkedList<EObjectWithName> possibleToolConfigurations;
 	Class actualVariedInterfaceClassObject;
 	String toolName;
-	AbstractSimulationConfiguration config;
-	ExpAutoFactoryImpl factory;
-	EObjectWithName curr;
+	EObjectWithName config;
 	
 	@Inject
 	IQualifiedNameProvider nameProvider;
@@ -127,35 +115,27 @@ class ExpAutoScopeProvider extends AbstractExpAutoScopeProvider {
 		
 		// Scope ToolConfiguration
 		if(context instanceof ToolDefinition && reference == ExpAutoPackage.Literals.TOOL_DEFINITION__TOOL){
-		  	adapters = new ArrayList();
-		  	//extensions = Platform.getExtensionRegistry().getExtensionPoint("org.palladiosimulator.experimentautomation.dsl.toolAdapter").getExtensions();
-		  	//extensions = Collections.unmodifiableList(Arrays.asList(Platform.getExtensionRegistry().getExtensionPoint("toolAdapter").getExtensions()));
-		  	val a = Platform.getExtensionRegistry
-		  	val b = a.getExtensionPoint("org.palladiosimulator.experimentautomation.dsl.toolAdapter")
-		  	//b.getExtensions()
+		  	val registry = Platform.getExtensionRegistry
+		  	val extensionPoint = registry.getExtensionPoint("org.palladiosimulator.experimentautomation.dsl.org.palladiosimulator.experimentautomation.dsl.toolAdapter")
 		  	
-		  	factory = new ExpAutoFactoryImpl();
-		  	possibleToolConfigurations = new LinkedList<EObjectWithName>
+		  	if(extensionPoint === null) {
+		  		return null;
+		  	} 
 		  	
-		  	curr = factory.createEObjectWithName();
-		  	curr.name = "First";
-  		    possibleToolConfigurations.add(0, curr);
+		  	val extensions = extensionPoint.getExtensions()
+		  	val factory = new ExpAutoFactoryImpl()
   		    
-  		    curr = factory.createEObjectWithName();
-		  	curr.name = "Second";
-  		    possibleToolConfigurations.add(1, curr);
-  		    
-//		  	for (i=0; i<extensions.length; i++){
-//		  		currExtension = extensions.get(i);
-//		  				val extensionElements = currExtension.configurationElements
-//		  				for(IConfigurationElement currElem : extensionElements){
-//		  					toolName = currElem.getAttribute("toolName")
-//		  				}
-//		  				if(toolName !== null){
-//		  					//config = aus Extension Factory holen, Config erstellen
-//		  					possibleToolConfigurations.addFirst(config)
-//		  				}
-//		  	}
+		  	for (i=0; i<extensions.length; i++){
+		  		currExtension = extensions.get(i);
+  				val extensionElements = currExtension.configurationElements
+  				for(IConfigurationElement currElem : extensionElements){
+  					toolName = currElem.getAttribute("toolName")
+  				}
+  				if(toolName !== null){
+  					config = factory.createEObjectWithName()
+  					possibleToolConfigurations.addFirst(config)
+  				}
+		  	}
 
 			
 		  	val candidates = possibleToolConfigurations
