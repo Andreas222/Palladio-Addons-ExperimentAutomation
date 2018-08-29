@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.palladiosimulator.experimentautomation.dsl.org.palladiosimulator.experimentautomation.dsl.toolAdapter">
+      <ToolAdapterConfigurationFactory
+            class="org.palladiosimulator.experimentautomation.dsl.application.tooladapter.simulizar.Factory"
+            toolName="SimuLizar">
+      </ToolAdapterConfigurationFactory>
+   </extension>
+   <extension
+         point="org.palladiosimulator.experimentautomation.dsl.org.palladiosimulator.experimentautomation.dsl.toolAdapter">
+      <ToolAdapterConfigurationFactory
+            class="org.palladiosimulator.experimentautomation.dsl.application.tooladapter.simulizar.AbstractToolAdapterConfigurationFactory:1"
+            toolName="org.palladiosimulator.experimentautomation.dsl.application.tooladapter.simucom.ToolAdapterConfigurationFactory1">
+      </ToolAdapterConfigurationFactory>
+   </extension>
+
+</plugin>
