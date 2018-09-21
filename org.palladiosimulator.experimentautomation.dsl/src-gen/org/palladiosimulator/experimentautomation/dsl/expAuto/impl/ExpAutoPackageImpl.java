@@ -299,9 +299,9 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
     isInited = true;
 
     // Initialize simple dependencies
+    IdentifierPackage.eINSTANCE.eClass();
     EcorePackage.eINSTANCE.eClass();
     VariationPackage.eINSTANCE.eClass();
-    IdentifierPackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
     theExpAutoPackage.createPackageContents();
@@ -1218,6 +1218,7 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
     // Obtain other dependent packages
     EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
     VariationPackage theVariationPackage = (VariationPackage)EPackage.Registry.INSTANCE.getEPackage(VariationPackage.eNS_URI);
+    IdentifierPackage theIdentifierPackage = (IdentifierPackage)EPackage.Registry.INSTANCE.getEPackage(IdentifierPackage.eNS_URI);
 
     // Create type parameters
 
@@ -1275,7 +1276,7 @@ public class ExpAutoPackageImpl extends EPackageImpl implements ExpAutoPackage
     initEClass(variationEClass, Variation.class, "Variation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVariation_VariationTyp(), theVariationPackage.getValueVariation(), null, "variationTyp", null, 0, 1, Variation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVariation_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Variation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getVariation_Target(), theEcorePackage.getEObject(), null, "target", null, 0, 1, Variation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariation_Target(), theIdentifierPackage.getIdentifier(), null, "target", null, 0, 1, Variation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVariation_MaxVariations(), theEcorePackage.getEInt(), "maxVariations", null, 0, 1, Variation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVariation_ValueProvider(), theEcorePackage.getEObject(), null, "valueProvider", null, 0, 1, Variation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

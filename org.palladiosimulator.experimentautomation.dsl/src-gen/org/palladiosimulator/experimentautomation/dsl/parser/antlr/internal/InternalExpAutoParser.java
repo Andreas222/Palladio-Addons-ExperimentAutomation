@@ -2348,7 +2348,7 @@ public class InternalExpAutoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVariation"
-    // InternalExpAuto.g:980:1: ruleVariation returns [EObject current=null] : (otherlv_0= 'variation' otherlv_1= '=' ( (otherlv_2= RULE_ID ) ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'target' otherlv_6= '=' ( (otherlv_7= RULE_STRING ) ) otherlv_8= 'maxVariations' otherlv_9= '=' ( (lv_maxVariations_10_0= RULE_INT ) ) otherlv_11= 'values' otherlv_12= '=' ( ( (lv_valueProvider_13_1= ruleNestedIntervalsValueProvider | lv_valueProvider_13_2= ruleSetValueProvider | lv_valueProvider_13_3= ruleLinearValueProvider | lv_valueProvider_13_4= ruleExponentialValueProvider | lv_valueProvider_13_5= rulePolynomialValueProvider ) ) ) otherlv_14= '}' ) ;
+    // InternalExpAuto.g:980:1: ruleVariation returns [EObject current=null] : (otherlv_0= 'variation' otherlv_1= '=' ( (otherlv_2= RULE_ID ) ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'target' otherlv_6= '=' ( (otherlv_7= RULE_ID ) ) otherlv_8= 'maxVariations' otherlv_9= '=' ( (lv_maxVariations_10_0= RULE_INT ) ) otherlv_11= 'values' otherlv_12= '=' ( ( (lv_valueProvider_13_1= ruleNestedIntervalsValueProvider | lv_valueProvider_13_2= ruleSetValueProvider | lv_valueProvider_13_3= ruleLinearValueProvider | lv_valueProvider_13_4= ruleExponentialValueProvider | lv_valueProvider_13_5= rulePolynomialValueProvider ) ) ) otherlv_14= '}' ) ;
     public final EObject ruleVariation() throws RecognitionException {
         EObject current = null;
 
@@ -2381,11 +2381,11 @@ public class InternalExpAutoParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalExpAuto.g:986:2: ( (otherlv_0= 'variation' otherlv_1= '=' ( (otherlv_2= RULE_ID ) ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'target' otherlv_6= '=' ( (otherlv_7= RULE_STRING ) ) otherlv_8= 'maxVariations' otherlv_9= '=' ( (lv_maxVariations_10_0= RULE_INT ) ) otherlv_11= 'values' otherlv_12= '=' ( ( (lv_valueProvider_13_1= ruleNestedIntervalsValueProvider | lv_valueProvider_13_2= ruleSetValueProvider | lv_valueProvider_13_3= ruleLinearValueProvider | lv_valueProvider_13_4= ruleExponentialValueProvider | lv_valueProvider_13_5= rulePolynomialValueProvider ) ) ) otherlv_14= '}' ) )
-            // InternalExpAuto.g:987:2: (otherlv_0= 'variation' otherlv_1= '=' ( (otherlv_2= RULE_ID ) ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'target' otherlv_6= '=' ( (otherlv_7= RULE_STRING ) ) otherlv_8= 'maxVariations' otherlv_9= '=' ( (lv_maxVariations_10_0= RULE_INT ) ) otherlv_11= 'values' otherlv_12= '=' ( ( (lv_valueProvider_13_1= ruleNestedIntervalsValueProvider | lv_valueProvider_13_2= ruleSetValueProvider | lv_valueProvider_13_3= ruleLinearValueProvider | lv_valueProvider_13_4= ruleExponentialValueProvider | lv_valueProvider_13_5= rulePolynomialValueProvider ) ) ) otherlv_14= '}' )
+            // InternalExpAuto.g:986:2: ( (otherlv_0= 'variation' otherlv_1= '=' ( (otherlv_2= RULE_ID ) ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'target' otherlv_6= '=' ( (otherlv_7= RULE_ID ) ) otherlv_8= 'maxVariations' otherlv_9= '=' ( (lv_maxVariations_10_0= RULE_INT ) ) otherlv_11= 'values' otherlv_12= '=' ( ( (lv_valueProvider_13_1= ruleNestedIntervalsValueProvider | lv_valueProvider_13_2= ruleSetValueProvider | lv_valueProvider_13_3= ruleLinearValueProvider | lv_valueProvider_13_4= ruleExponentialValueProvider | lv_valueProvider_13_5= rulePolynomialValueProvider ) ) ) otherlv_14= '}' ) )
+            // InternalExpAuto.g:987:2: (otherlv_0= 'variation' otherlv_1= '=' ( (otherlv_2= RULE_ID ) ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'target' otherlv_6= '=' ( (otherlv_7= RULE_ID ) ) otherlv_8= 'maxVariations' otherlv_9= '=' ( (lv_maxVariations_10_0= RULE_INT ) ) otherlv_11= 'values' otherlv_12= '=' ( ( (lv_valueProvider_13_1= ruleNestedIntervalsValueProvider | lv_valueProvider_13_2= ruleSetValueProvider | lv_valueProvider_13_3= ruleLinearValueProvider | lv_valueProvider_13_4= ruleExponentialValueProvider | lv_valueProvider_13_5= rulePolynomialValueProvider ) ) ) otherlv_14= '}' )
             {
-            // InternalExpAuto.g:987:2: (otherlv_0= 'variation' otherlv_1= '=' ( (otherlv_2= RULE_ID ) ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'target' otherlv_6= '=' ( (otherlv_7= RULE_STRING ) ) otherlv_8= 'maxVariations' otherlv_9= '=' ( (lv_maxVariations_10_0= RULE_INT ) ) otherlv_11= 'values' otherlv_12= '=' ( ( (lv_valueProvider_13_1= ruleNestedIntervalsValueProvider | lv_valueProvider_13_2= ruleSetValueProvider | lv_valueProvider_13_3= ruleLinearValueProvider | lv_valueProvider_13_4= ruleExponentialValueProvider | lv_valueProvider_13_5= rulePolynomialValueProvider ) ) ) otherlv_14= '}' )
-            // InternalExpAuto.g:988:3: otherlv_0= 'variation' otherlv_1= '=' ( (otherlv_2= RULE_ID ) ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'target' otherlv_6= '=' ( (otherlv_7= RULE_STRING ) ) otherlv_8= 'maxVariations' otherlv_9= '=' ( (lv_maxVariations_10_0= RULE_INT ) ) otherlv_11= 'values' otherlv_12= '=' ( ( (lv_valueProvider_13_1= ruleNestedIntervalsValueProvider | lv_valueProvider_13_2= ruleSetValueProvider | lv_valueProvider_13_3= ruleLinearValueProvider | lv_valueProvider_13_4= ruleExponentialValueProvider | lv_valueProvider_13_5= rulePolynomialValueProvider ) ) ) otherlv_14= '}'
+            // InternalExpAuto.g:987:2: (otherlv_0= 'variation' otherlv_1= '=' ( (otherlv_2= RULE_ID ) ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'target' otherlv_6= '=' ( (otherlv_7= RULE_ID ) ) otherlv_8= 'maxVariations' otherlv_9= '=' ( (lv_maxVariations_10_0= RULE_INT ) ) otherlv_11= 'values' otherlv_12= '=' ( ( (lv_valueProvider_13_1= ruleNestedIntervalsValueProvider | lv_valueProvider_13_2= ruleSetValueProvider | lv_valueProvider_13_3= ruleLinearValueProvider | lv_valueProvider_13_4= ruleExponentialValueProvider | lv_valueProvider_13_5= rulePolynomialValueProvider ) ) ) otherlv_14= '}' )
+            // InternalExpAuto.g:988:3: otherlv_0= 'variation' otherlv_1= '=' ( (otherlv_2= RULE_ID ) ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'target' otherlv_6= '=' ( (otherlv_7= RULE_ID ) ) otherlv_8= 'maxVariations' otherlv_9= '=' ( (lv_maxVariations_10_0= RULE_INT ) ) otherlv_11= 'values' otherlv_12= '=' ( ( (lv_valueProvider_13_1= ruleNestedIntervalsValueProvider | lv_valueProvider_13_2= ruleSetValueProvider | lv_valueProvider_13_3= ruleLinearValueProvider | lv_valueProvider_13_4= ruleExponentialValueProvider | lv_valueProvider_13_5= rulePolynomialValueProvider ) ) ) otherlv_14= '}'
             {
             otherlv_0=(Token)match(input,31,FOLLOW_17); 
 
@@ -2450,24 +2450,24 @@ public class InternalExpAutoParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getVariationAccess().getTargetKeyword_5());
             		
-            otherlv_6=(Token)match(input,23,FOLLOW_6); 
+            otherlv_6=(Token)match(input,23,FOLLOW_7); 
 
             			newLeafNode(otherlv_6, grammarAccess.getVariationAccess().getEqualsSignKeyword_6());
             		
-            // InternalExpAuto.g:1039:3: ( (otherlv_7= RULE_STRING ) )
-            // InternalExpAuto.g:1040:4: (otherlv_7= RULE_STRING )
+            // InternalExpAuto.g:1039:3: ( (otherlv_7= RULE_ID ) )
+            // InternalExpAuto.g:1040:4: (otherlv_7= RULE_ID )
             {
-            // InternalExpAuto.g:1040:4: (otherlv_7= RULE_STRING )
-            // InternalExpAuto.g:1041:5: otherlv_7= RULE_STRING
+            // InternalExpAuto.g:1040:4: (otherlv_7= RULE_ID )
+            // InternalExpAuto.g:1041:5: otherlv_7= RULE_ID
             {
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getVariationRule());
             					}
             				
-            otherlv_7=(Token)match(input,RULE_STRING,FOLLOW_22); 
+            otherlv_7=(Token)match(input,RULE_ID,FOLLOW_22); 
 
-            					newLeafNode(otherlv_7, grammarAccess.getVariationAccess().getTargetEObjectCrossReference_7_0());
+            					newLeafNode(otherlv_7, grammarAccess.getVariationAccess().getTargetIdentifierCrossReference_7_0());
             				
 
             }

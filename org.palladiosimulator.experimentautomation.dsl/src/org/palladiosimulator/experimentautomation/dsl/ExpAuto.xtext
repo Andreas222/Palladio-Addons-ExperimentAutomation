@@ -15,23 +15,6 @@ Model:
 Import:
 	'import' path = STRING
 ;
-/*
-Datasource:
-	'datasource' name = ID ':' specification = DatasourceSpecification
-;
-
-DatasourceSpecification:
-	specification = (FileDatasourceSpecification | MemoryDatasourceSpecification)
-;
-
-FileDatasourceSpecification:
-	sourceType = 'EDP2' '(' sourceURI = STRING ')'
-;
-
-MemoryDatasourceSpecification:
-	sourceType = 'EDP2'
-;
-*/
 
 Datasource:
 	'datasource' name = ID ':' sourceType = 'EDP2' ('(' sourceURI = STRING ')')?
@@ -86,7 +69,7 @@ MonitorRepository:
 Variation:
 	'variation' '=' variationTyp = [ValueVariation] name = ID
 	'{'
-		'target' '=' target = [EObject | STRING]
+		'target' '=' target = [Identifier]
 		'maxVariations' '=' maxVariations = INT
 		'values' '=' valueProvider = (NestedIntervalsValueProvider | SetValueProvider | LinearValueProvider | ExponentialValueProvider | PolynomialValueProvider)
 	'}'

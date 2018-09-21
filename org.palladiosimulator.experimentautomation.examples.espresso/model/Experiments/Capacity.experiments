@@ -1,5 +1,10 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
-<ExperimentAutomation.Experiments:ExperimentRepository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ExperimentAutomation.Experiments="http://palladiosimulator.org/ExperimentAutomation/Experiments/1.0" xmlns:ExperimentAutomation.Experiments.AbstractSimulation="http://palladiosimulator.org/ExperimentAutomation/AbstractSimulation/1.0" xmlns:ExperimentAutomation.Variation="http://palladiosimulator.org/ExperimentAutomation/Variation/1.0" xmlns:simulizartooladapter="http://palladiosimulator.org/ExperimentAutomation/ToolAdapter/SimuLizar/1.0">
+<ExperimentAutomation.Experiments:ExperimentRepository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:ExperimentAutomation.Experiments="http://palladiosimulator.org/ExperimentAutomation/Experiments/1.0" 
+	xmlns:ExperimentAutomation.Experiments.AbstractSimulation="http://palladiosimulator.org/ExperimentAutomation/AbstractSimulation/1.0" 
+	xmlns:ExperimentAutomation.Variation="http://palladiosimulator.org/ExperimentAutomation/Variation/1.0" 
+	xmlns:simulizartooladapter="http://palladiosimulator.org/ExperimentAutomation/ToolAdapter/SimuLizar/1.0">
   <experiments id="Espresso:Capacity" name="Espresso: Capacity" description="Determines capacity for the espresso example." repetitions="1">
     <variations minValue="1.0" maxValue="100.0" maxVariations="10" variedObjectId="_LPnI8CHdEd6lJo4DCALHMw" name="ClosedWorkloadPopulation">
       <type xsi:type="ExperimentAutomation.Variation:ValueVariation" href="pcm.variation#_zUZqID5zEeCEPJs72ZSOBg"/>
@@ -24,3 +29,4 @@
     </initialModel>
   </experiments>
 </ExperimentAutomation.Experiments:ExperimentRepository>
+

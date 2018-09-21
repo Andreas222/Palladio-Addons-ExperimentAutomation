@@ -1043,9 +1043,9 @@ ruleVariation returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getVariationRule());
 					}
 				}
-				otherlv_7=RULE_STRING
+				otherlv_7=RULE_ID
 				{
-					newLeafNode(otherlv_7, grammarAccess.getVariationAccess().getTargetEObjectCrossReference_7_0());
+					newLeafNode(otherlv_7, grammarAccess.getVariationAccess().getTargetIdentifierCrossReference_7_0());
 				}
 			)
 		)

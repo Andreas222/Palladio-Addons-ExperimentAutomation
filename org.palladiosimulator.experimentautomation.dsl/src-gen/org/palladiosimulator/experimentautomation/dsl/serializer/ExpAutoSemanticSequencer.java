@@ -616,7 +616,7 @@ public class ExpAutoSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (
 	 *         variationTyp=[ValueVariation|ID] 
 	 *         name=ID 
-	 *         target=[EObject|STRING] 
+	 *         target=[Identifier|ID] 
 	 *         maxVariations=INT 
 	 *         (
 	 *             valueProvider=NestedIntervalsValueProvider | 

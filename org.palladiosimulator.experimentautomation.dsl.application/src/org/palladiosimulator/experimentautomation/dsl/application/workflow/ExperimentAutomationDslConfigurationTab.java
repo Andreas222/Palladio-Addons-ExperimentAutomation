@@ -13,10 +13,10 @@ import de.uka.ipd.sdq.workflow.launchconfig.tabs.TabHelper;
 
 public class ExperimentAutomationDslConfigurationTab extends AbstractConfigurationTab {
 
-    public static final String SELECT_EXPERIMENTS_FILE = "Select ExpAuto DSL File **** TEST";
-    public static final String EXPERIMENTS_FILE = "ExpAuto DSL File **** TEST";
+    public static final String SELECT_EXPERIMENTS_FILE = "Select ExpAuto DSL File";
+    public static final String EXPERIMENTS_FILE = "ExpAuto DSL File";
     public static final String DEFAULT_EXPERIMENTS = "";
-    public static final String EXPERIMENT_AUTOMATION = "Exp Auto **** TEST";
+    public static final String EXPERIMENT_AUTOMATION = "Exp Auto";
     public static final String[] EXPERIMENTS_EXTENSION = new String[] {
         "*.expauto"
     };

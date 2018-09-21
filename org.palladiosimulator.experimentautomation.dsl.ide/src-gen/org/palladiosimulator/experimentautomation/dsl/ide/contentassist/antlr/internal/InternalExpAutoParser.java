@@ -7233,7 +7233,7 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
             // InternalExpAuto.g:2366:1: ( rule__Variation__Group__6__Impl rule__Variation__Group__7 )
             // InternalExpAuto.g:2367:2: rule__Variation__Group__6__Impl rule__Variation__Group__7
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_11);
             rule__Variation__Group__6__Impl();
 
             state._fsp--;
@@ -15283,29 +15283,29 @@ public class InternalExpAutoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Variation__TargetAssignment_7"
-    // InternalExpAuto.g:5161:1: rule__Variation__TargetAssignment_7 : ( ( RULE_STRING ) ) ;
+    // InternalExpAuto.g:5161:1: rule__Variation__TargetAssignment_7 : ( ( RULE_ID ) ) ;
     public final void rule__Variation__TargetAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalExpAuto.g:5165:1: ( ( ( RULE_STRING ) ) )
-            // InternalExpAuto.g:5166:2: ( ( RULE_STRING ) )
+            // InternalExpAuto.g:5165:1: ( ( ( RULE_ID ) ) )
+            // InternalExpAuto.g:5166:2: ( ( RULE_ID ) )
             {
-            // InternalExpAuto.g:5166:2: ( ( RULE_STRING ) )
-            // InternalExpAuto.g:5167:3: ( RULE_STRING )
+            // InternalExpAuto.g:5166:2: ( ( RULE_ID ) )
+            // InternalExpAuto.g:5167:3: ( RULE_ID )
             {
-             before(grammarAccess.getVariationAccess().getTargetEObjectCrossReference_7_0()); 
-            // InternalExpAuto.g:5168:3: ( RULE_STRING )
-            // InternalExpAuto.g:5169:4: RULE_STRING
+             before(grammarAccess.getVariationAccess().getTargetIdentifierCrossReference_7_0()); 
+            // InternalExpAuto.g:5168:3: ( RULE_ID )
+            // InternalExpAuto.g:5169:4: RULE_ID
             {
-             before(grammarAccess.getVariationAccess().getTargetEObjectSTRINGTerminalRuleCall_7_0_1()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getVariationAccess().getTargetEObjectSTRINGTerminalRuleCall_7_0_1()); 
+             before(grammarAccess.getVariationAccess().getTargetIdentifierIDTerminalRuleCall_7_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getVariationAccess().getTargetIdentifierIDTerminalRuleCall_7_0_1()); 
 
             }
 
-             after(grammarAccess.getVariationAccess().getTargetEObjectCrossReference_7_0()); 
+             after(grammarAccess.getVariationAccess().getTargetIdentifierCrossReference_7_0()); 
 
             }
 

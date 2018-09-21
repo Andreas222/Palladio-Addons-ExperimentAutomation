@@ -3,6 +3,8 @@
  */
 package org.palladiosimulator.experimentautomation.dsl.expAuto.impl;
 
+import de.uka.ipd.sdq.identifier.Identifier;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -75,7 +77,7 @@ public class VariationImpl extends MinimalEObjectImpl.Container implements Varia
    * @generated
    * @ordered
    */
-  protected EObject target;
+  protected Identifier target;
 
   /**
    * The default value of the '{@link #getMaxVariations() <em>Max Variations</em>}' attribute.
@@ -199,12 +201,12 @@ public class VariationImpl extends MinimalEObjectImpl.Container implements Varia
    * <!-- end-user-doc -->
    * @generated
    */
-  public EObject getTarget()
+  public Identifier getTarget()
   {
-    if (target != null && target.eIsProxy())
+    if (target != null && ((EObject)target).eIsProxy())
     {
       InternalEObject oldTarget = (InternalEObject)target;
-      target = eResolveProxy(oldTarget);
+      target = (Identifier)eResolveProxy(oldTarget);
       if (target != oldTarget)
       {
         if (eNotificationRequired())
@@ -219,7 +221,7 @@ public class VariationImpl extends MinimalEObjectImpl.Container implements Varia
    * <!-- end-user-doc -->
    * @generated
    */
-  public EObject basicGetTarget()
+  public Identifier basicGetTarget()
   {
     return target;
   }
@@ -229,9 +231,9 @@ public class VariationImpl extends MinimalEObjectImpl.Container implements Varia
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTarget(EObject newTarget)
+  public void setTarget(Identifier newTarget)
   {
-    EObject oldTarget = target;
+    Identifier oldTarget = target;
     target = newTarget;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ExpAutoPackage.VARIATION__TARGET, oldTarget, target));
@@ -367,7 +369,7 @@ public class VariationImpl extends MinimalEObjectImpl.Container implements Varia
         setName((String)newValue);
         return;
       case ExpAutoPackage.VARIATION__TARGET:
-        setTarget((EObject)newValue);
+        setTarget((Identifier)newValue);
         return;
       case ExpAutoPackage.VARIATION__MAX_VARIATIONS:
         setMaxVariations((Integer)newValue);
@@ -396,7 +398,7 @@ public class VariationImpl extends MinimalEObjectImpl.Container implements Varia
         setName(NAME_EDEFAULT);
         return;
       case ExpAutoPackage.VARIATION__TARGET:
-        setTarget((EObject)null);
+        setTarget((Identifier)null);
         return;
       case ExpAutoPackage.VARIATION__MAX_VARIATIONS:
         setMaxVariations(MAX_VARIATIONS_EDEFAULT);

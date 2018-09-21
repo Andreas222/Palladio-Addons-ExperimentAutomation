@@ -26,6 +26,7 @@ import org.palladiosimulator.experimentautomation.dsl.expAuto.ToolDefinition
 import org.eclipse.core.runtime.Platform
 import org.palladiosimulator.experimentautomation.dsl.expAuto.EObjectWithName
 import org.palladiosimulator.experimentautomation.dsl.expAuto.impl.ExpAutoFactoryImpl
+import de.uka.ipd.sdq.identifier.Identifier
 
 /**
  * This class contains custom scoping description.
@@ -37,7 +38,7 @@ class ExpAutoScopeProvider extends AbstractExpAutoScopeProvider {
 	IExtension currExtension;
 	int i;
 	LinkedList<ValueVariation> valueVariationList;
-	LinkedList<EObject> possibleTargetsList;
+	LinkedList<Identifier> possibleTargetsList;
 	LinkedList<EObjectWithName> possibleToolConfigurations;
 	Class actualVariedInterfaceClassObject;
 	String toolName;
@@ -83,26 +84,26 @@ class ExpAutoScopeProvider extends AbstractExpAutoScopeProvider {
 			val usageResource = context.eResource.resourceSet.getResource(
 				URI.createURI(usageModelEntity.getUsageModel()), true)
 			val usageRootEntity = usageResource.getContents().get(0)
-			val usageModelContents = EcoreUtil2.getAllContentsOfType(usageRootEntity, EObject)
+			val usageModelContents = EcoreUtil2.getAllContentsOfType(usageRootEntity, Identifier)
 
 			val allocationResource = context.eResource.resourceSet.getResource(
 				URI.createURI(allocationModelEntity.getAllocation()), true)
 			val allocationRootEntity = allocationResource.getContents().get(0)
-			val allocationModelContents = EcoreUtil2.getAllContentsOfType(allocationRootEntity, EObject)
+			val allocationModelContents = EcoreUtil2.getAllContentsOfType(allocationRootEntity, Identifier)
 
 			val importedStrategy = (context as Variation).getVariationTyp()
 			val variedEntityInterface = importedStrategy.getVariedEntityInterface()
 			actualVariedInterfaceClassObject = Class.forName(variedEntityInterface)
 
-			possibleTargetsList = new LinkedList<EObject>();
+			possibleTargetsList = new LinkedList<Identifier>();
 
-			for (EObject currObject : usageModelContents) {
+			for (Identifier currObject : usageModelContents) {
 				if(actualVariedInterfaceClassObject.isInstance(currObject)){
 					possibleTargetsList.addFirst(currObject)
 				}
 			}
 
-			for (EObject currObject : allocationModelContents) {
+			for (Identifier currObject : allocationModelContents) {
 				if(actualVariedInterfaceClassObject.isInstance(currObject)){
 					possibleTargetsList.addFirst(currObject)
 				}
@@ -136,6 +137,8 @@ class ExpAutoScopeProvider extends AbstractExpAutoScopeProvider {
   				if(toolName !== null){
   					config = factory.createEObjectWithName()
   					config.name = toolName
+  					val resource = context.eResource
+  					resource.contents.add(config)
   					possibleToolConfigurations.addFirst(config)
   				}
 		  	}
