@@ -13,6 +13,8 @@ import org.palladiosimulator.experimentautomation.experiments.SetValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.ValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.impl.ExperimentsFactoryImpl;
 
+import de.uka.ipd.sdq.identifier.Identifier;
+
 public class VariationTransformation {
 	private ExperimentsFactory factory;
 	
@@ -35,10 +37,8 @@ public class VariationTransformation {
 		return variation;
 	}
 	
-	private String transformVariationTarget(EObject old) {
-		//return old.getId();
-		//TODO
-		return null;
+	private String transformVariationTarget(Identifier old) {
+		return old.getId();
 	}
 	
 	private ValueProvider transformValueProvider(EObject valueProvider) {

@@ -159,37 +159,6 @@ public class ExperimentTransformation {
 		return generatorSeed;
 	}
 	
-	/*
-	private EDP2Datasource transformExperimentDatasource(ExperimentDatasource old) {
-		EDP2Datasource datasource;
-		EObject specification = old.getSource().getSpecification().getSpecification();
-		
-		if(specification instanceof FileDatasourceSpecification) {
-			datasource = transformFileDatasource((FileDatasourceSpecification)specification);
-		} else if(specification instanceof MemoryDatasourceSpecification) {
-			datasource = transformMemoryDatasource((MemoryDatasourceSpecification)specification);
-		} else {
-			//sollte nie passieren
-			return null;
-		}
-		
-		datasource.setId(old.getSource().getName());
-		
-		return datasource;
-	}
-	
-	private FileDatasource transformFileDatasource(FileDatasourceSpecification old) {
-		FileDatasource datasource = absFactory.createFileDatasource();
-		datasource.setLocation(old.getSourceURI());
-		return datasource;
-	}
-	
-	private MemoryDatasource transformMemoryDatasource(MemoryDatasourceSpecification old) {
-		MemoryDatasource datasource = absFactory.createMemoryDatasource();
-		return datasource;
-	}
-	*/
-	
 	private EDP2Datasource transformExperimentDatasource(ExperimentDatasource old) {
 		EDP2Datasource datasource;
 		String sourceURI = old.getSource().getSourceURI();
