@@ -20,8 +20,6 @@ public class ExpautoToExperimentsTransformation {
 		ResourceSet rs = new ResourceSetImpl();
 		//TODO URI festlegen
 		Resource res = rs.createResource(null);
-		//TODO Save options festlegen
-		//res.save(null);
 		
 		ExperimentTransformation experimentTransformation = new ExperimentTransformation(rs);
 		ExperimentRepository experimentRepository = factory.createExperimentRepository();
@@ -32,7 +30,6 @@ public class ExpautoToExperimentsTransformation {
 		}
 		
 		res.getContents().add(experimentRepository);
-		//res.save(null);
 		
 		return experimentRepository;
 	}

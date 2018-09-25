@@ -51,8 +51,6 @@ public class ExperimentTransformation {
 		experiment.setName(old.getName());
 		experiment.setId(old.getName());
 		experiment.setExperimentDesign(transformDesign(old.getDesign()));
-		
-		//TODO Defaultwert setzen
 		experiment.setResponseMeasurement(null);
 		
 		transformExperimentSpecifications(experiment, old.getExperimentSpecifications());

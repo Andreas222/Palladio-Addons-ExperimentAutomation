@@ -116,8 +116,8 @@ class ExpAutoValidator extends AbstractExpAutoValidator {
 			error('Es darf maximal ein Middleware Repository angegeben werden', ExpAutoPackage.Literals.INIT_SPECIFICATIONS__SPECIFICATIONS, 'invalidInitModel')
 		} else if(numberOfEventMiddlewareRepositories > 1){
 			error('Es darf maximal ein Event Middleware Repository angegeben werden', ExpAutoPackage.Literals.INIT_SPECIFICATIONS__SPECIFICATIONS, 'invalidInitModel')
-		} else if(numberOfMonitorRepositories > 1){
-			error('Es darf maximal ein Monitor Repository angegeben werden', ExpAutoPackage.Literals.INIT_SPECIFICATIONS__SPECIFICATIONS, 'invalidInitModel')
+		} else if(numberOfMonitorRepositories != 1){
+			error('Es muss genau ein Monitor Repository angegeben werden', ExpAutoPackage.Literals.INIT_SPECIFICATIONS__SPECIFICATIONS, 'invalidInitModel')
 		}
 	}
 	

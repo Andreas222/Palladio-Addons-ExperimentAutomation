@@ -54,27 +54,27 @@ public class InitialModelTransformation {
 				initialModel.setAllocation(allocation);
 			} else if(currObject instanceof org.palladiosimulator.experimentautomation.dsl.expAuto.MonitorRepository) {
 				MonitorRepository monitorRepository = transformMonitorRepository((org.palladiosimulator.experimentautomation.dsl.expAuto.MonitorRepository)currObject);
-				if(monitorRepository == null) {
-					//TODO Defaultwert setzen
-				} else {
-					initialModel.setMonitorRepository(monitorRepository);
-				}
+				initialModel.setMonitorRepository(monitorRepository);
 			} else if(currObject instanceof MiddlewareRepository) {
 				Repository middlewareRepository = transformMiddlewareRepository((MiddlewareRepository)currObject);
-				if(middlewareRepository == null) {
-					//TODO Defaultwert setzen
-				} else {
-					initialModel.setMiddlewareRepository(middlewareRepository);
-				}
+				initialModel.setMiddlewareRepository(middlewareRepository);
 			} else if(currObject instanceof EventMiddlewareRepository) {
 				Repository eventMiddlewareRepository = transformEventMiddlewareRepository((EventMiddlewareRepository)currObject);
-				if(eventMiddlewareRepository == null) {
-					//TODO Defaultwert setzen
-				} else {
-					initialModel.setEventMiddleWareRepository(eventMiddlewareRepository);
-				}
+				initialModel.setEventMiddleWareRepository(eventMiddlewareRepository);
 			}	
 		}
+		
+		if(initialModel.getMiddlewareRepository() == null) {
+			URI currUri = URI.createURI("pathmap://PCM_MODELS/Glassfish.repository");
+			Repository middlewareRepository = loadRepositoryResource(currUri);
+			initialModel.setMiddlewareRepository(middlewareRepository);
+		} 
+		
+		if(initialModel.getEventMiddleWareRepository() == null) {
+			URI currUri = URI.createURI("pathmap://PCM_MODELS/default_event_middleware.repository");
+			Repository middlewareRepository = loadRepositoryResource(currUri);
+			initialModel.setEventMiddleWareRepository(middlewareRepository);
+		} 
 	}
 	
 	private UsageModel transformUsageModel(org.palladiosimulator.experimentautomation.dsl.expAuto.UsageModel old) {
@@ -100,14 +100,16 @@ public class InitialModelTransformation {
 	
 	private Repository transformMiddlewareRepository(MiddlewareRepository old) {
 		URI currUri = URI.createURI(old.getMiddlewareRepository());
-		Resource importedResource = rs.getResource(currUri, true);
-		Repository repository = (Repository)importedResource.getContents().get(0);
-		return repository;
+		return loadRepositoryResource(currUri);
 	}
 	
 	private Repository transformEventMiddlewareRepository(EventMiddlewareRepository old) {
 		URI currUri = URI.createURI(old.getEventMiddelwareRepository());
-		Resource importedResource = rs.getResource(currUri, true);
+		return loadRepositoryResource(currUri);
+	}
+	
+	private Repository loadRepositoryResource(URI repositoryURI) {
+		Resource importedResource = rs.getResource(repositoryURI, true);
 		Repository repository = (Repository)importedResource.getContents().get(0);
 		return repository;
 	}
