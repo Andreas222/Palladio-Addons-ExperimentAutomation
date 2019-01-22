@@ -170,7 +170,7 @@ Workflow {
 		}
 		language = StandardLanguage {
 			name = "org.palladiosimulator.experimentautomation.dsl.ExpAuto"
-			fileExtensions = "ExpAuto"
+			fileExtensions = "expauto"
 			serializer = {
 				generateStub = false
 			}

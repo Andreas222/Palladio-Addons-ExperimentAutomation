@@ -2,6 +2,7 @@ package org.palladiosimulator.experimentautomation.dsl.application.workflow;
 
 import java.util.ArrayList;
 import org.eclipse.debug.core.ILaunchConfiguration;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -9,6 +10,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.palladiosimulator.experimentautomation.application.config.ExperimentAutomationConfiguration;
 import org.palladiosimulator.experimentautomation.experiments.Experiment;
+import org.palladiosimulator.experimentautomation.experiments.ExperimentRepository;
 import org.eclipse.core.runtime.CoreException;
 import de.uka.ipd.sdq.workflow.launchconfig.AbstractWorkflowBasedRunConfiguration;
 import de.uka.ipd.sdq.workflow.launchconfig.AbstractWorkflowConfigurationBuilder;
@@ -39,7 +41,11 @@ public class ExperimentAutomationDslLaunchConfigurationBasedConfigBuilder extend
         : ExperimentAutomationDslConfigurationTab.DEFAULT_EXPERIMENTS;
 
         //config.setExperiments(getExperimentRepository(experimentsURI).getExperiments());
-        config.setExperiments(transformation.transformExpautoToExperiments(getDSLRepository(dslURI)).getExperiments());
+        Model model = getDSLRepository(dslURI);
+        ExperimentRepository expRepo = transformation.transformExpautoToExperiments(model);
+        EList<Experiment> expList = expRepo.getExperiments();
+        config.setExperiments(expList);
+        //config.setExperiments(transformation.transformExpautoToExperiments(getDSLRepository(dslURI)).getExperiments());
         config.setAttributes(this.properties);
     }
 
